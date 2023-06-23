@@ -1,26 +1,30 @@
 <script setup></script>
 <template>
-    <div class="navbar bg-accent-content">
+    <div class="navbar bg-primary text-primary-content">
   <div class="navbar-start">
     <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost btn-circle">
+      <label tabindex="0" class="btn btn-ghost btn-circle ">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+        MENU
       </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 bg-base-200 w-52">
+
+      <ul tabindex="0" class="menu menu-compact dropdown-content bg-primary w-52">
         <li><a>Home</a></li>
+        <li class="menu-title">
+    <span>Chi siamo</span>
+  </li>
         <li><a>L'Associazione</a></li>
         <li><a>Il Gruppo</a></li>
         <li><a>La Comunità Capi</a></li>
-        <li><a>Archivio</a></li>
-        <li><a>Utilities</a></li>
+       
         <li class="menu-title">
-    <span>Branche</span>
+    <span>Le Branche</span>
   </li>
         <li tabindex="1" >
           <a>
             Lupetti e Coccinelle
           </a>
-          <ul class="bg-base-200 py-0">
+          <ul class="bg-primary py-0">
             <li><a>Branco della Roccia Azzurra</a></li>
             <li><a>Cerchio del Bosco Gioioso</a></li>
             <li><a>Piccole Orme</a></li>
@@ -31,7 +35,7 @@
           <a>
             Esploratori e Guide
           </a>
-          <ul class="bg-base-200 py-0">
+          <ul class="bg-primary py-0">
             <li><a>Reparto Brownsea</a></li>
             <li><a>Reparto Antares</a></li>
             <li><a>Campi di Specialità/Competenza</a></li>
@@ -42,13 +46,18 @@
           <a>
             Rover e Scolte
           </a>
-          <ul class="bg-base-200 py-0">
+          <ul class="bg-primary py-0">
             <li><a>Clan Fuoco Madonna della Valle</a></li>
             <li><a>Noviziato</a></li>
             <li><a>Epppi/Ross</a></li>
           </ul>
         </li>
         
+        <li class="menu-title">
+    <span>Altro</span>
+  </li>
+        <li><a>Archivio</a></li>
+        <li><a>Utilities</a></li>
         
       </ul>
     </div>
