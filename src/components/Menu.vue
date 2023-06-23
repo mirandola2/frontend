@@ -1,22 +1,47 @@
-<script setup>
-import { Navbar, NavbarLogo, NavbarCollapse, NavbarLink } from 'flowbite-vue'
-import { Dropdown, ListGroup, ListGroupItem } from 'flowbite-vue'
-
-</script>
+<script setup></script>
 <template>
-    <Navbar>
-      <template #logo>
-        <NavbarLogo link="/" alt="logo" image-url="logo_colored.png">
-          Agesci Mirandola 2
-        </NavbarLogo>
-      </template>
-      <template #default="{isShowMenu}">
-        <NavbarCollapse :isShowMenu="isShowMenu">
-          <NavbarLink isActive link="#">Home</NavbarLink>
-          <NavbarLink link="#">L'Associazione</NavbarLink>
-          <NavbarLink link="#">Le Branche</NavbarLink>
-          <NavbarLink link="#">Contatti</NavbarLink>
-        </NavbarCollapse>
-      </template>
-    </Navbar>
+    <div class="navbar bg-base-100">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+      </label>
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 bg-base-200">
+        <li><a>Home</a></li>
+        <li><a>L'Associazione</a></li>
+        <li><a>Il Gruppo</a></li>
+        <li tabindex="1" >
+          <a>
+            Le Branche
+          </a>
+          <ul class="bg-base-200 py-0">
+            <li><a>Lupetti e Coccinelle</a></li>
+            <li><a>Esploratori e Guide</a></li>
+            <li><a>Rover e Scolte</a></li>
+          </ul>
+        </li>
+        <li><a>Co.Ca.</a></li>
+        <li><a>Utilities</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-center">
+    <h1 class="normal-case text-xl">Gruppo Scout Mirandola 2</h1>
+  </div>
+  <div class="navbar-end"></div>
+  <!--
+  
+    <button class="btn btn-ghost btn-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button>
+    <button class="btn btn-ghost btn-circle">
+      <div class="indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+        <span class="badge badge-xs badge-primary indicator-item"></span>
+      </div>
+    </button>
+  </div>
+  -->
+</div>
+
 </template>
