@@ -12,7 +12,25 @@ export default {
     //require('flowbite/plugin')
   ],
     daisyui: {
-    themes: ["cupcake"],
+    themes: [
+      {
+      agesci: {  
+        "primary": "#462678",        
+        "secondary": "#6B478D",       
+        "accent": "#AEB0D9",      
+        "neutral": "#E5D6C7",     
+        "base-100": "#ECE9E6",           
+        "info": "#3ABFF8",          
+        "success": "#36D399",                
+        "warning": "#FBBD23",                 
+        "error": "#F87272",
+        "lc": "#FDC500",
+        "eg": "#21A067",
+        "rs": "#E74030",
+        "cc": "#9B66A5"
+        },
+      }
+    ],
   },
 }
 
