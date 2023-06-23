@@ -1,27 +1,55 @@
 <script setup></script>
 <template>
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-accent-content">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 bg-base-200">
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 bg-base-200 w-52">
         <li><a>Home</a></li>
         <li><a>L'Associazione</a></li>
         <li><a>Il Gruppo</a></li>
+        <li><a>La Comunità Capi</a></li>
+        <li><a>Archivio</a></li>
+        <li><a>Utilities</a></li>
+        <li class="menu-title">
+    <span>Branche</span>
+  </li>
         <li tabindex="1" >
           <a>
-            Le Branche
+            Lupetti e Coccinelle
           </a>
           <ul class="bg-base-200 py-0">
-            <li><a>Lupetti e Coccinelle</a></li>
-            <li><a>Esploratori e Guide</a></li>
-            <li><a>Rover e Scolte</a></li>
+            <li><a>Branco della Roccia Azzurra</a></li>
+            <li><a>Cerchio del Bosco Gioioso</a></li>
+            <li><a>Piccole Orme</a></li>
+            <li><a>Specialità</a></li>
           </ul>
         </li>
-        <li><a>Co.Ca.</a></li>
-        <li><a>Utilities</a></li>
+        <li tabindex="1" >
+          <a>
+            Esploratori e Guide
+          </a>
+          <ul class="bg-base-200 py-0">
+            <li><a>Reparto Brownsea</a></li>
+            <li><a>Reparto Antares</a></li>
+            <li><a>Campi di Specialità/Competenza</a></li>
+            <li><a>Specialità e Brevetti</a></li>
+          </ul>
+        </li>
+        <li tabindex="1" >
+          <a>
+            Rover e Scolte
+          </a>
+          <ul class="bg-base-200 py-0">
+            <li><a>Clan Fuoco Madonna della Valle</a></li>
+            <li><a>Noviziato</a></li>
+            <li><a>Epppi/Ross</a></li>
+          </ul>
+        </li>
+        
+        
       </ul>
     </div>
   </div>
