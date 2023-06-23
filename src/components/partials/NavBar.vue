@@ -28,47 +28,47 @@ export default {
             tabindex="0"
             class="menu menu-compact dropdown-content bg-primary drop-shadow-2xl rounded-xl w-40"
           >
-            <li><a>Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="menu-title">
               <span>Chi siamo</span>
             </li>
-            <li><a>L'Associazione</a></li>
-            <li><a>Il Gruppo</a></li>
-            <li><a>La Comunità Capi</a></li>
+            <li><a href="associazione">L'Associazione</a></li>
+            <li><a href="gruppo">Il Gruppo</a></li>
+            <li><a href="coca">La Comunità Capi</a></li>
 
             <li class="menu-title">
               <span>Le Branche</span>
             </li>
             <li tabindex="1">
-              <a> Lupetti e Coccinelle </a>
+              <a href="/lc"> Lupetti e Coccinelle </a>
               <ul
                 class="bg-primary drop-shadow-2xl rounded-xl py-0 -ml-10 z-10"
               >
-                <li><a>Branco della Roccia Azzurra</a></li>
-                <li><a>Cerchio del Bosco Gioioso</a></li>
-                <li><a>Piccole Orme</a></li>
-                <li><a>Specialità</a></li>
+                <li><a href="/lc/branco">Branco della Roccia Azzurra</a></li>
+                <li><a href="/lc/cerchio">Cerchio del Bosco Gioioso</a></li>
+                <li><a href="/lc/piccole-orme">Piccole Orme</a></li>
+                <li><a href="/lc/specialita">Specialità</a></li>
               </ul>
             </li>
             <li tabindex="1">
-              <a> Esploratori e Guide </a>
+              <a href="/eg"> Esploratori e Guide </a>
               <ul
                 class="bg-primary drop-shadow-2xl rounded-xl py-0 -ml-10 z-10"
               >
-                <li><a>Reparto Brownsea</a></li>
-                <li><a>Reparto Antares</a></li>
-                <li><a>Campi di Specialità e Competenza</a></li>
-                <li><a>Specialità e Brevetti</a></li>
+                <li><a href="/eg/brownsea">Reparto Brownsea</a></li>
+                <li><a href="/eg/antares">Reparto Antares</a></li>
+                <li><a href="/eg/campetti">Campi di Specialità e Competenza</a></li>
+                <li><a href="/eg/specialità-brevetti">Specialità e Brevetti</a></li>
               </ul>
             </li>
             <li tabindex="1">
-              <a> Rover e Scolte </a>
+              <a href="/rs"> Rover e Scolte </a>
               <ul
                 class="bg-primary drop-shadow-2xl rounded-xl py-0 -ml-10 z-10"
               >
-                <li><a>Clan Fuoco Madonna della Valle</a></li>
-                <li><a>Noviziato</a></li>
-                <li><a>Epppi/Ross</a></li>
+                <li><a href="/rs/mdv">Clan Fuoco Madonna della Valle</a></li>
+                <li><a href="/rs/noviziato">Noviziato</a></li>
+                <li><a href="/rs/epppi-ross">Epppi/Ross</a></li>
               </ul>
             </li>
 
