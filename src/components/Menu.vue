@@ -63,7 +63,7 @@
     </div>
   </div>
   <div class="navbar-center">
-    <h1 class="uppercase text-lg">Agesci Mirandola 2</h1>
+    <h1 class="font-bold text-xl">Agesci Mirandola 2</h1>
   </div>
   <div class="navbar-end">
     <!--

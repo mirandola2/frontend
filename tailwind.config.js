@@ -11,7 +11,14 @@ export default {
     require("daisyui"), //Make sure you require daisyui AFTER @tailwindcss/typography
     //require('flowbite/plugin')
   ],
-    daisyui: {
+  theme: {
+    fontFamily: {
+        
+      'sans': ['ubuntu', 'ui-sans-serif', 'system-ui'],
+      'display':  ['bebas neue', 'ui-sans-serif', 'system-ui']
+      },
+  },
+  daisyui: {
     themes: [
       {
       agesci: {  
