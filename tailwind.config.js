@@ -9,13 +9,14 @@ export default {
   theme: {
     fontFamily: {
       sans: ["ubuntu", "ui-sans-serif", "system-ui"],
-      display: ["bebas neue", "ui-sans-serif", "system-ui"],
+      display: ["Caprasimo", "ui-sans-serif", "system-ui"],
     },
     colors: {
       lc: "#FDC500",
       eg: "#21A067",
       rs: "#E74030",
       cc: "#9B66A5",
+      white: "#ffffff"
     },
   },
   daisyui: {

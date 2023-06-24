@@ -3,7 +3,7 @@ import NavBar from "./components/partials/NavBar.vue";
 </script>
 
 <template>
-  <div class="container mx-auto p-2 space-y-2 justify-between min-h-screen">
+  <div class="container mx-auto p-2 flex flex-col min-h-screen">
     <NavBar />
 
     <router-view></router-view>
