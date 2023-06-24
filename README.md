@@ -2,7 +2,7 @@
 
 ⚠️ _Il sito è ancora in construzione. Tutte le informazioni qui o altrove riportate sono da ritenere provvisorie e potrebbero subire cambiamenti._
 
-Frontend del sito web del Gruppo Agesci Mirandola 2. Built with Vue 3 + Vite and Tailwind.
+Frontend del sito web del Gruppo Agesci Mirandola 2. Built with Nuxt and Tailwind.
 
 ## Architettura
 
