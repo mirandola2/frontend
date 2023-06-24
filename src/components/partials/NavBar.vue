@@ -58,12 +58,12 @@ export default {
            
             <li tabindex="1">
               <details>
-                <summary> Lupetti e Coccinelle </summary>
+                <summary>Lupetti e Coccinelle</summary>
              
              <ul
                class=""
              >
-             <li><a href="/lc/">La Branca L.C.</a></li>
+             <li><a href="/lc/">La Branca L/C</a></li>
                <li><a href="/lc/branco">Branco della Roccia Azzurra</a></li>
                <li><a href="/lc/cerchio">Cerchio del Bosco Gioioso</a></li>
                <li><a href="/lc/piccole-orme">Piccole Orme</a></li>
@@ -75,11 +75,11 @@ export default {
               
             <li tabindex="1">
               <details>
-              <summary> Esploratori e Guide </summary>
+              <summary>Esploratori e Guide</summary>
               <ul
                 class=""
               >
-              <li><a href="/eg"> La Branca E.G. </a></li>
+              <li><a href="/eg">La Branca E/G</a></li>
                 <li><a href="/eg/brownsea">Reparto Brownsea</a></li>
                 <li><a href="/eg/antares">Reparto Antares</a></li>
                 <li><a href="/eg/campetti">Campi di Specialità e Competenza</a></li>
@@ -93,7 +93,7 @@ export default {
                 <ul
                 class=""
               >
-              <li><a href="/rs/">La Branca R.S.</a></li>
+              <li><a href="/rs/">La Branca R/S</a></li>
                 <li><a href="/rs/mdv">Clan Fuoco Madonna della Valle</a></li>
                 <li><a href="/rs/noviziato">Noviziato</a></li>
                 <li><a href="/rs/epppi-ross">Epppi/Ross</a></li>
