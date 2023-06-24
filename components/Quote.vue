@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <pre>{{ tomlContent }}</pre>
+    <div class="my-8 max-w-lg mx-auto">
+      <p v-if="quote" class="text-xl italic font-serif">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
     </div>
   </template>
   
@@ -12,14 +12,14 @@
   type: String
 })
 
-  const tomlContent = ref('...');
+  const quote = ref(null);
   
   watchEffect(async () => {
     try {
       const response = await fetch('/quotes.toml');
       const tomlText = await response.text();
       const parsedToml = toml.parse(tomlText);
-      tomlContent.value = parsedToml["frasi"][props.type][0];
+      quote.value = parsedToml["frasi"][props.type][Math.floor(Math.random()*parsedToml["frasi"][props.type].length)];
     } catch (error) {
       console.error('Failed to load TOML file:', error);
     }

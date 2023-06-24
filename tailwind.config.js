@@ -9,6 +9,7 @@ export default {
     fontFamily: {
       sans: ["DM Sans", "ui-sans-serif", "system-ui"],
       display: ["Caprasimo", "ui-sans-serif", "system-ui"],
+      serif: ['Playfair Display', "ui-serif"]
     },
     colors: {
       lc: "#FDC500",

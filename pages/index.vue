@@ -7,7 +7,7 @@
       logo="/logo_white.svg"
     />
     <div class="container mx-auto p-2 space-y-2">
-    <Quote type="gen"/>
+    <Quote type="gruppo"/>
 
     <div class="card w-96 bg-neutral text-neutral-content">
       <div class="card-body">
