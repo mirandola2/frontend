@@ -4,8 +4,8 @@ export default {
 };
 </script>
 <template>
-  <div class="navbar bg-primary text-primary-content rounded-lg">
-    <div class="container mx-auto px-3">
+  <div class="navbar bg-primary text-primary-content sticky top-0">
+    <div class="container mx-auto px-2">
       
       <div class="navbar-start w-3/4 flex">
         <h1 class="text-2xl my-auto font-bold"><a href="/">Mirandola 2</a></h1>
