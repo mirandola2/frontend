@@ -6,9 +6,9 @@ import NavBar from "./components/partials/NavBar.vue";
 
 <template>
   <div>
-    <NavBar />
-    <div class="container mx-auto p-2">
-
+    
+    <div class="container mx-auto p-2 space-y-2 lg:space-y-5">
+      <NavBar />
     <router-view></router-view>
   </div>
   </div>

@@ -4,16 +4,26 @@ export default {
 };
 </script>
 <template>
-  <div class="navbar bg-primary text-primary-content">
-    <div class="container mx-auto">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+  <div class="navbar bg-primary text-primary-content rounded-xl">
+    <div class="container mx-auto px-3">
+      
+      <div class="navbar-start w-3/4">
+        
+        <h1 class="text-2xl">Agesci Mirandola 2</h1>
+      </div>
+
+      <div class="navbar-center">
+        
+      </div>
+
+      <div class="navbar-end w-10 ml-auto">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block w-5 h-5 stroke-current"
+              class="inline-block w-6 h-6 stroke-current"
             >
               <path
                 stroke-linecap="round"
@@ -26,7 +36,7 @@ export default {
 
           <ul
             tabindex="0"
-            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow bg-secondary rounded-box w-72"
+            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-secondary w-72"
           >
             <li><a href="/">Home</a></li>
             
@@ -96,12 +106,6 @@ export default {
             <li><a>Utilities</a></li>
           </ul>
         </div>
-      </div>
-      <div class="navbar-center">
-        <h1 class="font-bold text-xl">Agesci Mirandola 2</h1>
-      </div>
-      <div class="navbar-end">
-        
       </div>
     </div>
   </div>
