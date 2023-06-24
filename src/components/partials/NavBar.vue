@@ -8,7 +8,7 @@ export default {
     <div class="container mx-auto px-3">
       
       <div class="navbar-start w-3/4 flex">
-        <h1 class="text-2xl my-auto"><a href="/">Mirandola 2</a></h1>
+        <h1 class="text-2xl my-auto font-bold"><a href="/">Mirandola 2</a></h1>
       </div>
 
       <div class="navbar-center">
