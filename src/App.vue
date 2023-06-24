@@ -3,12 +3,11 @@ import NavBar from "./components/partials/NavBar.vue";
 </script>
 
 <template>
-  <div class="container mx-auto p-2 flex flex-col min-h-screen">
-    <div class="space-y-2">
+  <div class="mx-auto flex flex-col min-h-screen">
+    
     <NavBar />
 
     <router-view></router-view>
-  </div>
 
     <footer
       class="footer items-center p-4 bg-neutral text-neutral-content rounded-lg mt-auto"
