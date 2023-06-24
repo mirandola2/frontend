@@ -1,5 +1,5 @@
 <template>
-  <Hero title="Un'avventura giocata insieme da 40 anni!" image="/hero.jpg" color="primary" logo="/logo_white.svg"/>
+  <Hero title="Quarant'anni di avventure giocate insieme!" image="/hero.jpg" color="primary" logo="/logo_white.svg"/>
 
   <div class="card w-96 bg-neutral text-neutral-content">
         <div class="card-body">
@@ -10,5 +10,6 @@
 </template>
 <script setup>
 import Hero from './partials/Hero.vue';
+
 
 </script>
