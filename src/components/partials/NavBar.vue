@@ -4,7 +4,7 @@ export default {
 };
 </script>
 <template>
-  <div class="navbar bg-primary text-primary-content rounded-xl">
+  <div class="navbar bg-primary text-primary-content rounded-lg">
     <div class="container mx-auto px-3">
       
       <div class="navbar-start w-3/4 flex">

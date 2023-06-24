@@ -8,7 +8,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["ubuntu", "ui-sans-serif", "system-ui"],
+      sans: ["DM Sans", "ui-sans-serif", "system-ui"],
       display: ["Caprasimo", "ui-sans-serif", "system-ui"],
     },
     colors: {
@@ -27,7 +27,7 @@ export default {
           secondary: "#6B478D",
           accent: "#AEB0D9",
           neutral: "#E5D6C7",
-          "base-100": "#ECE9E6",
+          "base-100": "#F7F4F0", //"#ECE9E6",
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",
