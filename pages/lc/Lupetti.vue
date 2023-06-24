@@ -1,5 +1,4 @@
 <script setup>
-import Hero from "./partials/Hero.vue";
 </script>
 <template>
   <h1 class="text-5xl font-display">Branco della Roccia Azzurra</h1>
