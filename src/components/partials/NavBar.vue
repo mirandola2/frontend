@@ -101,8 +101,33 @@ export default {
            
             </li>
 
-            <li><a>Archivio</a></li>
-            <li><a>Utilities</a></li>
+            <li tabindex="4">
+              <details>
+              <summary> Archivio </summary>
+                <ul
+                class=""
+              >
+                <li><a href="/totem">Totem</a></li>
+                <li><a href="/albo">Staff del Passato</a></li>
+                <li><a href="/campi">Campi e Route</a></li>
+              </ul>
+              </details>
+           
+            </li>
+
+            <li tabindex="5">
+              <details>
+              <summary> Utilities </summary>
+                <ul
+                class=""
+              >
+                <li><a href="/codice">Ricerca Codice Socio</a></li>
+                <li><a href="/uniforme">Uniforme e Distintivi</a></li>
+              </ul>
+              </details>
+           
+            </li>
+            
           </ul>
         </div>
       </div>
