@@ -7,9 +7,8 @@ export default {
   <div class="navbar bg-primary text-primary-content rounded-xl">
     <div class="container mx-auto px-3">
       
-      <div class="navbar-start w-3/4">
-        
-        <h1 class="text-2xl">Agesci Mirandola 2</h1>
+      <div class="navbar-start w-3/4 flex">
+        <h1 class="text-2xl my-auto"><a href="/">Mirandola 2</a></h1>
       </div>
 
       <div class="navbar-center">
@@ -36,7 +35,7 @@ export default {
 
           <ul
             tabindex="0"
-            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-secondary w-72"
+            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-secondary w-72 -mr-0.5"
           >
             <li><a href="/">Home</a></li>
             
@@ -64,8 +63,8 @@ export default {
                class=""
              >
              <li><a href="/lc/">La Branca L/C</a></li>
-               <li><a href="/lc/branco">Branco della Roccia Azzurra</a></li>
-               <li><a href="/lc/cerchio">Cerchio del Bosco Gioioso</a></li>
+               <li><a href="/lc/lupetti">Branco della Roccia Azzurra</a></li>
+               <li><a href="/lc/coccinelle">Cerchio del Bosco Gioioso</a></li>
                <li><a href="/lc/piccole-orme">Piccole Orme</a></li>
                <li><a href="/lc/specialita">Specialità</a></li>
              </ul>
@@ -73,7 +72,7 @@ export default {
           </details>
         </li>
               
-            <li tabindex="1">
+            <li tabindex="2">
               <details>
               <summary>Esploratori e Guide</summary>
               <ul
@@ -87,7 +86,7 @@ export default {
               </ul>
             </details>
             </li>
-            <li tabindex="1">
+            <li tabindex="3">
               <details>
               <summary> Rover e Scolte </summary>
                 <ul
