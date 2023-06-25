@@ -35,7 +35,7 @@ export default {
 
           <ul
             tabindex="0"
-            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-secondary w-72 -mr-0.5"
+            class="menu menu-xl dropdown-content mt-3 mr-2 z-[1] rounded-box bg-secondary w-72"
           >
             <li><a href="/">Home</a></li>
             

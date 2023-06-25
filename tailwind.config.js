@@ -11,6 +11,13 @@ export default {
       display: ["Caprasimo", "ui-sans-serif", "system-ui"],
       serif: ['Playfair Display', "ui-serif"]
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '0.5rem',
+        md: '0.75rem'
+      },
+    },
     colors: {
       lc: "#FDC500",
       eg: "#21A067",

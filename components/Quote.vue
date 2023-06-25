@@ -1,5 +1,5 @@
 <template>
-    <div class="my-8 max-w-lg mx-auto">
+    <div class="my-8 max-w-xl mx-auto">
       <p v-if="quote" class="text-xl italic font-serif">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
     </div>
   </template>
@@ -21,7 +21,7 @@
       const parsedToml = toml.parse(tomlText);
       quote.value = parsedToml["frasi"][props.type][Math.floor(Math.random()*parsedToml["frasi"][props.type].length)];
     } catch (error) {
-      console.error('Failed to load TOML file:', error);
+      console.error('Failed to load quotes TOML file.');
     }
   });
   </script>
