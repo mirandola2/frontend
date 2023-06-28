@@ -7,7 +7,9 @@
       logo="/logo_white.svg"
     />
     <div class="container mx-auto p-2 space-y-2">
-    <Quote type="gruppo"/>
+    
+      <Quote type="gruppo"/>
+      <div class="py-10"></div>
 
     <div class="card w-96 bg-neutral text-neutral-content">
       <div class="card-body">
@@ -21,4 +23,8 @@
 </template>
 
 <script setup>
+
+
+
+
 </script>
