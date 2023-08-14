@@ -42,13 +42,13 @@
         <div class="card-body">
           <h2 class="card-title">Rover e Scolte 🏔️🌅</h2>
           <p>I Rover e le Scolte sono ragazzi/e tra i 16 e 19 anni che aderiscono alla  proposta che lo Scoutismo fa alla loro età.  <a class="link">Leggi tutto.</a></p>
-          <div class="card-actions justify-between items-center">
-          <button class="btn btn-md btn-primary">Bacheca RS</button>
-          <div>
-          <button class="btn btn-xs btn-ghost btn-primary">Noviziato</button>
-          <button class="btn btn-xs btn-ghost btn-primary">Clan Fuoco</button>
-          </div>
-          </div>
+          <div class="card-actions justify-start items-center">
+          
+            
+          <button class="btn btn-xs btn-primary">Noviziato</button>
+          <button class="btn btn-xs btn-primary">Clan Fuoco</button>
+
+        </div>
         </div>
         </div>
         
