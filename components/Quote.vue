@@ -21,7 +21,7 @@
       const parsedToml = toml.parse(tomlText);
       quote.value = parsedToml["frasi"][props.type][Math.floor(Math.random()*parsedToml["frasi"][props.type].length)];
     } catch (error) {
-      console.error('Failed to load quotes TOML file.');
+      console.error('🥲 Failed to load quotes TOML file.');
     }
   });
   </script>
