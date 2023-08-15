@@ -4,9 +4,10 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
   content: {
     ignores: [
-      'index',
+      '/content/index.md',
       'totem'
-    ]
+    ],
+    documentDriven: true,
   }
 })
 
