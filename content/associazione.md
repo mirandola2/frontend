@@ -2,6 +2,8 @@
 title: "L'Associazione"
 ---
 
+:tableOfContents
+
 ## Lo Scoutismo nel Mondo
 
 **Ci sono oltre 38 milioni di bambini, ragazzi ed adulti, uomini e donne che in 216 paesi e territori del mondo sono scouts e guide.**
