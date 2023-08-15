@@ -18,11 +18,11 @@
             <p>
               Dagli 8 agli 11 anni i bambini e le bambine vivono nel "branco" o
               nel "cerchio" come lupetti o coccinelle.
-              <a class="link">Leggi tutto.</a>
+              <a class="link" href="/lc">Leggi tutto.</a>
             </p>
             <div class="card-actions justify-end items-center">
-              <button class="btn btn-ghost">Branco</button>
-              <button class="btn btn-ghost">Cerchio</button>
+              <a class="btn btn-ghost" href="/lc/lupetti">Branco</a>
+              <a class="btn btn-ghost" href="/lc/coccinelle">Cerchio</a>
             </div>
           </div>
         </div>
@@ -35,11 +35,11 @@
             <p>
               La Branca Esploratori/Guide si rivolge ai ragazzi dagli 12 ai 16
               anni che si uniscono in Unità chiamate Reparti.
-              <a class="link">Leggi tutto.</a>
+              <a class="link" href="/eg">Leggi tutto.</a>
             </p>
             <div class="card-actions justify-end items-center">
-              <button class="btn btn-ghost">Esploratori</button>
-              <button class="btn btn-ghost">Guide</button>
+              <a class="btn btn-ghost" href="/eg/brownsea">Esploratori</a>
+              <a class="btn btn-ghost" href="/eg/antares">Guide</a>
             </div>
           </div>
         </div>
@@ -51,11 +51,11 @@
             <p>
               I Rover e le Scolte sono ragazzi/e tra i 16 e 19 anni che
               aderiscono alla proposta che lo Scoutismo fa alla loro età.
-              <a class="link">Leggi tutto.</a>
+              <a class="link" href="/rs">Leggi tutto.</a>
             </p>
             <div class="card-actions justify-end items-center">
-              <button class="btn btn-ghost">Noviziato</button>
-              <button class="btn btn-ghost">Clan Fuoco</button>
+              <a class="btn btn-ghost" href="/rs/noviziato">Noviziato</a>
+              <a class="btn btn-ghost" href="/rs/mdv">Clan Fuoco</a>
             </div>
           </div>
         </div>
