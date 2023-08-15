@@ -13,6 +13,7 @@
       >
         <div class="card max-w-full bg-lc text-neutral-content">
           <div class="card-body">
+            <img class="h-16 ml-auto" src="/cappellini.svg"/>
             <h2 class="card-title">Lupetti e Coccinelle</h2>
             <p>
               Dagli 8 agli 11 anni i bambini e le bambine vivono nel "branco" o
@@ -27,7 +28,9 @@
         </div>
 
         <div class="card max-w-full bg-eg text-neutral-content">
+        
           <div class="card-body">
+            <img class="h-16 ml-auto" src="/tenda.svg"/>
             <h2 class="card-title">Esploratori e Guide</h2>
             <p>
               La Branca Esploratori/Guide si rivolge ai ragazzi dagli 12 ai 16
@@ -43,6 +46,7 @@
 
         <div class="card max-w-full bg-rs text-neutral-content">
           <div class="card-body">
+            <img class="h-16 ml-auto" src="/forcola.svg"/>
             <h2 class="card-title">Rover e Scolte</h2>
             <p>
               I Rover e le Scolte sono ragazzi/e tra i 16 e 19 anni che
