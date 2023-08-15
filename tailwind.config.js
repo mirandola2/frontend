@@ -22,7 +22,7 @@ export default {
     colors: {
       lc: "#FDC500",
       eg: "#21A067",
-      rs: "#E74030",
+      rs: "#E84C3E",
       cc: "#9B66A5",
       white: "#ffffff"
     },

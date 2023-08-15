@@ -1,6 +1,6 @@
 <template>
     <div class="my-8 max-w-xl mx-auto">
-      <p v-if="quote" class="text-xl italic font-serif">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
+      <p v-if="quote" class="text-xl italic text-center font-serif balanced">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
     </div>
   </template>
   
@@ -25,4 +25,12 @@
     }
   });
   </script>
+
+
+<style>
+.balanced{
+  text-wrap: balance;
+}
+
+</style>
   
