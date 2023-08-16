@@ -1,7 +1,7 @@
 <template>
-    <div class="card max-w-full text-neutral-content" :class="'bg-'+color">
+    <div class="card grid-item max-w-full htext-neutral-content" :class="{['bg-'+color]: true, 'md:col-span-2': big}">
 
-        <div class="card-body text-sm">
+        <div class="card-body">
             <h2 class="card-title">
                 {{title}}
             </h2>
@@ -21,6 +21,11 @@ const props = defineProps(
         color: {
             type: String,
             required: true
+        },
+        big: {
+            type: Boolean,
+            required: false,
+            default: false
         },
     }
 )
