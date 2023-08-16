@@ -1,7 +1,11 @@
 ---
 title: "Branco della Roccia Azzurra"
+image: "http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/1398149068.jpg"
 ---
 
+::quote
+...e quando Hathi, l'elefante selvaggio che vive cento anni e più, vide affiorare una lunga e sottile cresta di Roccia Azzurrina, proprio nel bel mezzo della corrente, capì che quella era la roccia della pace ed immediatamente alzò la proboscide e proclamò la "tregua dell'acqua".  
+::
 
 
 ## I Vecchi Lupi
@@ -30,7 +34,7 @@ I lupetti salutano con la mano destra, portando l'indice e il medio tesi e divar
 Le due dita divaricate ricordano i due articoli della Legge e le orecchie tese del lupo, mentre il pollice che copre le prime falangi dell'anulare e del mignolo rappresenta il più grande che protegge il più piccoli.
 :::
 
-:::card{title="Le Parole Maestre" color="lc"}
+:::card{title="Le Parole Maestre" color="lc" big}
 
 __Akela__: buona caccia a tutti quelli che rispettano la legge della giungla.  
 __Bagheera__: zampe che non fanno rumore, occhi che vedono nell'oscurità, orecchi che odono il vento delle tane e denti bianchi e taglienti.  
@@ -39,16 +43,16 @@ __Kaa__: cuor leale e lingua cortese fanno strada nella giungla.
 __Popolo Cacciatore__: siamo dello stesso sangue fratellino tu ed io.  
 :::
 
-:::card{title="Il Grande Urlo" color="lc"}
-Tutti i Lupetti e i Vecchi Lupisono in cerchio. Akela sceglie il lupo che guiderà il grande urlo.
-Akela grida: «Pronti per il Grande»
-Tutti: «URLO!»
+:::card{title="Il Grande Urlo" color="lc" big}
+Tutti i Lupetti e i Vecchi Lupi sono in cerchio. Akela sceglie il lupo o i lupi che guideranno il grande urlo.
+Akela grida: __«Pronti per il Grande»__
+Tutti: __«URLO!»__  
 A questo punto il Branco spiccherà un piccolo saltello accucciandosi poi a terra sulle punte sollevando i talloni, mani con le due dita indice e medio chiuse unite in mezzo alle gambe.
-Il lupo più anziano grida facendo un urlo:  «Aaa-»,
-e subito tutto il branco lo segue gridando: «ke-la! Deeel nooostrooo MEGLIO!»
+Il lupo più anziano grida facendo un urlo:  __«Aaa-»__,
+e subito tutto il branco lo segue gridando: __«ke-la! Deeel nooostrooo MEGLIO!»__
 A questo punto tutti saltano in piedi e salutano a due mani con le due dita indice e medio chiuse unite avvicinate ai lati della testa e rivolte verso l'alto, a somigliare le due orecchie del lupo.
-Ora il lupetto che guida il grande urlo grida al branco voltandosi prima  a destra e poi a sinistra. «Vostro meglio, vostro meglio! Vostro meglio, vostro meglio!»
-Ora tutti abbassano il braccio sinistro e nella posizione di saluto, con le due dita aperte rispondono: «Siii! Meglio, meglio, meglio, meglio.»
+Ora chi guida il grande urlo grida al branco voltandosi prima  a destra e poi a sinistra. __«Vostro meglio, vostro meglio! Vostro meglio, vostro meglio!»__
+Ora tutti abbassano il braccio sinistro e nella posizione di saluto, con le due dita aperte rispondono: __«Siii! Meglio, meglio, meglio, meglio.»__
 :::
 
 :::card{title="La Preghiera" color="lc"}
@@ -69,10 +73,4 @@ San Francesco d'Assisi
 Tutti i lupetti del branco seguono la propria Pista cercando di fare sempre del proprio meglio. Per andare avanti sulla Pista, però, bisogna cacciare!
 Da Cucciolo, insieme al Branco, scoprirai la Giungla e pronuncerai la Promessa; poi inizierà la Stagione di Caccia. Andrai in Caccia con Baloo, Bagheera e Akela, per diventare Lupo della Legge, poi Lupo della Rupe ed infine Lupo Anziano.
 
-### La Stagione di Caccia
 
-<ul class="steps">
-  <li data-content="🐻" class="step step-neutral">dsfdgfhgjh,kjmhgfsdas</li>
-  <li data-content="🐈‍⬛" class="step step-neutral">Step 2</li>
-  <li data-content="🐺" class="step step-neutral">Step 3</li>
-</ul>

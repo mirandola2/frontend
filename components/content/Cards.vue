@@ -1,8 +1,15 @@
 <template>
-    <div class="not-prose max-w-none mx-auto grid grid-cols-1 gap-3 md:grid-cols-2 ">
+    <div class="not-prose mx-auto grid gap-3 grid-flow-row-dense grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
         <slot />
 
     </div>
 
 
 </template>
+
+
+<script setup>
+
+
+
+</script>
