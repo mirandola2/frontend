@@ -3,7 +3,7 @@ title: "Branco della Roccia Azzurra"
 image: "http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/1398149068.jpg"
 ---
 
-::quote
+::quoted
 ...e quando Hathi, l'elefante selvaggio che vive cento anni e più, vide affiorare una lunga e sottile cresta di Roccia Azzurrina, proprio nel bel mezzo della corrente, capì che quella era la roccia della pace ed immediatamente alzò la proboscide e proclamò la "tregua dell'acqua".  
 ::
 
@@ -19,14 +19,14 @@ Il lupetto pensa agli altri come a se stesso.
 Il lupetto vive con gioia e lealtà insieme al branco.
 :::
 :::card{title="Il Motto" color="lc"}
-Del Nostro Meglio
+__Del Nostro Meglio__
 :::
 :::card{title="La Promessa" color="lc"}
-Prometto, con l'aiuto e l'esempio di Gesù,
+"Prometto, con l'aiuto e l'esempio di Gesù,
 di fare del mio meglio
 per migliorare me stesso,
 per aiutare gli altri,
-per osservare la legge del branco.
+per osservare la legge del branco."
 :::
 
 :::card{title="Il Saluto" color="lc"}
@@ -60,7 +60,7 @@ Buon Gesù,
 ti amo con tutto il cuore perchè mai troverò miglior amico di te.
 Per farti piacere io voglio, per tutta la giornata, con l'aiuto di Maria nostra mamma del cielo, fare del mio meglio come tu facesti un giorno a Nazareth.
 Insegnami dunque ad ascoltare non me stesso, ma la tua voce, quella dei miei genitori, dei miei superiori, dei miei capi.
-Amen
+__Amen__
 :::
 
 :::card{title="Il Patrono" color="lc"}

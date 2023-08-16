@@ -1,36 +1,40 @@
 <template>
-    <div class="my-8 max-w-xl mx-auto">
-      <p v-if="quote" class="text-xl italic text-center font-serif balanced">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
-    </div>
-  </template>
+  <div class="my-8 max-w-xl mx-auto">
+    <p v-if="quote" class="text-xl italic text-center font-serif balanced">«{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span></p>
+  </div>
+</template>
   
-  <script setup>
-  import * as toml from 'toml';
-  import { ref, watchEffect } from 'vue';
-  
-  const props = defineProps({
-  type: String
+<script setup>
+import * as toml from 'toml';
+import { ref, watchEffect } from 'vue';
+
+const props = defineProps({
+  type: String,
+  quote: String
 })
 
-  const quote = ref(null);
-  
-  watchEffect(async () => {
+const quote = ref();
+
+watchEffect(async () => {
+  if (props.quote == null) {
     try {
       const response = await fetch('/quotes.toml');
       const tomlText = await response.text();
       const parsedToml = toml.parse(tomlText);
-      quote.value = parsedToml["frasi"][props.type][Math.floor(Math.random()*parsedToml["frasi"][props.type].length)];
+      quote.value = parsedToml["frasi"][props.type][Math.floor(Math.random() * parsedToml["frasi"][props.type].length)];
     } catch (error) {
       console.error('🥲 Failed to load quotes TOML file.');
     }
-  });
-  </script>
+  }else{
+    quote.value = {text: props.quote}
+  }
+});
+</script>
 
 
 <style>
-.balanced{
+.balanced {
   text-wrap: balance;
 }
-
 </style>
   

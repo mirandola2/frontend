@@ -20,7 +20,8 @@ const props = defineProps(
         },
         color: {
             type: String,
-            required: true
+            required: false,
+            default: 'neutral'
         },
         big: {
             type: Boolean,

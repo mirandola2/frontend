@@ -1,6 +1,6 @@
 <template>
     <footer
-      class="footer items-center p-4 bg-neutral text-neutral-content mt-auto"
+      class="footer items-center p-4 bg-neutral text-neutral-content mt-auto max-w-none w-screen"
     >
         <div class="container flex">
         <img src="/logo_colored.png" class="w-16" />
