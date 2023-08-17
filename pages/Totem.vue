@@ -3,7 +3,7 @@
 
   <div class="justify-between content-start container flex flex-col gap-4 md:flex-row-reverse">
     <div class="md:w-1/2">
-      <p class="my-8 text-justify">
+      <p class="my-8 text-justify ">
         Il Totem è un nome, di solito di un animale (ma a volte anche di piante,
         alberi o agenti atmosferici), seguito da un aggettivo, che viene dato
         alle guide e agli scout per sottolineare una loro caratteristica.
@@ -18,7 +18,7 @@
         il suo valore.
       </p>
 
-      <div class="form-control w-full sticky top-20">
+      <div class="form-control w-full md:sticky md:top-20 mb-8">
         <label class="label">
           <span class="label-text">Filtra per nome o per totem</span>
         </label>
@@ -36,7 +36,7 @@
       <template v-for="(totems, locationAndYear) in tableTotem">
         <thead v-if="totems.people.length > 0">
           <div class="my-12"></div>
-          <tr class="bg-neutral sticky top-20">
+          <tr class="bg-neutral sticky top-2 md:top-20">
             <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
             <th class="rounded-r-xl">{{ totems.year }}</th>
           </tr>
