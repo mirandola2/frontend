@@ -16,12 +16,12 @@ const props = defineProps({title: {
 </script>
 
 <template>
-  <div class="hero max-w-none w-screen" :style="{'background-image': 'url(' + image + ')'}">
+  <div class="hero max-w-none w-screen " :style="{'background-image': 'url(' + image + ')'}">
     <div class="hero-overlay bg-opacity-60" :class="'bg-' + color"></div>     
-    <div class="hero-content mx-auto py-12 flex-col md:flex-row text-white">
+    <div class=" container py-12 flex-col md:flex-row text-white ">
 
-        <img v-if="logo != undefined" :src="logo" class="w-40 pb-8 md:p-0 md:w-72 mx-auto" />
-        <div class="my-auto text-center max-w-xl md:ml-10 md:text-left">
+        <img v-if="logo != undefined" :src="logo" class="w-40 pb-8 md:p-0 md:w-72 md:mr-10" />
+        <div class="my-auto text-center md:text-left mr-auto">
           <h2 class="text-xl md:text-3xl mb-5 ">AGESCI - Gruppo Scout Mirandola 2</h2>
           <h1 class=" text-5xl md:text-6xl font-display">
             {{ title }}
