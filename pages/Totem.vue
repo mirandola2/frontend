@@ -1,7 +1,7 @@
 <template>
   <hero title="Nomi Totem" image="http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/background-images/1888766141.jpg"></hero>
 
-  <div class="justify-between container flex flex-col md:flex-row-reverse">
+  <div class="justify-between content-start container flex flex-col gap-4 md:flex-row-reverse">
     <div class="md:w-1/2">
       <p class="my-8 text-justify">
         Il Totem è un nome, di solito di un animale (ma a volte anche di piante,
@@ -32,12 +32,12 @@
       </div>
     </div>
 
-    <table class="table max-w-2xl">
-      <template v-for="(totems, location) in tableTotem">
+    <table class="table max-w-xl h-fit">
+      <template v-for="(totems, locationAndYear) in tableTotem">
         <thead v-if="totems.people.length > 0">
           <div class="my-12"></div>
           <tr class="bg-neutral sticky top-20">
-            <th class="rounded-l-xl my-4">{{ location }}</th>
+            <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
             <th class="rounded-r-xl">{{ totems.year }}</th>
           </tr>
         </thead>
@@ -64,10 +64,11 @@ function updateTotem() {
   tableTotem.value = {};
 
   totem.value.forEach((person) => {
-    const location = person["location"];
-    if (!tableTotem.value[location]) {
-      tableTotem.value[location] = {
+    const locationAndYear = person["location"] + person["year"];
+    if (!tableTotem.value[locationAndYear]) {
+      tableTotem.value[locationAndYear] = {
         year: person["year"],
+        location: person["location"],
         people: [],
       };
     }
@@ -77,7 +78,7 @@ function updateTotem() {
       person.name.toLowerCase().includes(filter.value.toLowerCase()) ||
       person.totem.toLowerCase().includes(filter.value.toLowerCase())
     ) {
-      tableTotem.value[location].people.push(person);
+      tableTotem.value[locationAndYear].people.push(person);
     }
   });
 }
