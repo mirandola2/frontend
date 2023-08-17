@@ -27,12 +27,12 @@ const menu = ref({
     "Noviziato": "/rs/noviziato",
     "Epppi/Ross": "/rs/epppi-ross",
   },
-  Archivio: {
+  'Archivio': {
     "Totem": "/totem",
     "Staff del Passato": "/albo",
     "Campi e Route": "/campi",
   },
-  Utilities: {
+  'Utilities': {
     "Ricerca Codice Socio": "/codice",
     "Uniforme e Distintivi": "/uniforme",
   },
@@ -109,8 +109,9 @@ const menu = ref({
         <div>
           <ul class="menu p-4 w-80 bg-secondary min-h-full overflow-y-scroll  text-white">
             <!-- Sidebar content here -->
+            <a href="/">
             <img src="/logo_white.svg" class="h-24 mb-8 " alt="">
-            <li> <a href="/">Home</a></li>
+          </a>
             <template v-for="(submenu, mainItem) in menu" :key="mainItem">
               <!-- Check if the submenu is an object -->
               <template v-if="typeof submenu === 'object'">
