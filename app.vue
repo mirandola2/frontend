@@ -45,14 +45,13 @@ const menu = ref({
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       <div class="navbar bg-primary text-primary-content lg:sticky lg:top-0 lg:z-10">
-        <div class="container mx-auto px-2">
+        <div class="container mx-auto">
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">Mirandola 2</a>
             </h1>
           </div>
 
-          <div class="navbar-center"></div>
 
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
@@ -63,7 +62,7 @@ const menu = ref({
                   <template v-if="typeof submenu === 'object'">
                     <div class="menu-dropdown-toggle dropdown dropdown-end dropdown-bottom dropdown-hover hover:text-secondary">
                       <label tabindex="0" class="">{{ mainItem }}</label>
-                      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box">
+                      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-44">
                         <!-- Loop through the sub-menu items -->
                         <li v-for="(link, subItem) in submenu" :key="subItem">
                           <a :href="link">{{ subItem }}</a>
