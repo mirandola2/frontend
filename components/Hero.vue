@@ -18,7 +18,7 @@ const props = defineProps({title: {
 <template>
   <div class="hero max-w-none w-screen " :style="{'background-image': 'url(' + image + ')'}">
     <div class="hero-overlay bg-opacity-60" :class="'bg-' + color"></div>     
-    <div class=" container py-12 flex-col md:flex-row text-white ">
+    <div class=" container mx-auto py-12 flex flex-col md:flex-row text-white ">
 
         <img v-if="logo != undefined" :src="logo" class="w-40 pb-8 md:p-0 md:w-72 md:mr-10" />
         <div class="my-auto text-center md:text-left mr-auto">
@@ -29,8 +29,9 @@ const props = defineProps({title: {
         </div>
     </div>
   </div>
-  <!--<div class="bg-[#ffee18] h-1 w-full"></div>
-        <div class="bg-[#07ac0f] h-1 w-full"></div>
+  <!--
+    <div class="bg-[#ffee18] h-1 w-full"></div>
+    <div class="bg-[#07ac0f] h-1 w-full"></div>
         -->
         
         
