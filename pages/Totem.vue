@@ -1,9 +1,14 @@
 <template>
-  <hero title="Nomi Totem" image="http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/background-images/1888766141.jpg"></hero>
+  <hero
+    title="Nomi Totem"
+    image="http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/background-images/1888766141.jpg"
+  ></hero>
 
-  <div class="justify-between content-start container flex flex-col gap-4 md:flex-row-reverse">
+  <div
+    class="justify-between content-start container flex flex-col gap-4 md:gap-8 md:flex-row-reverse"
+  >
     <div class="md:w-1/2">
-      <p class="my-8 text-justify ">
+      <p class="my-8 text-justify">
         Il Totem è un nome, di solito di un animale (ma a volte anche di piante,
         alberi o agenti atmosferici), seguito da un aggettivo, che viene dato
         alle guide e agli scout per sottolineare una loro caratteristica.
@@ -26,30 +31,36 @@
           type="text"
           v-model="filter"
           placeholder="Inserisci una parte del nome o del totem"
-          class="input input-bordered w-full "
+          class="input input-bordered w-full"
           @input="updateTotem()"
         />
       </div>
     </div>
+    <div class="md:w-1/2">
+      <table class="table h-fit" v-if="loading.loaded">
+        <template v-for="(totems, locationAndYear) in tableTotem">
+          <thead v-if="totems.people.length > 0">
+            <div class="my-12"></div>
+            <tr class="bg-neutral sticky top-2 md:top-20">
+              <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
+              <th class="rounded-r-xl">{{ totems.year }}</th>
+            </tr>
+          </thead>
 
-    <table class="table max-w-xl h-fit">
-      <template v-for="(totems, locationAndYear) in tableTotem">
-        <thead v-if="totems.people.length > 0">
-          <div class="my-12"></div>
-          <tr class="bg-neutral sticky top-2 md:top-20">
-            <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
-            <th class="rounded-r-xl">{{ totems.year }}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr v-for="person in totems.people" class="hover">
-            <td class="rounded-l-xl">{{ person.name }}</td>
-            <td class="rounded-r-xl">{{ person.totem }}</td>
-          </tr>
-        </tbody>
-      </template>
-    </table>
+          <tbody>
+            <tr v-for="person in totems.people" class="hover">
+              <td class="rounded-l-xl">{{ person.name }}</td>
+              <td class="rounded-r-xl">{{ person.totem }}</td>
+            </tr>
+          </tbody>
+        </template>
+      </table>
+      <div v-else class="my-8 text-primary text-center">
+        <span class="loading loading-spinner loading-lg" v-if="!loading.error"></span>
+        <br />
+        {{ loading.text }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,6 +70,11 @@ import { ref, watchEffect } from "vue";
 const totem = ref(null);
 const tableTotem = ref({});
 const filter = ref("");
+const loading = ref({
+  loaded: false,
+  text: "Il Grande Capo Manitù sta caricando i nomi totem, attendete!",
+  error: false,
+});
 
 function updateTotem() {
   tableTotem.value = {};
@@ -89,6 +105,12 @@ watchEffect(() => {
     .then((t) => {
       totem.value = t;
       updateTotem();
+      loading.value.loaded = true;
+    })
+    .catch((error) => {
+      loading.value.text =
+        "Un problema non ha permesso il caricamento dei dati, riprova più tardi.";
+      loading.value.error = true;
     });
 });
 </script>
