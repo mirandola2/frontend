@@ -61,12 +61,9 @@
         </div>
 
         <div class="card max-w-full md:col-span-2 bg-neutral text-neutral-content">
-          <div class="card-body">
-            
-            <ContentDoc v-slot="{ doc }" path="_home">
-              <h2 class="card-title">{{ doc.title }}</h2>
-            <ContentRendererMarkdown :value="doc" />
-            </ContentDoc>
+          <div class="card-body">   
+            <h2 class="card-title">{{ data.title }}</h2>
+            <ContentRenderer :value="data" />
           </div>
         </div>
 
@@ -85,4 +82,10 @@
 
 
 </template>
+
+<script setup>
+const { data } = await useAsyncData('home', () => queryContent('/_home').findOne())
+
+
+</script>
 
