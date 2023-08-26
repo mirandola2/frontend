@@ -40,6 +40,10 @@ const menu = ref({
 </script>
 
 <template>
+    <Head>
+    <Title>Scout Mirandola 2</Title>
+
+  </Head>
   <div class="drawer drawer-end" tabindex="0">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
