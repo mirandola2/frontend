@@ -1,4 +1,6 @@
-nome,nome caccia,cu,staff,coca,desc
-Giacomo Salici,Baloo,false,L,true,"Baloo è l'orso della Giungla. È il maestro della Legge per i Cuccioli del popolo libero. Essendo un membro onorevole del popolo libero, Baloo parla a favore di Mowgli, garantendogli così la protezione del branco."
-Emmanuele Morabito,Chil,false,L,true,"Chil è l'avvoltoio messaggero della giungla. Viene chiamato da Mowgli mentre viene rapito dal Bandar-log che gli chiede di avvisare Bagheera e Baloo che le scimmie lo stanno portando alle Tane Fredde."
+nome,nomeCaccia,ruolo,staff,coca,desc,img
+Giacomo Salici,Baloo,Aiuto Capo Unità,L,1,"Baloo è l'orso della Giungla. È il maestro della Legge per i Cuccioli del popolo libero. Essendo un membro onorevole del popolo libero, Baloo parla a favore di Mowgli, garantendogli così la protezione del branco.",baloo.jpg
+Emmanuele Morabito,Chil,Aiuto Capo Unità,L,1,"Chil è l'avvoltoio messaggero della giungla. Viene chiamato da Mowgli mentre viene rapito dal Bandar-log che gli chiede di avvisare Bagheera e Baloo che le scimmie lo stanno portando alle Tane Fredde.",chil.jpg
+Leonardo Busuoli,Fratel Bigio,Aiuto di Clan,L,0,,
+
 
