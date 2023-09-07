@@ -51,7 +51,7 @@ Coccinelle: (risollevando la testa, cessando di tenersi per mano e salutando) __
 :::
 
 :::card{title="La Preghiera" color="lc"}
-BEccomi o Gesù,
+Eccomi o Gesù,
 col mio cuore vicino al tuo.
 Aiutami a volerti bene,
 ad essere buona con tutti,
