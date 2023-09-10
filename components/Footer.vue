@@ -8,7 +8,7 @@
         <div class="container flex">
         <img src="/logo_colored.png" class="w-16" />
         <p class="my-auto">AGESCI - Gruppo Scout Mirandola 2<br />Via Posta, 55 - 41037 Mirandola
-        (MO)<br/><span class="opacity-30">Credit Aquila Ambiziosa</span></p>
+        (MO)<br/><span class="opacity-30">Proudly open-sourced by Baloo & Gaia.</span></p>
       </div></div>
     </footer>
 </template>
