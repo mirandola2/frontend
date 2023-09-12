@@ -124,7 +124,7 @@ function birthdaysFormatter(birthdays) {
     }
 
     if (tminus === "0") {
-      returnBDString += `Oggi è il compleanno di ${namesString}, AUGURI! `;
+      returnBDString += `Oggi è il compleanno di ${namesString}, auguri! `;
     } else if (tminus === "1") {
       returnBDString += `Domani ${
         length < 2 ? "compierà" : "compieranno"
@@ -142,7 +142,7 @@ function birthdaysFormatter(birthdays) {
   }
 
   returnBDString +=
-    returnBDString == "" ? "Nessuno compierà gli anni durante la prossima settimana." : ".";
+    returnBDString == "" && !flagFarBDString ? "Nessuno compierà gli anni durante la prossima settimana." : ".";
   return returnBDString;
 }
 </script>
