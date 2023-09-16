@@ -3,6 +3,10 @@ title: Il Gruppo
 ---
 :TableOfContents
 
+## I numeri del Gruppo
+
+:GroupSize
+
 ## Il Fazzolettone
 
 Il nostro fazzolettone è verde con due righe gialle che si incontrano in punta.
