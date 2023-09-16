@@ -16,11 +16,11 @@ const props = defineProps({title: {
 </script>
 
 <template>
-  <div class="hero w-screen" :style="{'background-image': 'url(' + image + ')'}">
+  <div class="hero" :style="{'background-image': 'url(' + image + ')'}">
     <div class="hero-overlay bg-opacity-60" :class="'bg-' + color"></div>     
-    <div class="container mx-auto px-12 py-20 flex flex-col md:flex-row text-white ">
+    <div class="container mx-auto md:px-12 py-20 flex flex-col md:flex-row text-white ">
         <img v-if="logo != undefined" :src="logo" class="w-40 pb-8 mx-auto md:p-0 md:w-56 lg:w-64 md:mr-10" />
-        <div class="m-auto text-center md:text-left mr-auto lg:w-1/2 " :class="{'ml-0': 'logo!=undefined' }">
+        <div class="text-center md:text-left md:mr-auto lg:w-1/2 " :class="{'ml-0': 'logo!=undefined' }">
           <h2 class="text-lg md:text-3xl mb-5 ">AGESCI - Gruppo Scout Mirandola 2</h2>
           <h1 class=" text-5xl md:text-6xl font-display">
             {{ title }}
