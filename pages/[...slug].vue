@@ -9,7 +9,7 @@
 
 
 
-      <div class="prose max-w-none prose-a:no-underline prose-headings:text-bold prose-a:text-primary px-2 mx-auto">
+      <div class="prose max-w-none prose-a:no-underline prose-headings:text-bold prose-a:text-primary px-2 mx-auto text-justify">
       <ContentRenderer :value="page" />
       </div>
 
