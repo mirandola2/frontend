@@ -5,7 +5,7 @@
   ></hero>
 
   <div
-    class="justify-between content-start container flex flex-col gap-4 md:gap-8 md:flex-row-reverse"
+    class="justify-between px-4 content-start container flex flex-col gap-4 md:gap-8 md:flex-row-reverse"
   >
     <div class="md:w-1/2">
       <p class="my-8 text-justify">
