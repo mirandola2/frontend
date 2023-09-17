@@ -12,7 +12,7 @@ const menu = ref({
     "Branco della Roccia Azzurra": "/lc/lupetti",
     "Cerchio del Bosco Gioioso": "/lc/coccinelle",
     "Piccole Orme": "/lc/piccole-orme",
-    Specialità: "/lc/specialita",
+    "Specialità": "/lc/specialita",
   },
   "Esploratori e Guide": {
     "La Branca E/G": "/eg",
@@ -24,15 +24,15 @@ const menu = ref({
   "Rover e Scolte": {
     "La Branca R/S": "/rs/",
     "Clan Fuoco Madonna della Valle": "/rs/mdv",
-    Noviziato: "/rs/noviziato",
+    "Noviziato": "/rs/noviziato",
     "Epppi/Ross": "/rs/epppi-ross",
   },
-  Archivio: {
-    Totem: "/totem",
-    "Staff del Passato": "/albo",
+  "Archivio": {
+    "Totem": "/totem",
+    "Staff del Passato": "/archivio-staff",
     "Campi e Route": "/campi",
   },
-  Utilities: {
+  "Utilities": {
     "Ricerca Codice Socio": "/codice",
     "Uniforme e Distintivi": "/uniforme",
   },
