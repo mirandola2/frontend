@@ -34,8 +34,8 @@
                   </form>
                   <h3 class="font-bold text-lg">Credits</h3>
                   <p class="py-4">
-                    Sito web open-source sviluppato da Aquila Ambiziosa e Leoncino
-                    Spensierato. Contribuisci su github/mirandola2.
+                    Sito web open-source sviluppato da Aquila Ambiziosa. Puoi vedere il codice e contribuire anche tu su <i>github/mirandola2</i>.
+                    Questo lavoro è stato possibile solo grazie all'aiuto di Lince Spensierata, Leoncino Spensierato e tutti coloro che hanno partecipato.
                   </p>
                 </div>
               </dialog>

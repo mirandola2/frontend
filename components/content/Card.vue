@@ -5,9 +5,7 @@
             <h2 class="card-title">
                 {{title}}
             </h2>
-            <p>
                 <slot />
-            </p>
         </div>
     </div>
 </template>

@@ -4,40 +4,44 @@ image: "/brownsea.jpg"
 ---
 
 ::quoted
-Quando ero giovane c'era in voga una canzone popolare: «Guida la tua canoa» con il ritornello: «Non startene inerte, triste o adirato. Da solo tu devi guidar la tua canoa».<br>Questo era davvero un buon consiglio per la vita.<br>
-Nel disegno che ho fatto, sei tu che stai spingendo con la pagaia la canoa, non stai remando in una barca. La differenza è che nel primo caso tu guardi dinnanzi a te, e vai sempre avanti, mentre nel secondo non puoi guardare dove vai e ti affidi al timone tenuto da altri e perciò puoi cozzare contro quaeghe scoglio, prima di rendertene conto.<br>
-Molta gente tenta di remare attraverso la vita in questo modo. Altri ancora preferiscono imbarcarsi passivamente, veleggiando trasportati dal vento della fortuna o dalla corrente del caso: è più facile che remare, ma egualmente pericoloso.<br>
-Preferisco uno che guardi innanzi a sé e sappia condurre la sua canoa, cioè si apra da solo la propria strada.<br> Guida tu la tua canoa.
-
- B.P.
+"Quando ero giovane c'era in voga una canzone popolare: «Guida la tua canoa» con il ritornello: «Non startene inerte, triste o adirato. Da solo tu devi guidar la tua canoa». Questo era davvero un buon consiglio per la vita." B.-P.
 ::
 
 
 ## I Capi Reparto
 
+:staff{staff="E"}
 
-## I concetti principali
+
+## Il Reparto in Pillole
 
 L'__Isola di Brownsea__ è un'isola situata nella regione Sud Est dell'Inghilterra, all'interno del porto di Poole. Robert Baden-Powell ha tenuto qui il primo campo scout sperimentale nel 1907 e l'isola ora è conosciuta universalmente come il luogo di nascita dello Scautismo e del Guidismo. 
 
 
 ::cards
+
 :::card{title="La Legge" color="eg" big}
 La Guida e lo Scout:
-<ol>
-    <li>1. pongono il loro onore nel meritare fiducia;</li>
-    <li>2. sono leali;</li>
-    <li>3. si rendono utili ed aiutano gli altri;</li>
-    <li>4. sono amici di tutti e fratelli di ogni altra Guida e Scout;</li>
-    <li>5. sono cortesi;</li>
-    <li>6. amano e rispettano la natura;</li>
-    <li>7. sanno obbedire;</li>
-    <li>8. sorridono e cantano anche nelle difficoltà</li>
-    <li>9. sono laboriosi ed economi;</li>
-    <li>10. sono puri di pensieri, parole e azioni.</li>
-</ol>
+
+1. pongono il loro onore nel meritare fiducia;
+2. sono leali;
+3. si rendono utili ed aiutano gli altri;
+4. sono amici di tutti e fratelli di ogni altra Guida e Scout;
+5. sono cortesi;
+6. amano e rispettano la natura;
+7. sanno obbedire;
+8. sorridono e cantano anche nelle difficoltà
+9. sono laboriosi ed economi;
+10. sono puri di pensieri, parole e azioni.
 :::
 
+:::card{title="La Promessa" color="eg" big}
+Con l'aiuto di Dio, prometto sul mio onore di fare del mio meglio:
+
+- per compiere il mio dovere verso Dio e verso il mio Paese;
+- per aiutare gli altri in ogni circostanza;
+- per osservare la Legge scout.
+:::
 :::card{title="Il Motto" color="eg"}
 __SII PREPARATO__
 :::
@@ -46,14 +50,7 @@ __SII PREPARATO__
 San Giorgio
 :::
 
-:::card{title="La Promessa" color="eg" big}
-Con l'aiuto di Dio, prometto sul mio onore di fare del mio meglio:
-<ul>
-<li>- per compiere il mio dovere verso Dio e verso il mio Paese;</li>
-<li>- per aiutare gli altri in ogni circostanza;</li>
-<li>- per osservare la Legge scout.</li>
-<ul>
-:::
+
 
 :::card{title="La Preghiera" color="eg" big}
 Fa', o Signore, che io abbia le mani pure, pura la lingua, puro il pensiero.
