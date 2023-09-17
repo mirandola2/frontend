@@ -10,6 +10,7 @@ image: "http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/1398149068.jpg"
 
 ## I Vecchi Lupi
 
+:staff{staff="L"}
 
 ## I concetti principali
 
