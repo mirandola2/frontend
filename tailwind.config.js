@@ -6,6 +6,11 @@ export default {
     require("daisyui"), //Make sure you require daisyui AFTER @tailwindcss/typography
     //require('flowbite/plugin')
   ],
+  whitelistPatterns: [
+    {
+      pattern: /bg-[lc | rs | eg | cc]/,
+    },
+  ],
   theme: {
     fontFamily: {
       sans: ["DM Sans", "ui-sans-serif", "system-ui"],

@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="page.title" :image="page.image" />
+  <Hero :title="page.title" :image="page.image"/>
 
   <div class="container p-2 space-y-2 max-w-4xl">
     <div

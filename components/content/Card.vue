@@ -1,5 +1,5 @@
 <template>
-    <div class="card grid-item max-w-full htext-neutral-content" :class="{['bg-'+color]: true, 'md:col-span-2': big}">
+    <div class="card grid-item max-w-full" :class="[bgColor[color], {'md:col-span-2': big}]">
 
         <div class="card-body">
             <h2 class="card-title">
@@ -28,5 +28,12 @@ const props = defineProps(
         },
     }
 )
+
+const bgColor = {
+  lc : 'bg-lc',
+  eg : 'bg-eg text-white',
+  rs : 'bg-rs text-white',
+  cc : 'bg-cc text-white', 
+}
 
 </script>
