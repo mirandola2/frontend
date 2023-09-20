@@ -1,6 +1,6 @@
 <template>
   <footer class="p-10 mt-auto bg-neutral text-neutral-content">
-    <div class="container footer text-center place-items-center sm:place-items-start sm:text-left items-center">
+    <div class="container footer text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
       <aside class="flex gap-5">
         <div class="space-y-2">
           <p>
@@ -44,7 +44,7 @@
         </div>
       </aside>
 
-      <p class="text-2xl font-serif inline text-primary">
+      <p class="text-2xl font-serif inline text-primary md:text-right">
         <i>Del nostro meglio</i> <br />
         per <i>essere pronti</i> <br />
         a <i>servire</i>.
