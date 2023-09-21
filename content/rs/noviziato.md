@@ -4,11 +4,11 @@ title: Clan Fuoco Madonna della Valle
 
 Il nome "Madonna della Valle" è tradizionale dei clan di Mirandola sin dai suoi inizi. Nel 1983, alla nascita del nostro gruppo,  il nome viene ripreso da uno dei due clan del Mirandola 1 che era giunto ad esaurimento dei suoi membri, per evitare che questo nome ormai più che trentennale nella storia dello scautismo locale andasse definitivamente a scomparire. Il clan ha come protettrice la Madonna della Valle, la cui edicola si trova in via Punta, sulla strada per Quarantoli, all'incrocio con via Bruino.
 
-## I Capi Clan/Fuoco
+## I Maestri dei Novizi
 
-:staff{staff=CF}
+:staff{staff=N}
 
-## Il Clan/Fuoco in Pillole
+## Il Noviziato in Pillole
 
 ::cards
 
@@ -62,12 +62,3 @@ La Guida e lo Scout:
 **LA COMUNITÀ** aiuta i singoli componenti a scoprire e maturare la propria vocazione personale, a conoscere la realtà che li circonda e ad agire in essa.   
 
 **IL SERVIZIO** è l'elemento unificante dei vari interessi, delle attese personali, delle attività e dei valori proposti. Ciò nasce dalla convinzione che una persona trova la sua completa dimensione nel fare il bene degli altri, ad imitazione di Gesù, che non è venuto nel mondo per essere servito, ma per servire.  
-
-## La Carta di Clan
-
-La Carta di Clan è un documento con cui la comunità rende esplicite le sue caratteristiche e tradizioni.  
-È costruita in armonia con i valori della Legge e della Promessa scout e si arricchisce progressivamente del risultato delle esperienze vissute dalla comunità.  
-Il Clan/Fuoco vi fissa le proprie riflessioni, i propri obiettivi, nonché i valori che ciascun rover e scolta si impegnano a testimoniare.  
-È scritta e periodicamente rinnovata dal Clan/Fuoco, quando la comunità non si riconosce più in essa oppure quando, con il passare degli anni, la comunità cambia.  
-
-Dopo pochi mesi dall'ingresso nella Comunità di Clan/Fuoco i rover e le scolte firmano la Carta di Clan, accettandone i contenuti e impegnandosi personalmente nella realizzazione degli obiettivi in essa esplicitati.
