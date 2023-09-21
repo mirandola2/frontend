@@ -71,7 +71,11 @@ San Francesco d'Assisi
 ::
 
 ## La Pista Del Lupetto
+
 Tutti i lupetti del branco seguono la propria Pista cercando di fare sempre del proprio meglio. Per andare avanti sulla Pista, però, bisogna cacciare!
 Da Cucciolo, insieme al Branco, scoprirai la Giungla e pronuncerai la Promessa; poi inizierà la Stagione di Caccia. Andrai in Caccia con Baloo, Bagheera e Akela, per diventare Lupo della Legge, poi Lupo della Rupe ed infine Lupo Anziano.
 
-
+### La Stagione di Caccia
+| | |
+|-|-|
+|**In Caccia con Baloo** per diventare **LUPO DELLA LEGGE** | |

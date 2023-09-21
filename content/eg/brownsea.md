@@ -10,13 +10,11 @@ image: "/brownsea.jpg"
 
 ## I Capi Reparto
 
-:staff{staff="E"}
-
+:staff{staff=E}
 
 ## Il Reparto in Pillole
 
 L'__Isola di Brownsea__ è un'isola situata nella regione Sud Est dell'Inghilterra, all'interno del porto di Poole. Robert Baden-Powell ha tenuto qui il primo campo scout sperimentale nel 1907 e l'isola ora è conosciuta universalmente come il luogo di nascita dello Scautismo e del Guidismo. 
-
 
 ::cards
 
@@ -42,6 +40,7 @@ Con l'aiuto di Dio, prometto sul mio onore di fare del mio meglio:
 - per aiutare gli altri in ogni circostanza;
 - per osservare la Legge scout.
 :::
+
 :::card{title="Il Motto" color="eg"}
 __SII PREPARATO__
 :::
@@ -49,8 +48,6 @@ __SII PREPARATO__
 :::card{title="Il Patrono" color="eg"}
 San Giorgio
 :::
-
-
 
 :::card{title="La Preghiera" color="eg" big}
 Fa', o Signore, che io abbia le mani pure, pura la lingua, puro il pensiero.
@@ -71,10 +68,8 @@ Le tre dita tese ricordano i tre punti della Promessa, mentre il pollice che cop
 ::
 
 ## Il Sentiero
-<ul>
-<li>Responsabilità</li>
-<li>Competenza</li>
-<li>Scoperta</li>
-</ul>
+
+|Scoperta|Competenza|Responsabilità|
+|-|-|-|
 
 

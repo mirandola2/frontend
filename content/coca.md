@@ -33,3 +33,57 @@ Il Patto associativo è rivolto anche alle famiglie dei ragazzi e a tutti coloro
 
 
  [Visualizza il Patto Associativo](https://www.agesci.it/?wpfb_dl=2082)
+
+## Formazione Capi 
+
+Formazione Capi, abbreviato in Fo.Ca., è l'insieme dei percorsi formativi per adulti proposti dall'AGESCI per tutelare il diritto di bambini, ragazzi, e giovani ad essere seguiti da persone che abbiano fatto scelte solide e acquisito adeguate competenze.
+
+La formazione è continua e permanente, e prosegue anche dopo il conseguimento della Nomina a Capo e Wood Badge.
+
+#### LA PRIMA FASE DEL PERCORSO FORMATIVO DI BASE
+La prima fase del percorso formativo di base ha come finalità di far acquisire al socio adulto la conoscenza e la consapevolezza degli elementi fondanti del servizio educativo sia motivazionali che pedagogico-metodologici.
+
+**Il Tirocinio**  
+Il tirocinio è il momento iniziale del cammino di formazione del socio adulto.
+Tale periodo, indicativamente della durata di 12 mesi, si avvia nel momento in cui l’adulto inserito in una Comunità capi,comincia il suo servizio in unità.
+
+**Il Campo di Formazione Tirocinanti (CFT)**  
+Il CFT è un’occasione formativa che si colloca all’interno del tirocinio da vivere preferibilmente nel momento iniziale di inserimento in Comunità capi ed è necessario per poter partecipare al Campo di Formazione Metodologica.
+Il CFT viene realizzato a livello locale con il coordinamento della Regione relativamente alle modalità attuative secondo un modello unitario nazionale, relativo ai contenuti, predisposto dalla Formazione Capi.
+
+**Campo di Formazione Metodologica (CFM)**  
+Il CFM è rivolto ai soci adulti che hanno frequentato durante l’anno di tirocinio o successivamente.
+Il CFM si realizza sotto forma di campo mobile e/o fisso, a livello regionale o di area di Formazione Capi, nell’ambito di un modello unitario nazionale predisposto dalla Formazione Capi in collaborazione con le Branche.
+La sua durata è di 5-7 giorni.
+
+#### LA SECONDA FASE DEL PERCORSO FORMATIVO DI BASE
+
+La seconda fase del percorso formativo di base, nel quadro del proprio Progetto di Capo ha come finalità di acquisire consapevolezza della scelta di servizio educativo in Associazione e giungere alla nomina a Capo.
+
+**Il Campo di Formazione Associativa (CFA)**  
+Il CFA è rivolto ai soci adulti che hanno concluso da almeno 10 mesi la prima fase del percorso formativo di base. Nel CFA le competenze vengono esplorate, confrontate, approfondite, con lo stile della ricerca, intesa come orientamento alla rielaborazione e alla riflessione sulla esperienza di servizio.
+Il CFA si realizza sotto forma di campo mobile e/o fisso, nell’ambito di un modello unitario nazionale formulato dalla Formazione Capi in collaborazione con le Branche.
+La sua durata è di 7 giorni.
+
+**Campi di Aggiornamento Metodologico (CAM)**  
+I CAM sono diretti ai soci adulti che intendono prestare servizio in una Branca diversa da quella del Campo di Formazione Metodologica.
+Essi sono organizzati su base regionale o di area di Formazione Capi, su un modello unitario predisposto a livello nazionale dalla Formazione Capi, in collaborazione con le Branche.
+Hanno durata di 3 giorni.
+
+#### LA NOMINA A CAPO  
+
+La Comunità capi, valutata positivamente la richiesta, la trasmette ai Responsabili di Zona.
+La Capo Guida e il Capo Scout nominano i Capi della Associazione, su proposta degli Incaricati nazionali alla Formazione Capi, vista la valutazione del percorso formativo ed il parere favorevole dei Responsabili regionali e di Zona.
+
+**Wood-Badge**  
+La nomina a Capo ha riconoscimento internazionale e dà diritto alla Wood-Badge.
+
+**Formazione continua**  
+La formazione continua è l’atteggiamento della persona in continua ricerca di occasioni e strumenti di apprendimento, aggiornamento, confronto e verifica.
+Il socio adulto, conseguita la Nomina a Capo e Wood Badge, proseguirà il suo cammino formativo articolando personali percorsi formativi coerentemente con il proprio aggiornato Progetto del Capo. Parteciperà quindi, oltre che ai momenti di democrazia associativa, ad occasioni formative organizzate dall’Associazione ai vari livelli e a quelle proposte da altri enti ed organizzazioni.
+
+**Campo per adulti di provenienza extrassociativa o con esperienza remota di scautismo – CAEX**  
+L’AGESCI propone la partecipazione al CAEX agli adulti di provenienza extrassociativa ed a quelli con esperienza remota di scautismo, secondo i progetti di sviluppo delle Zone.
+Si realizza in un fine settimana vissuto in stile scout, valorizzando il vissuto dei partecipanti, organizzato a livello locale con il coordinamento della Formazione Capi regionale.
+
+_dal Regolamento Agesci 2011_
