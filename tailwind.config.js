@@ -28,9 +28,9 @@ export default {
       },
     },
     colors: {
-      lc: "#FDC500",
-      eg: "#21A067",
-      rs: "#E84C3E",
+      lc: "#FFBE0A", //"#FDC500",
+      eg: "#559928", //#21A067",
+      rs: "#E84C3E", //"#E84C3E",
       cc: "#9B66A5",
       white: "#ffffff"
     },

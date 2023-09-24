@@ -1,5 +1,5 @@
 <template>
-  <footer class="p-10 mt-auto bg-neutral text-neutral-content">
+  <footer class="p-10 mt-auto bg-primary text-primary-content">
     <div class="container footer text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
       <aside class="flex gap-5">
         <div class="space-y-2">
@@ -12,7 +12,7 @@
             &copy; {{ new Date().getFullYear() }} - Tutti i diritti riservati
           </p>
 
-          <nav class="text-primary">
+          <nav class="text-secondary font-bold">
             <div class="grid grid-flow-col gap-4">
               <a class="link link-hover">Privacy Policy</a>
               <a class="link link-hover">Contatti</a>
@@ -44,7 +44,7 @@
         </div>
       </aside>
 
-      <p class="text-2xl font-serif inline text-primary md:text-right">
+      <p class="text-2xl font-serif inline md:text-right">
         <i>Del nostro meglio</i> <br />
         per <i>essere pronti</i> <br />
         a <i>servire</i>.

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 
 const menu = ref({
   "Chi Siamo": {
@@ -41,6 +41,22 @@ const menu = ref({
     "Materiali e link": "/materiale" 
   },
 });
+
+const topOfPage = ref(true)
+
+onBeforeMount(()=>{
+  window.addEventListener('scroll', handleScroll)
+})
+
+function handleScroll(){
+      if(window.scrollY>5){
+        if(topOfPage.value) topOfPage.value = false
+      } else {
+        if(!topOfPage.value) topOfPage.value = true
+      }
+    }
+
+
 </script>
 
 <template>
@@ -52,17 +68,20 @@ const menu = ref({
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div
-        class="navbar bg-primary text-primary-content lg:sticky lg:top-0 lg:z-10"
+        class="navbar  text-primary-content fixed lg:top-0 z-50"
+        :class="{'transparent': topOfPage, 'bg-primary shadow-md': !topOfPage}"
       >
-        <div class="container mx-auto">
+        <div class="container max-w-none mx-auto">
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
-              <a href="/">Mirandola 2</a>
+              <a href="/">
+                <img src="/logo_white.svg" class="h-16"/> 
+              </a>
             </h1>
           </div>
 
           <div class="flex-none hidden lg:block">
-            <ul class="menu menu-horizontal">
+            <ul class="menu menu-horizontal text-white">
               <!-- Navbar menu content here -->
               <template v-for="(submenu, mainItem) in menu" :key="mainItem">
                 <li>
