@@ -29,8 +29,9 @@
               </h2>
             </div>
             <div class="align-center pb-0" v-else>
-              <h2 class="text-xl font-bold">{{ capo.nome }}</h2>
-              <p class="">
+              <h2 class="text-xl font-bold" v-if="!coca">{{ capo.nome.split(" ")[0] }}</h2>
+              <h2 class="text-xl font-bold" v-else>{{ capo.nome }}</h2>
+              <p>
                 {{ capo.ruolo }}
               </p>
             </div>

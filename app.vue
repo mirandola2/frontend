@@ -6,6 +6,7 @@ const menu = ref({
     "L'Associazione": "/associazione",
     "Il Gruppo": "/gruppo",
     "La Comunità Capi": "/coca",
+    "Contatti": "/contatti"
   },
   "Lupetti e Coccinelle": {
     "La Branca L/C": "/lc/",
@@ -19,22 +20,25 @@ const menu = ref({
     "Reparto Brownsea": "/eg/brownsea",
     "Reparto Antares": "/eg/antares",
     "Campi di Specialità e Competenza": "/eg/campetti",
-    "Specialità e Brevetti": "/eg/specialità-brevetti",
+    "Specialità e Competenze": "/eg/specialita",
   },
   "Rover e Scolte": {
     "La Branca R/S": "/rs/",
-    "Clan Fuoco Madonna della Valle": "/rs/mdv",
+    "Clan Fuoco MdV": "/rs/mdv",
     "Noviziato": "/rs/noviziato",
     "Epppi/Ross": "/rs/epppi-ross",
   },
   "Archivio": {
-    "Totem": "/totem",
+    "Archivio Totem": "/totem",
     "Staff del Passato": "/archivio-staff",
-    "Campi e Route": "/campi",
+    "Campi e Route": "/archivio-campi-route",
+    "Foto e Video": "/media",
   },
   "Utilities": {
-    "Ricerca Codice Socio": "/codice",
+    "Ricerca Codice Socio": "/codice-socio",
     "Uniforme e Distintivi": "/uniforme",
+    "Traduttore Morse": "/morse",
+    "Materiali e link": "/materiale" 
   },
 });
 </script>
@@ -70,7 +74,7 @@ const menu = ref({
                       <label tabindex="0" class="">{{ mainItem }}</label>
                       <ul
                         tabindex="0"
-                        class="dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-44"
+                        class="dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-60"
                       >
                         <!-- Loop through the sub-menu items -->
                         <li v-for="(link, subItem) in submenu" :key="subItem">
