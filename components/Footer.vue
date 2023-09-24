@@ -1,5 +1,5 @@
 <template>
-  <footer class="p-10 mt-auto bg-primary text-primary-content">
+  <div class="mt-auto"><footer class="mt-12 p-10 bg-primary text-primary-content">
     <div class="container footer text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
       <aside class="flex gap-5">
         <div class="space-y-2">
@@ -50,5 +50,5 @@
         a <i>servire</i>.
       </p>
     </div>
-  </footer>
+  </footer></div>
 </template>
