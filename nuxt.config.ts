@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   content: {
     ignores: [
       '/content/index.md',
-      'totem'
+      'totem', 'codice-socio'
     ],
     documentDriven: true,
   }

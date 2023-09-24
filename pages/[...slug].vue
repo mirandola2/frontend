@@ -1,9 +1,9 @@
 <template>
   <Hero :title="page.title" :image="page.image"/>
 
-  <div class="container p-2 space-y-2 max-w-4xl">
+  <div class="container p-3 space-y-2 max-w-3xl">
     <div
-      class="prose max-w-none prose-a:no-underline prose-headings:text-bold prose-a:text-primary px-2 mx-auto text-justify"
+      class="prose prose-neutral max-w-none prose-a:no-underline prose-a:text-primary mx-auto prose-p:text-justify prose-li:my-0"
     >
       <ContentRenderer :value="page" />
     </div>

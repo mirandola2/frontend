@@ -20,8 +20,11 @@ export default {
     container: {
       center: true,
       padding: {
-        DEFAULT: '0.5rem',
-        md: '0.75rem'
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
       },
     },
     colors: {
@@ -40,7 +43,8 @@ export default {
           secondary: "#6B478D",
           accent: "#AEB0D9",
           neutral: "#E5D6C7",
-          "base-100": "#F7F4F0", //"#ECE9E6",
+          "base-100": "#ffffff", //"#ECE9E6",
+          "base-content": "#000",
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",

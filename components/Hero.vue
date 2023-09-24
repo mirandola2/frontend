@@ -7,7 +7,7 @@ const props = defineProps({title: {
     default: "/hero.jpg",
 }, color: {
     type: String,
-    default: "primary",
+    default: "neutral",
 }, logo: {
     type: String,
     default: undefined,
@@ -19,15 +19,17 @@ const bgColor = {
   eg : 'bg-eg',
   rs : 'bg-rs',
   cc : 'bg-cc', 
-  primary : 'bg-primary'
+  primary : 'bg-primary',
+  neutral: 'bg-[#000000]'
+
 }
 
 </script>
 
 <template>
   <div class="hero" :style="{'background-image': 'url(' + image + ')'}">
-    <div class="hero-overlay bg-opacity-60" :class="bgColor[color]"></div>     
-    <div class="container max-w-5xl mx-auto md:px-12 py-20 flex flex-col md:flex-row text-white ">
+    <div class="hero-overlay bg-opacity-40" :class="bgColor[color]"></div>     
+    <div class="container max-w-4xl mx-auto md:px-12 py-20 flex flex-col md:flex-row text-white ">
         <img v-if="logo != undefined" :src="logo" class="w-40 pb-8 mx-auto md:p-0 md:w-56 lg:w-64 md:mr-10" />
         <div class="text-center md:text-left md:mr-auto" :class="{'ml-0': 'logo!=undefined' }">
           <h2 class="text-lg md:text-3xl mb-5 ">AGESCI - Gruppo Scout Mirandola 2</h2>
@@ -37,15 +39,7 @@ const bgColor = {
         </div>
     </div>
   </div>
-  <!--
-    <div class="bg-[#ffee18] h-1 w-full"></div>
-    <div class="bg-[#07ac0f] h-1 w-full"></div>
-        -->
-        
-        
  
-
-
 </template>
 
 
