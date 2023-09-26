@@ -27,6 +27,15 @@ export default {
         '2xl': '6rem',
       },
     },
+    extend: {
+      typography: {
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
+          },
+        },
+      },
     colors: {
       lc: "#FFBE0A", //"#FDC500",
       eg: "#559928", //#21A067",
