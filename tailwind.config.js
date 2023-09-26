@@ -36,6 +36,7 @@ export default {
           },
         },
       },
+    },
     colors: {
       lc: "#FFBE0A", //"#FDC500",
       eg: "#559928", //#21A067",
