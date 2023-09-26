@@ -1,7 +1,7 @@
 <template>
   <!--parametri capo: nome,nomeCaccia,ruolo,staff,coca,desc,img
 -->
-  <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
     <div
       v-for="capo in data.body.filter((value) =>
         props.coca == false
