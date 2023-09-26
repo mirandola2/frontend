@@ -14,8 +14,8 @@
 
           <nav class="text-secondary font-bold">
             <div class="grid grid-flow-col gap-4">
-              <a class="link link-hover">Privacy Policy</a>
-              <a class="link link-hover">Contatti</a>
+              <a class="link link-hover" href="/privacy-policy">Privacy Policy</a>
+              <a class="link link-hover" href="/contatti">Contatti</a>
 
               <button
                 class="link link-hover"
@@ -33,9 +33,9 @@
                     </button>
                   </form>
                   <h3 class="font-bold text-lg">Credits</h3>
-                  <p class="py-4">
-                    Sito web open-source sviluppato da Aquila Ambiziosa. Puoi vedere il codice e contribuire anche tu su <i>github/mirandola2</i>.
-                    Questo lavoro è stato possibile solo grazie all'aiuto di Lince Spensierata, Leoncino Spensierato e tutti coloro che hanno partecipato.
+                  <p class="py-4 font-normal text-justify">
+                    Il sito web che stai leggendo è stato sviluppato da <i>Aquila Ambiziosa</i> sulla base del lavoro di <i>Lince Spensierata</i>, con l'aiuto di <i>Leoncino Spensierato</i> e tutti coloro che hanno contribuito. 
+                    Il codice è open-source, chiunque può leggerlo e migliorarlo su <i>GitHub/Mirandola2</i>.
                   </p>
                 </div>
               </dialog>

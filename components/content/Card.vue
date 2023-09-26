@@ -33,7 +33,8 @@ const bgColor = {
   lc : 'bg-lc',
   eg : 'bg-eg text-white',
   rs : 'bg-rs text-white',
-  cc : 'bg-cc text-white', 
+  cc : 'bg-cc text-white',
+  primary: 'bg-primary text-white' 
 }
 
 </script>
