@@ -2,7 +2,11 @@
 title: Lupetti e Coccinelle
 ---
 
-
+::card{title = 'Attività e Orari' color = 'lc'}
+Le attività dei Lupetti e delle Coccinelle si svolgono principalmente il **sabato pomeriggio**, solitamente **dalle ore 15.45 alle ore 18.30**, nelle sedi di Via Posta.  
+Durante l'anno sono previste alcune Cacce/Voli (uscite) della durata di 2 giorni.  
+In estate ci sono le Vacanze di Branco/Cerchio della durata di circa 8 giorni.  
+::
 
 Dagli 8 agli 11 anni i bambini e le bambine vivono nel "branco" o nel "cerchio" come lupetti o coccinelle. Il metodo educativo utilizzato è quello dello scautismo i cui fondamenti si trovano nell'opera di Baden-Powell, nello Statuto e nel Patto Associativo. La proposta educativa della Branca Lupetti/Coccinelle viene proseguita nelle età successive da quella della Branca Esploratori/Guide e  Rovers/Scolte.
 

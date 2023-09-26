@@ -2,6 +2,13 @@
 title: Rover e Scolte
 ---
 
+::card{title = 'Attività e Orari' color = 'rs'}
+Le attività si svolgono principalmente durante la settimana di sera o alla domenica mattina.
+E' prevista un'Uscita di 2 giorni ogni mese circa.  
+Durante l'anno c'è: la Route Invernale di 2 o 3 giorni; la Route di Pasqua di 2 o 3 giorni e la Route Estiva di 7 o 8 giorni.
+::
+
+
 
 I Rover e le Scolte sono ragazzi/e tra i 16 e 19 anni che aderiscono alla  proposta che lo Scoutismo fa alla loro età. Formano le Comunità R/S per vivere  un'esperienza tesa a favorire la crescita di ciascuno nell'impegno  dell'autoeducazione, nella disponibilità al servizio del prossimo, nello sforzo  di maturare delle scelte per la vita. I fini e le linee fondamentali del metodo  del Roverismo/Scoltismo, già delineati da Boden-Powell, sono quelli comuni a  tutta l'Associazione. La proposta educativa della Branca R/S, mentre costituisce  il completamento della formazione attuata nelle Branche precedenti, è aperta  anche all'adesione di giovani non provenienti dallo scautismo.
 

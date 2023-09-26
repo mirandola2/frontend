@@ -2,7 +2,11 @@
 title: Esploratori e Guide
 ---
 
-
+::card{title = 'Attività e Orari' color = 'eg'}
+Le attività dei reparti si svolgono principalmente il **sabato pomeriggio**, solitamente **dalle ore 15.30 alle ore 18.30**, nelle sedi di Via Posta.  
+Durante l'anno sono previste alcune Uscite della durata di 2 o 3 giorni.  
+In inverno c'è il Campo Invernale della durata di 3 giorni. In estate c'è il Campo Estivo della durata di circa 13 giorni.
+::
 
 La Branca Esploratori/Guide si rivolge ai ragazzi dagli 12 ai 16 anni che si uniscono in Unità chiamate Reparti. I fini della proposta educativa della branca, comuni a tutta l'Associazione, sono presentati in maniera adeguata all'età, rispettando i tempi di crescita dei singoli e della comunità; ad essi debbono ispirarsi tutte le attività del Reparto sia nella fase di preparazione che in quella di realizzazione, sia, infine, in sede di verifica.
 

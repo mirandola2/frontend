@@ -140,7 +140,7 @@ function handleScroll(){
         <Footer />
      
     </div>
-    <div class="drawer-side min-h-full">
+    <div class="drawer-side min-h-full z-50">
       <label for="my-drawer-3" class="drawer-overlay"></label>
 
       <div class="flex flex-row min-h-full">
