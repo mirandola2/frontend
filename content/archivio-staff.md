@@ -647,10 +647,10 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Cerchio del Bosco Gioioso:** Alessia Bucci _(Arcanda - CU)_, Elena Zerbini _(Scotti)_, Davide Dulmieri (_Mi_)  
   
 **Reparto Brownsea:** Edoardo Galavotti _(CU),_ Francesco Botti  
-**Reparto Antares:** Elisabetta Polacchini _(CU)_, Lucrezia Polacchini, Riccardo Avanzi  
+**Reparto Antares:** Elisabetta Polacchini _(CU)_, Lucrezia Polacchini, Riccardo Avanzi, Giovanni Soavi 
 
 **Noviziato:** Francesco Madonia  
 **Clan/Fuoco Madonna della Valle:** Riccardo Sbardellati _(CU)_, Irene Cavicchioli _(CU)_  
   
-**A disposizione:** Giulia Bergonzini, Tommaso Rompianesi, Giovanni Soavi, Luca Cavicchioli  
+**A disposizione:** Giulia Bergonzini, Tommaso Rompianesi, Luca Cavicchioli  
 
