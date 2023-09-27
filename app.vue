@@ -2,6 +2,7 @@
 import { ref, onBeforeMount } from "vue";
 
 const menu = ref({
+  "Home": "/",
   "Chi Siamo": {
     "L'Associazione": "/associazione",
     "Il Gruppo": "/gruppo",
@@ -14,6 +15,7 @@ const menu = ref({
     "Cerchio del Bosco Gioioso": "/lc/coccinelle",
     "Piccole Orme": "/lc/piccole-orme",
     "Specialità": "/lc/specialita",
+    "Iniziazione Cristiana": "/lc/ic"
   },
   "Esploratori e Guide": {
     "La Branca E/G": "/eg",
