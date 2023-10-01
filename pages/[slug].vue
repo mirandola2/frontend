@@ -10,8 +10,7 @@
       prose-table:max-w-4xl prose-table:mx-auto
       prose-headings:max-w-4xl prose-headings:mx-auto
       prose-blockquote:max-w-4xl prose-blockquote:mx-auto prose-blockquote:font-serif
-      prose-figure:rounded-xl prose-img:rounded-xl
-      
+      prose-figure:rounded-xl prose-img:rounded-xl prose-img:max-w-lg prose-img:mx-auto
       "
     >
       <ContentRenderer :value="page" />
