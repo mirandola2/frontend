@@ -78,59 +78,18 @@
     <div class="container mt-3">
       <div class="gap-3 flex justify-items-stretch">
         <div class="w-full max-w-7xl mx-auto text-neutral-content">
-          <div class="card max-w-none bg-base-200">
+          <div class="card max-w-none bg-base-300">
             <div class="card-body">
               <h2 class="card-title">{{ data.title }}</h2>
               <ContentRenderer :value="data" />
             </div>
           </div>
-          <div class="grid mt-5">
-            <div
-              class="card w-96 bg-base-100 shadow-xl"
-              v-for="post in contentQuery"
-            >
-              <figure class="h-40">
-                <img
-                  :src="post.img"
-                  alt="Shoes"
-                  
-                />
-              </figure>
-              <div class="card-body">
-                <h2 class="card-title">
-                  {{ post.title }}
-                  <div class="badge" :class="badge[post.category].bg">{{badge[post.category].text}}</div>
-                </h2>
-                <p>{{ post.description }} <a class="link" :href="post._path">Leggi tutto</a></p>
-              </div>
-            </div>
+          <div class="grid md:grid-cols-2 mt-3 grid-flow-rows gap-3">
+            <BlogFeed />
           </div>
         </div>
 
-        <div
-          class="card max-w-sm bg-neutral text-neutral-content divide-y divide-base-100"
-        >
-          <div class="card-body">
-            <h2 class="card-title">Compleanni</h2>
-            <p>
-              <Birthdays />
-            </p>
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">Meteo Mirandola</h2>
-            <Weather />
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">S. Messa di Gruppo</h2>
-            <p>Ogni Domenica, alle 9.00 in Duomo</p>
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">Liturgia del Giorno</h2>
-            <p>
-              <DailyWord />
-            </p>
-          </div>
-        </div>
+        <Sidebar />
       </div>
     </div>
   </div>
@@ -140,16 +99,6 @@
 const { data } = await useAsyncData("home", () =>
   queryContent("/_home").findOne()
 );
-
-const contentQuery = await queryContent("blog").find();
-
-
-const badge = {
-  lc: {bg: "bg-lc text-lc-content", text: "L/C"},
-  eg: {bg: "bg-eg text-eg-content", text: "E/G"},
-  rs: {bg: "bg-rs text-rs-content", text: "R/S"},
-  cc: {bg: "bg-cc text-primary-content", text: "Gruppo"},
-};
 
 
 </script>

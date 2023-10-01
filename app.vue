@@ -1,21 +1,22 @@
 <script setup>
 import { ref, onBeforeMount } from "vue";
+const route = useRouter();
 
 const menu = ref({
-  "Home": "/",
+  Home: "/",
   "Chi Siamo": {
     "L'Associazione": "/associazione",
     "Il Gruppo": "/gruppo",
     "La Comunità Capi": "/coca",
-    "Contatti": "/contatti"
+    Contatti: "/contatti",
   },
   "Lupetti e Coccinelle": {
     "La Branca L/C": "/lc/",
     "Branco della Roccia Azzurra": "/lc/lupetti",
     "Cerchio del Bosco Gioioso": "/lc/coccinelle",
     "Piccole Orme": "/lc/piccole-orme",
-    "Specialità": "/lc/specialita",
-    "Iniziazione Cristiana": "/lc/ic"
+    Specialità: "/lc/specialita",
+    "Iniziazione Cristiana": "/lc/ic",
   },
   "Esploratori e Guide": {
     "La Branca E/G": "/eg",
@@ -27,38 +28,47 @@ const menu = ref({
   "Rover e Scolte": {
     "La Branca R/S": "/rs/",
     "Clan Fuoco MdV": "/rs/mdv",
-    "Noviziato": "/rs/noviziato",
+    Noviziato: "/rs/noviziato",
     "Epppi/Ross": "/rs/epppi-ross",
   },
-  "Archivio": {
+  Archivio: {
     "Archivio Totem": "/totem",
     "Staff del Passato": "/archivio-staff",
     "Campi e Route": "/archivio-campi-route",
     "Foto e Video": "/media",
   },
-  "Utilities": {
+  Utilities: {
     "Ricerca Codice Socio": "/codice-socio",
     "Uniforme e Distintivi": "/uniforme",
     "Traduttore Morse": "/morse",
-    "Materiali e link": "/materiale" 
+    "Materiali e link": "/materiale",
   },
 });
 
-const topOfPage = ref(true)
+const transparentNavbar = ref(true);
+const fixedNavbar = ref(true);
+const regex = /^\/blog\//;
 
-onBeforeMount(()=>{
-  window.addEventListener('scroll', handleScroll)
-})
-
-function handleScroll(){
-      if(window.scrollY>5){
-        if(topOfPage.value) topOfPage.value = false
-      } else {
-        if(!topOfPage.value) topOfPage.value = true
-      }
-    }
+onMounted(() => {
+  if (regex.test(route.currentRoute.value.fullPath)) {
+    console.log("ciao");
+    fixedNavbar.value = false;
+    transparentNavbar.value = false;
+  } else {
+    window.addEventListener("scroll", handleScroll);
+  }
+});
 
 
+
+
+function handleScroll() {
+  if (window.scrollY > 5) {
+    if (transparentNavbar.value) transparentNavbar.value = false;
+  } else {
+    if (!transparentNavbar.value) transparentNavbar.value = true;
+  }
+}
 </script>
 
 <template>
@@ -70,14 +80,19 @@ function handleScroll(){
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div
-        class="navbar  text-primary-content fixed lg:top-0 z-50"
-        :class="{'transparent': topOfPage, 'bg-primary shadow-md': !topOfPage}"
+        class="navbar text-primary-content lg:top-0 z-50"
+        :class="{
+          fixed: fixedNavbar,
+          sticky: !fixedNavbar,
+          transparent: transparentNavbar,
+          'bg-primary shadow-md': !transparentNavbar,
+        }"
       >
         <div class="container max-w-none mx-auto">
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <img src="/logo_white.svg" class="h-16"/> 
+                <img src="/logo_white.svg" class="h-16" />
               </a>
             </h1>
           </div>
@@ -136,11 +151,9 @@ function handleScroll(){
       </div>
       <!-- Page content here -->
 
-     
-        <NuxtPage />
-  
-        <Footer />
-     
+      <NuxtPage />
+
+      <Footer />
     </div>
     <div class="drawer-side min-h-full z-50">
       <label for="my-drawer-3" class="drawer-overlay"></label>
