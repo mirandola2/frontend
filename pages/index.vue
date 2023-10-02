@@ -75,10 +75,9 @@
       </div>
     </div>
 
-    <div class="container-xl p-3">
-      <div class="gap-3 flex justify-items-stretch flex-col md:flex-row">
-        <div class="w-full max-w-7xl mx-auto text-neutral-content">
-          <div class="card max-w-none bg-base-300">
+
+    <BlogLayout>
+      <div class="card max-w-none bg-base-300">
             <div class="card-body">
               <h2 class="card-title">{{ data.title }}</h2>
               <ContentRenderer :value="data" />
@@ -87,11 +86,8 @@
           <div class="grid lg:grid-cols-2 xl:grid-cols-3 mt-3 grid-flow-rows gap-3">
             <BlogFeed />
           </div>
-        </div>
+    </BlogLayout>
 
-        <Sidebar />
-      </div>
-    </div>
   </div>
 </template>
 
