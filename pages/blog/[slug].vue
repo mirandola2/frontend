@@ -1,29 +1,33 @@
 <template>
-  <div class="container-xl flex gap-5 justify-between items-stretch p-5">
-    <div class="mx-auto w-full">
-      <div class="hero rounded-2xl bg-base-200">
-        <div class="hero-content w-full flex-col justify-between md:flex-row-reverse">
-          <img :src="page.img" class="max-w-sm rounded-lg shadow-2xl" />
-          <div class="text-center mx-auto">
-            <h2 class="text-lg">Blog</h2>
-            <h1 class="text-4xl font-display">{{page.title}}</h1>
-            <span class="badge border-0" :class="badge[page.category].bg">{{
-          badge[page.category].text
-        }}</span> <span class="badge border-0 bg-base-300" >{{
-          capitalizeFirstLetter(new Date(page.date).toLocaleDateString('it-IT', {month: "long", year: "numeric"}))
-        }}</span> 
-          </div>
+  <BlogLayout>
+    <div class="hero rounded-2xl bg-base-200">
+      <div
+        class="hero-content w-full flex-col justify-between md:flex-row-reverse"
+      >
+        <img :src="page.img" class="max-w-sm rounded-lg shadow-2xl" />
+        <div class="text-center mx-auto">
+          <h2 class="text-lg">Blog</h2>
+          <h1 class="text-4xl font-display">{{ page.title }}</h1>
+          <span class="badge border-0" :class="badge[page.category].bg">{{
+            badge[page.category].text
+          }}</span>
+          <span class="badge border-0 bg-base-300">{{
+            capitalizeFirstLetter(
+              new Date(page.date).toLocaleDateString("it-IT", {
+                month: "long",
+                year: "numeric",
+              })
+            )
+          }}</span>
         </div>
       </div>
-      <div class="prose-container">
-        <ContentRenderer :value="page" />
-      </div>
-     
     </div>
-
-    <Sidebar />
-  </div>
+    <div class="prose-container">
+      <ContentRenderer :value="page" />
+    </div>
+  </BlogLayout>
 </template>
+
 <script setup>
 const { toc, page } = useContent();
 
@@ -35,6 +39,6 @@ const badge = {
 };
 
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 </script>
