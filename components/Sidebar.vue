@@ -1,6 +1,6 @@
 <template>
     <div
-          class="card max-w-sm bg-neutral text-neutral-content divide-y divide-base-100"
+          class="card max-w-full md:max-w-sm bg-neutral text-neutral-content divide-y divide-base-100"
         >
           <div class="card-body">
             <h2 class="card-title">Compleanni</h2>
