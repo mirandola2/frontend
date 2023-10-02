@@ -75,8 +75,8 @@
       </div>
     </div>
 
-    <div class="container mt-3">
-      <div class="gap-3 flex justify-items-stretch">
+    <div class="container-xl p-3">
+      <div class="gap-3 flex justify-items-stretch flex-col md:flex-row">
         <div class="w-full max-w-7xl mx-auto text-neutral-content">
           <div class="card max-w-none bg-base-300">
             <div class="card-body">
@@ -84,7 +84,7 @@
               <ContentRenderer :value="data" />
             </div>
           </div>
-          <div class="grid md:grid-cols-2 mt-3 grid-flow-rows gap-3">
+          <div class="grid lg:grid-cols-2 xl:grid-cols-3 mt-3 grid-flow-rows gap-3">
             <BlogFeed />
           </div>
         </div>

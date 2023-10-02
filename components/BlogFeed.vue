@@ -1,16 +1,17 @@
 <template>
   <div
-    class="card w-full bg-base-100 shadow-lg"
+    class="card w-full relative bg-base-100 shadow-lg"
     :class="{'card-side': horizontal}"
     v-for="post in contentQuery"
   >
-    <figure class="bg-contain">
-      <img class=" max-h-40" :src="post.img" :alt="post.title" />
+
+        <figure class="bg-contain max-h-40 rounded-t-2xl hover:scale-120 ease-in duration-500">
+      <img  :src="post.img" :alt="post.title" class=""/>
     </figure>
-    <div class="card-body border-base-200 rounded-2xl rounded-t-none">
+    <div class="card-body">
       <h2 class="text-xl font-bold">
         {{ post.title }}
-        <span class="badge inline" :class="badge[post.category].bg">{{
+        <span class="badge inline border-0" :class="badge[post.category].bg">{{
           badge[post.category].text
         }}</span>
       </h2>
@@ -19,7 +20,8 @@
         <a class="link" :href="post._path">Leggi tutto</a>
       </p>
     </div>
-  </div>
+    </div>
+   
 </template>
 <script setup>
 const contentQuery = await queryContent("blog").find();
@@ -28,7 +30,7 @@ const badge = {
   lc: { bg: "bg-lc text-lc-content", text: "L/C" },
   eg: { bg: "bg-eg text-eg-content", text: "E/G" },
   rs: { bg: "bg-rs text-rs-content", text: "R/S" },
-  cc: { bg: "bg-cc text-primary-content", text: "Gruppo" },
+  cc: { bg: "bg-cc text-white", text: "Gruppo" },
 };
 
 const props = defineProps({

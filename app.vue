@@ -51,16 +51,12 @@ const regex = /^\/blog\//;
 
 onMounted(() => {
   if (regex.test(route.currentRoute.value.fullPath)) {
-    console.log("ciao");
     fixedNavbar.value = false;
     transparentNavbar.value = false;
   } else {
     window.addEventListener("scroll", handleScroll);
   }
 });
-
-
-
 
 function handleScroll() {
   if (window.scrollY > 5) {
