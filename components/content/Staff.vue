@@ -3,7 +3,7 @@
 -->
   <div class="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
     <div
-      v-for="capo in data.body.filter((value) =>
+      v-for="person in data.body.filter((value) =>
         props.coca == false
           ? props.staff == '*' || value.staff == props.staff
           : (props.staff == '*' || value.staff == props.staff) &&
@@ -16,37 +16,37 @@
           <img
             class="mask mask-squircle w-24 h-24 "
             :src="
-              capo.img != '' && capo.img != undefined
-                ? capo.img
-                : 'https://api.dicebear.com/7.x/thumbs/svg?seed=' + capo.nome
+              person.img != '' && person.img != undefined
+                ? '/people/' + person.img
+                : 'https://api.dicebear.com/7.x/thumbs/svg?seed=' + person.nome
             "
             alt="Avatar Staff"
           />
           <div class="">
             <div v-if="namesCannotBeShown()">
               <h2 class="text-xl font-bold">
-                {{ capo.nomeCaccia }}
+                {{ person.nomeCaccia }}
               </h2>
             </div>
             <div class="align-center pb-0" v-else>
-              <h2 class="text-xl font-bold" v-if="!coca">{{ capo.nome.split(" ")[0] }}</h2>
-              <h2 class="text-xl font-bold" v-else>{{ capo.nome }}</h2>
+              <h2 class="text-xl font-bold" v-if="!coca">{{ person.nome.split(" ")[0] }}</h2>
+              <h2 class="text-xl font-bold" v-else>{{ person.nome }}</h2>
               <p>
-                {{ capo.ruolo }}
+                {{ person.ruolo }}
               </p>
             </div>
 
             <div
               class="badge font-bold badge-lg"
               v-if="coca"
-              :class="getColorStaffName(capo.staff)"
+              :class="getColorStaffName(person.staff)"
             >
-              {{ getFullStaffName(capo.staff) }}
+              {{ getFullStaffName(person.staff) }}
             </div>
           </div>
         </div>
 
-        <p class="text-sm" v-if="!coca">{{ capo.desc }}</p>
+        <p class="text-sm" v-if="!coca">{{ person.desc }}</p>
       </div>
     </div>
   </div>
