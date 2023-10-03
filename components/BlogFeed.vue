@@ -1,11 +1,11 @@
 <template>
   <div
-    class="card w-full relative bg-base-100 shadow-lg"
+    class="card w-full bg-base-100 shadow-lg"
     :class="{'card-side': horizontal}"
     v-for="post in contentQuery"
   >
 
-        <figure class="bg-contain max-h-40 rounded-t-2xl hover:scale-120 ease-in duration-500">
+        <figure class="bg-contain max-h-40" :class="{'max-w-xs': horizontal}">
       <img  :src="post.img" :alt="post.title" class=""/>
     </figure>
     <div class="card-body">
@@ -24,7 +24,7 @@
    
 </template>
 <script setup>
-const contentQuery = await queryContent("blog").find();
+const contentQuery = props.all ? await queryContent("blog").sort({date: 1}).find() : await queryContent("blog").limit(4).sort({date: 1}).find();
 
 const badge = {
   lc: { bg: "bg-lc text-lc-content", text: "L/C" },
