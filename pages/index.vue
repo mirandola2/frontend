@@ -86,6 +86,7 @@
           <div class="grid lg:grid-cols-2 xl:grid-cols-3 mt-3 grid-flow-rows gap-3">
             <BlogFeed />
           </div>
+          <p class=" text-right w-full mt-2"><a href="/blog" class="link text-primary">Tutte le notizie -></a></p>
     </BlogLayout>
 
   </div>

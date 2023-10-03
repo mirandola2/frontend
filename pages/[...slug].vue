@@ -11,4 +11,9 @@
 </template>
 <script setup>
 const { toc, page } = useContent();
+
+useHead({
+  title: page.title
+})
+
 </script>

@@ -47,7 +47,7 @@ const menu = ref({
 
 const transparentNavbar = ref(true);
 const fixedNavbar = ref(true);
-const regex = /^\/blog\//;
+const regex = /^\/blog/;
 
 onMounted(() => {
   if (regex.test(route.currentRoute.value.fullPath)) {
