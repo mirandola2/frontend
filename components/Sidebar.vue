@@ -1,7 +1,7 @@
 <template>
-   <div class="sticky top-24  max-h-screen md:max-w-sm max-w-full  ">
+   <div class="sticky top-24 w-full max-h-screen max-w-full lg:max-w-xs">
    <div
-          class="card  bg-neutral text-neutral-content divide-y divide-base-100"
+          class="card  bg-neutral w-full text-neutral-content divide-y divide-base-100"
         >
           <div class="card-body">
             <h2 class="card-title">Compleanni</h2>
