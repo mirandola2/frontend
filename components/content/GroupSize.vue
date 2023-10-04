@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-2 grid-cols-2 lg:grid-cols-4">
+  <div class="grid gap-2 my-5 grid-cols-2 lg:grid-cols-4">
     <div class="stats bg-base-200">
       <div class="stat">
         <div class="stat-title">Totale Soci consiti</div>

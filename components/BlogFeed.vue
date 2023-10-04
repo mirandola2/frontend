@@ -1,30 +1,45 @@
 <template>
-  <div
-    class="card w-full bg-base-100 shadow-lg"
-    :class="{'card-side': horizontal}"
-    v-for="post in contentQuery"
-  >
-
-        <figure class="bg-contain max-h-40" :class="{'max-w-xs': horizontal}">
-      <img  :src="post.img" :alt="post.title" class=""/>
-    </figure>
-    <div class="card-body">
-      <h2 class="text-xl font-bold">
-        {{ post.title }}
-        <span class="badge inline border-0" :class="badge[post.category].bg">{{
-          badge[post.category].text
-        }}</span>
-      </h2>
-      <p>
-        {{ post.description }}
-        <a class="link" :href="post._path">Leggi tutto</a>
-      </p>
+  <div class="relative hover:shadow shadow-lg rounded-2xl" v-for="post in contentQuery">
+    <a class="absolute z-10 w-full h-full pointer-events-auto" :href="post._path"></a>
+    <div
+      class="card w-full bg-base-100"
+      :class="{ 'md:card-side': horizontal }"
+    >
+      <figure
+        class="bg-contain"
+        :class="{ 'md:max-w-xs max-h-40 md:max-h-none': horizontal, 'max-h-40': !horizontal }"
+      >
+        <img :src="post.img" :alt="post.title" class="" />
+      </figure>
+      <div class="card-body">
+        <h2 class="text-xl font-bold">
+          {{ post.title }}
+          <span
+            class="badge inline border-0"
+            :class="badge[post.category].bg"
+            >{{ badge[post.category].text }}</span
+          >
+        </h2>
+        <p>
+          {{ post.description }}
+          <a class="link" :href="post._path">Leggi tutto</a>
+        </p>
+        <p class="text-sm opacity-50">
+          Pubblicato in {{
+              new Date(post.date).toLocaleDateString("it-IT", {
+                month: "long",
+                year: "numeric",
+              })
+          }}
+        </p>
+      </div>
     </div>
-    </div>
-   
+  </div>
 </template>
 <script setup>
-const contentQuery = props.all ? await queryContent("blog").sort({date: 1}).find() : await queryContent("blog").limit(4).sort({date: 1}).find();
+const contentQuery = props.all
+  ? await queryContent("blog").sort({ date: 1 }).find()
+  : await queryContent("blog").limit(4).sort({ date: 1 }).find();
 
 const badge = {
   lc: { bg: "bg-lc text-lc-content", text: "L/C" },
@@ -39,7 +54,7 @@ const props = defineProps({
     required: false,
     default: false,
   },
-  all:  {
+  all: {
     type: Boolean,
     required: false,
     default: false,

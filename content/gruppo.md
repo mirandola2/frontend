@@ -1,13 +1,16 @@
 ---
 title: Il Gruppo
 ---
-:TableOfContents
 
 ## I numeri del Gruppo
 
 :GroupSize
 
+:TableOfContents
+
+
 ## Il Fazzolettone
+
 
 Il nostro fazzolettone è verde con due righe gialle che si incontrano in punta.
 Il colore giallo ci accomuna al Mirandola 1 (fazzolettone giallo e blu), primo gruppo scout a Mirandola.
