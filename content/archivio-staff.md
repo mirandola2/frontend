@@ -1,11 +1,10 @@
 ---
 title: "Capi e Staff del passato"
 ---
+:TableOfContents
 
 **Legenda**  
 _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_  
-
-:TableOfContents
 
 ## ANNI I-X
   
@@ -652,5 +651,22 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Noviziato:** Francesco Madonia  
 **Clan/Fuoco Madonna della Valle:** Riccardo Sbardellati _(CU)_, Irene Cavicchioli _(CU)_  
   
-**A disposizione:** Giulia Bergonzini, Tommaso Rompianesi, Luca Cavicchioli  
+**Preparazione ai sacramenti:** Luca Cavicchioli, Matteo Tartaglia  
+**A disposizione:** Giulia Bergonzini, Tommaso Rompianesi
 
+### anno 2022-2023
+
+**Capi Gruppo:** Francesco Bergonzini, Letizia Pongiluppi, Stefano Venturini  
+**A.E.:** don Arnaud Giegue Tametsop, suor Mary Roselet Fernandez, Stefano Simeoni  
+  
+**Branco della Roccia Azzurra:** Luca Meschieri _(Akela - CU)_, Giacomo Salici _(Baloo)_, Francesco Prandini _(Bagheera)_, Emmanuele Morabito _(Chil)_  
+**Cerchio del Bosco Gioioso:** Elena Zerbini _(Arcanda - CU)_, Davide Dulmieri (_Mi_), Pietro Dondi _(Ughetto)_
+  
+**Reparto Brownsea:** Francesco Botti _(CU)_, Riccardo Avanzi, Gaia Clerici  
+**Reparto Antares:** Lucrezia Polacchini _(CU)_, Marcello Cavicchioli, Giulio Pongiluppi
+
+**Noviziato:** Riccardo Sbardellati, Alessia Bucci  
+**Clan/Fuoco Madonna della Valle:** Elisabetta Polacchini _(CU)_, Francesco Madonia _(CU)_, Edoardo Galavotti
+  
+**Preparazione ai sacramenti:** Maddalena Pieri, Matteo Tartaglia  
+**A disposizione:** Irene Cavicchioli, Giovanni Soavi
