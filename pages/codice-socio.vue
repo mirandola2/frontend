@@ -62,6 +62,9 @@ const fiscalCode = ref("");
 const personData = ref();
 const loading = ref(true);
 
+
+const navbar_solid = ref(true)
+
 function checkFC() {
   fiscalCode.value = fiscalCode.value
     .trim()

@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onBeforeMount } from "vue";
 const route = useRouter();
+const  {page} = useContent()
+
+console.log(route)
 
 const menu = ref({
   Home: "/",
@@ -50,7 +53,7 @@ const fixedNavbar = ref(true);
 const regex = /^\/blog/;
 
 onMounted(() => {
-  if (regex.test(route.currentRoute.value.fullPath)) {
+  if (regex.test(route.currentRoute.value.fullPath) || page.value?.navbar_solid) {
     fixedNavbar.value = false;
     transparentNavbar.value = false;
   } else {
@@ -146,7 +149,6 @@ function handleScroll() {
         </div>
       </div>
       <!-- Page content here -->
-
       <NuxtPage />
 
       <Footer />
