@@ -3,8 +3,6 @@ import { ref, onBeforeMount } from "vue";
 const route = useRouter();
 const  {page} = useContent()
 
-console.log(route)
-
 const menu = ref({
   Home: "/",
   "Chi Siamo": {

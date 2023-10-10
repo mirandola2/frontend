@@ -1,7 +1,11 @@
 <template>
+  <Hero
+      title="Ricerca Codice Socio"
+      image="/hero.jpg"
+    />
+
   <div class="card w-full max-w-md mt-12 mx-auto bg-base-100">
     <div class="card-body">
-      <h2 class="card-title">Ricerca Codice Socio</h2>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">Codice Fiscale</span>

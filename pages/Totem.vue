@@ -1,7 +1,7 @@
 <template>
   <hero
     title="Nomi Totem"
-    image="http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/background-images/1888766141.jpg"
+    image="/img/misc/fuoco.jpg"
   ></hero>
 
   <div
@@ -41,7 +41,7 @@
         <template v-for="(totems, locationAndYear) in tableTotem">
           <thead v-if="totems.people.length > 0">
             <div class="my-12"></div>
-            <tr class="bg-neutral sticky top-2 md:top-20">
+            <tr class="bg-neutral sticky top-2 md:top-24">
               <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
               <th class="rounded-r-xl">{{ totems.year }}</th>
             </tr>
