@@ -1,6 +1,7 @@
 ---
 title: Le Specialità
-hero: false
+image: /img/misc/specialità_lc.jpg
+
 ---
 
-
+![](/img/misc/specialità_lc.jpg)

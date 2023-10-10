@@ -1,6 +1,6 @@
 ---
 title: "Reparto Antares"
-image: "/antares.jpg"
+image: "/img/unità/antares.jpg"
 ---
 
 ::quoted
@@ -8,14 +8,15 @@ image: "/antares.jpg"
 ::
 
 
+![](/img/unità/antares.jpg)
+
+
+
 ## I Capi Reparto
 
 :staff{staff=G}
 
 ## Pillole di Reparto
-
-__Antares__ è la stella più luminosa della costellazione dello Scorpione. Con una magnitudine apparente 1,07 essa è inoltre la sedicesima stella più brillante dell'intera volta celeste. Il suo colore rosso-arancio spicca fra le stelle luminose che la circondano, che sono quasi tutte di colore azzurro.
-
 
 ::cards
 

@@ -1,7 +1,7 @@
 <template>
-  <Hero :title="page.title" :image="page.image"/>
+  <Hero :title="page.title" :image="page.image" v-if="page?.show_hero != false"/>
 
-  <div class="container space-y-2">
+  <div class="container space-y-2 mt-5">
     <div
       class="prose-container"
     >

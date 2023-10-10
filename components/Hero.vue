@@ -33,7 +33,7 @@ const bgColor = {
 
 <template>
   <div class="relative">
-    <div class="hero" :style="{ 'background-image': 'url(' + image + ')' }">
+    <div class="hero mb-5" :style="{ 'background-image': 'url(' + image + ')' }">
       <div class="hero-overlay bg-opacity-60" :class="bgColor[color]"></div>
       <div
         class="container max-w-4xl mx-auto md:px-12 flex flex-col md:flex-row text-white"
@@ -57,7 +57,7 @@ const bgColor = {
         </div>
       </div>
     </div>
-    <div class="hero-shape-divider">
+    <!--<div class="hero-shape-divider">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const bgColor = {
           class="shape-fill"
         ></path>
       </svg>
-    </div>
+    </div>-->
   </div>
 </template>
 
