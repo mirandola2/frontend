@@ -90,6 +90,18 @@ I parametri di card sono:
 
 Fa apparire un indice della pagina nella parte destra della pagina sui dispositivi non mobili, al centro altrimenti. Per far sì che sia a larghezza intera su tutti i dispositivi, è neccessario il parametro opzionale `notaside` sia true.
 
+#### Figures
+
+```md
+:Fig{src='/img/misc/img.jpg' desc='La descrizione dell'immagine' float=1 alt='Immagine di esempio'}
+```
+
+Mostra un'immagine formattata usando la grafica del sito. I parametri sono:
+
+- `src` string, mandatory: source dell'immagine, interna in _public_ o esterna
+- `desc` string, optional: descrizione che appare sotto all'immagine
+- `alt` string, optional: testo alternativo per migliorare l'accessibilità ([cos'è?](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt))
+- `float` number, optional: regola come apparirà l'immagine: `0` la farà apparire centrata e a larghezza ampia, `1` (default) la farà diventare float a sinistra, `2` float a destra.
 
 #### Quoted
 
