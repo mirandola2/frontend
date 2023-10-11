@@ -17,7 +17,7 @@
             class="mask mask-squircle w-24 h-24 "
             :src="
               person.img != '' && person.img != undefined
-                ? '/people/' + person.img
+                ?  person.img
                 : 'https://api.dicebear.com/7.x/thumbs/svg?seed=' + person.nome
             "
             alt="Avatar Staff"
