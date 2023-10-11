@@ -73,7 +73,7 @@ Due componenti da usare insieme, permettono di visualizzare tante _carte_ testua
     :::card{title="Il Motto" color="lc"}
         Del Nostro Meglio
     :::
-
+::
 ```
 
 I parametri di card sono:  
@@ -88,7 +88,7 @@ I parametri di card sono:
 :tableOfContents
 ```
 
-Fa apparire un indice della pagina nella parte destra della pagina sui dispositivi non mobili, al centro altrimenti. Per far sì che sia a larghezza intera su tutti i dispositivi, è neccessario il parametro opzionale `notaside` sia True.
+Fa apparire un indice della pagina nella parte destra della pagina sui dispositivi non mobili, al centro altrimenti. Per far sì che sia a larghezza intera su tutti i dispositivi, è neccessario il parametro opzionale `notaside` sia true.
 
 
 #### Quoted
@@ -140,9 +140,9 @@ Per i singoli post presenti nella cartella `content/blog`, invece:
 
 ```md
 ---
-title: Video 40 Passi in Vespa
+title: "Titolo"
 img: 'path/cover.jpg'
-category: 'cc' 
+category: 'cc' # lc | eg | rs | cc
 date: 2023-10-15
 ---
 ```

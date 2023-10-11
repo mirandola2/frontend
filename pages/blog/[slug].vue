@@ -4,10 +4,10 @@
       <div
         class="hero-content w-full flex-col justify-between md:flex-row-reverse"
       >
-        <img :src="page.img" class="max-w-sm rounded-lg shadow-2xl" />
+        <img :src="page.img" class="md:max-w-sm rounded-lg shadow-2xl" />
         <div class="text-center mx-auto">
           <h2 class="text-lg">Blog</h2>
-          <h1 class="text-4xl font-display">{{ page.title }}</h1>
+          <h1 class="text-4xl my-4 font-display">{{ page.title }}</h1>
           <span class="badge border-0" :class="badge[page.category].bg">{{
             badge[page.category].text
           }}</span>
