@@ -23,7 +23,7 @@ Pushando le modifiche su Github, il sito verrà automaticamente aggiornato.
 
 ## Content update
 
-___Premessa__: Questo paragrafo vuole essere d'aiuto per chiunque voglia modificare il sito senza avere particolari rudimenti su [Nuxt](https://nuxt.com/) o Vue. Logicamente non si è potuto inserire tutto lo scibile sull'argomento; perciò si rimanda il lettore alla documentazione ufficiale nel caso si volessero fare modifiche più profonde al sito.
+__Premessa__: Questo paragrafo vuole essere d'aiuto per chiunque voglia modificare il sito senza avere particolari rudimenti su [Nuxt](https://nuxt.com/) o Vue. Logicamente non si è potuto inserire tutto lo scibile sull'argomento; perciò si rimanda il lettore alla documentazione ufficiale nel caso si volessero fare modifiche più profonde al sito.
 
 I contenuti del sito sono renderizzati a partire da file presenti in due fonti:
 
@@ -32,7 +32,18 @@ I contenuti del sito sono renderizzati a partire da file presenti in due fonti:
 
 I contenuti nella carta __"In primo piano"__ presente nella home sono invece modificabili dal file `content/_home.md`.
 
-Essendo il Markdown un linguaggio estremamente comodo, si è preferito usare il più possibile la cartella `content`, lasciando nei file Vue solamente cioò che era troppo complesso per essere scritto in Markdown. Questi ultimi file vanno esclusi dal contenuto generato dinamicamente modificando il file di configurazione ([documentazione](https://content.nuxtjs.org/api/configuration#ignores)) (solo per le nuove pagine Vue create).  
+I singoli articoli della sezioni blog sono anch'esse pagine Markdown, presenti nella cartella `content/blog`
+
+Essendo il Markdown un linguaggio estremamente comodo, si è preferito usare il più possibile la cartella `content`, lasciando nei file Vue solamente cioò che era troppo complesso per essere scritto in Markdown. Questi ultimi file vanno esclusi dal contenuto generato dinamicamente modificando il file di configurazione ([documentazione](https://content.nuxtjs.org/api/configuration#ignores)) (solo per le nuove pagine Vue create).
+
+Si noti infine che le immagini si trovano nella cartella `public`. Si è cercato di mettere qui solo le immagini principali, compresse il più possibile, tenendo sempre a mente il fatto che la maggioranza di esse nonché i file esterni, è meglio non caricarli su GitHub (sebbene non ci sia un hard-limit allo spazio di archiviazione, Github nasce per il codice) favorendo altri cloud (Google Photos, One Drive, Google Drive, Cloudlfare Files etc.). Quando vengono linkate le immagini interne nella varie pagine, il percorso deve essere relativo al contenuto della cartella `/public`, non a `/`.
+
+__Indice:__
+
+- [Introduzione](#content-update)
+- [MDC syntax](#mdc-syntax)
+- [Front matter pagine e post](#front-matter)
+- [Menu](#menu)
 
 ### MDC syntax
 
@@ -77,7 +88,8 @@ I parametri di card sono:
 :tableOfContents
 ```
 
-Fa apparire un indice della pagina.  
+Fa apparire un indice della pagina nella parte destra della pagina sui dispositivi non mobili, al centro altrimenti. Per far sì che sia a larghezza intera su tutti i dispositivi, è neccessario il parametro opzionale `notaside` sia True.
+
 
 #### Quoted
 
@@ -97,7 +109,7 @@ Il blocco `quoted` permette di creare una citazione.
 
 Parametri:  
 
-- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC ]
+- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC | *] (rispettivamente, lupetti, coccinelle, esploratori, guide, noviziato, clan-fuoco, coca (a disposizione e cj), tutti)
 - `coca`: booleano, opzionale. Se vero, mostra solo i capi in CoCa.
 
 Il blocco mostra tutti i capi di una certa staff. I capi sono inseriti in formato .csv nel file `/content/_capi.csv` rispettando la formattazione presentata nell'esempio seguente.
@@ -109,7 +121,31 @@ Baden Powell,Impeesa,Capo Reparto,E,1,Impeesa ovvero l'animale che si sposta fur
 
 Da notare come il `nomeCaccia` indichi non il nome Totem ma bensì il personaggio interpretato dai capi in LC. Viene mostrato al posto del nome vero se e solo se `staff == {L, C}` e `coca==true`.
 
-Il campo `img` è il nome del file della foto del capo che si deve trovare  nella cartella `/public/staff`.
+Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è in `/public/img/staff/capo.jpg`, il campo deve essere `/img/staff/capo.jpg`).
+
+### Front Matter
+
+Nei blog post come nelle pagine markdown, esiste una sezione chiamata front matter, utile a inserire proprietà e metadati. ([documentazione ufficiale](https://content.nuxt.com/usage/markdown#front-matter)).
+
+Per quanto riguarda le pagine, il front-matter supportato è il seguente.
+
+```md
+---
+title: "Titolo della pagina"
+image: path/img.jpg 
+---
+```
+
+Per i singoli post presenti nella cartella `content/blog`, invece:  
+
+```md
+---
+title: Video 40 Passi in Vespa
+img: 'path/cover.jpg'
+category: 'cc' 
+date: 2023-10-15
+---
+```
 
 ### Menu
 
