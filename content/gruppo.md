@@ -8,23 +8,23 @@ title: Il Gruppo
 
 :TableOfContents
 
-
 ## Il Fazzolettone
 
-
-Il nostro fazzolettone è verde con due righe gialle che si incontrano in punta.
+Il nostro fazzolettone è __verde__ con __due righe gialle__ che si incontrano in punta.
 Il colore giallo ci accomuna al Mirandola 1 (fazzolettone giallo e blu), primo gruppo scout a Mirandola.
 Il colore verde è stato scelto perché la stoffa è di facile reperimento (all'epoca era utilizzata per realizzare i camici da ospedale).
 Inoltre, un documento del 1946 (anno di riapertura dello scautismo a Mirandola, dopo il periodo fascista) dichiara erroneamente che i colori del Mirandola 1, all'epoca unico gruppo scout in città, sono di colore giallo e verde anziché giallo e blu.
 
-Perciò, nel 1983, si è deciso per i colori: ​GIALLO e VERDE.
+:Fig{src='/img/misc/fazzolettoni.jpg' desc='Alcuni fazzolettoni prima della Promessa'}
+
+Perciò, nel 1983, si è deciso per i colori: __​GIALLO__ e __VERDE__.
 
 ## La Nostra Storia
 
 Nel 1982 il gruppo Mirandola 1 è formato da 3 Branchi, 2 Cerchi, 4 Reparti, 1 Noviziato, 2 Clan ed una Comunità Capi di circa 50 persone. Si ritiene quindi necessaria la divisione del gruppo e la formazione di uno nuovo, cogliendo anche la volontà di aprirci come scout ad altre zone del territorio mirandolese, fuori dal centro storico; infatti si pensa di trasferire il nuovo gruppo nella casa parrocchiale di via Posta, a circa 2 km dall'Oratorio cittadino.  
 Questa nostra scelta è forse un "unicum" in ambito scout, poichè Mirandola ha un'unica Parrocchia (seppur molto grande) ed accoglie due gruppi scout.
 
-__È Nato il Mirandola 2, composto dal Branco Della Roccia Azzurra e dal Cerchio Del Bosco Gioioso, dal Reparto Brownsea e dal Reparto Antares, dal Noviziato e Clan/Fuoco Madonna Della Valle e dalla Comunità Capi.__
+__È nato così il gruppo Agesci Mirandola 2, composto dal Branco Della Roccia Azzurra e dal Cerchio Del Bosco Gioioso, dal Reparto Brownsea e dal Reparto Antares, dal Noviziato e Clan/Fuoco Madonna Della Valle e dalla Comunità Capi.__
 
 ### 16 ottobre 1983 - nasce il Mirandola 2
 
