@@ -26,11 +26,16 @@ Questa nostra scelta è forse un "unicum" in ambito scout, poichè Mirandola ha 
 
 __È nato così il gruppo Agesci Mirandola 2, composto dal Branco Della Roccia Azzurra e dal Cerchio Del Bosco Gioioso, dal Reparto Brownsea e dal Reparto Antares, dal Noviziato e Clan/Fuoco Madonna Della Valle e dalla Comunità Capi.__
 
+![](/img/archive/logo1983.jpg)
+
 ### 16 ottobre 1983 - nasce il Mirandola 2
+
+:Fig{src='/img/archive/nascita-gruppo.jpg' desc='Divisione dei gruppi in piazza Duomo'}
 
 Era il 16 ottobre 1983, la Messa della 8.30 in Duomo sarebbe stata l’ultima con la presenza di un solo gruppo a Mirandola. La mattina non era promettente, il cielo era nuvoloso e non c’era molto caldo, ma nell'aria si respirava la tensione dei grandi eventi. La piazza davanti al Duomo era inverosimilmente priva di auto, di lì a poco, finita la Messa, si sarebbe riempita di tanti lupetti e coccinelle, scout e guide, rover e scolte, capi, genitori.  
 Tutto il gruppo scout Mirandola 1 da un lato, sul sagrato la comunità capi e in mezzo il tabellone che illustrava l’evento, un tavolo pieno di fazzolettoni verdi e gialli. Dopo le chiamate, gli urli di squadriglia, una introduzione del Capo Gruppo che ha spiegato il perché della giornata ed è iniziata la chiamata di quanti avrebbero dato vita al nuovo gruppo.  
-Iniziando dalla comunità capi fino al branco e al cerchio, passando a prendere il nuovo fazzolettone ci si spostava dalla parte opposta della piazza.  
+Iniziando dalla comunità capi fino al branco e al cerchio, passando a prendere il nuovo fazzolettone ci si spostava dalla parte opposta della piazza.
+
 _Ricordo di Claudio Zerbini (Tricheco Pettegolo), primo capo gruppo._
 
 ### 1985-1989 - collaboriamo all'apertura di un nuovo gruppo scout a Medolla (MO)
@@ -45,6 +50,7 @@ In questo periodo (tranne che per l'annata 1991/'92) si da vita al noviziato cit
 
 Grazie ad alcune conoscenze comuni, veniamo a sapere della volontà di aprire un gruppo scout a Postumia in Slovegnia ed accettiamo di affiancare i capi ed i ragazzi nei primi anni della loro vita.
 Tra le varie iniziative ed attività fatte insieme si ricordano:
+
 - 1991: Campo Estivo di Reparto ad Ovaro (UD) con le due squadriglie di Postumia; la sq. femminile delle Levinje (Leonesse) e la sq. maschile Sokoli (Falchi);
 - 1992: Uscita con le due Comunità Capi a Venezia;
 - 1993: Route Estiva di Clan in Slovenia.
@@ -58,9 +64,7 @@ Nel 1983, anno di fondazione del nostro gruppo, la casa di Via Posta (vecchia ca
 
 Nell’anno scout 1992/93 festeggiamo i 10 anni del nostro gruppo con la realizzazione di alcuni gadget (adesivo e maglietta).
 
-
 ### 14 novembre 1998 - apriamo il Branco Giungla di Mezzo
-
 
 Per accogliere le tante richiese di ingressi, apriamo il secondo branco maschile del nostro gruppo. 
 All'inizio dell'anno scout vengono formate due nuove sestiglie all'interno del Branco della Roccia Azzurra: i Bianchi e i Bruni, che insieme ai Fulvi, Grigi, Neri e Pezzati vanno a comporre un branco molto numeroso.
@@ -71,8 +75,11 @@ Il branco rimarrà attivo per 13 anni, fino al 2010-11.
 
 ### 16 ottobre 2003 - il gruppo compie 20 anni
 
+:Fig{src='/img/archive/le-capo-gruppo.jpg' desc='Le capo Gruppo dei primi 20 anni, da sinistra: Brunetta Costa, Angela Panza, Loretta Tromba, Katia Barelli e Katia Tarter'}
+
 Nell'anno scout 2003/2004 festeggiamo i 20 anni del nostro gruppo.
 Tra le tante iniziative si ricordano:
+
 - una Mostra nella Chiesa del SS. Sacramento, con la visone di foto, video, costumi, modellini di costruzioni, quaderni, ecc. dei primi 20 anni di storia del nostro gruppo;
 - uno Spettacolo in Piazza Costituente intitolato "Quattro Capi in Capo al Mondo";
 - un Libro che raccoglie i racconti di tutte le Vacanze di Branco/Crchio, Campi Estivi e Route narrate dai Capi che le hanno preparate e vissute.
@@ -80,7 +87,7 @@ Tra le tante iniziative si ricordano:
 ### 16 ottobre 2004 - apriamo il Reparto Aquile Randagie
 
 I tanti lupetti che dai due branchi passano nell'unico reparto di allora rende necessaria l'apertura del secondo reparto maschile del nostro gruppo.
-Per il nome del nuovo reparto si sceglie "Aquile Randagie", in ricordo di quei ragazzi che, al tempo del fascismo (periodo nel quale i gruppi scout furono soppressi) continuarono a vivere lo scautismo in clandestinità, a rischio della loro vita.
+Per il nome del nuovo reparto si sceglie "Aquile Randagie", in ricordo di [quei ragazzi](/associazione#le-aquile-randagie) che, al tempo del fascismo (periodo nel quale i gruppi scout furono soppressi) continuarono a vivere lo scautismo in clandestinità, a rischio della loro vita.
 Le squadriglie sono scelte tra i rapaci indicati da B.P.: CORVI, GHEPPI e FALCHI.
 Il reparto rimarrà attivo per 6 anni, fino al 2009-10.
 
@@ -101,6 +108,7 @@ Il progetto consiste nell'accompagnare i lupetti e le coccinelle dalla terza ele
 
 Tra il 2013 e il 2014 festeggiamo i 30 anni del nostro gruppo.
 Tante le iniziative proposte, come:
+
 - Concorso per il Logo del Trentennale;
 - Primo Campo di Gruppo del Mirandola 2, dal 31 luglio al 10 agosto 2013 a Cesclans (UD);
 - Messa celebrativa dei 30 anni del gruppo, il 16 ottobre 2013 nel Centro di Comunità di via Posta;
@@ -116,3 +124,33 @@ Durante la visita pastorale nella nostra diocesi, il Santo Padre Papa Francesco 
 
 Domenica 22 ottobre, dopo la Santa Messa presieduta dal Vescovo Francesco Cavina, è stata inaugurata la casa parrocchiale di Via Posta, ristrutturata dopo il terremoto ed intitolata al Beato Piergiorgio Frassati. Da quel giorno siamo ritornati a svolgere le attività nelle nostre storiche sedi che ci ospitano dal 1992.
 
+### 15 ottobre 2023 - il gruppo compie 40 anni
+
+Nell'anno precedente al 40esimo compleanno ci sono stati numerosi appuntamenti vissuti tutti insieme:
+
+- Letio Divina sulla Parabola del Giudice e della Vedova sul tema "essere scout cattolici" tenuta da don Francesco Preziosi;
+- Proiezione fotografica delle migliori foto dei primi 40 anni del gruppo;
+- Fiera delle botteghe e spettacolo "4 passi in vespa" recitato da tutto il gruppo scout!
+- Fuoco di bivacco organizzato insieme al Masci;
+- Pranzo di chiusura dell'anno del 40ennale.  
+
+## Lo Scautismo a Mirandola
+
+### Inizi dello Scautismo a Mirandola
+
+Nel 1919 arriva a Mirandola il nuovo vicario parrocchiale don Francesco Venturelli assumendo l'incarico di rettore della chiesa del Gesù e di assistente dell'Ospedale-Ricovero e dell'Orfanotrofio. Veniva ad affiancare l'allora parroco Mons. Roberto Maletti, il quale trovò da subito, nel giovane sacerdote, un collaboratore affezionato ed intelligente. Per questo accolse positivamente l'iniziativa del giovane cappellano di fondare un circolo cattolico a Mirandola, intitolato a Giovanni Pico. Il circolo, collegato strettamente all'Azione Cattolica, divenne la culla del primo riparto scout.
+I lavori di formazione del primo riparto a Mirandola iniziano già nel 1923. E' soprattutto grazie al costante collegamento tra Arnaldo Pozzetti e don Francesco Venturelli da una parte e Umberto Bandieri dall'altra, che si giunge alla fondazione del gruppo.
+Dopo un'entusiasmante e seria preparazione, si arriva al 26 ottobre 1924, giorno delle promesse, pronunciate davanti al parroco, all'assistente don Francesco, al novello direttore del riparto Arnaldo Pozzetti (aiuto istruttore) di Mirandola e al dirigente scout Alfredo Borsari, accompagnato da una piccola e fraterna rappresentanza di scout modenesi. Formano una squadriglia di esploratori chiamata Castoro e una squadriglia di lupetti, i Grigi. Sono dodici in tutto, tra esploratori e lupetti, una piccola ma solida compagine che nel lungo tempo darà frutti insperati.
+
+### Lo scioglimento del gruppo a Mirandola
+
+Alla fine del 1927, il riparto ASCI di Mirandola venne sciolto. Non fu un evento improvviso e inaspettato, ne dettato da necessità o problemi interni, ma fu una conseguenza dei provvedimenti di primo parziale scioglimento dell'ASCI da parte del governo fascista. Il triste epilogo della prima avventura scout di Mirandola, per poter essere compreso, va collocato all'interno di un quadro generale nazionale, dal quale emerge in modo chiaro la decisione governativa di sciogliere i gruppi scout nei paesi con meno di 20.000 abitanti che non fossero capoluoghi di provincia.
+
+### 1946: si riparte!
+
+Nell'autunno del 1945 giunse a Mirandola, quale terzo Cappellano, don Nino Levratti; era giovanissimo e ci fu una specie di divisione di incarichi tra lui e don Antonio Siena. Don Nino curò soprattutto i ragazzi interessati allo scautismo. L'arrivo di don Nino fu la svolta determinante per la rinascita, la crescita e lo sviluppo dello scautismo a Mirandola. Tra l'autunno e l'inverno del 1945/46 i ragazzi interessati allo scautismo intensificarono la loro preparazione tecnica e spirituale in previsione degli "esami scout", che sostennero nella primavera del 1946 davanti ai capi dell'ASCI di Modena. La prima nota ufficiale della volontà di riapertura del riparto fu la richiesta inoltrata in data 15 gennaio 1946 al commissariato centrale ASCI da parte di don Nino Levratti. Il superamento degli esami consenti la riapertura ufficiale del Riparto Scout Mirandola 1, che avvenne con la Promessa pronunciata in forma solenne in Duomo, il 23 giugno 1946. Erano in tutto dodici scout, in perfetta divisa, con i fazzolettoni giallo blu, che erano già stati i colori del riparto sciolto nel 1927. Due furono le prime squadriglie, i Cervi e le Aquile, guidate dal Capo Riparto Luigi Carboni.
+
+### Il guidismo a Mirandola
+
+Era l'ottobre del 1945 quando Lucia Vezzini, insegnate di lettere al liceo classico Giovanni Pico, spinta dal suo forte spirito scout e dalla disponibilità dimostrata da alcune sue alunne, decise di iniziare ad organizzare il movimento scout femminile nel nostro territorio. Il primo riconoscimento del nascente gruppo AGI di Mirandola, porta la data del 20 gennaio 1947, giorno in cui vi fu l'ammissione ufficiale delle aspiranti guide all'associazione. Sotto gli occhi vigili e attenti di Lucia Vezzini e dell'assistente don Nino Levratti, si arriva al fatidico giorno delle prime cinque promesse delle guide mirandolesi nel mese di maggio del 1948; ne seguirono altre quattro il giorno 8 novembre.
+_Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stefano Zerbini_
