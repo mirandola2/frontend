@@ -1,21 +1,19 @@
 ---
 title: Il Gruppo
+image: /img/archive/fondazione-gruppo.jpg
 ---
-
-## I numeri del Gruppo
 
 :GroupSize
 
-:TableOfContents
+:TableOfContents{notaside}
 
 ## Il Fazzolettone
 
+:Fig{src='/img/misc/fazzolettoni.jpg' desc='Alcuni fazzolettoni prima della Promessa'}
 Il nostro fazzolettone è __verde__ con __due righe gialle__ che si incontrano in punta.
 Il colore giallo ci accomuna al Mirandola 1 (fazzolettone giallo e blu), primo gruppo scout a Mirandola.
 Il colore verde è stato scelto perché la stoffa è di facile reperimento (all'epoca era utilizzata per realizzare i camici da ospedale).
 Inoltre, un documento del 1946 (anno di riapertura dello scautismo a Mirandola, dopo il periodo fascista) dichiara erroneamente che i colori del Mirandola 1, all'epoca unico gruppo scout in città, sono di colore giallo e verde anziché giallo e blu.
-
-:Fig{src='/img/misc/fazzolettoni.jpg' desc='Alcuni fazzolettoni prima della Promessa'}
 
 Perciò, nel 1983, si è deciso per i colori: __​GIALLO__ e __VERDE__.
 
@@ -30,13 +28,15 @@ __È nato così il gruppo Agesci Mirandola 2, composto dal Branco Della Roccia A
 
 ### 16 ottobre 1983 - nasce il Mirandola 2
 
-:Fig{src='/img/archive/nascita-gruppo.jpg' desc='Divisione dei gruppi in piazza Duomo'}
+:Fig{src=/img/archive/nascita-gruppo.jpg desc='Divisione dei gruppi in piazza Duomo'}
 
 Era il 16 ottobre 1983, la Messa della 8.30 in Duomo sarebbe stata l’ultima con la presenza di un solo gruppo a Mirandola. La mattina non era promettente, il cielo era nuvoloso e non c’era molto caldo, ma nell'aria si respirava la tensione dei grandi eventi. La piazza davanti al Duomo era inverosimilmente priva di auto, di lì a poco, finita la Messa, si sarebbe riempita di tanti lupetti e coccinelle, scout e guide, rover e scolte, capi, genitori.  
 Tutto il gruppo scout Mirandola 1 da un lato, sul sagrato la comunità capi e in mezzo il tabellone che illustrava l’evento, un tavolo pieno di fazzolettoni verdi e gialli. Dopo le chiamate, gli urli di squadriglia, una introduzione del Capo Gruppo che ha spiegato il perché della giornata ed è iniziata la chiamata di quanti avrebbero dato vita al nuovo gruppo.  
 Iniziando dalla comunità capi fino al branco e al cerchio, passando a prendere il nuovo fazzolettone ci si spostava dalla parte opposta della piazza.
 
 _Ricordo di Claudio Zerbini (Tricheco Pettegolo), primo capo gruppo._
+
+:Fig{src=/img/archive/fondazione-gruppo.jpg float=0}
 
 ### 1985-1989 - collaboriamo all'apertura di un nuovo gruppo scout a Medolla (MO)
 
@@ -97,6 +97,8 @@ Festeggiamo i 25 anni del nostro gruppo con una cena persso l'Oratorio Cittadino
 
 ### 20 e 29 maggio 2012 - la terra trema
 
+:Fig{src='/img/archive/capi-terremoto.jpg' desc='La Comunità Capi a servizio della cittadinanza.'}
+
 Tra il 20 e il 29 maggio 2012 il nostro territorio è colpito da una forte serie di sismi. Come scout ci rendiamo disponibili per l’assistenza ed il conforto dei concittadini, per quelle che sono le nostre caratteristiche come scout, collaborando con protezione civile e comune. Continuiamo l'animazione della S. Messa scout domenicale (anche nel periodo estivo) nella tensostruttura della tendopoli principale della città. Con grande sacrificio, anche personale, ci prodighiamo per portare a termine le attività coi nostri ragazzi, nell'organizzazione e realizzazione delle Vacanze di Branco/Cerchio, Campi Estivi e Route. L'inagibilità dell'Oratorio cittadino ci dà la possibilità di accogliere i fratelli scout del Mirandola 1 nella casa di Via Posta (risultata illesa); così, come nei primi anni della nostra storia, i due gruppi scout di Mirandola condividono fraternamente, di nuovo, lo stesso tetto e gli stessi spazi aperti.
 
 ### Ottobre 2012 - iniziamo il cammino di Iniziazione Cristiana in Branco/Cerchio
@@ -105,6 +107,9 @@ Dopo alcuni anni di lavoro e di studio, iniziamo la sperimentazione quinquennale
 Il progetto consiste nell'accompagnare i lupetti e le coccinelle dalla terza elementare alla prima media, nel loro cammino di Iniziazione Cristiana, vivendo i contenuti specifici attraverso le attività e la metodologia scout.
 
 ### 16 Ottobre 2013 - il gruppo compie 30 anni
+
+:Fig{src=/img/archive/capi-gruppo2013.jpg desc="Nella foto, da sinistra: Brunetta Costa, Claudio Zerbini e don Silvano Rettighieri (primi Capi Gruppo e AE); Giuditta Panzani, Alberto Bucci e Stefano Zerbini (Capi Gruppo e AE nel trentesimo anno)"}
+
 
 Tra il 2013 e il 2014 festeggiamo i 30 anni del nostro gruppo.
 Tante le iniziative proposte, come:
@@ -117,6 +122,8 @@ Tante le iniziative proposte, come:
 - Commedia Scout in 3 atti intitolata "La Casa col Muro di Vetro", messa in scena il 27 settembre 2014 in Via Posta e in replica il 21 febbraio 2015 al Teatro 29.
 
 ### 2 Aprile 2017 - visita di Papa Francesco a Mirandola
+
+:Fig{src='/img/archive/papa.jpg' desc='Il Papa col Fazzolettone.'}
 
 Durante la visita pastorale nella nostra diocesi, il Santo Padre Papa Francesco è venuto a Mirandola, dove ha pronunciato il suo discorso alle popolazioni colpite dal terremoto, davanti  all'ingresso del Duomo, ancora inagibile a seguito del sisma, accolto da a una piazza gremita di persone. In quell'occasione abbiamo avuto la possibilità di donargli (mettergli al collo) il nostro fazzolettone, assieme a quello del Mirandola 1.
 
@@ -134,23 +141,4 @@ Nell'anno precedente al 40esimo compleanno ci sono stati numerosi appuntamenti v
 - Fuoco di bivacco organizzato insieme al Masci;
 - Pranzo di chiusura dell'anno del 40ennale.  
 
-## Lo Scautismo a Mirandola
-
-### Inizi dello Scautismo a Mirandola
-
-Nel 1919 arriva a Mirandola il nuovo vicario parrocchiale don Francesco Venturelli assumendo l'incarico di rettore della chiesa del Gesù e di assistente dell'Ospedale-Ricovero e dell'Orfanotrofio. Veniva ad affiancare l'allora parroco Mons. Roberto Maletti, il quale trovò da subito, nel giovane sacerdote, un collaboratore affezionato ed intelligente. Per questo accolse positivamente l'iniziativa del giovane cappellano di fondare un circolo cattolico a Mirandola, intitolato a Giovanni Pico. Il circolo, collegato strettamente all'Azione Cattolica, divenne la culla del primo riparto scout.
-I lavori di formazione del primo riparto a Mirandola iniziano già nel 1923. E' soprattutto grazie al costante collegamento tra Arnaldo Pozzetti e don Francesco Venturelli da una parte e Umberto Bandieri dall'altra, che si giunge alla fondazione del gruppo.
-Dopo un'entusiasmante e seria preparazione, si arriva al 26 ottobre 1924, giorno delle promesse, pronunciate davanti al parroco, all'assistente don Francesco, al novello direttore del riparto Arnaldo Pozzetti (aiuto istruttore) di Mirandola e al dirigente scout Alfredo Borsari, accompagnato da una piccola e fraterna rappresentanza di scout modenesi. Formano una squadriglia di esploratori chiamata Castoro e una squadriglia di lupetti, i Grigi. Sono dodici in tutto, tra esploratori e lupetti, una piccola ma solida compagine che nel lungo tempo darà frutti insperati.
-
-### Lo scioglimento del gruppo a Mirandola
-
-Alla fine del 1927, il riparto ASCI di Mirandola venne sciolto. Non fu un evento improvviso e inaspettato, ne dettato da necessità o problemi interni, ma fu una conseguenza dei provvedimenti di primo parziale scioglimento dell'ASCI da parte del governo fascista. Il triste epilogo della prima avventura scout di Mirandola, per poter essere compreso, va collocato all'interno di un quadro generale nazionale, dal quale emerge in modo chiaro la decisione governativa di sciogliere i gruppi scout nei paesi con meno di 20.000 abitanti che non fossero capoluoghi di provincia.
-
-### 1946: si riparte!
-
-Nell'autunno del 1945 giunse a Mirandola, quale terzo Cappellano, don Nino Levratti; era giovanissimo e ci fu una specie di divisione di incarichi tra lui e don Antonio Siena. Don Nino curò soprattutto i ragazzi interessati allo scautismo. L'arrivo di don Nino fu la svolta determinante per la rinascita, la crescita e lo sviluppo dello scautismo a Mirandola. Tra l'autunno e l'inverno del 1945/46 i ragazzi interessati allo scautismo intensificarono la loro preparazione tecnica e spirituale in previsione degli "esami scout", che sostennero nella primavera del 1946 davanti ai capi dell'ASCI di Modena. La prima nota ufficiale della volontà di riapertura del riparto fu la richiesta inoltrata in data 15 gennaio 1946 al commissariato centrale ASCI da parte di don Nino Levratti. Il superamento degli esami consenti la riapertura ufficiale del Riparto Scout Mirandola 1, che avvenne con la Promessa pronunciata in forma solenne in Duomo, il 23 giugno 1946. Erano in tutto dodici scout, in perfetta divisa, con i fazzolettoni giallo blu, che erano già stati i colori del riparto sciolto nel 1927. Due furono le prime squadriglie, i Cervi e le Aquile, guidate dal Capo Riparto Luigi Carboni.
-
-### Il guidismo a Mirandola
-
-Era l'ottobre del 1945 quando Lucia Vezzini, insegnate di lettere al liceo classico Giovanni Pico, spinta dal suo forte spirito scout e dalla disponibilità dimostrata da alcune sue alunne, decise di iniziare ad organizzare il movimento scout femminile nel nostro territorio. Il primo riconoscimento del nascente gruppo AGI di Mirandola, porta la data del 20 gennaio 1947, giorno in cui vi fu l'ammissione ufficiale delle aspiranti guide all'associazione. Sotto gli occhi vigili e attenti di Lucia Vezzini e dell'assistente don Nino Levratti, si arriva al fatidico giorno delle prime cinque promesse delle guide mirandolesi nel mese di maggio del 1948; ne seguirono altre quattro il giorno 8 novembre.
-_Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stefano Zerbini_
+:Fig{src=/img/archive/foto-gruppo2022.jpg desc="Foto di Gruppo per la cerimonia dell'apertura del quarantennale, in via Posta (2022)" float=0}
