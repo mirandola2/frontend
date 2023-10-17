@@ -2,7 +2,7 @@
   <div>
     <Hero
       title="Quarant'anni di giochi, avventure e strade."
-      image="/img/archive/foto-gruppo2022.jpg"
+      image="/img/archive/2022_foto-gruppo.jpg"
       big
     />
 
