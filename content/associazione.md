@@ -19,7 +19,7 @@ Fin dalla loro fondazione lo Scautismo e il Guidismo sono, nel loro complesso, u
 
 Lo scautismo è quindi un movimento _in movimento_ ed è il più numeroso al mondo e con la maggior diffusione territoriale. Attraverso la fantasia, il gioco, l'avventura la vita all'aria aperta, l'esperienza comunitaria, la progressiva ricerca di senso della vita e lo sviluppo della dimensione sociale e spirituale, lo scautismo risponde alle tante e autentiche domande dei giovani sulla vita e sul crescere in essa.  
 
-:Fig{src='/img/archive/bp.jpg' desc='B.-P. - Lord Robert Baden Powell'}
+:Fig{src='/img/archive/1907_bp.jpg' desc='B.-P. - Lord Robert Baden Powell'}
 
 Lord Robert Baden Powell, B.-P. per tutti gli scouts, nasce il 22 febbraio del 1857 a Londra e nella concretezza del suo linguaggio e delle sue intuizioni pedagogiche, aveva indicato in "quattro punti" i fondamenti del metodo scout: "formazione del carattere, abilità manuale, salute e forza fisica, servizio del prossimo", qualità semplici, ma necessarie per formare un uomo libero ed un buon cittadino.  
 
@@ -27,7 +27,6 @@ Diffusosi velocemente in tutto il mondo immediatamente dopo la sua fondazione ne
 
 A sottolineare l'educazione all'impegno sociale, è significativo ricordare che molti dei leaders politici nei vari paesi del mondo sono stati educati nello scautismo. Il Parlamento Italiano per l'azione educativa svolta a favore dei giovani in tutto il mondo, ha assegnato congiuntamente alle due organizzazioni mondiali dello scautismo il Premio Parlamentare per l'Infanzia, che è stato consegnato ai rappresentanti dei Comitati Mondiali in occasione della Giornata Nazionale per l'Infanzia il 20 novembre 2005.
 
-​
 _Liberamente tratto dal libro di Paolo Alacevich "Scautismo e Umanesimo Cristiano". 2003, Collana Tracce Edizioni Fiordaliso._
 
 ---
@@ -54,7 +53,7 @@ _Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stef
 
 ### Inizi dello Scautismo a Mirandola
 
-:Fig{src='/img/archive/censimento1925.jpg' desc='Primo censimento di gruppo'}
+:Fig{src='/img/archive/1925_censimento.jpg' desc='Primo censimento di gruppo'}
 
 Nel 1919 arriva a Mirandola il nuovo vicario parrocchiale don Francesco Venturelli assumendo l'incarico di rettore della chiesa del Gesù e di assistente dell'Ospedale-Ricovero e dell'Orfanotrofio. Veniva ad affiancare l'allora parroco Mons. Roberto Maletti, il quale trovò da subito, nel giovane sacerdote, un collaboratore affezionato ed intelligente. Per questo accolse positivamente l'iniziativa del giovane cappellano di fondare un circolo cattolico a Mirandola, intitolato a Giovanni Pico. Il circolo, collegato strettamente all'Azione Cattolica, divenne la culla del primo riparto scout.
 I lavori di formazione del primo riparto a Mirandola iniziano già nel 1923. E' soprattutto grazie al costante collegamento tra Arnaldo Pozzetti e don Francesco Venturelli da una parte e Umberto Bandieri dall'altra, che si giunge alla fondazione del gruppo.
@@ -66,13 +65,13 @@ Alla fine del 1927, il riparto ASCI di Mirandola venne sciolto. Non fu un evento
 
 ### 1946: si riparte!
 
-:Fig{src='/img/archive/esploratori1946.jpg'}
+:Fig{src='/img/archive/1946_esploratori.jpg'}
 
 Nell'autunno del 1945 giunse a Mirandola, quale terzo Cappellano, don Nino Levratti; era giovanissimo e ci fu una specie di divisione di incarichi tra lui e don Antonio Siena. Don Nino curò soprattutto i ragazzi interessati allo scautismo. L'arrivo di don Nino fu la svolta determinante per la rinascita, la crescita e lo sviluppo dello scautismo a Mirandola. Tra l'autunno e l'inverno del 1945/46 i ragazzi interessati allo scautismo intensificarono la loro preparazione tecnica e spirituale in previsione degli "esami scout", che sostennero nella primavera del 1946 davanti ai capi dell'ASCI di Modena. La prima nota ufficiale della volontà di riapertura del riparto fu la richiesta inoltrata in data 15 gennaio 1946 al commissariato centrale ASCI da parte di don Nino Levratti. Il superamento degli esami consenti la riapertura ufficiale del Riparto Scout Mirandola 1, che avvenne con la Promessa pronunciata in forma solenne in Duomo, il 23 giugno 1946. Erano in tutto dodici scout, in perfetta divisa, con i fazzolettoni giallo blu, che erano già stati i colori del riparto sciolto nel 1927. Due furono le prime squadriglie, i Cervi e le Aquile, guidate dal Capo Riparto Luigi Carboni.
 
 ### Il guidismo a Mirandola
 
-:Fig{src='/img/archive/guide1948.jpg'}
+:Fig{src='/img/archive/1948_guide.jpg'}
 
 Era l'ottobre del 1945 quando Lucia Vezzini, insegnate di lettere al liceo classico Giovanni Pico, spinta dal suo forte spirito scout e dalla disponibilità dimostrata da alcune sue alunne, decise di iniziare ad organizzare il movimento scout femminile nel nostro territorio. Il primo riconoscimento del nascente gruppo AGI di Mirandola, porta la data del 20 gennaio 1947, giorno in cui vi fu l'ammissione ufficiale delle aspiranti guide all'associazione. Sotto gli occhi vigili e attenti di Lucia Vezzini e dell'assistente don Nino Levratti, si arriva al fatidico giorno delle prime cinque promesse delle guide mirandolesi nel mese di maggio del 1948; ne seguirono altre quattro il giorno 8 novembre.
 
@@ -84,7 +83,7 @@ La legge n. 5 art. 3 del 9 Gennaio 1927 decreta lo scioglimento dei Riparti Scou
 Papa Pio XI fu costretto a dichiarare sciolto lo scautismo il 24 gennaio dello stesso anno.  
 Il 9 aprile 1928 il Consiglio dei Ministri modifica la legge ONB e col decreto n. 696, firmato dal capo del Governo, Benito Mussolini, e dal Re, dichiara soppresso lo Scautismo.  
 
-:Fig{src='/img/archive/aquile-randagie.jpg'}
+:Fig{src='/img/archive/1935_aquilerandagie.jpg'}
 
 
 Il 22 aprile 1928 l'ASCI viene ufficialmente chiusa e vengono deposte in Duomo a Milano le fiamme, insegne dei reparti. In quello stesso giorno Ciacco, un lupetto del gruppo Milano 2, fa la sua promessa entrando nella famiglia scout: è il primo simbolico atto di rivolta.  

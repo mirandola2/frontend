@@ -10,7 +10,6 @@ Se siete interessati rivolgetevi alla referente Nadia Ortolani. Nadia riceverà 
 
 :Fig{src=img/misc/box-luca.jpg desc="Box Luca"}
 
-
 Per aquistare uniforme nuove ci si può recare presso la cooperativa Il Gallo, a Modena o a Bologna.
 
 **Sede di Bologna (vendita al pubblico)**  
