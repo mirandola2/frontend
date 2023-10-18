@@ -66,12 +66,15 @@ function handleScroll() {
     if (!transparentNavbar.value) transparentNavbar.value = true;
   }
 }
+
 </script>
 
 <template>
   <Head>
-    <Title>Scout Mirandola 2</Title>
+    <Title>{{page?.title}} - Scout Mirandola 2</Title>
   </Head>
+
+
   <div class="drawer drawer-end" tabindex="0">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col min-h-screen">
