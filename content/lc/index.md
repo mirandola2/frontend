@@ -1,5 +1,6 @@
 ---
 title: Lupetti e Coccinelle
+overlap_hero: true
 ---
 
 ::card{title = 'Attività e Orari' color = 'lc'}
