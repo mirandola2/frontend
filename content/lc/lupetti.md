@@ -1,11 +1,13 @@
 ---
 title: "Branco della Roccia Azzurra"
-image: "http://mirandola2.weebly.com/uploads/1/1/8/8/11889083/1398149068.jpg"
+image: "/img/unità/lupetti_1.jpg"
 ---
 
 ::quoted
 ...e quando Hathi, l'elefante selvaggio che vive cento anni e più, vide affiorare una lunga e sottile cresta di Roccia Azzurrina, proprio nel bel mezzo della corrente, capì che quella era la roccia della pace ed immediatamente alzò la proboscide e proclamò la "tregua dell'acqua".  
 ::
+
+:Fig{src=/img/unità/lupetti_2.jpg desc="Il branco in caccia a S.Giuseppe Artigiano (Carpi) - 2014" float=0}
 
 
 ## I Vecchi Lupi
