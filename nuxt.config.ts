@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       '/content/index.md',
       'totem', 'codice-socio'
     ],
+    markdown: {
+      anchorLinks: false
+    },
     documentDriven: true,
   }
 })
