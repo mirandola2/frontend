@@ -1,5 +1,5 @@
 <template>
-    <div class="container-xl flex flex-col lg:flex-row gap-5 p-5">
+    <div class="container flex flex-col lg:flex-row gap-5 pt-5">
       <div class="mx-auto w-full">
         <slot>
 
