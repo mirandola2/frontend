@@ -1,5 +1,6 @@
 ---
 title: Esploratori e Guide
+overlap_hero: true
 ---
 
 ::card{title = 'Attività e Orari' color = 'eg'}

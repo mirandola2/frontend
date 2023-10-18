@@ -1,5 +1,6 @@
 ---
 title: Rover e Scolte
+overlap_hero: true
 ---
 
 ::card{title = 'Attività e Orari' color = 'rs'}
