@@ -1,5 +1,5 @@
 <template>
-  <div class="not-prose" :class="{'my-2 max-w-xl w-full mx-auto': float=='0', 'md:float-left m-3 md:ml-0 md:max-w-sm': float=='1', 'md:float-right md:max-w-sm m-3 md:mr-0': float=='2'}">
+  <div class="not-prose" :class="{'my-2 max-w-3xl w-full mx-auto': float=='0', 'md:float-left m-3 md:ml-0 md:max-w-sm': float=='1', 'md:float-right md:max-w-sm m-3 md:mr-0': float=='2'}">
     <div class="w-full bg-base-200 p-5 rounded-xl place-items-center ">
       <a :href="src">
         <img :src="src" :alt="alt || desc" class="rounded-lg shadow-lg m-auto max-h-96"/>
