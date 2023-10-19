@@ -1,20 +1,23 @@
 ---
 title: "Branco della Roccia Azzurra"
-image: "/img/unità/lupetti_1.jpg"
+image: "/img/branche/lupetti_1.jpg"
 ---
 
 ::quoted
 ...e quando Hathi, l'elefante selvaggio che vive cento anni e più, vide affiorare una lunga e sottile cresta di Roccia Azzurrina, proprio nel bel mezzo della corrente, capì che quella era la roccia della pace ed immediatamente alzò la proboscide e proclamò la "tregua dell'acqua".  
 ::
 
-:Fig{src=/img/unità/lupetti_2.jpg desc="Il branco in caccia a S.Giuseppe Artigiano (Carpi) - 2014" float=0}
-
+:Fig{src=/img/branche/lupetti_2.jpg desc="Il branco in caccia a S.Giuseppe Artigiano (Carpi) - 2014" float=0}
 
 ## I Vecchi Lupi
 
 :staff{staff="L"}
 
-## I concetti principali
+## Le Sestiglie
+
+I Lupetti del Branco della Roccia Azzura si dividono in sestiglie in base al colore del proprio pelo: Bianchi, Fulvi, Grigi, Pezzati e Neri.
+
+## Pillole di Branco
 
 ::cards
 :::card{title="La Legge" color="lc"}
@@ -78,6 +81,8 @@ Tutti i lupetti del branco seguono la propria Pista cercando di fare sempre del 
 Da Cucciolo, insieme al Branco, scoprirai la Giungla e pronuncerai la Promessa; poi inizierà la Stagione di Caccia. Andrai in Caccia con Baloo, Bagheera e Akela, per diventare Lupo della Legge, poi Lupo della Rupe ed infine Lupo Anziano.
 
 ### La Stagione di Caccia
-| | |
-|-|-|
-|**In Caccia con Baloo** per diventare **LUPO DELLA LEGGE** | |
+
+
+| ![](/img/misc/pp_lupi1.jpg) | ![](/img/misc/pp_lupi2.jpg)  | ![](/img/misc/pp_lupi3.jpg)
+|-|-|-|
+**In Caccia con Baloo** per diventare **LUPO DELLA LEGGE** | **In Caccia con Bagheera** per diventare **LUPO DELLA RUPE** | **In Caccia con Baloo** per diventare **LUPO ANZIANO** |

@@ -1,6 +1,6 @@
 ---
 title: "Reparto Brownsea"
-image: "/brownsea.jpg"
+image: "/img/branche/brownsea.jpg"
 ---
 
 ::quoted
@@ -70,6 +70,6 @@ Le tre dita tese ricordano i tre punti della Promessa, mentre il pollice che cop
 ## Il Sentiero
 
 |Scoperta|Competenza|Responsabilità|
-|-|-|-|
-
+|:-:|:-:|:-:|
+![](/img/misc/pp_rep1.jpg) | ![](/img/misc/pp_rep2.jpg) | ![](/img/misc/pp_rep3.jpg) |
 

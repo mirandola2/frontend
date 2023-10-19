@@ -1,6 +1,7 @@
 ---
 title: Lupetti e Coccinelle
 overlap_hero: true
+image: /img/branche/lc_1.jpg
 ---
 
 ::card{title = 'Attività e Orari' color = 'lc'}

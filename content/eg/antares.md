@@ -1,16 +1,15 @@
 ---
 title: "Reparto Antares"
-image: "/img/unità/antares.jpg"
+image: "/img/branche/antares.jpg"
 ---
 
 ::quoted
 "Quando ero giovane c'era in voga una canzone popolare: «Guida la tua canoa» con il ritornello: «Non startene inerte, triste o adirato. Da solo tu devi guidar la tua canoa». Questo era davvero un buon consiglio per la vita." B.-P.
 ::
 
+__Antares__ è la stella più luminosa della costellazione dello Scorpione. Con una magnitudine apparente 1,07 essa è inoltre la sedicesima stella più brillante dell'intera volta celeste. Il suo colore rosso-arancio spicca fra le stelle luminose che la circondano, che sono quasi tutte di colore azzurro.
 
-![](/img/unità/antares.jpg)
-
-
+:Fig{src=/img/branche/antares.jpg desc="Il reparto Antares al Campo Estivo nel 2022" float=0}
 
 ## I Capi Reparto
 
@@ -43,14 +42,12 @@ Con l'aiuto di Dio, prometto sul mio onore di fare del mio meglio:
 - per osservare la Legge scout.
 :::
 :::card{title="Il Motto" color="eg"}
-__SII PREPARATO__
+__SII PREPARATA__
 :::
 
 :::card{title="Il Patrono" color="eg"}
 San Giorgio
 :::
-
-
 
 :::card{title="La Preghiera" color="eg" big}
 Fa', o Signore, che io abbia le mani pure, pura la lingua, puro il pensiero.
@@ -71,10 +68,7 @@ Le tre dita tese ricordano i tre punti della Promessa, mentre il pollice che cop
 ::
 
 ## Il Sentiero
-<ul>
-<li>Responsabilità</li>
-<li>Competenza</li>
-<li>Scoperta</li>
-</ul>
 
-
+|Scoperta|Competenza|Responsabilità|
+|:-:|:-:|:-:|
+![](/img/misc/pp_rep1.jpg) | ![](/img/misc/pp_rep2.jpg) | ![](/img/misc/pp_rep3.jpg) |
