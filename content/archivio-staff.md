@@ -1,5 +1,6 @@
 ---
 title: "Capi e Staff del passato"
+image: /img/misc/vecchia-staff.jpg
 ---
 :TableOfContents
 

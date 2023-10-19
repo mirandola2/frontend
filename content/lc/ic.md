@@ -1,5 +1,6 @@
 ---
 title: Iniziazione Cristiana
+image: /img/misc/fiamme-totem.jpg
 ---
 
 _Nella proposta di progetto di Iniziazione Cristiana nella Branca Lupetti/Coccinelle è valorizzata la scansione temporale dell'anno litugico come cammino coerente che permette ai ragazzi di prendere progressiva coscienza dei doni che Dio elargisce nello scorrere del tempo. É dentro l'anno scout che si succedono i tempi e gli accenti della progressione educativa delle unità e di ciascun ragazzo._  
@@ -7,7 +8,6 @@ _Nella proposta di progetto di Iniziazione Cristiana nella Branca Lupetti/Coccin
 _Nell'alternanza dei tre cicli di letture, in cui si privilegiano i tre Evangelisti Matteo (A), Marco (B), Luca (C), si propone un incontro sempre nuovo e più profondo con l'unico evento e mistero di Salvezza: Cristo._
 
 ## GLI OBIETTIVI
-
 
 ### Sviluppo di una Mentalità di Fede
 
