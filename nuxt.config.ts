@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   content: {
     ignores: [
       '/content/index.md',
-      'totem', 'codice-socio'
+      'totem'
     ],
     markdown: {
       anchorLinks: false
