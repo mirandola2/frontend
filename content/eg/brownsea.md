@@ -1,12 +1,13 @@
 ---
 title: "Reparto Brownsea"
-image: "/img/branche/brownsea.jpg"
+image: "/img/branche/reparto_2.jpg"
 ---
 
 ::quoted
 "Quando ero giovane c'era in voga una canzone popolare: «Guida la tua canoa» con il ritornello: «Non startene inerte, triste o adirato. Da solo tu devi guidar la tua canoa». Questo era davvero un buon consiglio per la vita." B.-P.
 ::
 
+:Fig{src=/img/branche/reparto_2.jpg desc="Il reparto Brownsea in uscita, 2022" float=0}
 
 ## I Capi Reparto
 

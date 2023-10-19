@@ -1,5 +1,6 @@
 ---
 title: "Campi e Route"
+image: /img/branche/reparto_1.jpg
 ---
 
 :TableOfContents{notaside}

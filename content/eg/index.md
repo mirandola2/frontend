@@ -1,5 +1,6 @@
 ---
 title: Esploratori e Guide
+image: /img/branche/reparto_1.jpg
 overlap_hero: true
 ---
 

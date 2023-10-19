@@ -1,11 +1,11 @@
 ---
 title: 'Comunità Capi'
-image: '/img/staff/coca.jpg'
+image: '/img/branche/coca.jpg'
 ---
 
 La Comunità Capi (abbreviata in Co.Ca.) è il gruppo di soci adulti dell'associazione che si impegna alla gestione di un gruppo scout e all'educazione dei ragazzi in un ambiente caratterizzato dalla condivisione dalla corresponsabilità e dalla solidarietà reciproca.
 
-:Fig{src=/img/staff/coca.jpg desc='La Comunità Capi alla cerimonia di apertura del quarantennale.' float=0}
+:Fig{src=/img/branche/coca.jpg desc='La Comunità Capi alla cerimonia di apertura del quarantennale.' float=0}
 
 ### Capi e staff
 
