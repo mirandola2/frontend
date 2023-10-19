@@ -1,5 +1,6 @@
 ---
 title: 'Archivio Foto e Video'
+image: /img/misc/fotografa.jpg
 ---
 
 ### Pagina in costruzione  

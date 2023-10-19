@@ -1,5 +1,7 @@
 ---
 title: EPPPI e ROSS
+image: /img/misc/strada-campo.jpg
+
 ---
 
 ## EPPPI - Eventi di Progressione Personale a Partecipazione Individuale

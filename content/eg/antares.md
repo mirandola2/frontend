@@ -1,6 +1,6 @@
 ---
 title: "Reparto Antares"
-image: "/img/branche/antares.jpg"
+image: "/img/branche/reparto_3.jpg"
 ---
 
 ::quoted
@@ -9,7 +9,7 @@ image: "/img/branche/antares.jpg"
 
 __Antares__ è la stella più luminosa della costellazione dello Scorpione. Con una magnitudine apparente 1,07 essa è inoltre la sedicesima stella più brillante dell'intera volta celeste. Il suo colore rosso-arancio spicca fra le stelle luminose che la circondano, che sono quasi tutte di colore azzurro.
 
-:Fig{src=/img/branche/antares.jpg desc="Il reparto Antares al Campo Estivo nel 2022" float=0}
+:Fig{src=/img/branche/reparto_3.jpg desc="Il reparto Antares al Campo Estivo nel 2022" float=0}
 
 ## I Capi Reparto
 

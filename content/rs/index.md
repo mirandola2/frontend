@@ -1,6 +1,7 @@
 ---
 title: Rover e Scolte
 overlap_hero: true
+image: /img/misc/strada-campo.jpg
 ---
 
 ::card{title = 'Attività e Orari' color = 'rs'}
