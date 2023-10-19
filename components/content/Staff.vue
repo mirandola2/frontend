@@ -14,15 +14,15 @@
       <div class="card-body p-5">
         <div class="flex gap-4 justify-start items-center mb-4">
           <img
-            class="mask mask-squircle w-24 h-24 "
+            class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none"
             :src="
               person.img != '' && person.img != undefined
-                ?  person.img
+                ?  '/img/staff/' + person.img
                 : 'https://api.dicebear.com/7.x/thumbs/svg?seed=' + person.nome
             "
             alt="Avatar Staff"
           />
-          <div class="">
+          <div>
             <div v-if="namesCannotBeShown()">
               <h2 class="text-xl font-bold">
                 {{ person.nomeCaccia }}
