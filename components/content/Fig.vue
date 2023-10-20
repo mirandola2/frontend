@@ -21,13 +21,14 @@
     </div>
   </div>
 
+  <client-only>
   <vue-easy-lightbox
     :visible="visibleRef"
     :imgs="imgsRef"
     :index="indexRef"
     @hide="onHide"
-  >
-</vue-easy-lightbox>
+  />
+</client-only>
 </template>
 <script setup>
 const props = defineProps({
@@ -53,6 +54,7 @@ const props = defineProps({
 });
 
 import { ref, defineComponent } from "vue";
+import VueEasyLightbox from 'vue-easy-lightbox'
 
 const visibleRef = ref(false);
 const indexRef = ref(0); // default 0
