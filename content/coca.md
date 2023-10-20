@@ -9,7 +9,7 @@ La Comunità Capi (abbreviata in Co.Ca.) è il gruppo di soci adulti dell'associ
 
 ### Capi e staff
 
-:staff{staff='*' coca}
+:staff{staff='*' coca selector}
 
 ### In primo Piano
 

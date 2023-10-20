@@ -121,7 +121,7 @@ Il blocco `quoted` permette di creare una citazione.
 
 Parametri:  
 
-- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC | *] (rispettivamente, lupetti, coccinelle, esploratori, guide, noviziato, clan-fuoco, coca (a disposizione e cj), tutti)
+- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC | CJ | *] (rispettivamente, lupetti, coccinelle, esploratori, guide, noviziato, clan-fuoco, coca (altri incarichi), capi gruppo, tutti). Separare i doppi incarichi con un `-`.
 - `coca`: booleano, opzionale. Se vero, mostra solo i capi in CoCa.
 
 Il blocco mostra tutti i capi di una certa staff. I capi sono inseriti in formato .csv nel file `/content/_capi.csv` rispettando la formattazione presentata nell'esempio seguente.
@@ -145,6 +145,7 @@ Per quanto riguarda le pagine, il front-matter supportato è il seguente.
 ---
 title: "Titolo della pagina"
 image: path/img.jpg 
+overlap_hero: false #lasciare falso a meno di non voler sovrapporre leggermente il contenuto all'immagine di hero.
 ---
 ```
 
