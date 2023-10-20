@@ -1,6 +1,7 @@
 <template>
   <!--parametri capo: nome,nomeCaccia,ruolo,staff,coca,desc,img
 -->
+
   <div class="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
     <div
       v-for="person in data.body.filter((value) =>
@@ -61,6 +62,12 @@ const props = defineProps({
     required: true,
   },
   coca: {
+    //true se vuoi mostrare solo la staff in comunità capi
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  selector: {
     //true se vuoi mostrare solo la staff in comunità capi
     type: Boolean,
     required: false,

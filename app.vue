@@ -71,7 +71,7 @@ function handleScroll() {
 
 <template>
   <Head>
-    <Title>{{page?.title ? page?.title + ' - ' : 'Gruppo' }} Scout Mirandola 2</Title>
+    <Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2</Title>
   </Head>
 
 
