@@ -2,7 +2,6 @@
 import tailwindConfig from "./tailwind.config"
 
 export default defineNuxtConfig({
-  experimental: { appManifest: false },
   app: {
     head: {
       charset: 'utf-8',
