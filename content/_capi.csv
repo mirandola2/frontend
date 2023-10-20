@@ -1,6 +1,11 @@
 nome,nomeCaccia,ruolo,staff,coca,desc,img
 Riccardo Sbardellati,,Capo Gruppo,CC,1,,ciccio.jpg,
 Elena Zerbini,,Capo Gruppo,CC,1,,ele.jpg,
+Stefano Venturini,,Incaricato Nazionale alla branca L/C,CC,1,,mini.jpg
+Edoardo Galavotti,,A disposizione,CC,1,,edo.jpg
+Francesco Bergonzini,,A disposizione,CC,1,,checco.jpg
+Letizia Pongiluppi,,A disposizione,CC,1,,leti.jpg
+Suor Mary Roselet,Messua,Assistente Spirituale L/C,CC,1,,suormary.jpg
 Giacomo Salici,Akela,Capo Unità,L,1,"Akela è il capo del branco di Seeonee, di cui fa parte anche Mowgli. Lupo solitario, dal pelo grigio, simbolo di anzianità e saggezza. È il garante della legge del Branco.",jack.png,
 Emmanuele Morabito,Chil,Aiuto Capo Unità,L,1,"Chil è l'avvoltoio messaggero della giungla. Aiuta Mowgli mentre viene rapito dal Bandar-log, avvisando Bagheera e Baloo del pericolo.",morry.jpg
 Giulio Pongiluppi,Bagheera,Aiuto Capo Unità,L,1,"Bagheera è la forte e saggia pantera nera che riscatta Mowgli al consiglio della rupe dona la sua preda, un toro, per permettere di vivere con il branco.",giulio.jpg
@@ -16,8 +21,4 @@ Maddalena Pieri,,Maestra dei Novizi,N,1,,madda.jpg
 Luca Meschieri,,Capo Clan,CF,1,,meschio.jpeg
 Alessia Bucci,,Aiuto Capo Fuoco,CF,1,,ale.png
 Veronica Panza,,A disposizione,CC,1,,
-Stefano Venturini,,A disposizione,CC,1,,mini.jpg
-Edoardo Galavotti,,A disposizione,CC,1,,edo.jpg
-Francesco Bergonzini,,A disposizione,CC,1,,checco.jpg
-Letizia Pongiluppi,,A disposizione,CC,1,,leti.jpg
-Suor Mary Roselet,Messua,Assistente Spirituale L/C,CC,1,,suormary.jpg
+
