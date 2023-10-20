@@ -21,13 +21,13 @@
     </div>
   </div>
 
-  <vue-easy-lightbox
+  <VueEasyLightbox
     :visible="visibleRef"
     :imgs="imgsRef"
     :index="indexRef"
     @hide="onHide"
   >
-  </vue-easy-lightbox>
+  </VueEasyLightbox>
 </template>
 <script setup>
 const props = defineProps({
