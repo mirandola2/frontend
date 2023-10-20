@@ -133,6 +133,7 @@ function getColorStaffName(staff) {
 }
 
 function pushQuery(){
-  router.push({ query: { staff: actualStaff.value }})
+  
+  router.push({ query: actualStaff.value != '*' ? { staff: actualStaff.value } : {}})
 }
 </script>
