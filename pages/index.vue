@@ -23,7 +23,7 @@
           </div>
         </div>
         <img
-          src="/cappellini.svg"
+          src="/img/graphics/icon_cappellini.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />
       </div>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <img
-          src="/tenda.svg"
+          src="/img/graphics/icon_tenda.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />
       </div>
@@ -63,7 +63,7 @@
           </div>
         </div>
         <img
-          src="/forcola.svg"
+          src="/img/graphics/icon_forcola.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />
       </div>

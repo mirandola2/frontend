@@ -6,7 +6,7 @@ const props = defineProps({
   },
   image: {
     type: String,
-    default: "/hero.jpg",
+    default: "/img/misc/hero.jpg",
   },
   color: {
     type: String,

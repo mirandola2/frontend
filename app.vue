@@ -92,7 +92,7 @@ function handleScroll() {
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <img src="/logo_white.svg" class="h-16" />
+                <img src="/img/graphics/logo_white.svg" class="h-16" />
               </a>
             </h1>
           </div>
@@ -167,7 +167,7 @@ function handleScroll() {
           >
             <!-- Sidebar content here -->
             <a href="/">
-              <img src="/logo_white.svg" class="h-24 mb-8" alt="" />
+              <img src="/img/graphics/logo_white.svg" class="h-24 mb-8" alt="" />
             </a>
             <template v-for="(submenu, mainItem) in menu" :key="mainItem">
               <!-- Check if the submenu is an object -->
