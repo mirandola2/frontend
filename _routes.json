@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "include": ["/*"],
+    "exclude": [
+        "/_nuxt/*",
+        "/favicon.ico",
+        "/quotes.toml",
+        "/api/_content/cache.1698010536173.json",
+        "/img/*"
+    ]
+ }
