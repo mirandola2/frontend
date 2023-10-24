@@ -18,10 +18,11 @@
     prose-headings:max-w-4xl prose-headings:mx-auto
     prose-blockquote:max-w-4xl prose-blockquote:mx-auto prose-blockquote:font-serif
     prose-figure:rounded-xl prose-img:rounded-xl prose-img:max-w-full prose-img:mx-auto
-    
+    before:prose-p:content-none after:prose-p:content-none
 }
 
 
 html {
     scroll-padding-top: 6rem;
   }
+
