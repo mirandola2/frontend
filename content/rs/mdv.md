@@ -74,3 +74,11 @@ Il Clan/Fuoco vi fissa le proprie riflessioni, i propri obiettivi, nonché i val
 È scritta e periodicamente rinnovata dal Clan/Fuoco, quando la comunità non si riconosce più in essa oppure quando, con il passare degli anni, la comunità cambia.  
 
 Dopo pochi mesi dall'ingresso nella Comunità di Clan/Fuoco i rover e le scolte firmano la Carta di Clan, accettandone i contenuti e impegnandosi personalmente nella realizzazione degli obiettivi in essa esplicitati.
+
+## La rivista Camminiamo Insieme
+
+Clicca al link qua sotto per leggere Camminiamo Insieme, la rivista dei rover e delle scolte dell’AGESCI. Il suo compito è portare online le speranze, gli ideali e le voci dei giovani tra i 17 e i 21 anni di età che hanno scelto lo scautismo come esperienza di crescita e impegno per un futuro migliore, come spazio di condivisione e costruzione di uno stile comunitario di fraternità, come testimonianza di fede in Cristo e di servizio agli altri.
+
+::Lnk{href="https://camminiamoinsieme.agesci.it/" icon="newspaper"}
+Leggi Camminiamo Insieme
+::

@@ -86,3 +86,12 @@ Da Cucciolo, insieme al Branco, scoprirai la Giungla e pronuncerai la Promessa; 
 | ![](/img/misc/pp_lupi1.jpg) | ![](/img/misc/pp_lupi2.jpg)  | ![](/img/misc/pp_lupi3.jpg)
 |-|-|-|
 **In Caccia con Baloo** per diventare **LUPO DELLA LEGGE** | **In Caccia con Bagheera** per diventare **LUPO DELLA RUPE** | **In Caccia con Baloo** per diventare **LUPO ANZIANO** |
+
+## Il Giornalino Giochiamo!
+
+Clicca al link qua sotto per leggere Giochiamo, il giornalino dei Lupetti e delle Coccinelle. 
+
+::Lnk{href="https://giochiamo.agesci.it/" icon="newspaper"}
+Leggi Giochiamo!
+::
+

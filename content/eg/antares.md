@@ -72,3 +72,11 @@ Le tre dita tese ricordano i tre punti della Promessa, mentre il pollice che cop
 |Scoperta|Competenza|Responsabilità|
 |:-:|:-:|:-:|
 ![](/img/misc/pp_rep1.jpg) | ![](/img/misc/pp_rep2.jpg) | ![](/img/misc/pp_rep3.jpg) |
+
+## La rivista Avventura
+
+Clicca al link qua sotto per leggere Avventura, la rivista nazionale degli esploratori e delle guide.  
+
+::Lnk{href="https://avventura.agesci.it/" icon="newspaper"}
+Leggi Avventura
+::
