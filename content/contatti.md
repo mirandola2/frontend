@@ -1,5 +1,6 @@
 ---
 title: Contatti
+image: /img/misc/fiamme-totem.jpg
 ---
 
 ## Per Contattare il Gruppo

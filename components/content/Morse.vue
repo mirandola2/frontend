@@ -2,7 +2,7 @@
 
 <div class=" max-w-md mx-auto">
     <textarea class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24" placeholder="Messaggio" v-model="mex" @input="code = textToMorse(mex)"></textarea>
-    <textarea class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24" placeholder="Codice Morse" v-model="code" @input="mex = morseToText(code)"></textarea>
+    <textarea class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24" placeholder="Codice Morse" disabled v-model="code" @input="mex = morseToText(code)"></textarea>
 
 </div>
 
