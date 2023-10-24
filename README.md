@@ -135,6 +135,16 @@ Da notare come il `nomeCaccia` indichi non il nome Totem ma bensì il personaggi
 
 Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è in `/public/img/staff/capo.jpg`, il campo deve essere `/img/staff/capo.jpg`).
 
+#### Button Link
+
+Mostra il testo di un link all'interno di un bottone e con un'icona scelta fra [queste](https://fonts.google.com/icons?selected=Material+Symbols+Rounded:open_in_new:FILL@0;wght@400;GRAD@0;opsz@24&icon.platform=web&icon.style=Rounded).
+
+```md
+::Lnk{href="https://example.com" icon="checklist"}
+Testo del Bottone
+::
+```
+
 ### Front Matter
 
 Nei blog post come nelle pagine markdown, esiste una sezione chiamata front matter, utile a inserire proprietà e metadati. ([documentazione ufficiale](https://content.nuxt.com/usage/markdown#front-matter)).
