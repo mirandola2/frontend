@@ -35,8 +35,9 @@ E' il legame che esprime le scelte fatte dai Capi e dagli Assistenti ecclesiasti
 Ci impegniamo a rispettarlo perché riconosciamo nei suoi contenuti il fondamento del nostro servizio educativo e uno stimolo per il cammino di formazione personale.
 Il Patto associativo è rivolto anche alle famiglie dei ragazzi e a tutti coloro che sono interessati ai problemi dell'educazione, perché possano comprendere quali siano le caratteristiche dell'Associazione.
 
-
- [Visualizza il Patto Associativo](https://www.agesci.it/?wpfb_dl=2082)
+::Lnk{href="https://www.agesci.it/?wpfb_dl=2082"}
+Visualizza il Patto Associativo
+::
 
 ---
 
@@ -93,3 +94,11 @@ L’AGESCI propone la partecipazione al CAEX agli adulti di provenienza extrasso
 Si realizza in un fine settimana vissuto in stile scout, valorizzando il vissuto dei partecipanti, organizzato a livello locale con il coordinamento della Formazione Capi regionale.
 
 _dal Regolamento Agesci 2011_
+
+## La rivista Proposta Educativa
+
+Clicca al link qua sotto per leggere Proposta Educativa, la rivista Agesci rivolta ai Capi.
+
+::Lnk{href="https://pe.agesci.it/" icon="newspaper"}
+Leggi PE
+::

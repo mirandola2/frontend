@@ -8,6 +8,7 @@
       role="button"
       class="btn btn-block max-w-lg mx-auto btn-outline btn-secondary"
       :href="href"
+      target="_blank"
       ><span class="material-symbols-rounded"> {{icon}} </span> <slot></slot
     ></a>
 
