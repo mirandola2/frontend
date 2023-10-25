@@ -1,31 +1,26 @@
 <template>
-  <div class="card w-full max-w-md mt-12 mx-auto bg-base-100">
+  <div class="card w-full not-prose max-w-xl mt-12 mx-auto">
     <div class="card-body">
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">Codice Fiscale</span>
-        </label>
+      <h2 class="card-title">Riceca codice socio</h2>
+      <div class="join">
+        
         <input
           type="text"
-          v-model="fiscalCode"
-          placeholder="ABCCBA00X00F40I"
-          class="input input-bordered w-full max-w-xs"
-          disabled
-          @input="checkFC()"
+          v-model="name"
+          placeholder="Nome Completo"
+          class="input input-bordered w-full join-item"
         />
-      </div>
-      <div class="card-actions justify-end">
         <button
-          class="btn btn-primary"
+          class="btn btn-primary join-item"
           onclick="modal.showModal()"
           @click="searchMemberCode()"
-          :disabled="fiscalCode.length != 16"
-          disabled
         >
           Cerca
         </button>
       </div>
+      <p class="text-sm text-right" v-if="lastupdate">Dati aggiornati al censimento {{ lastupdate }}.</p>
     </div>
+  
   </div>
 
   <dialog id="modal" class="modal">
@@ -59,27 +54,35 @@
 </template>
 
 <script setup>
-const fiscalCode = ref("");
+const name = ref("");
 const personData = ref();
 const loading = ref(true);
 
 
 const navbar_solid = ref(true)
 
-function checkFC() {
-  fiscalCode.value = fiscalCode.value
+function check() {
+  name.value = name.value
     .trim()
     .toUpperCase()
-    .replace(/[^A-Z0-9]/gi, "");
+    .replace(/[^A-Z0-9 ]/gi, "");
 }
 
 async function searchMemberCode() {
   personData.value = await (
     await fetch(
-      `https://people.mirandola2.workers.dev/data?id=${fiscalCode.value.toLowerCase()}`
+      `https://people.mirandola2.workers.dev/data?name=${encodeURIComponent(name.value.toLowerCase().trim())}`
     )
   ).json();
   console.log(personData.value)
   loading.value = false;
 }
+
+
+defineProps({
+  lastupdate: {
+    type: String,
+    required: false
+  }
+})
 </script>
