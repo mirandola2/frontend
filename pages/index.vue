@@ -13,9 +13,9 @@
         <div class="text-center card-body items-center z-10">
           <h2 class="card-title">Lupetti e Coccinelle</h2>
           <p>
-            Dagli 8 agli 11 anni i bambini e le bambine vivono nel "branco" e
+            Dagli 8 agli 11 anni i bambini e le bambine "cacciano" e "volano" nel "branco" e
             nel "cerchio".
-            <a class="link" href="/lc">Leggi tutto.</a>
+            <a class="link" href="/lc">Leggi.</a>
           </p>
           <div class="card-actions justify-center">
             <a class="btn btn-ghost btn-sm" href="/lc/lupetti">Branco</a>
@@ -32,9 +32,9 @@
         <div class="card-body items-center text-center z-10">
           <h2 class="card-title">Esploratori e Guide</h2>
           <p>
-            La Branca Esploratori/Guide si rivolge ai ragazzi dagli 12 ai 16
+            La Branca Esploratori/Guide si rivolge ai ragazzi da 12 a 16
             anni che si uniscono nei Reparti.
-            <a class="link" href="/eg">Leggi tutto.</a>
+            <a class="link" href="/eg">Leggi.</a>
           </p>
           <div class="card-actions justify-center">
             <a class="btn btn-ghost btn-sm" href="/eg/brownsea">Esploratori</a>
@@ -55,7 +55,7 @@
           <p>
             I Rover e le Scolte tra i 16 e 19 anni aderiscono alla proposta che
             lo Scoutismo fa alla loro età.
-            <a class="link" href="/rs">Leggi tutto.</a>
+            <a class="link" href="/rs">Leggi.</a>
           </p>
           <div class="card-actions justify-center">
             <a class="btn btn-ghost btn-sm" href="/rs/noviziato">Noviziato</a>
