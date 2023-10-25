@@ -8,4 +8,3 @@ image: /img/misc/tesserino60s70s.jpg
 
 
 :Fig{src="/img/misc/tesserino60s70s.jpg" desc="Tesserino ASCI anni '60-'70" float=0}
-
