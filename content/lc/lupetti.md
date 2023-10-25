@@ -7,7 +7,7 @@ image: "/img/branche/lupetti_1.jpg"
 ...e quando Hathi, l'elefante selvaggio che vive cento anni e più, vide affiorare una lunga e sottile cresta di Roccia Azzurrina, proprio nel bel mezzo della corrente, capì che quella era la roccia della pace ed immediatamente alzò la proboscide e proclamò la "tregua dell'acqua".  
 ::
 
-:Fig{src=/img/branche/lupetti_2.jpg desc="Il branco in caccia a S.Giuseppe Artigiano (Carpi) - 2014" float=0}
+:Fig{src=/img/branche/lupetti_2.jpg desc="Il branco in caccia a S. Giuseppe Artigiano (Carpi) - 2014" float=0}
 
 ## I Vecchi Lupi
 
