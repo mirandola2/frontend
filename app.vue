@@ -10,6 +10,7 @@ const menu = ref({
     "Il Gruppo": "/gruppo",
     "La Comunità Capi": "/coca",
     Contatti: "/contatti",
+    Iscrizioni: "/iscrizioni"
   },
   "Lupetti e Coccinelle": {
     "La Branca L/C": "/lc/",

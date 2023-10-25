@@ -133,7 +133,7 @@ Baden Powell,Impeesa,Capo Reparto,E,1,Impeesa ovvero l'animale che si sposta fur
 
 Da notare come il `nomeCaccia` indichi non il nome Totem ma bensì il personaggio interpretato dai capi in LC. Viene mostrato al posto del nome vero se e solo se `staff == {L, C}` e `coca==true`.
 
-Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è in `/public/img/staff/capo.jpg`, il campo deve essere `/img/staff/capo.jpg`).
+Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è `/public/img/staff/capo.jpg`, il campo deve essere `capo.jpg`).
 
 #### Button Link
 
