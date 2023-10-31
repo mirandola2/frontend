@@ -54,7 +54,7 @@
           <h2 class="card-title">Rover e Scolte</h2>
           <p>
             I Rover e le Scolte tra i 16 e 19 anni aderiscono alla proposta che
-            lo Scoutismo fa alla loro età.
+            lo scautismo fa alla loro età.
             <a class="link" href="/rs">Leggi.</a>
           </p>
           <div class="card-actions justify-center">

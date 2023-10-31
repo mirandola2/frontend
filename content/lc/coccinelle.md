@@ -85,7 +85,7 @@ Da Cocci, insieme al Cerchio, scoprirai il Bosco e pronuncerai la Promessa; poi 
 
 | ![](/img/misc/pp_cocci1.jpg) | ![](/img/misc/pp_cocci2.jpg)  | ![](/img/misc/pp_cocci3.jpg)
 |-|-|-|
-**In Volo sul Prato** per diventare **COCCINELLA DEL PRATO** | **In Volo con Bosco** per diventare **COCCINELLA DEL BOSCO** | **In Volo con Montagna** per diventare **COCCINELLA DELLA MONTAGNA** |
+**In Volo sul Prato** per diventare **COCCINELLA DEL PRATO** | **In Volo sul Bosco** per diventare **COCCINELLA DEL BOSCO** | **In Volo sulla Montagna** per diventare **COCCINELLA DELLA MONTAGNA** |
 
 ## Il Giornalino Giochiamo!
 

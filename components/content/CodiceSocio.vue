@@ -18,7 +18,7 @@
           Cerca
         </button>
       </div>
-      <p class="text-sm text-right" v-if="lastupdate">Dati aggiornati al censimento {{ lastupdate }}.</p>
+      <p class="text-sm text-right" v-if="lastupdate">Dati aggiornati al {{ lastupdate }}</p>
     </div>
   
   </div>

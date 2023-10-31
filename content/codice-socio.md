@@ -3,7 +3,7 @@ title: Codice Socio
 image: /img/misc/tesserino60s70s.jpg
 ---
 
-:CodiceSocio{lastupdate="2022"}
+:CodiceSocio{lastupdate="2022-23"}
 
 
 
