@@ -16,7 +16,7 @@
     <option :value="'CC'">Altri incarichi</option>
   </select>
 
-  <div class="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+  <div class="not-prose clear-both grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
     <div
       v-for="person in data.body.filter((value) =>
         props.coca == false

@@ -12,7 +12,7 @@ In inverno c'è il Campo Invernale della durata di 3 giorni. In estate c'è il C
 
 La Branca Esploratori/Guide si rivolge ai ragazzi dagli 12 ai 16 anni che si uniscono in Unità chiamate Reparti. I fini della proposta educativa della branca, comuni a tutta l'Associazione, sono presentati in maniera adeguata all'età, rispettando i tempi di crescita dei singoli e della comunità; ad essi debbono ispirarsi tutte le attività del Reparto sia nella fase di preparazione che in quella di realizzazione, sia, infine, in sede di verifica.
 
-Il metodo educativo utilizzato è quello dello Scoutismo i cui fondamenti si trovano nell'opera di B.-P. L'esperienza fatta dai ragazzi nella Branca e/g si pone come continuazione di quella da loro eventualmente già fatta nei Branchi-Cerchi e
+Il metodo educativo utilizzato è quello dello scautismo i cui fondamenti si trovano nell'opera di B.-P. L'esperienza fatta dai ragazzi nella Branca e/g si pone come continuazione di quella da loro eventualmente già fatta nei Branchi-Cerchi e
 tende a completarsi organicamente in quella della Comunità Rover/Scolte. La realizzazione di tale continuità è compito statuario della comunità Capi, ma i Capi Reparto, per la posizione centrale della Branca, vi pongono particolare attenzione. L'intero Reparto vive nello spirito espresso dalla Legge, Promessa e motto.
 
 ### La Legge Scout
