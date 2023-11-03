@@ -75,7 +75,10 @@ function handleScroll() {
     <Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2</Title>
   </Head>
 
-
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
   <div class="drawer drawer-end" tabindex="0">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col min-h-screen">

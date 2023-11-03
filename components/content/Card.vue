@@ -2,7 +2,7 @@
     <div class="card not-prose grid-item max-w-full" :class="[bgColor[color], {'md:col-span-2': big}]">
 
         <div class="card-body">
-            <h2 class="card-title">
+            <h2 class="card-title" v-if="title">
                 {{title}}
             </h2>
                 <slot />
@@ -34,7 +34,8 @@ const bgColor = {
   eg : 'bg-eg text-white',
   rs : 'bg-rs text-white',
   cc : 'bg-cc text-white',
-  primary: 'bg-primary text-white' 
+  primary: 'bg-primary text-white',
+  base: 'bg-base-200'
 }
 
 </script>

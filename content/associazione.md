@@ -4,20 +4,20 @@ title: "L'Associazione"
 
 :tableOfContents
 
-## Lo scautismo nel Mondo
+## Lo Scautismo nel Mondo
 
 **Ci sono oltre 38 milioni di bambini, ragazzi ed adulti, uomini e donne che in 216 paesi e territori del mondo sono scouts e guide.**
 
-Lo scautismo e il Guidismo sono un movimento mondiale
+Lo Scautismo e il Guidismo sono un movimento mondiale
 
 - Di giovani
 - Per i giovani
 - Educativo
 - Che esprime un ideale di vita
 
-Fin dalla loro fondazione lo scautismo e il Guidismo sono, nel loro complesso, un movimento educativo non formale di giovani che si propone come obiettivo la formazione integrale della persona secondo i principi ed i valori definiti dal suo fondatore Lord Robert Baden-Powell, attualizzati oggi dall'Organizzazione Mondiale del Movimento Scout (WOSM/OMMS - World Organization of the Scout Movement) e dall'Associazione Mondiale delle Guide Esploratrici (WAGGGS/AMGE - World Association of Girl Guides and Girl Scouts).
+Fin dalla loro fondazione lo Scautismo e il Guidismo sono, nel loro complesso, un movimento educativo non formale di giovani che si propone come obiettivo la formazione integrale della persona secondo i principi ed i valori definiti dal suo fondatore Lord Robert Baden-Powell, attualizzati oggi dall'Organizzazione Mondiale del Movimento Scout (WOSM/OMMS - World Organization of the Scout Movement) e dall'Associazione Mondiale delle Guide Esploratrici (WAGGGS/AMGE - World Association of Girl Guides and Girl Scouts).
 
-Lo scautismo è quindi un movimento _in movimento_ ed è il più numeroso al mondo e con la maggior diffusione territoriale. Attraverso la fantasia, il gioco, l'avventura la vita all'aria aperta, l'esperienza comunitaria, la progressiva ricerca di senso della vita e lo sviluppo della dimensione sociale e spirituale, lo scautismo risponde alle tante e autentiche domande dei giovani sulla vita e sul crescere in essa.  
+Lo Scautismo è quindi un movimento _in movimento_ ed è il più numeroso al mondo e con la maggior diffusione territoriale. Attraverso la fantasia, il gioco, l'avventura la vita all'aria aperta, l'esperienza comunitaria, la progressiva ricerca di senso della vita e lo sviluppo della dimensione sociale e spirituale, lo scautismo risponde alle tante e autentiche domande dei giovani sulla vita e sul crescere in essa.  
 
 :Fig{src='/img/archive/1907_bp.jpg' desc='B.-P. - Lord Robert Baden Powell'}
 
@@ -27,11 +27,11 @@ Diffusosi velocemente in tutto il mondo immediatamente dopo la sua fondazione ne
 
 A sottolineare l'educazione all'impegno sociale, è significativo ricordare che molti dei leaders politici nei vari paesi del mondo sono stati educati nello scautismo. Il Parlamento Italiano per l'azione educativa svolta a favore dei giovani in tutto il mondo, ha assegnato congiuntamente alle due organizzazioni mondiali dello scautismo il Premio Parlamentare per l'Infanzia, che è stato consegnato ai rappresentanti dei Comitati Mondiali in occasione della Giornata Nazionale per l'Infanzia il 20 novembre 2005.
 
-_Liberamente tratto dal libro di Paolo Alacevich "scautismo e Umanesimo Cristiano". 2003, Collana Tracce Edizioni Fiordaliso._
+_Liberamente tratto dal libro di Paolo Alacevich "Scautismo e Umanesimo Cristiano". 2003, Collana Tracce Edizioni Fiordaliso._
 
 ---
 
-## Lo scautismo in Italia
+## Lo Scautismo in Italia
 
 Il primo esperimento italiano di scautismo fu fatto nella primavera del 1910 a opera di sir Francis Vane, baronetto di Hutton, e si tenne a Bagni di Lucca. Il 12 luglio 1910, con l'aiuto di un maestro locale, Remo Molinari, il baronetto fondò ufficialmente un primo reparto di scout col nome di «Ragazzi Esploratori», da cui presero origine i «Ragazzi Esploratori Italiani» (REI), sezione italiana degli inglesi British Boy Scouts.  
 
@@ -77,7 +77,7 @@ Dopo l'armistizio dell'8 Settembre 1943, le Aquile Randagie organizzano l'assist
 Nasce così OSCAR (Organizzazione Scout Cattolica Assistenza Ricercati) che si impegnò in un'opera di salvataggio di perseguitati e ricercati di diversa nazione, razza, religione, con espatri in Svizzera (noto quello di Indro Montanelli) e concludendo il proprio servizio proteggendo la vita, a guerra finita, ai persecutori di ieri.  
 Con la fine del fascismo anche i componenti delle Aquile Randagie hanno contribuito a rifondare l'Associazione Scouts Cattolici Italiani portando il proprio contributo di fedeltà (l'ASCI confluì poi nell'AGESCI).  
 
-## Lo scautismo a Mirandola
+## Lo Scautismo a Mirandola
 
 _Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stefano Zerbini_
 
@@ -104,4 +104,3 @@ Nell'autunno del 1945 giunse a Mirandola, quale terzo Cappellano, don Nino Levra
 :Fig{src='/img/archive/1948_guide.jpg'}
 
 Era l'ottobre del 1945 quando Lucia Vezzini, insegnate di lettere al liceo classico Giovanni Pico, spinta dal suo forte spirito scout e dalla disponibilità dimostrata da alcune sue alunne, decise di iniziare ad organizzare il movimento scout femminile nel nostro territorio. Il primo riconoscimento del nascente gruppo AGI di Mirandola, porta la data del 20 gennaio 1947, giorno in cui vi fu l'ammissione ufficiale delle aspiranti guide all'associazione. Sotto gli occhi vigili e attenti di Lucia Vezzini e dell'assistente don Nino Levratti, si arriva al fatidico giorno delle prime cinque promesse delle guide mirandolesi nel mese di maggio del 1948; ne seguirono altre quattro il giorno 8 novembre.
-
