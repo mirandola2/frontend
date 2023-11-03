@@ -14,6 +14,23 @@
           class="rounded-lg shadow-lg w-auto h-auto"
           :class="{'max-h-48': float != '0'}"
         />
+
+        <div class="carousel rounded-box">
+  <div class="carousel-item max-h-64">
+    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
+  </div> 
+  <div class="carousel-item max-h-64 w-auto">
+    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
+  </div> 
+  <div class="carousel-item max-h-64 w-auto">
+    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
+  </div> 
+  <div class="carousel-item max-h-64 w-auto">
+    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
+  </div>
+</div>
+
+
       </button>
       <p class="text-sm text-center opacity-70 mt-2 mx-auto">
         {{ desc }}
