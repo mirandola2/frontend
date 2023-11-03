@@ -1,56 +1,56 @@
 <template>
   <div
-    class="not-prose  object-contain bg-base-200 p-5 rounded-xl"
+    class="not-prose object-contain bg-base-200 p-5 rounded-xl justify-center content-center"
     :class="{
       'my-2 max-w-3xl w-full mx-auto clear-both': float == '0',
       'md:float-left m-3 md:ml-0 md:max-w-sm': float == '1',
       'md:float-right md:max-w-sm m-3 md:mr-0': float == '2',
     }"
   >
+    <div v-if="typeof src == String">
       <button @click="showSingle" class="block mx-auto h-auto w-auto">
         <img
           :src="src"
-          :alt="alt || desc"
+          :alt="alt || desc || ''"
           class="rounded-lg shadow-lg w-auto h-auto"
-          :class="{'max-h-48': float != '0'}"
+          :class="{ 'max-h-48': float != '0' }"
         />
-
-        <div class="carousel rounded-box">
-  <div class="carousel-item max-h-64">
-    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
-  </div> 
-  <div class="carousel-item max-h-64 w-auto">
-    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
-  </div> 
-  <div class="carousel-item max-h-64 w-auto">
-    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
-  </div> 
-  <div class="carousel-item max-h-64 w-auto">
-    <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Burger" />
-  </div>
-</div>
-
-
       </button>
       <p class="text-sm text-center opacity-70 mt-2 mx-auto">
         {{ desc }}
       </p>
+    </div>
+    <div v-else>
+      <button @click="showSingle" class="block mx-auto h-auto w-auto">
+        <img
+          :src="src[indexRef]"
+          :alt="alt[indexRef] || desc[indexRef] || ''"
+          class="rounded-lg shadow-lg w-auto h-auto"
+          :class="{ 'max-h-48': float != '0' }"
+        />
+      </button>
+      <p class="text-sm text-center opacity-70 mt-2 mx-auto">
+        {{ desc[indexRef] || '' }}
+      </p>
+      <div class="join mx-auto">
+         <button class="join-item btn-secondary btn btn-xs" :class="{'btn-active': 'indexRef==index'}"  v-for="(item, index) in src" v-on:click="indexRef=index">{{index}}</button>
+      </div>
+    </div>
   </div>
 
   <client-only>
-  <vue-easy-lightbox
-    :visible="visibleRef"
-    :imgs="imgsRef"
-    :index="indexRef"
-    @hide="onHide"
-  />
-</client-only>
+    <vue-easy-lightbox
+      :visible="visibleRef"
+      :imgs="imgsRef"
+      :index="indexRef"
+      @hide="onHide"
+    />
+  </client-only>
 </template>
 <script setup>
 const props = defineProps({
   src: {
-    type: String,
-    required: true,
+    required: false,
   },
   alt: {
     type: String,
@@ -58,9 +58,8 @@ const props = defineProps({
     default: "",
   },
   desc: {
-    type: String,
     required: false,
-    default: "",
+    default: undefined,
   },
   float: {
     type: String,
@@ -70,46 +69,43 @@ const props = defineProps({
 });
 
 import { ref, defineComponent } from "vue";
-import VueEasyLightbox from 'vue-easy-lightbox'
+import VueEasyLightbox from "vue-easy-lightbox";
 
 const visibleRef = ref(false);
-const indexRef = ref(0); // default 0
+const indexRef = ref(0);
 const imgsRef = ref([]);
-// Img Url , string or Array of string
-// ImgObj { src: '', title: '', alt: '' }
-// 'src' is required
-// allow mixing
 
 const onShow = () => {
   visibleRef.value = true;
 };
 const showSingle = () => {
-  imgsRef.value = [{
-    src: props.src,
-    title: props.desc,
-  }]
-  // or
-  // imgsRef.value  = {
-  //   title: 'this is a placeholder',
-  //   src: 'http://via.placeholder.com/350x150'
-  // }
+  imgsRef.value = [
+    {
+      src: props.src,
+      title: props.desc,
+    },
+  ];
+  onShow();
+};
+
+const showMulti = () => {  
+  imgsRef.value = src.map((e, i)=>{
+    return {src: e, title: desc[i] || ""}
+  });
   onShow();
 };
 
 const onHide = () => (visibleRef.value = false);
 </script>
 
-
 <style>
-.vel-modal{
-  background: rgba(0,0,0,0.8) !important;
+.vel-modal {
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
-.vel-img-title{
+.vel-img-title {
   color: white;
   font-size: 16px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
 }
-
-
 </style>
