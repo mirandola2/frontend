@@ -1,6 +1,6 @@
 <template>
-    <div class="my-8 max-w-xl mx-auto">
-    <p  class="italic text-center font-serif balanced"><slot/> </p>
+    <div class="my-8 max-w-xl mx-auto italic text-center font-serif balanced">
+    <slot/> 
   </div>
 </template>
 
