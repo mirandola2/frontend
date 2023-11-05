@@ -1,107 +1,130 @@
 <template>
-
-<div class=" max-w-md mx-auto">
-    <textarea class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24" placeholder="Messaggio" v-model="mex" @input="code = textToMorse(mex)"></textarea>
-    <textarea class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24" placeholder="Codice Morse" disabled v-model="code" @input="mex = morseToText(code)"></textarea>
-
-</div>
-
-
-
+  <div class="max-w-md mx-auto">
+    <textarea
+      class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24"
+      placeholder="Messaggio"
+      v-model="mex_text"
+      @input="text2morse()"
+    ></textarea>
+    <textarea
+      class="textarea textarea-lg w-full textarea-bordered bg-base-200 h-24"
+      placeholder="Codice Morse"
+      v-model="mex_morse"
+      @input="morse2text()"
+    ></textarea>
+  </div>
 </template>
 
 <script setup>
+const mex_text = ref();
+const mex_morse = ref();
 
-const mex = ref()
-const code = ref()
-
-
-var dot = ".",
-  dash = "-",
-  divide = " / ",
-  newline = "\n";
-
-var morse = {
-  a: [dot, dash],
-  b: [dash, dot, dot, dot],
-  c: [dash, dot, dash, dot],
-  d: [dash, dot, dot],
-  e: [dot],
-  f: [dot, dot, dash, dot],
-  g: [dash, dash, dot],
-  h: [dot, dot, dot, dot],
-  i: [dot, dot],
-  j: [dot, dash, dash, dash],
-  k: [dash, dot, dash],
-  l: [dot, dash, dot, dot],
-  m: [dash, dash],
-  n: [dash, dot],
-  o: [dash, dash, dash],
-  p: [dot, dash, dash, dot],
-  q: [dash, dash, dot, dash],
-  r: [dot, dash, dot],
-  s: [dot, dot, dot],
-  t: [dash],
-  u: [dot, dot, dash],
-  v: [dot, dot, dot, dash],
-  w: [dot, dash, dash],
-  x: [dash, dot, dot, dash],
-  y: [dash, dot, dash, dash],
-  z: [dash, dash, dot, dot],
-  1: [dot, dash, dash, dash, dash],
-  2: [dot, dot, dash, dash, dash],
-  3: [dot, dot, dot, dash, dash],
-  4: [dot, dot, dot, dot, dash],
-  5: [dot, dot, dot, dot, dot],
-  6: [dash, dot, dot, dot, dot],
-  7: [dash, dash, dot, dot, dot],
-  8: [dash, dash, dash, dot, dot],
-  9: [dash, dash, dash, dash, dot],
-  0: [dash, dash, dash, dash, dash],
-  space: [divide],
-  return: [newline],
-  
+const morseDict = {
+  A: ".-",
+  B: "-...",
+  C: "-.-.",
+  D: "-..",
+  E: ".",
+  F: "..-.",
+  G: "--.",
+  H: "....",
+  I: "..",
+  J: ".---",
+  K: "-.-",
+  L: ".-..",
+  M: "--",
+  N: "-.",
+  O: "---",
+  P: ".--.",
+  Q: "--.-",
+  R: ".-.",
+  S: "...",
+  T: "-",
+  U: "..-",
+  V: "...-",
+  W: ".--",
+  X: "-..-",
+  Y: "-.--",
+  Z: "--..",
+  ".-": "A",
+  "-...": "B",
+  "-.-.": "C",
+  "-..": "D",
+  ".": "E",
+  "..-.": "F",
+  "--.": "G",
+  "....": "H",
+  "..": "I",
+  ".---": "J",
+  "-.-": "K",
+  ".-..": "L",
+  "--": "M",
+  "-.": "N",
+  "---": "O",
+  ".--.": "P",
+  "--.-": "Q",
+  ".-.": "R",
+  "...": "S",
+  "-": "T",
+  "..-": "U",
+  "...-": "V",
+  ".--": "W",
+  "-..-": "X",
+  "-.--": "Y",
+  "--..": "Z",
+  0: "-----",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----.",
+  ".----": "1",
+  "..---": "2",
+  "...--": "3",
+  "....-": "4",
+  ".....": "5",
+  "-....": "6",
+  "--...": "7",
+  "---..": "8",
+  "----.": "9",
+  "-----": "0",
+  " ": " ",
+  "/": " "
 };
 
-function textToMorse(str) {
-  var chars = str
-      .toLowerCase()
-      .replace(/[^a-z0-9\s\n\r]/g, "")
-      .replace(/  +/g, " ")
-      .split(""),
-    morsecode = [];
+function text2morse() {
+  mex_text.value = mex_text.value
+    .toUpperCase()
+    .replace(/[^A-Z0-9\s\n\r]/g, "")
+    .replace(/  +/g, " ");
 
-  for (let i = 0; i < chars.length; i++) {
-    if (chars[i] == " ") {
-      morsecode.push(morse.space.join(""));
-    } else if (chars[i] == "\r" || chars[i] == "\n") {
-      morsecode.push(morse.return.join(""));
+  var str = [];
+
+  mex_text.value.split("").forEach((letter) => {
+    if (letter == " " || letter == "\r" || letter == "\n") {
+      str.push("/");
     } else {
-      morsecode.push(morse[chars[i]].join(""));
+      str.push(morseDict[letter]);
     }
-  }
+  });
 
-  return morsecode.join(" ");
+  mex_morse.value = str.join(" ");
 }
 
-function morseToText(str) {
-  var chars = str
-      .toLowerCase()
-      .replace(/[^a-z0-9\s\n\r]/g, "")
-      .replace(/  +/g, " ")
-      .split(""),
-    morsecode = [];
+function morse2text() {
+  mex_morse.value = mex_morse.value.toUpperCase().replace(/[^ \n./-]/g, "");
+  var str = [];
 
-  for (let i = 0; i < chars.length; i++) {
-    if (chars[i] == " ") {
-      morsecode.push(morse.space.join(""));
-    } else if (chars[i] == "\r" || chars[i] == "\n") {
-      morsecode.push(morse.return.join(""));
-    } else {
-      morsecode.push(morse[chars[i]].join(""));
+  mex_morse.value.split(" ").forEach((letter) => {
+    if (letter in morseDict) {
+      str.push(morseDict[letter]);
     }
-  }
+  });
 
-  return morsecode.join(" ");
+  mex_text.value = str.join("");
 }
 </script>
