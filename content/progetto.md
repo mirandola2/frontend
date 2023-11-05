@@ -4,23 +4,21 @@ image: /img/archive/2022_foto-gruppo.jpg
 overlap_hero: true
 --- 
 
-::::card{color = 'base'}
+:::card{color = 'base'}
 Il Progetto Educativo, ispirandosi ai principi dello scautismo e al [_Patto Associativo_](https://www.agesci.it/?wpfb_dl=2082){.link .text-primary}, individua, a fronte delle esigenze educative emergenti dall’analisi dell’ambiente in cui il Gruppo opera, le aree di impegno prioritario per il Gruppo e indica i conseguenti obiettivi e percorsi educativi.
   
-:::MyDiv
 ::Lnk{href="#obiettivi-2023-24" self icon="center_focus_strong"}
 Leggi gli obiettivi 2023-24
 ::
-
-::Lnk{href="#"}
-Visualizza il progetto completo
-::
 :::
-::::
 
 :TableOfContents
 
 ## Introduzione
+
+::Lnk{href="#"}
+Visualizza il progetto completo
+::
 
 La Comunità Capi, partendo dalla verifica del precedente Progetto Educativo e da una nuova analisi d’ambiente, ha individuato i __bisogni principali__, le aree d’impiego e successivamente le __priorità trasversali__ per tutte le branche, che faranno da guida per il prossimo quadriennio. Da queste ultime la Comunità Capi, tutta insieme, delineerà annualmente gli __Obiettivi Educativi__ di ciascuna branca, che serviranno per la programmazione delle attività per le Unità.
 
