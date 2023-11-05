@@ -1,4 +1,5 @@
 <template>
+  <div class="not-prose max-w-4xl mx-auto">
     <a
       role="button"
       class="btn btn-outline btn-secondary w-fit"
@@ -6,6 +7,7 @@
       :target="self?'_self':'_blank'"
       ><span class="material-symbols-rounded"> {{icon}} </span> <slot></slot
     ></a>
+  </div>
 </template>
 <script setup>
 defineProps({
