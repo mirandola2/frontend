@@ -7,7 +7,7 @@
       'md:float-right md:max-w-sm m-3 md:mr-0': float == '2',
     }"
   >
-    <div v-if="typeof src == String">
+    <div v-if="typeof src == 'string'">
       <button @click="showSingle" class="block mx-auto h-auto w-auto">
         <img
           :src="src"
@@ -21,20 +21,35 @@
       </p>
     </div>
     <div v-else>
-      <button @click="showSingle" class="block mx-auto h-auto w-auto">
+        
+        <div class="relative justify-center items-center flex"   :class="{ '': float == '0' }">
+        <button
+          @click="showMulti"
+        > 
         <img
-          :src="src[indexRef]"
-          :alt="alt[indexRef] || desc[indexRef] || ''"
-          class="rounded-lg shadow-lg w-auto h-auto"
-          :class="{ 'max-h-48': float != '0' }"
-        />
+            :src="src[indexRef]"
+            :alt="alt[indexRef] || desc[indexRef] || ''"
+            class="rounded-lg shadow-lg w-auto h-auto "
+            :class="{ 'max-h-48': float != '0', 'max-h-96': float == '0' }"
+          />
       </button>
+      
+          <button
+            class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -left-3 z-20"
+            v-on:click="changeIndex(-1)"
+          >
+            <span class="material-symbols-rounded"> navigate_before </span>
+          </button>
+          <button
+            class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -right-3 z-20"
+            v-on:click="changeIndex(+1)"
+          >
+            <span class="material-symbols-rounded">navigate_next</span>
+          </button>
+        </div>
       <p class="text-sm text-center opacity-70 mt-2 mx-auto">
-        {{ desc[indexRef] || '' }}
+        {{ desc[indexRef] }} [{{ indexRef + 1}}/{{ src.length }}]
       </p>
-      <div class="join mx-auto">
-         <button class="join-item btn-secondary btn btn-xs" :class="{'btn-active': 'indexRef==index'}"  v-for="(item, index) in src" v-on:click="indexRef=index">{{index}}</button>
-      </div>
     </div>
   </div>
 
@@ -88,12 +103,16 @@ const showSingle = () => {
   onShow();
 };
 
-const showMulti = () => {  
-  imgsRef.value = src.map((e, i)=>{
-    return {src: e, title: desc[i] || ""}
+const showMulti = () => {
+  imgsRef.value = props.src.map((e, i) => {
+    return { src: e, title:props.desc[i] || "" };
   });
   onShow();
 };
+
+function changeIndex(num) {
+  indexRef.value = Math.abs((indexRef.value + num) % props.src.length);
+}
 
 const onHide = () => (visibleRef.value = false);
 </script>
