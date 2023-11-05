@@ -9,6 +9,7 @@ const menu = ref({
     "L'Associazione": "/associazione",
     "Il Gruppo": "/gruppo",
     "La Comunità Capi": "/coca",
+    "Il Progetto Educativo": "/progetto",
     Contatti: "/contatti",
     Iscrizioni: "/iscrizioni"
   },

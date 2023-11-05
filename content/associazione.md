@@ -27,7 +27,7 @@ Diffusosi velocemente in tutto il mondo immediatamente dopo la sua fondazione ne
 
 A sottolineare l'educazione all'impegno sociale, è significativo ricordare che molti dei leaders politici nei vari paesi del mondo sono stati educati nello scautismo. Il Parlamento Italiano per l'azione educativa svolta a favore dei giovani in tutto il mondo, ha assegnato congiuntamente alle due organizzazioni mondiali dello scautismo il Premio Parlamentare per l'Infanzia, che è stato consegnato ai rappresentanti dei Comitati Mondiali in occasione della Giornata Nazionale per l'Infanzia il 20 novembre 2005.
 
-_Liberamente tratto dal libro di Paolo Alacevich "Scautismo e Umanesimo Cristiano". 2003, Collana Tracce Edizioni Fiordaliso._
+_~ Liberamente tratto dal libro di Paolo Alacevich "Scautismo e Umanesimo Cristiano". 2003, Collana Tracce Edizioni Fiordaliso._
 
 ---
 
@@ -49,26 +49,16 @@ Il clima culturale del dopoguerra, il nuovo ruolo della donna nella società e n
 
 ## Le Aquile Randagie
 
-La legge n. 5 art. 3 del 9 Gennaio 1927 decreta lo scioglimento dei Riparti Scout nei centri inferiori a 20.000 abitanti ed obbliga ad apporre, ai restanti, le iniziali ONB (Opera Nazionale Balilla, vale a dire l'organizzazione giovanile fascista) sulle proprie insegne.  
-Papa Pio XI fu costretto a dichiarare sciolto lo scautismo il 24 gennaio dello stesso anno.  
-Il 9 aprile 1928 il Consiglio dei Ministri modifica la legge ONB e col decreto n. 696, firmato dal capo del Governo, Benito Mussolini, e dal Re, dichiara soppresso lo scautismo.  
+La legge n. 5 art. 3 del 9 Gennaio 1927 decreta lo scioglimento dei Riparti Scout nei centri inferiori a 20.000 abitanti ed obbliga ad apporre, ai restanti, le iniziali ONB (Opera Nazionale Balilla, vale a dire l'organizzazione giovanile fascista) sulle proprie insegne. Papa Pio XI fu costretto a dichiarare sciolto lo scautismo il 24 gennaio dello stesso anno. Il 9 aprile 1928 il Consiglio dei Ministri modifica la legge ONB e col decreto n. 696, firmato dal capo del Governo, Benito Mussolini, e dal Re, dichiara soppresso lo scautismo.  
 
 :Fig{src='/img/archive/1935_aquilerandagie.jpg'}
 
 
-Il 22 aprile 1928 l'ASCI viene ufficialmente chiusa e vengono deposte in Duomo a Milano le fiamme, insegne dei reparti. In quello stesso giorno Ciacco, un lupetto del gruppo Milano 2, fa la sua promessa entrando nella famiglia scout: è il primo simbolico atto di rivolta.  
-Alcuni Capi e ragazzi sono decisi a mantenere fede alla Promessa e alla Legge: tra questi Andrea Ghetti, del gruppo Milano 11, detto Baden e Giulio Cesare  Uccellini, Capo del Milano 2, che prenderà il nome di Kelly durante la clandestinità, guideranno le Aquile Randagie.  
-La clandestinità durerà 16 anni 11 mesi e 5 giorni, che saranno chiamati, basandosi sul linguaggio kiplingiano, il periodo della giungla silente.  
+Il 22 aprile 1928 l'ASCI viene ufficialmente chiusa e vengono deposte in Duomo a Milano le fiamme, insegne dei reparti. In quello stesso giorno Ciacco, un lupetto del gruppo Milano 2, fa la sua promessa entrando nella famiglia scout: è il primo simbolico atto di rivolta. Alcuni Capi e ragazzi sono decisi a mantenere fede alla Promessa e alla Legge: tra questi Andrea Ghetti, del gruppo Milano 11, detto Baden e Giulio Cesare  Uccellini, Capo del Milano 2, che prenderà il nome di Kelly durante la clandestinità, guideranno le Aquile Randagie. La clandestinità durerà 16 anni 11 mesi e 5 giorni, che saranno chiamati, basandosi sul linguaggio kiplingiano, il periodo della giungla silente.  
 
-Fare scautismo in uniforme vuol dire amare totalmente il metodo, avere convinzioni salde, coraggio per  affrontare le conseguenze e i rischi, come la perdita dei vari benefici dati dall'iscrizione al Fascio.  
+Fare scautismo in uniforme vuol dire amare totalmente il metodo, avere convinzioni salde, coraggio per  affrontare le conseguenze e i rischi, come la perdita dei vari benefici dati dall'iscrizione al Fascio. Le Aquile randagie sono senza sede e le informazioni per le uscite intere o pomeridiane della domenica  sono lasciate in alcuni monumenti storici intorno a Piazza del Duomo, ovviamente senza data e firma.  Per non rimanere isolati s'instaura una fitta corrispondenza con Scout stranieri che durerà per tutto il  tempo della clandestinità e che permetterà, alle Aquile randagie, di mantenersi sempre aggiornati metodologicamente con l'evoluzione dello scautismo mondiale.  
 
-Le Aquile randagie sono senza sede e le informazioni per le uscite intere o pomeridiane della domenica  sono lasciate in alcuni monumenti storici intorno a Piazza del Duomo, ovviamente senza data e firma.  
-Per non rimanere isolati s'instaura una fitta corrispondenza con Scout stranieri che durerà per tutto il  tempo della clandestinità e che permetterà, alle Aquile randagie, di mantenersi sempre aggiornati metodologicamente con l'evoluzione dello scautismo mondiale.  
-
-Saranno mantenute, per tutto il periodo della clandestinità, le tradizioni dell'inaugurazione dell'anno Scout  in settembre, la visita il pomeriggio di Natale all'Ospedale dei Bambini, la festa di Carnevale, il rinnovare insieme la Promessa il 23 aprile in comunione  ideale con tutti gli Scout del mondo, il Campo di San Giorgio, il Campo Estivo, ecc.  
-Una delegazione di cinque Aquile Randagie, aggregata al contingente svizzero, partecipa nel 1933  al  Jamboree di Gödöllo (Ungheria) incontrando Baden-Powell per la  prima volta.  
-Nel settembre del 1936 Kelly (Giulio Uccellini) partecipa ad un Pellegrinaggio di Scout stranieri a Lourdes e fa voto di condurne uno ufficiale dell'ASCI qualora questa sia ricostruita integralmente.  
-Questo voto sarà sciolto da  oltre 400 Scout ASCI nel 1954.  
+Saranno mantenute, per tutto il periodo della clandestinità, le tradizioni dell'inaugurazione dell'anno Scout  in settembre, la visita il pomeriggio di Natale all'Ospedale dei Bambini, la festa di Carnevale, il rinnovare insieme la Promessa il 23 aprile in comunione  ideale con tutti gli Scout del mondo, il Campo di San Giorgio, il Campo Estivo, ecc. Una delegazione di cinque Aquile Randagie, aggregata al contingente svizzero, partecipa nel 1933  al  Jamboree di Gödöllo (Ungheria) incontrando Baden-Powell per la  prima volta. Nel settembre del 1936 Kelly (Giulio Uccellini) partecipa ad un Pellegrinaggio di Scout stranieri a Lourdes e fa voto di condurne uno ufficiale dell'ASCI qualora questa sia ricostruita integralmente. Questo voto sarà sciolto da  oltre 400 Scout ASCI nel 1954.  
 
 Nell'agosto 1937 delle Aquile randagie partecipano al Jamboree di Voghelenzang (Olanda) inseriti nella delegazione Scout della Corsica. Il 9 agosto Kelly, Andrea Ghetti - Baden e suo fratello Vittorio incontrano Baden-Powell che li riceve ufficialmente come delegazione italiana e concede l'investitura di Capo a Kelly e l'incarico di conservare lo spirito dello scautismo e di diffonderlo tra la gioventù italiana, fuori da ogni forma associativa.  
 Nel 1939 avviene la prima salita in Val Codera, scoperta da un'aquila randagia, 'paradiso perduto' sconosciuto e con possibilità di fuga in Svizzera.  
@@ -77,9 +67,11 @@ Dopo l'armistizio dell'8 Settembre 1943, le Aquile Randagie organizzano l'assist
 Nasce così OSCAR (Organizzazione Scout Cattolica Assistenza Ricercati) che si impegnò in un'opera di salvataggio di perseguitati e ricercati di diversa nazione, razza, religione, con espatri in Svizzera (noto quello di Indro Montanelli) e concludendo il proprio servizio proteggendo la vita, a guerra finita, ai persecutori di ieri.  
 Con la fine del fascismo anche i componenti delle Aquile Randagie hanno contribuito a rifondare l'Associazione Scouts Cattolici Italiani portando il proprio contributo di fedeltà (l'ASCI confluì poi nell'AGESCI).  
 
+---
+
 ## Lo Scautismo a Mirandola
 
-_Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stefano Zerbini_
+_~ Tratto dal libro "Dall'inghilterra alla Bassa Modenese" di Fabio Balboni e Stefano Zerbini._
 
 ### Inizi dello scautismo a Mirandola
 
