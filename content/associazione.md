@@ -45,6 +45,12 @@ Anche all'interno della Chiesa, durante la stagione di rinnovamento culminata ne
 
 Il clima culturale del dopoguerra, il nuovo ruolo della donna nella società e nella Chiesa, lo stesso rinnovamento conciliare, hanno creato successivamente l'occasione favorevole per la nascita di un'unica associazione di guide e scouts cattolici nella quale potessero convivere, nel rispetto reciproco e secondo il principio della coeducazione, ragazzi e ragazze: era il 1974, nasceva l'AGESCI.
 
+::card{color="base" title="Il Grande Gioco - 100 Anni di Scoutismo"}
+ Si tratta di un film/documentario sui cent'anni di scautismo di Fabio Toncelli, realizzato in coproduzione AGESCI-Rai Trade e con il patrocinio del Segretariato sociale RAI.
+::Lnk{ href="https://www.youtube.com/watch?v=GdQoudk0znM&list=PL50B574103B99D879&index=1" icon="movie"}
+Guardalo su Youtube
+::
+::
 --- 
 
 ## Le Aquile Randagie
@@ -66,6 +72,13 @@ Nel 1939 avviene la prima salita in Val Codera, scoperta da un'aquila randagia, 
 Dopo l'armistizio dell'8 Settembre 1943, le Aquile Randagie organizzano l'assistenza ad ex prigionieri inglesi e greci, americani, russi, serbi, e quindi ebrei, giovani sbandati o renitenti alla leva, e perseguitati di ogni fede politica.  
 Nasce così OSCAR (Organizzazione Scout Cattolica Assistenza Ricercati) che si impegnò in un'opera di salvataggio di perseguitati e ricercati di diversa nazione, razza, religione, con espatri in Svizzera (noto quello di Indro Montanelli) e concludendo il proprio servizio proteggendo la vita, a guerra finita, ai persecutori di ieri.  
 Con la fine del fascismo anche i componenti delle Aquile Randagie hanno contribuito a rifondare l'Associazione Scouts Cattolici Italiani portando il proprio contributo di fedeltà (l'ASCI confluì poi nell'AGESCI).  
+
+::card{color="base" title="La storia delle Aquile Randagie"}
+Narrata dal regista Fabio Toncelli nel film documentario "Il grande gioco - Cent'anni di scautismo".
+::Lnk{ href="https://www.youtube.com/watch?v=r_waqjZnQGA" icon="movie"}
+Guarda il video su Youtube
+::
+::
 
 ---
 
