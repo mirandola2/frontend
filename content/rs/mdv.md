@@ -3,7 +3,7 @@ title: Clan Fuoco Madonna della Valle
 image: /img/misc/strada-campo.jpg
 ---
 
-:Fig{src="/img/branche/clan_1.jpg" desc="Il Clan Fuoco in Route sul lago Scaffaiolo nel 2020." float="0"}
+:Fig{:src='["/img/branche/clan_1.jpg", "/img/branche/clan_2.jpg"]' :desc='["Il Clan Fuoco in Route sul lago Scaffaiolo nel 2020.", "Il Clan Fuoco in Route a Santiago de Compostela, 2018"]' float="0"}
 
 
 :Fig{src="/img/misc/madonna_della_valle.jpg" desc="L'Edicola in Via Bruino."}

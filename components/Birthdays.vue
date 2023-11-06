@@ -22,15 +22,16 @@ function birthdaysFormatter(birthdays) {
   let counterFarBD = 0;
 
   const birthdaysReduced = birthdays.reduce(function (acc, curr) {
-    acc[curr.t_minus] = acc[curr.t_minus] || [];
-    acc[curr.t_minus].push(curr.name);
-    if (curr.t_minus > 1) {
+    let t = curr.t_minus > 0 ? curr.t_minus-1 : curr.t_minus+364
+    acc[t] = acc[t] || [];
+    acc[t].push(curr.name);
+    if (t > 1) {
       counterFarBD += 1;
     }
     return acc;
   }, Object.create(null));
 
-  for (const [tminus, names] of Object.entries(birthdaysReduced)) {
+  for (const [t_minus_key, names] of Object.entries(birthdaysReduced)) {
     const length = names.length;
 
     let namesString = "";
@@ -44,9 +45,9 @@ function birthdaysFormatter(birthdays) {
       namesString = names.join(", ") + " e " + last;
     }
 
-    if (tminus === "0") {
+    if (t_minus_key === "0") {
       returnBDString += `Oggi è il compleanno di ${namesString}, auguri! `;
-    } else if (tminus === "1") {
+    } else if (t_minus_key === "1") {
       returnBDString += `Domani ${
         length < 2 ? "compierà" : "compieranno"
       } gli anni ${namesString}. `;
@@ -57,7 +58,7 @@ function birthdaysFormatter(birthdays) {
             ? "Il prossimo compleanno è di"
             : "I prossimi compleanni sono di"
           : ", "
-      } ${namesString} fra ${tminus} giorni`;
+      } ${namesString} fra ${t_minus_key} giorni`;
       flagFarBDString = false;
     }
   }
