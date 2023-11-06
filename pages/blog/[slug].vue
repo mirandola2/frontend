@@ -2,7 +2,7 @@
   <BlogLayout>
     <div class="hero rounded-2xl bg-base-200">
       <div
-        class="hero-content w-full flex-col justify-between md:flex-row-reverse"
+        class="hero-content flex w-full flex-col justify-between xl:flex-row-reverse"
       >
         <img :src="page.img" class="md:max-w-sm rounded-lg shadow-2xl" />
         <div class="text-center mx-auto">
