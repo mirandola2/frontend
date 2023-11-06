@@ -70,7 +70,7 @@ function handleScroll() {
 }
 
 useSeoMeta({
-  title: (page?.title ? page?.title + ' ~ ' : 'Gruppo') + 'Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade',
+  title: page?.title ? page?.title + ' ~ Gruppo Scout Mirandola 2' : 'Gruppo Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade',
   ogTitle: 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
   description: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
   ogDescription: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, il nostro team, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
@@ -80,10 +80,6 @@ useSeoMeta({
 </script>
 
 <template>
-  <Head>
-    <Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2</Title>
-  </Head>
-
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
