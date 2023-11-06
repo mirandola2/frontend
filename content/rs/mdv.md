@@ -72,6 +72,8 @@ La Guida e lo Scout:
 
 ## La Carta di Clan
 
+:Fig{:src='["/img/misc/impegno-1983-1992.jpg", "/img/misc/impegno-1993-2001.jpg", "/img/misc/impegno-2002-2013.jpg"]' :desc='["Firme Impegno 1983-1992", "Firme Impegno 1993-2001", "Firme Impegno 2002-2013"]'}
+
 La Carta di Clan è un documento con cui la comunità rende esplicite le sue caratteristiche e tradizioni.  
 È costruita in armonia con i valori della Legge e della Promessa scout e si arricchisce progressivamente del risultato delle esperienze vissute dalla comunità.  
 Il Clan/Fuoco vi fissa le proprie riflessioni, i propri obiettivi, nonché i valori che ciascun rover e scolta si impegnano a testimoniare.  

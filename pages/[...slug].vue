@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="page.title" :image="page.image" v-if="page?.show_hero != false"/>
+  <Hero :title="page?.title" :image="page?.image" v-if="page?.show_hero != false"/>
 
   <div class="container space-y-2" :class="{'-mt-16': page?.overlap_hero, 'mt-5': !page?.overlap_hero}">
     <div
@@ -8,6 +8,7 @@
       <ContentRenderer :value="page" />
     </div>
   </div>
+
 </template>
 <script setup>
 const { toc, page } = useContent();
@@ -15,5 +16,12 @@ const { toc, page } = useContent();
 useHead({
   title: page.title
 })
+
+if (!page.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
+  })
+}
 
 </script>
