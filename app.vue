@@ -70,12 +70,11 @@ function handleScroll() {
 }
 
 useSeoMeta({
-  title: (page?.title ? page?.title + ' ~ ' : 'Gruppo') + 'Scout Mirandola 2',
-  ogTitle: 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade.',
-  description: 'Sito Internet del Gruppo Scout Agesci Mirandola 2 ~ 40 anni di giochi, avventure e strade.',
-  ogDescription: 'Sito Internet del Gruppo Scout Agesci Mirandola 2.',
+  title: (page?.title ? page?.title + ' ~ ' : 'Gruppo') + 'Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade',
+  ogTitle: 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
+  description: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
+  ogDescription: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, il nostro team, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
   ogImage: '/img/misc/hero.jpg',
-  twitterCard: 'summary_large_image',
 })
 
 </script>
