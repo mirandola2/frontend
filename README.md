@@ -98,10 +98,18 @@ Fa apparire un indice della pagina nella parte destra della pagina sui dispositi
 
 Mostra un'immagine formattata usando la grafica del sito. I parametri sono:
 
-- `src` string, mandatory: source dell'immagine, interna in _public_ o esterna
-- `desc` string, optional: descrizione che appare sotto all'immagine
+- `src` string | Object, mandatory: source dell'immagine, interna in _public_ o esterna
+- `desc` string | Object, optional: descrizione che appare sotto all'immagine
 - `alt` string, optional: testo alternativo per migliorare l'accessibilità ([cos'è?](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt))
 - `float` number, optional: regola come apparirà l'immagine: `0` la farà apparire centrata e a larghezza ampia, `1` (default) la farà diventare float a sinistra, `2` float a destra.
+
+##### Caroselli
+
+Le proprietà `src` e `desc` possono anche avere più immagini, in modo da creare un carosello. La sintassi deve essere la seguente: 
+
+```md
+:Fig{:src='["/path0.jpg", "/path1.jpg"]' :desc='["Caption Img 0", "Caption Img 1"]' }
+```
 
 #### Quoted
 
