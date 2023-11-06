@@ -21,34 +21,34 @@
       </p>
     </div>
     <div v-else>
-        
-        <div class="relative justify-center items-center flex"   :class="{ '': float == '0' }">
-        <button
-          @click="showMulti"
-        > 
-        <img
+      <div
+        class="relative justify-center items-center flex"
+        :class="{ '': float == '0' }"
+      >
+        <button @click="showMulti">
+          <img
             :src="src[indexRef]"
             :alt="alt[indexRef] || desc[indexRef] || ''"
-            class="rounded-lg shadow-lg w-auto h-auto "
+            class="rounded-lg shadow-lg w-auto h-auto"
             :class="{ 'max-h-48': float != '0', 'max-h-96': float == '0' }"
           />
-      </button>
-      
-          <button
-            class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -left-3 z-20"
-            v-on:click="changeIndex(-1)"
-          >
-            <span class="material-symbols-rounded"> navigate_before </span>
-          </button>
-          <button
-            class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -right-3 z-20"
-            v-on:click="changeIndex(+1)"
-          >
-            <span class="material-symbols-rounded">navigate_next</span>
-          </button>
-        </div>
+        </button>
+
+        <button
+          class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -left-3 z-20"
+          v-on:click="changeIndex(-1)"
+        >
+          <span class="material-symbols-rounded"> navigate_before </span>
+        </button>
+        <button
+          class="btn btn-secondary border-secondary-content shadow-xl btn-circle absolute -right-3 z-20"
+          v-on:click="changeIndex(+1)"
+        >
+          <span class="material-symbols-rounded">navigate_next</span>
+        </button>
+      </div>
       <p class="text-sm text-center opacity-70 mt-2 mx-auto">
-        {{ desc[indexRef] }} [{{ indexRef + 1}}/{{ src.length }}]
+        {{ desc[indexRef] }} [{{ indexRef + 1 }}/{{ src.length }}]
       </p>
     </div>
   </div>
@@ -105,7 +105,7 @@ const showSingle = () => {
 
 const showMulti = () => {
   imgsRef.value = props.src.map((e, i) => {
-    return { src: e, title:props.desc[i] || "" };
+    return { src: e, title: props.desc[i] || "" };
   });
   onShow();
 };
