@@ -569,7 +569,7 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Reparto Brownsea:** Riccardo Sbardellati _(CU)_, Elisabetta Polacchini, Thomas Bolognini  
 **Reparto Antares:** Irene Cavicchioli _(CU)_, Giorgia Sbardellati  
   
-**Noviziato :** Chiara Massarenti  
+**Noviziato:** Chiara Massarenti  
 **Clan/Fuoco Madonna della Valle:** Samuele Marastoni _(CU)_, Alice Massarenti _(CU)_  
   
 **Altri servizi/incarichi:** Francesca Zerbini, Francesco Bergonzini, Alessandro Bruschi, Gabriele Sienna.
@@ -600,7 +600,7 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Reparto Brownsea:** Riccardo Sbardellati _(CU),_ Edoardo Galavotti, Antonio Puorro  
 **Reparto Antares:** Elisabetta Polacchini _(CU)_, Cecilia Galavotti  
 
-**Noviziato Can't Stop:** Elisa Basaglia, Francesco Bergonzini  
+**Noviziato:** Elisa Basaglia, Francesco Bergonzini  
 **Clan/Fuoco Madonna della Valle:** Stefano Venturini _(CU)_, Chiara Cavicchioli _(CU)_  
   
 **Preparazione ai sacramenti:** Alessio Massarenti, Irene Cavicchioli, Andrea Morini, Matteo Tartaglia, Samuele Marastoni
@@ -670,4 +670,23 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Clan/Fuoco Madonna della Valle:** Elisabetta Polacchini _(CU)_, Francesco Madonia _(CU)_, Edoardo Galavotti
   
 **Preparazione ai sacramenti:** Maddalena Pieri, Matteo Tartaglia  
-**A disposizione:** Irene Cavicchioli, Giovanni Soavi
+**A disposizione:** Giovanni Soavi  
+**Altri incarichi associativi:**  Irene Cavicchioli  
+
+## ANNI XL - L
+### anno 2023-2024
+**Capi Gruppo:** Riccardo Sbardellati, Elena Zerbini  
+**A.E.:** don Amal Johnson Chirayil, suor Mary Roselet Fernandez, Gianluca Giannini
+  
+**Branco della Roccia Azzurra:** Giacomo Salici _(Akela - CU)_, Emmanuele Morabito _(Chil)_, Giulio Pongiluppi _(Bagheera)_, Michele Soavi _(Kaa)_  
+**Cerchio del Bosco Gioioso:** Gaia Clerici _(Arcanda - CU)_, Riccardo Avanzi (_Scibà_), Lucia Cavicchioli _(Litmi)_, Veronica Panza _(Mi)_
+  
+**Reparto Brownsea:** Francesco Botti _(CU)_, Tobia Cavicchioli  
+**Reparto Antares:** Lucrezia Polacchini _(CU)_
+
+**Noviziato:** Maddalena Pieri  
+**Clan/Fuoco Madonna della Valle:** Elisabetta Polacchini _(CU)_, Luca Meschieri _(CU)_, Alessia Bucci  
+  
+**Preparazione ai sacramenti:** Edoardo Galavotti  
+**A disposizione:** Francesco Bergonzini, Letizia Pongiluppi  
+**Altri incarichi associativi:** Stefano Venturini

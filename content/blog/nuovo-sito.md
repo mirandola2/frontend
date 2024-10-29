@@ -2,7 +2,7 @@
 img: 'https://raw.githubusercontent.com/mirandola2/frontend/main/doc/architecture.png'
 category: 'cc'
 title: Un nuovo sito web
-date: 2023-10-15
+date: 2024-10-15
 description: Siamo felici di presentarvi il nuovo sito del nostro gruppo!
 ---
 
