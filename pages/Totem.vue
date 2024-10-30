@@ -15,9 +15,9 @@
         Normalmente il nome dell'animale richiama una caratteristica fisica
         della persona, mentre l'aggettivo una caratteristica della personalità.
         In passato, nel nostro gruppo, il totem veniva assegnato alle guide del
-        primo anno (prima media) e agli scout dell’ultimo anno (seconda
-        superiore). Oggi il totem viene assegnato in terza media (dal 1991 per
-        gli scout e dal 2006 per le guide), con una cerimonia chiamata
+        primo anno (prima media) e agli scout dell'ultimo anno (seconda
+        superiore), successivamente è stato assegnato in terza media (dal 1991 per
+        gli scout e dal 2006 per le guide). Oggi invece viene assegnato im prima superiore con una cerimonia chiamata
         “totemizzazione”. Durante questa cerimonia la guida o lo scout per
         ricevere il suo "Totem" dovrà superare delle prove che testimonieranno
         il suo valore.

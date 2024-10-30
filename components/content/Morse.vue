@@ -1,5 +1,5 @@
 <template>
-<div class="card not-prose lg:float-right lg:m-5 w-96 bg-neutral">
+<div class="card not-prose lg:float-right my-5 lg:m-5 w-full lg:w-96 bg-neutral">
   <div class="card-body">
     <h2 class="card-title">Traduttore Morse</h2>
     <p>Scrivi un messaggio qui sotto per tradurlo! Puoi anche tradurre direttamente dal codice morse, separando le lettere con <strong>/</strong> e le parole con <strong>//</strong>.</p>

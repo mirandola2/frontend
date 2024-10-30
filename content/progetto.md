@@ -7,8 +7,8 @@ overlap_hero: true
 :::card{color = 'base'}
 Il Progetto Educativo, ispirandosi ai principi dello scautismo e al [_Patto Associativo_](https://www.agesci.it/?wpfb_dl=2082){.link .text-primary}, individua, a fronte delle esigenze educative emergenti dall’analisi dell’ambiente in cui il Gruppo opera, le aree di impegno prioritario per il Gruppo e indica i conseguenti obiettivi e percorsi educativi.
   
-::Lnk{href="#obiettivi-2023-24" self icon="center_focus_strong"}
-Leggi gli obiettivi 2023-24
+::Lnk{href="#obiettivi-2024-25" self icon="center_focus_strong"}
+Leggi gli obiettivi 2024-25
 ::
 :::
 
@@ -101,7 +101,7 @@ La Co.Ca. si impegna a mettere in atto nei programmi annuali azioni concrete, ch
 
 :::cards 
 ::card{color=lc title="Obiettivo Branca LC"}
-Sfruttando le capacità acquisite come protagonisti attivi della vita di branco e cerchio, saper individuare i propri sogni, e aspirare a raggiungerli nella consapevolezza che l'obiettivo non è il successo individuale.
+...
 ::
 ::card{color=eg title="Obiettivo Branca EG"}
 ...
@@ -115,8 +115,7 @@ Sfruttando le capacità acquisite come protagonisti attivi della vita di branco 
 
 :::cards 
 ::card{color=lc title="Passi LC"}
-Fare in modo che i Lupetti e Coccinella comprendano l'importanza della cura di sé e di ciò che ci circonda, far presentare loro le specialità acquisite e 
-spronare il CDA in modo che possa essere d'aiuto al resto del Branco / Cerchio.
+...
 ::
 ::card{color=eg title="Passi EG"}
 ...

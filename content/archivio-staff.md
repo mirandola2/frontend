@@ -26,13 +26,13 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 
 ### anno 1984-1985
 
-**Capi Gruppo:** Claudio Zerbini, Brunetta Costa   
+**Capi Gruppo:** Claudio Zerbini, Brunetta Costa  
 **A.E.:** don Silvano Rettighieri  
   
-**Branco della Roccia Azzurra:** Carlo Gavioli _(Akela - CU)_, Andrea Salici _(F. Bigio)_   
+**Branco della Roccia Azzurra:** Carlo Gavioli _(Akela - CU)_, Andrea Salici _(F. Bigio)_  
 **Cerchio del Bosco Gioioso:** Paola Caleffi Garuti _(CU)_  
   
-**Reparto Brownsea:** Nino Pongiluppi _(CU)_, Paolo Cavicchioli, Giuseppe Tomasini   
+**Reparto Brownsea:** Nino Pongiluppi _(CU)_, Paolo Cavicchioli, Giuseppe Tomasini  
 **Reparto Antares:** Egle Benatti _(CU)_  
   
 **Noviziato e Clan/Fuoco Madonna della Valle:** Stefano Zerbini _(CU)_, Daniela Dotti _(CU)_; Emanuele Pacchioni _(MdN)_, Morena Covizzi _(MdN)_  
@@ -41,7 +41,7 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 
 ### anno 1985-1986
 
-**Capi Gruppo:** Claudio Zerbini, Brunetta Costa   
+**Capi Gruppo:** Claudio Zerbini, Brunetta Costa  
 **A.E.:** don Silvano Rettighieri  
   
 **Branco della Roccia Azzurra:** Andrea Salici _(Akela CU)_  
@@ -63,12 +63,12 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
   
 **Branco della Roccia Azzurra:** Andrea Salici _(Akela - CU)_, Marco Ferraresi _(Bagheera)_, Giovanni Cavicchioli _(Chil)_, Luca David _(Mang)_, Andrea Marazzi _(Kaa)_, Germano Zerbini _(Mysa)_  
 **Cerchio del Bosco Gioioso:** Lucia Bocchi _(CU)_, Cristiana Bellini  
-**Branco Waingunga** _(Medolla)_**:** Carlo Gavioli _(Akela - CU)_, Fabio Balboni, Stefano Forapani _(Kaa)_, Paolo Golinelli _(F. Bigio)_, Luigi Neri, Pietro Vescovini _(Chil)_  
+**Branco Waingunga:** _(Medolla)_ Carlo Gavioli _(Akela - CU)_, Fabio Balboni, Stefano Forapani _(Kaa)_, Paolo Golinelli _(F. Bigio)_, Luigi Neri, Pietro Vescovini _(Chil)_  
   
 **Reparto Brownsea:** Paolo Cavicchioli _(CU)_, Daniele Galavotti, Massimo Negrelli, Giuseppe Tommasini  
 **Reparto Antares:** Angela Panza _(CU)_, Cristina Francia, Laura Maffei, Loretta Tromba  
   
-**Noviziato e Clan/Fuoco Madonna della Valle:** Stefano Zerbini _(CU)_, Daniela Dotti _(CU), Enrico Zini_; Emanuele Pacchioni _(MdN)_, Maria Chiara Clerici _(MdN)_, Odette Magri  
+**Noviziato e Clan/Fuoco Madonna della Valle:** Stefano Zerbini _(CU)_, Daniela Dotti _(CU)_, Enrico Zini; Emanuele Pacchioni _(MdN)_, Maria Chiara Clerici _(MdN)_, Odette Magri  
   
 **Altri servizi/incarichi:** Marina Bassi, Lorenzo Borsari, Morena Covizzi, Milena Porta
 
@@ -79,10 +79,10 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
   
 **Branco della Roccia Azzurra:** Luca David _(Akela - CU)_, Marco Ferraresi, Lorenzo Borsari _(F. Bigio)_, Andrea Marazzi, Germano Zerbini  
 **Cerchio del Bosco Gioioso:** Cristiana Bellini _(Arcanda - CU)_  
-**Branco Waingunga** _(Medolla)_**:** Fabio Balboni _(Akela - CU)_, Stefano Forapani _(Kaa)_, Paolo Golinelli _(F. Bigio)_, Milena Porta, Pietro Vescovini _(Chil)_  
+**Branco Waingunga:** _(Medolla)_ Fabio Balboni _(Akela - CU)_, Stefano Forapani _(Kaa)_, Paolo Golinelli _(F. Bigio)_, Milena Porta, Pietro Vescovini _(Chil)_  
   
 **Reparto Brownsea:** Paolo Cavicchioli _(CU)_, Gianni Basaglia, Massimo Negrelli  
-**Reparto Antares:** Angela Panza _(CU)_, Loretta Tromba, Cristina Francia, Laura Maffei   
+**Reparto Antares:** Angela Panza _(CU)_, Loretta Tromba, Cristina Francia, Laura Maffei  
   
 **Clan/Fuoco Madonna della Valle:** Andrea Salici _(CU)_, Lucia Bocchi _(CU)_, Carlo Cavicchioli, Maria Chiara Clerici  
   
@@ -211,10 +211,10 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Cerchio del Bosco Gioioso:** Angela Ganzerli _(Arcanda – CU),_ Elisa Ghidoni, Natale Ventilati _(Scotti)_  
   
 **Reparto Brownsea:** Paolo Neri _(CU)_, Matteo Venturini, Gabriele Gardini  
-**Reparto Antares:** Alessandra Mischiati _(CU)_,  
+**Reparto Antares:** Alessandra Mischiati _(CU)_  
   
 **Noviziato Cittadino Camelot:** Nicola Berni, Michele Vanzini, Enrico Galavotti  
-**Clan/Fuoco Madonna della Valle:** Daniele Galavotti_(CU),_ Daniele Cavicchioli  
+**Clan/Fuoco Madonna della Valle:** Daniele Galavotti _(CU)_, Daniele Cavicchioli  
   
 **Altri servizi/incarichi:** Gianni Basaglia, Cristina Francia, Daniele Pivetti  
 **A disposizione:** Angela Panza, Dino Pongiluppi, Andrea Tromba, Patrizia Vignato
@@ -228,7 +228,7 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Cerchio del Bosco Gioioso:** Elisa Ghidoni _(Arcanda - CU)_, Monica Magri _(Mi)_, Andrea Tromba _(Scotti)_  
   
 **Reparto Brownsea:** Paolo Neri _(CU)_, Matteo Venturini, Gabriele Gardini, Luca David  
-**Reparto Antares:** Raffaella Tommasini _(CU)_, katia Barelli, Ilaria Levratti  
+**Reparto Antares:** Raffaella Tommasini _(CU)_, Katia Barelli, Ilaria Levratti  
   
 **Noviziato Cittadino Excalibur:** Francesco Belluzzi, _Chiara Galavotti (Mirandola 1)_  
 **Clan/Fuoco Madonna della Valle:** Daniele Galavotti _(CU)_, Daniele Cavicchioli, Enrico Galavotti, Alessandra Mischiati  
