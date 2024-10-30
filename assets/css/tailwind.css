@@ -12,7 +12,7 @@
 
 .prose-container {
     @apply prose max-w-none prose-a:text-secondary 
-    prose-p:text-justify prose-p:max-w-4xl prose-p:mx-auto
+    prose-p:md:text-justify prose-p:max-w-4xl prose-p:mx-auto
     prose-li:my-0 prose-ul:pl-10 prose-ul:max-w-4xl prose-ul:mx-auto prose-ol:max-w-4xl prose-ol:mx-auto
     prose-table:max-w-4xl prose-table:mx-auto
     prose-headings:max-w-4xl prose-headings:mx-auto
