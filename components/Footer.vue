@@ -34,8 +34,8 @@
                   </form>
                   <h3 class="font-bold text-lg">Credits</h3>
                   <p class="py-4 font-normal text-justify">
-                    Il sito web che stai leggendo è stato sviluppato da <i>Aquila Ambiziosa</i> sulla base del lavoro di <i>Lince Spensierata</i>, con l'aiuto di <i>Leoncino Spensierato</i> e tutti coloro che hanno contribuito. 
-                    Il codice è open-source, chiunque può leggerlo e migliorarlo su <i>GitHub/Mirandola2</i>.
+                    Il sito web che stai leggendo è stato sviluppato sulla base del lavoro di <i>Lince Spensierata</i>, da <i>Aquila Ambiziosa</i> e tutti coloro che lo hanno aiutato durante le fasi di costruzione e revisione.
+                    Il codice sorgente dell'intero sito, così come l'elenco di chi ha contribuito, è disponibile su <i>GitHub/Mirandola2</i>. Essendo open-source, chiunque può leggere il codice e migliorarlo.
                   </p>
                 </div>
               </dialog>
