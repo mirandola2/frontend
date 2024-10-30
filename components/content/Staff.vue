@@ -22,7 +22,7 @@
         props.coca == false
           ? actualStaff == '*' || value.staff?.split(' ').includes(actualStaff)
           : (actualStaff == '*' || value.staff?.split(' ').includes(actualStaff)) && value.coca == 1
-      )"
+      ).sort((a, b) => a.order - b.order)"
       class="card bg-base-200"
     >
       <div class="card-body p-5">
@@ -48,7 +48,7 @@
               </h2>
               <h2 class="text-xl font-bold" v-else>{{ person.nome }}</h2>
               <p>
-                {{ person.ruolo }}
+                {{ actualStaff == '*' ? person.ruolo?.split('|')[0] : person.ruolo?.split('|').length > 1 ? person.ruolo?.split('|')[1] : person.ruolo?.split('|')[0] }}
               </p>
             </div>
 

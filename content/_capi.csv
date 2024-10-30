@@ -1,19 +1,19 @@
-nome,nomeCaccia,ruolo,staff,coca,desc,img
-Riccardo Sbardellati,,Capo Gruppo,CJ E,1,,ciccio.jpeg,
-Elena Zerbini,Scotti,Capo Gruppo,CJ C,1,"Scotti è lo scoiattolo. Accoglie, insieme alla sua famiglia, Cocci nella propria tana. ",ele.jpg,
+nome,nomeCaccia,ruolo,staff,coca,desc,img,order
+Riccardo Sbardellati,,Capo Gruppo|Aiuto Capo Reparto,CJ E,1,,ciccio.jpeg,1
+Elena Zerbini,Scotti,Capo Gruppo|Aiuto Capo Unità,CJ C,1,"Scotti è lo scoiattolo. Accoglie, insieme alla sua famiglia, Cocci nella propria tana. ",ele.jpg,1
 Letizia Pongiluppi,,Aiuto Capo Gruppo,CC,1,,leti.jpg
 Stefano Venturini,,Incaricato Nazionale alla branca L/C,CC,1,,mini.jpg
 Don Severin Ngueliassi,,Assistente Ecclesiastico,CJ,1,,
 Suor Mary Roselet,Messua,Assistente Spirituale L/C,CC,1,,suormary.jpg
 Gianluca Giannini,,Assistente Spirituale E/G,CC,1,,
-Giacomo Salici,Akela,Capo Unità,L,1,"Akela è il capo del branco di Seeonee, di cui fa parte anche Mowgli. Lupo solitario, dal pelo grigio, simbolo di anzianità e saggezza. È il garante della legge del Branco.",jack.png,
+Giacomo Salici,Akela,Capo Unità,L,1,"Akela è il capo del branco di Seeonee, di cui fa parte anche Mowgli. Lupo solitario, dal pelo grigio, simbolo di anzianità e saggezza. È il garante della legge del Branco.",jack.jpg,
 Emmanuele Morabito,Chil,Aiuto Capo Unità,L,1,"Chil è l'avvoltoio messaggero della giungla. Aiuta Mowgli mentre viene rapito dal Bandar-log, avvisando Bagheera e Baloo del pericolo.",morry.jpg
 Giulio Pongiluppi,Bagheera,Aiuto Capo Unità,L,1,"Bagheera è la forte e saggia pantera nera che riscatta Mowgli al consiglio della rupe dona la sua preda, un toro, per permettere di vivere con il branco.",giulio.jpg
-Lucia Cavicchioli,Arcanda,Capo Unità,C,1,"Arcanda è l'aquila che chiama in sogno Cocci al suo volo ed è colei che la accoglie  al termine del sentiero della Montagna.",lucy.jpg
+Lucia Cavicchioli,Arcanda,Capo Unità,C,1,"Arcanda è l'aquila che chiama in sogno Cocci al suo volo ed è colei che la accoglie  al termine del sentiero della Montagna.",lucy.jpg,0
 Michele Soavi,Ughetto,Aiuto Capo Unità,C,1,"Ughetto è lo gnomo del Bosco. Vive insieme agli altri animali sapendo sempre come aiutarli al meglio.",michi.jpg
-Tobia Cavicchioli,,Capo Reparto,E,1,,tob.png
+Tobia Cavicchioli,,Capo Reparto,E,1,,tob.jpg,0
 Lucrezia Polacchini,,Capo Reparto,G,1,,luchi.jpg
-Alessia Bucci,,Aiuto Capo Reparto,G,1,,ale.png
+Alessia Bucci,,Aiuto Capo Reparto,G,1,,ale.jpg
 Enea Casini,,Aiuto Capo Reparto,G,1,,
 Elisabetta Polacchini,,Capo Fuoco,CF,1,,betta.jpg
 Maddalena Pieri,,Maestra dei Novizi,N,1,,madda.jpg
