@@ -37,17 +37,6 @@
   </div>
 </template>
 <script setup>
-const contentQuery = props.all
-  ? await queryContent("blog").sort({ date: 1 }).find()
-  : await queryContent("blog").limit(4).sort({ date: 1 }).find();
-
-const badge = {
-  lc: { bg: "bg-lc text-lc-content", text: "L/C" },
-  eg: { bg: "bg-eg text-eg-content", text: "E/G" },
-  rs: { bg: "bg-rs text-rs-content", text: "R/S" },
-  cc: { bg: "bg-cc text-white", text: "Gruppo" },
-};
-
 const props = defineProps({
   horizontal: {
     type: Boolean,
@@ -60,4 +49,17 @@ const props = defineProps({
     default: false,
   },
 });
+
+const contentQuery = props.all
+  ? await queryContent("blog").sort({ date: -1 }).find()
+  : await queryContent("blog").limit(4).sort({ date: -1 }).find();
+
+const badge = {
+  lc: { bg: "bg-lc text-lc-content", text: "L/C" },
+  eg: { bg: "bg-eg text-eg-content", text: "E/G" },
+  rs: { bg: "bg-rs text-rs-content", text: "R/S" },
+  cc: { bg: "bg-cc text-white", text: "Gruppo" },
+};
+
+
 </script>

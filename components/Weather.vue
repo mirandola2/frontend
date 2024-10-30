@@ -1,6 +1,7 @@
 <template>
   <span class="loading loading-spinner loading-xs" v-if="!weather.loaded"></span>
   <table v-else class="text-center">
+    <tbody>
     <tr>
       <td v-for="day in weather.daily.time">
         {{ new Date(day).toLocaleString("it-IT", {weekday: "short", day: "2-digit"}).toUpperCase() }}
@@ -11,6 +12,7 @@
         {{ codes[day] }}
       </td>
     </tr>
+    </tbody>
   </table>
 </template>
 <script setup>

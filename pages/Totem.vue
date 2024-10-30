@@ -40,7 +40,6 @@
       <table class="table h-fit" v-if="loading.loaded">
         <template v-for="(totems, locationAndYear) in tableTotem">
           <thead v-if="totems.people.length > 0">
-            <div class="my-12"></div>
             <tr class="bg-neutral sticky top-2 md:top-24">
               <th class="rounded-l-xl w-1/2">{{ totems.location }}</th>
               <th class="rounded-r-xl">{{ totems.year }}</th>
