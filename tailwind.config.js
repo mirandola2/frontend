@@ -16,7 +16,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["DM Sans", "ui-sans-serif", "system-ui"],
+      sans: ["Ubuntu", "ui-sans-serif", "system-ui"],
       display: ["Caprasimo", "ui-sans-serif", "system-ui"],
       serif: ['Playfair Display', "ui-serif"]
     },
