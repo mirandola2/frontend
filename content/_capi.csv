@@ -1,6 +1,6 @@
 nome,nomeCaccia,ruolo,staff,coca,desc,img,order
-Riccardo Sbardellati,,Capo Gruppo|Aiuto Capo Reparto,CJ E,1,,ciccio.jpeg,1
-Elena Zerbini,Scotti,Capo Gruppo|Aiuto Capo Unità,CJ C,1,"Scotti è lo scoiattolo. Accoglie, insieme alla sua famiglia, Cocci nella propria tana. ",ele.jpg,1
+Riccardo Sbardellati,,Capo Gruppo|Aiuto Capo Reparto,CJ|E,1,,ciccio.jpeg,1
+Elena Zerbini,Scotti,Capo Gruppo|Aiuto Capo Unità,CJ|C,1,"Scotti è lo scoiattolo. Accoglie, insieme alla sua famiglia, Cocci nella propria tana. ",ele.jpg,1
 Letizia Pongiluppi,,Aiuto Capo Gruppo,CC,1,,leti.jpg
 Stefano Venturini,,Incaricato Nazionale alla branca L/C,CC,1,,mini.jpg
 Don Severin Ngueliassi,,Assistente Ecclesiastico,CJ,1,,

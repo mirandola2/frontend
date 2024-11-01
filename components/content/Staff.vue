@@ -20,13 +20,13 @@
     <div
       v-for="person in data.body.filter((value) =>
         props.coca == false
-          ? actualStaff == '*' || value.staff?.split(' ').includes(actualStaff)
-          : (actualStaff == '*' || value.staff?.split(' ').includes(actualStaff)) && value.coca == 1
+          ? actualStaff == '*' || value.staff?.split('|').includes(actualStaff)
+          : (actualStaff == '*' || value.staff?.split('|').includes(actualStaff)) && value.coca == 1
       ).sort((a, b) => a.order - b.order)"
       class="card bg-base-200"
     >
       <div class="card-body p-5">
-        <div class="flex gap-4 justify-start items-center mb-4">
+        <div class="flex gap-4 justify-start items-top mb-4">
           <img
             class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none"
             :src="
@@ -37,7 +37,7 @@
             alt="Avatar Staff"
           />
           <div>
-            <div v-if="namesCannotBeShown()">
+            <div v-if="namesCannotBeShown()"> 
               <h2 class="text-xl font-bold">
                 {{ person.nomeCaccia }}
               </h2>
@@ -55,7 +55,7 @@
             <div
               class="badge font-bold badge-lg"
               v-if="coca"
-              v-for="s in person.staff?.split(' ')"
+              v-for="s in person.staff?.split('|')"
               :class="getColorStaffName(s)"
             >
               {{ getFullStaffName(s) }}

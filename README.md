@@ -1,16 +1,37 @@
-# Sito web del Gruppo Scout Mirandola 2
+# Frontend Sito Mirandola 2 ⚜️
 
-⚠️ _Il sito è ancora in construzione. Tutte le informazioni qui o altrove riportate sono da ritenere provvisorie e potrebbero subire cambiamenti._
+> ℹ️ _Il ruolo di questo file è duplice: in primis funge da documentazione per coloro che hanno creato sviluppato il sito ma hanno altresì scarsissima memoria. In secondo luogo vuole essere, anche e soprattutto, una sorta di guida per chi a prescindere dalle proprie competenze vorrebbe_ capirci qualcosa _ed è curioso di cosa tiene in piedi il “frontend” del sito del Mirandola 2. Per questa duplice natura - e nell'ottica del principio scout del Trapasso Nozioni - si è cercato di usare un linguaggio chiaro e spiegare cose che per alcuni possono essere ovvie pur sapendo che d'altra parte per forza di cose questo non potrà bastare a capire tutto tutto. Sicuramente è meglio di niente; se vorrete leggerlo, buona caccia!_
 
-Frontend del sito web del Gruppo Agesci Mirandola 2. Built with Nuxt and Tailwind.
+Il frontend è la parte di un sito web che è visibile dall'utente. Nel nostro caso è stata costruita usando Nuxt and Tailwind. Quest'ultimo è un framework CSS utilizzato insieme alla libreria Daisy UI per semplificare la parte di design del sito. Nuxt è invece un framework JavaScript che permette di costruite siti statici utilizzando **Vue.js**. 
 
-## Architecture
+I siti statici, come quelli creati con framework come Nuxt, sono siti web precompilati in pagine HTML, CSS e JavaScript che non richiedono un server attivo per generare i contenuti al momento della richiesta dell’utente. A differenza dei siti tradizionali dinamici, che generano le pagine in tempo reale, i siti statici vengono generati in anticipo, permettendo una distribuzione più semplice e una performance più elevata. 
 
-![](doc/architecture.png)
+Di seguito si può vedere l'architettura del sito.
 
-In questa repository si trova la parte nel blocco `frontend` comprensiva della documentazione necessaria per tenere aggiornato il sito anche senza saper usare Nuxt o Vue.  
+![L'architettura del sito](doc/architecture.png)
 
-## Local development
+In questa repository è presente e qui documentato il frontend, mentre il [Middleware 📤 si può trovare qui](https://github.com/mirandola2/middleware).
+
+#### Indice
+- [Introduzione](#frontend-sito-mirandola-2-)
+   * [Local development 🪄](#local-development-)
+   * [Content update ✏️](#content-update-)
+      + [MDC syntax](#mdc-syntax)
+         - [Cards & card](#cards--card)
+         - [Table of contents](#table-of-contents)
+         - [Figures](#figures)
+            * [Caroselli](#caroselli)
+         - [Quoted](#quoted)
+         - [Staff](#staff)
+         - [Button Link](#button-link)
+      + [Front Matter](#front-matter)
+      + [Menu](#menu)
+   * [Staff file 👨‍👩‍👧‍👧](#staff-file-)
+   * [Immagini 🖼️](#immagini-)
+   * [Hosting ☁️](#hosting-)
+
+
+## Local development 🪄
 
 Per far partire il local server:
 
@@ -21,9 +42,9 @@ npm run dev
 
 Pushando le modifiche su Github, il sito verrà automaticamente aggiornato.
 
-## Content update
+## Content update ✏️
 
-__Premessa__: Questo paragrafo vuole essere d'aiuto per chiunque voglia modificare il sito senza avere particolari rudimenti su [Nuxt](https://nuxt.com/) o Vue. Logicamente non si è potuto inserire tutto lo scibile sull'argomento; perciò si rimanda il lettore alla documentazione ufficiale nel caso si volessero fare modifiche più profonde al sito.
+> __Premessa__: Questo paragrafo vuole essere d'aiuto per chiunque voglia modificare il sito senza avere particolari rudimenti su [Nuxt](https://nuxt.com/) o Vue. Logicamente non si è potuto inserire tutto lo scibile sull'argomento; perciò si rimanda il lettore alla documentazione ufficiale nel caso si volessero fare modifiche più profonde al sito.
 
 I contenuti del sito sono renderizzati a partire da file presenti in due fonti:
 
@@ -37,13 +58,6 @@ I singoli articoli della sezioni blog sono anch'esse pagine Markdown, presenti n
 Essendo il Markdown un linguaggio estremamente comodo, si è preferito usare il più possibile la cartella `content`, lasciando nei file Vue solamente cioò che era troppo complesso per essere scritto in Markdown. Questi ultimi file vanno esclusi dal contenuto generato dinamicamente modificando il file di configurazione ([documentazione](https://content.nuxtjs.org/api/configuration#ignores)) (solo per le nuove pagine Vue create).
 
 Si noti infine che le immagini si trovano nella cartella `public`. Si è cercato di mettere qui solo le immagini principali, compresse il più possibile, tenendo sempre a mente il fatto che la maggioranza di esse nonché i file esterni, è meglio non caricarli su GitHub (sebbene non ci sia un hard-limit allo spazio di archiviazione, Github nasce per il codice) favorendo altri cloud (Google Photos, One Drive, Google Drive, Cloudlfare Files etc.). Quando vengono linkate le immagini interne nella varie pagine, il percorso deve essere relativo al contenuto della cartella `/public`, non a `/`.
-
-__Indice:__
-
-- [Introduzione](#content-update)
-- [MDC syntax](#mdc-syntax)
-- [Front matter pagine e post](#front-matter)
-- [Menu](#menu)
 
 ### MDC syntax
 
@@ -129,19 +143,11 @@ Il blocco `quoted` permette di creare una citazione.
 
 Parametri:  
 
-- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC | CJ | *] (rispettivamente, lupetti, coccinelle, esploratori, guide, noviziato, clan-fuoco, coca (altri incarichi), capi gruppo, tutti). Separare i doppi incarichi con un `-`.
+- `staff`: stringa, indica quale staff mostrare [L | C | E | G | N | CF | CC | CJ | *] (rispettivamente, lupetti, coccinelle, esploratori, guide, noviziato, clan-fuoco, coca (altri incarichi), capi gruppo, tutti). 
 - `coca`: booleano, opzionale. Se vero, mostra solo i capi in CoCa.
 
-Il blocco mostra tutti i capi di una certa staff. I capi sono inseriti in formato .csv nel file `/content/_capi.csv` rispettando la formattazione presentata nell'esempio seguente.
+Il blocco mostra tutti i capi di una certa staff. I capi sono inseriti in formato .csv nel file `/content/_capi.csv` rispettando la formattazione presentata in calce.
 
-```csv
-nome,nomeCaccia,ruolo,staff,coca,desc,img
-Baden Powell,Impeesa,Capo Reparto,E,1,Impeesa ovvero l'animale che si sposta furtivamente di notte,bp.jpg
-```
-
-Da notare come il `nomeCaccia` indichi non il nome Totem ma bensì il personaggio interpretato dai capi in LC. Viene mostrato al posto del nome vero se e solo se `staff == {L, C}` e `coca==true`.
-
-Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è `/public/img/staff/capo.jpg`, il campo deve essere `capo.jpg`).
 
 #### Button Link
 
@@ -193,3 +199,33 @@ Esempio:
         }
  }
 ```
+
+## Staff file 👨‍👩‍👧‍👧
+
+I capi sono inseriti in formato .csv nel file `/content/_capi.csv` rispettando la formattazione presentata nell'esempio seguente.
+
+```csv
+nome,nomeCaccia,ruolo,staff,coca,desc,img,order
+Baden Powell,Impeesa,Fondatore dello Scoutismo|Capo Reparto,CC|E,1,Impeesa ovvero l'animale che si sposta furtivamente di notte,bp.jpg,0
+```
+
+- Da notare come il `nomeCaccia` indichi non il nome Totem ma bensì il personaggio interpretato dai capi in LC. Viene mostrato al posto del nome vero se e solo se `staff == {L, C}` e `coca==true`.
+- Se nel campo `ruolo` è presente una `|`, il contenuto antecedente verrà mostrato quando `staff == *`, il contenuto successivo negli altri casi. 
+- Separare i doppi incarichi con un `|` nel campo `staff`. I valori possibili sono gli stessi riportati in precedenza.
+- Il campo `img` è il percorso relativo della foto del capo che si deve trovare nella cartella `/public/img/staff` (se il percorso della foto è `/public/img/staff/capo.jpg`, il campo deve essere `capo.jpg`).
+- Il campo `order` è facoltativo. Se presente, in tutte le visualizzazione ``staff != *`, sovrascrive l'ordine delle righe, andando a posizionare i capi della singola staff secondo l'ordine crescente. Utile solo in caso di doppi servizi.
+
+## Immagini 🖼️
+
+Gestire le immagini è complicato sia per una questione di privacy sia per una questione di storage. L'attuale soluzione prevede che tutte le immagini di archivio siano caricate esternamente, in particolare sul OneDrive fornito al gruppo dall'associazione; tranne per ciò che riguarda le poche immagini presenti sul sito come immagini di copertina o simili, che per una questione di latenza si è preferito procedere diversamente. Queste caricate su GitHub. Tuttavia per evitare che queste finiscano nella git commit history (da evitare sia per motivi di best practice informatiche sia per motivi interni nostri), sono caricate come oggetti di [Git LFS](https://git-lfs.com/). 
+
+```sh
+git lfs track public/img/**/*.jpg
+git add ...
+git commit -m "Added images"
+git push origin main
+```
+
+## Hosting ☁️
+
+Il sito è ospitato gratuitamente su Netlify.
