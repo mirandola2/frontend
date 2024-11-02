@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onBeforeMount } from "vue";
-const route = useRouter();
+const router = useRouter();
 const  {page} = useContent()
 
 const menu = ref({
@@ -53,7 +53,7 @@ const fixedNavbar = ref(true);
 const regex = /^\/blog/;
 
 onMounted(() => {
-  if (regex.test(route.currentRoute.value.fullPath) || page.value?.navbar_solid) {
+  if (regex.test(router.currentRoute.value.fullPath) || page.value?.navbar_solid) {
     fixedNavbar.value = false;
     transparentNavbar.value = false;
   } else {
@@ -70,17 +70,17 @@ function handleScroll() {
 }
 
 useSeoMeta({
-  ogTitle: 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
-  description: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
-  ogDescription: 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, il nostro team, i nomi totem, la galleria foto e video, e una raccolta di strumenti utili.',
-  ogImage: '/img/misc/hero.jpg',
+  ogTitle: router.currentRoute.value.path != '/' ? page.value?.title + ' ~ Agesci Gruppo Mirandola 2' : 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
+  description: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
+  ogDescription: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
+  ogImage: router.currentRoute.value.path == '/' ? '/img/misc/hero.jpg' : page.value?.image,
 })
 
 </script>
 
 <template>
   <Head>
-    <Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade</Title>
+    <Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade</Title>
   </Head>
 
   <link
