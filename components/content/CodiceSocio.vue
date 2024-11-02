@@ -4,17 +4,17 @@
       <h2 class="card-title">Ricerca codice socio</h2>
       <button class="btn ml-auto text-primary font-bold"
       @click="logout" v-if="logged">
-        Logout <span class="material-symbols-rounded"> logout </span>
+        Reset Token <span class="material-symbols-rounded"> logout </span>
       </button>
       <div class="flex gap-2" v-if="!logged">
         <input
           type="password"
           v-model="pw"
-          placeholder="Parola magica"
+          placeholder="Token Magico"
           class="input input-bordered w-full"
         />
         <button class="btn btn-primary" @click="digestMessage(pw)">
-          Login
+          Salva
         </button>
       </div>
       <div class="flex gap-2">

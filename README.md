@@ -1,4 +1,7 @@
 # Frontend Sito Mirandola 2 ⚜️
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3cab9dc4-e8a6-4d1e-a97f-a791ecb2027b/deploy-status)](https://app.netlify.com/sites/mirandola2/deploys)
+
+
 
 > ℹ️ _Il ruolo di questo file è duplice: in primis funge da documentazione per coloro che hanno creato sviluppato il sito ma hanno altresì scarsissima memoria. In secondo luogo vuole essere, anche e soprattutto, una sorta di guida per chi a prescindere dalle proprie competenze vorrebbe_ capirci qualcosa _ed è curioso di cosa tiene in piedi il “frontend” del sito del Mirandola 2. Per questa duplice natura - e nell'ottica del principio scout del Trapasso Nozioni - si è cercato di usare un linguaggio chiaro e spiegare cose che per alcuni possono essere ovvie pur sapendo che d'altra parte per forza di cose questo non potrà bastare a capire tutto tutto. Sicuramente è meglio di niente; se vorrete leggerlo, buona caccia!_
 
