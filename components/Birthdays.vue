@@ -10,9 +10,15 @@ const compleanni = ref(
   }
 );
 
+
+
 watchEffect(async () => {
+  var now = new Date();
+	var start = new Date(now.getFullYear(), 0, 0);
+	var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+	var day = Math.floor(diff / (1000 * 60 * 60 * 24));
   compleanni.value.text = birthdaysFormatter(
-    await (await fetch("https://people.mirandola2.workers.dev/birthday")).json()
+    await (await fetch(`https://people.mirandola2.workers.dev/birthday?t=7&d=${day}`)).json()
   );
 });
 
@@ -20,9 +26,8 @@ function birthdaysFormatter(birthdays) {
   let returnBDString = "";
   let flagFarBDString = true;
   let counterFarBD = 0;
-
   const birthdaysReduced = birthdays.reduce(function (acc, curr) {
-    let t = curr.t_minus > 0 ? curr.t_minus-1 : curr.t_minus+364
+    let t = curr.t_minus
     acc[t] = acc[t] || [];
     acc[t].push(curr.name);
     if (t > 1) {
@@ -50,7 +55,7 @@ function birthdaysFormatter(birthdays) {
     } else if (t_minus_key === "1") {
       returnBDString += `Domani ${
         length < 2 ? "compierà" : "compieranno"
-      } gli anni ${namesString}. `;
+      } gli anni ${namesString}! `;
     } else {
       returnBDString += `${
         flagFarBDString
