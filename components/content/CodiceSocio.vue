@@ -44,8 +44,9 @@
   <dialog id="modal" class="modal">
     <div class="modal-box">
       <span class="loading loading-spinner loading-md" v-if="loading"></span>
-      <span v-if="loading == false && personData.length == 0"
-        >Codice socio non trovato o token errato.</span
+      <span v-if="error!=''" class="font-bold text-error">{{ error }}</span>
+      <span v-else-if="loading == false && personData.length == 0"
+        >Codice socio non trovato.</span
       >
       <table class="table text-sm py-8 font-mono" v-for="data in personData">
         <tbody>
@@ -78,6 +79,7 @@ const name = ref("");
 const personData = ref();
 const loading = ref(true);
 const pw = ref("");
+const error = ref("")
 
 const cookie = useCookie("psk", { maxAge: 345600000 });
 const logged = ref(cookie.value && cookie.value.length == 64);
@@ -108,8 +110,8 @@ function check() {
 }
 
 async function searchMemberCode() {
-  personData.value = await (
-    await fetch(
+  try {
+    const res = await fetch(
       `https://people.mirandola2.workers.dev/data?name=${encodeURIComponent(
         name.value.toLowerCase().trim()
       )}`,
@@ -119,10 +121,23 @@ async function searchMemberCode() {
           "Just-A-PSK": cookie.value,
         },
       }
-    )
-  ).json();
-  console.log(personData.value);
-  loading.value = false;
+    );
+
+    if (res.status === 403) {
+      loading.value = false;
+      error.value = "Non sei autorizzato o il token usato è errato. Esci e riprova.";
+      personData.value = [];
+    } else {
+      personData.value = await res.json();
+      error.value = "";
+    }
+  } catch (e) {
+    error.value = "Errore di rete";
+    personData.value = [];
+  } finally {
+    console.log(personData.value);
+    loading.value = false;
+  }
 }
 
 defineProps({
