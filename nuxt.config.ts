@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       meta: [{name: 'theme-color', content: '#462678'}],
     }
   },
+  plugins: [{ src: "~/plugins/simple-analytics.js", ssr: false }],
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
   content: {
