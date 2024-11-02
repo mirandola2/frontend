@@ -1,32 +1,52 @@
 <template>
   <div class="card w-full not-prose max-w-xl mt-12 mx-auto">
     <div class="card-body">
-      <h2 class="card-title">Riceca codice socio</h2>
-      <div class="join">
-        
+      <h2 class="card-title">Ricerca codice socio</h2>
+      <button class="btn ml-auto text-primary font-bold"
+      @click="logout" v-if="logged">
+        Logout <span class="material-symbols-rounded"> logout </span>
+      </button>
+      <div class="flex gap-2" v-if="!logged">
+        <input
+          type="password"
+          v-model="pw"
+          placeholder="Parola magica"
+          class="input input-bordered w-full"
+        />
+        <button class="btn btn-primary" @click="digestMessage(pw)">
+          Login
+        </button>
+      </div>
+      <div class="flex gap-2">
         <input
           type="text"
           v-model="name"
           placeholder="Nome Completo"
-          class="input input-bordered w-full join-item"
+          class="input input-bordered w-full"
+          v-bind:disabled="!logged"
         />
         <button
-          class="btn btn-primary join-item"
+          class="btn btn-primary"
           onclick="modal.showModal()"
           @click="searchMemberCode()"
+          v-bind:disabled="!logged"
         >
           Cerca
         </button>
       </div>
-      <p class="text-sm text-right" v-if="lastupdate">Dati aggiornati al {{ lastupdate }}</p>
+
+      <p class="text-sm text-right" v-if="lastupdate">
+        Dati aggiornati al {{ lastupdate }}
+      </p>
     </div>
-  
   </div>
 
   <dialog id="modal" class="modal">
     <div class="modal-box">
       <span class="loading loading-spinner loading-md" v-if="loading"></span>
-      <span v-if="loading == false && personData.length==0" >Codice socio non trovato.</span>
+      <span v-if="loading == false && personData.length == 0"
+        >Codice socio non trovato o token errato.</span
+      >
       <table class="table text-sm py-8 font-mono" v-for="data in personData">
         <tbody>
           <tr>
@@ -46,7 +66,7 @@
 
       <div class="modal-action">
         <form method="dialog">
-          <button class="btn" @click="loading=false">Chiudi</button>
+          <button class="btn" @click="loading = false">Chiudi</button>
         </form>
       </div>
     </div>
@@ -57,9 +77,28 @@
 const name = ref("");
 const personData = ref();
 const loading = ref(true);
+const pw = ref("");
 
+const cookie = useCookie("psk", { maxAge: 345600000 });
+const logged = ref(cookie.value && cookie.value.length == 64);
 
-const navbar_solid = ref(true)
+function logout(){
+  cookie.value = undefined
+  logged.value = false
+}
+
+async function digestMessage(message) {
+  const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", msgUint8); // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+  const hashHex = hashArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join(""); // convert bytes to hex string
+  cookie.value = hashHex;
+  logged.value = true;
+}
+
+const navbar_solid = ref(true);
 
 function check() {
   name.value = name.value
@@ -71,18 +110,25 @@ function check() {
 async function searchMemberCode() {
   personData.value = await (
     await fetch(
-      `https://people.mirandola2.workers.dev/data?name=${encodeURIComponent(name.value.toLowerCase().trim())}`
+      `https://people.mirandola2.workers.dev/data?name=${encodeURIComponent(
+        name.value.toLowerCase().trim()
+      )}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Just-A-PSK": cookie.value,
+        },
+      }
     )
   ).json();
-  console.log(personData.value)
+  console.log(personData.value);
   loading.value = false;
 }
-
 
 defineProps({
   lastupdate: {
     type: String,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 </script>
