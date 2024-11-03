@@ -104,7 +104,7 @@ useSeoMeta({
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <img src="/img/graphics/logo_white.svg" class="h-16" />
+                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16" />
               </a>
             </h1>
           </div>
@@ -179,7 +179,7 @@ useSeoMeta({
           >
             <!-- Sidebar content here -->
             <a href="/">
-              <img src="/img/graphics/logo_white.svg" class="h-24 mb-8" alt="" />
+              <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-24 mb-8" alt="" />
             </a>
             <template v-for="(submenu, mainItem) in menu" :key="mainItem">
               <!-- Check if the submenu is an object -->

@@ -39,7 +39,7 @@ const bgColor = {
         class="container max-w-4xl mx-auto md:px-12 flex flex-col md:flex-row text-white"
         :class="{ 'pt-28 pb-44': big, 'py-28': !big }"
       >
-        <img
+        <NuxtImg placeholder
           v-if="logo != undefined"
           :src="logo"
           class="w-40 pb-8 mx-auto md:p-0 md:w-56 lg:w-64 md:mr-10"

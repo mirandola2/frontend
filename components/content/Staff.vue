@@ -27,7 +27,7 @@
     >
       <div class="card-body p-5">
         <div class="flex gap-4 justify-start items-top mb-4">
-          <img
+          <NuxtImg placeholder
             class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none"
             :src="
               person.img != '' && person.img != undefined

@@ -9,7 +9,7 @@
         class="bg-contain"
         :class="{ 'md:max-w-xs max-h-40 md:max-h-none': horizontal, 'max-h-40': !horizontal }"
       >
-        <img :src="post.img" :alt="post.title" class="" />
+        <NuxtImg placeholder :src="post.img" :alt="post.title" class="" />
       </figure>
       <div class="card-body">
         <h2 class="text-xl font-bold">

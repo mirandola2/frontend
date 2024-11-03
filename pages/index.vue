@@ -22,7 +22,7 @@
             <a class="btn btn-ghost btn-sm" href="/lc/coccinelle">Cerchio</a>
           </div>
         </div>
-        <img
+        <NuxtImg placeholder
           src="/img/graphics/icon_cappellini.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />
@@ -41,7 +41,7 @@
             <a class="btn btn-ghost btn-sm" href="/eg/antares">Guide</a>
           </div>
         </div>
-        <img
+        <NuxtImg placeholder
           src="/img/graphics/icon_tenda.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />
@@ -62,7 +62,7 @@
             <a class="btn btn-ghost btn-sm" href="/rs/mdv">Clan Fuoco</a>
           </div>
         </div>
-        <img
+        <NuxtImg placeholder
           src="/img/graphics/icon_forcola.svg"
           class="absolute w-full h-full p-2 opacity-10 object-contain"
         />

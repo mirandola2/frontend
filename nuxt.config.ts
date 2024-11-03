@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image'],
   content: {
     ignores: [
       '/content/index.md',
@@ -23,4 +23,3 @@ export default defineNuxtConfig({
     documentDriven: true,
   }
 })
-
