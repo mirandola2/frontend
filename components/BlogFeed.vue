@@ -8,6 +8,7 @@
       <figure
         class="bg-contain"
         :class="{ 'md:max-w-xs max-h-40 md:max-h-none': horizontal, 'max-h-40': !horizontal }"
+        v-if="images"
       >
         <NuxtImg placeholder :src="post.img" :alt="post.title" class="" />
       </figure>
@@ -48,6 +49,11 @@ const props = defineProps({
     required: false,
     default: false,
   },
+  images:{
+    type: Boolean,
+    required: false,
+    default: true,
+  }
 });
 
 const contentQuery = props.all

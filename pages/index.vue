@@ -76,18 +76,18 @@
     </div>
 
 
-    <BlogLayout>
+    <LazyBlogLayout>
       <div class="card max-w-none bg-base-300">
             <div class="card-body">
               <h2 class="card-title">{{ data.title }}</h2>
-              <ContentRenderer :value="data" />
+              <LazyContentRenderer :value="data" />
             </div>
           </div>
           <div class="grid lg:grid-cols-2 mt-3 grid-flow-rows gap-3">
-            <BlogFeed />
+            <LazyBlogFeed :images="false"/>
           </div>
           <p class=" text-right w-full mt-3"><a href="/blog" class="btn btn-base-200">Leggi Tutte le notizie</a></p>
-    </BlogLayout>
+    </LazyBlogLayout>
 
   </div>
 </template>
