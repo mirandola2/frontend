@@ -47,16 +47,16 @@ const menu = ref({
     "Materiali e link": "/materiale",
   },
 });
-
-const transparentNavbar = ref(true);
-const fixedNavbar = ref(true);
 const regex = /^\/blog/;
 
-onMounted(() => {
-  if (regex.test(router.currentRoute.value.fullPath) || page.value?.navbar_solid) {
-    fixedNavbar.value = false;
-    transparentNavbar.value = false;
-  } else {
+const solid = regex.test(router.currentRoute.value.fullPath) || page.value?.navbar_solid;
+const transparentNavbar = ref(!solid);
+const fixedNavbar = ref(!solid);
+
+const nuxtApp = useNuxtApp();
+
+nuxtApp.hook("page:finish", () => {
+  if (!solid){
     window.addEventListener("scroll", handleScroll);
   }
 });
@@ -104,7 +104,7 @@ useSeoMeta({
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16" />
+                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 lg:ml-0" />
               </a>
             </h1>
           </div>
