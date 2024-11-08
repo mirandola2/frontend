@@ -50,14 +50,13 @@ San Giorgio
 :::
 
 :::card{title="La Preghiera" color="eg" big}
-Fa', o Signore, che io abbia le mani pure, pura la lingua, puro il pensiero.
-Aiutami a lottare per il bene difficile contro il male facile,
-impedisci che io prenda abitudini che rovinano la vita.
-Insegnami a lavorare alacremente e a comportarmi lealmente quando Tu solo mi vedi, come se tutto il mondo potesse vedermi.
-Perdonami quando sono cattivo e aiutami a perdonare coloro che non mi trattano bene.
-Rendimi capace di aiutare gli altri anche quando ciò mi è faticoso.
-Mandami le occasioni di fare un po' di bene ogni giorno per avvicinarmi di più al Tuo divino figlio Gesù.
-__Così sia__
+Signore, insegnami a essere generosa,  
+a servirti come lo meriti,  
+a dare senza contare,  
+a combattere senza pensiero delle ferite,  
+a lavorare senza cercare riposo,  
+a prodigarmi senza aspettare altra ricompensa,  
+con la coscienza di fare la Tua santa volontà.  
 :::
 
 :::card{title="Il Saluto" color="eg"}
