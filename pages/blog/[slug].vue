@@ -4,7 +4,7 @@
       <div
         class="hero-content flex w-full flex-col justify-between xl:flex-row-reverse"
       >
-        <NuxtImg placeholder :src="page.img" class="md:max-w-sm rounded-lg shadow-2xl" />
+        <img :src="page.img" class="md:max-w-sm rounded-lg shadow-2xl" />
         <div class="text-center mx-auto">
           <h2 class="text-lg">Blog</h2>
           <h1 class="text-4xl my-4 font-display">{{ page.title }}</h1>

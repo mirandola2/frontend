@@ -9,7 +9,7 @@
   >
     <div v-if="typeof src == 'string'">
       <button @click="showSingle" class="block mx-auto h-auto w-auto">
-        <NuxtImg placeholder
+        <img
           :src="src"
           :alt="alt || desc || ''"
           class="rounded-lg shadow-lg w-auto h-auto"
@@ -26,7 +26,7 @@
         :class="{ '': float == '0' }"
       >
         <button @click="showMulti">
-          <NuxtImg placeholder
+          <img
             :src="src[indexRef]"
             :alt="alt[indexRef] || desc[indexRef] || ''"
             class="rounded-lg shadow-lg w-auto h-auto"
