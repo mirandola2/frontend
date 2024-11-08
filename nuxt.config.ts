@@ -2,6 +2,9 @@
 import tailwindConfig from "./tailwind.config"
 
 export default defineNuxtConfig({
+  image: {
+    provider: 'ipx', // IPX proxy server for images
+  },
   experimental: { appManifest: false },
   app: {
     head: {
