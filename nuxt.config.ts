@@ -10,7 +10,6 @@ export default defineNuxtConfig({
       meta: [{name: 'theme-color', content: '#462678'}],
     }
   },
-  devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image'],
   content: {
     ignores: [
