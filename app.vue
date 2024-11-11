@@ -89,7 +89,7 @@ useSeoMeta({
   />
   <div class="drawer drawer-end" tabindex="0">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col min-h-screen">
+    <main class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div
         class="navbar text-primary-content lg:top-0 z-50"
@@ -165,7 +165,7 @@ useSeoMeta({
       <NuxtPage />
 
       <Footer />
-    </div>
+    </main>
     <div class="drawer-side min-h-full z-50">
       <label for="my-drawer-3" class="drawer-overlay"></label>
 

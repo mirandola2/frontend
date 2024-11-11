@@ -3,6 +3,7 @@ import tailwindConfig from "./tailwind.config"
 
 export default defineNuxtConfig({
   experimental: { appManifest: false },
+
   app: {
     head: {
       charset: 'utf-8',
@@ -10,12 +11,15 @@ export default defineNuxtConfig({
       meta: [{name: 'theme-color', content: '#462678'}],
     }
   },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    '@nuxtjs/sitemap'
   ],
+
   fonts: {
     defaults: {
       weights: [400, 700],
@@ -25,6 +29,7 @@ export default defineNuxtConfig({
       ]
     },
   },
+
   content: {
     ignores: [
       '/content/index.md',
@@ -34,5 +39,7 @@ export default defineNuxtConfig({
       anchorLinks: false
     },
     documentDriven: true,
-  }
+  },
+
+  compatibilityDate: '2024-11-11'
 })
