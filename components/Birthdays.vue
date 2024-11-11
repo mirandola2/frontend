@@ -29,7 +29,7 @@ function birthdaysFormatter(birthdays) {
   const birthdaysReduced = birthdays.reduce(function (acc, curr) {
     let t = curr.t_minus
     acc[t] = acc[t] || [];
-    acc[t].push(curr.name);
+    acc[t].push(`${curr.name} ${curr.last_initial}.`);
     if (t > 1) {
       counterFarBD += 1;
     }
