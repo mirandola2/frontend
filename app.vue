@@ -84,7 +84,7 @@ useSeoMeta({
   </Head>
 
   <link
-    rel="stylesheet"
+    rel="stylesheet" defer
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
   />
   <div class="drawer drawer-end" tabindex="0">
@@ -92,7 +92,7 @@ useSeoMeta({
     <main class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div
-        class="navbar text-primary-content lg:top-0 z-50"
+        class="navbar text-primary-content xl:top-0 z-50"
         :class="{
           fixed: fixedNavbar,
           sticky: !fixedNavbar,
@@ -100,16 +100,16 @@ useSeoMeta({
           'bg-primary shadow-md': !transparentNavbar,
         }"
       >
-        <div class="container max-w-none mx-auto">
+        <div class="container max-w-none max-xl:px-5 xl:mx-auto">
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 lg:ml-0" />
+                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 xl:ml-0" />
               </a>
             </h1>
           </div>
 
-          <div class="flex-none hidden lg:block">
+          <div class="flex-none hidden xl:block">
             <ul class="menu menu-horizontal text-white">
               <!-- Navbar menu content here -->
               <template v-for="(submenu, mainItem) in menu" :key="mainItem">
@@ -117,12 +117,12 @@ useSeoMeta({
                   <!-- Check if the submenu is an object -->
                   <template v-if="typeof submenu === 'object'">
                     <div
-                      class="menu-dropdown-toggle dropdown dropdown-end dropdown-bottom dropdown-hover hover:text-secondary"
+                      class="menu-dropdown-toggle dropdown dropdown-end dropdown-bottom dropdown-hover hover:text-[#dfd2ff]"
                     >
                       <label tabindex="0" class="">{{ mainItem }}</label>
                       <ul
                         tabindex="0"
-                        class="dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-60"
+                        class=" dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-60"
                       >
                         <!-- Loop through the sub-menu items -->
                         <li v-for="(link, subItem) in submenu" :key="subItem">
@@ -133,7 +133,7 @@ useSeoMeta({
                   </template>
                   <!-- If not an object, it's a direct link -->
                   <template v-else>
-                    <a :href="submenu" class="hover:text-secondary">{{
+                    <a :href="submenu" class=" hover:text-[#dfd2ff]">{{
                       mainItem
                     }}</a>
                   </template>
@@ -143,7 +143,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <div class="flex-none lg:hidden">
+        <div class="flex-none xl:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
