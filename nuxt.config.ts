@@ -10,7 +10,21 @@ export default defineNuxtConfig({
       meta: [{name: 'theme-color', content: '#462678'}],
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/content',
+    '@nuxt/image',
+    '@nuxt/fonts'
+  ],
+  fonts: {
+    defaults: {
+      weights: [400, 700],
+      styles: ['normal', 'italic'],
+      subsets: [
+        'latin'
+      ]
+    },
+  },
   content: {
     ignores: [
       '/content/index.md',
