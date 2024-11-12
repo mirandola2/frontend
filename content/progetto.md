@@ -93,7 +93,7 @@ Se i ragazzi si appassionano a quello che fanno sono capaci di sognare e di impe
 
 La Co.Ca. si impegna a mettere in atto nei programmi annuali azioni concrete, chiamate “Passi di Autonomia”, di anno in anno sulla base delle potenzialità dei ragazzi, con l’obiettivo di alzare l’asticella dell’autonomia in maniera incrementale ogni anno. 
 
-## Obiettivi 2023-24  
+## Obiettivi 2024-25  
 
 :::cards 
 ::card{color=lc title="Obiettivo Branca LC"}
