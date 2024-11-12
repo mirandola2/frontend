@@ -16,10 +16,6 @@ Leggi gli obiettivi 2024-25
 
 ## Introduzione
 
-::Lnk{href="#"}
-Visualizza il progetto completo
-::
-
 La Comunità Capi, partendo dalla verifica del precedente Progetto Educativo e da una nuova analisi d’ambiente, ha individuato i __bisogni principali__, le aree d’impiego e successivamente le __priorità trasversali__ per tutte le branche, che faranno da guida per il prossimo quadriennio. Da queste ultime la Comunità Capi, tutta insieme, delineerà annualmente gli __Obiettivi Educativi__ di ciascuna branca, che serviranno per la programmazione delle attività per le Unità.
 
 ### Scelta delle aree d'impegno prioritario
@@ -101,28 +97,12 @@ La Co.Ca. si impegna a mettere in atto nei programmi annuali azioni concrete, ch
 
 :::cards 
 ::card{color=lc title="Obiettivo Branca LC"}
-...
+Mettersi in gioco pensando in grande e riconoscere gli insuccessi come nuove occasioni di ripartenza.
 ::
 ::card{color=eg title="Obiettivo Branca EG"}
-...
+Essere protagonisti attivi dei propri sogni e, servendosi dei propri talenti donati da Dio, impegnarsi a realizzarli riponendo in Lui le proprie speranze, imparando ad accettare i propri fallimenti e insicurezze.
 ::
 ::card{color=rs title="Obiettivo Branca RS"}
-...
+Vivere la Promessa: essere protagonisti e responsabili della propria Comunità.
 ::
 :::
-
-### Azioni Concrete sull'Autonomia
-
-:::cards 
-::card{color=lc title="Passi LC"}
-...
-::
-::card{color=eg title="Passi EG"}
-...
-::
-::card{color=rs title="Passo RS"}
-...
-::
-:::
-
-
