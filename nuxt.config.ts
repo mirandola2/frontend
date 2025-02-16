@@ -41,5 +41,18 @@ export default defineNuxtConfig({
     documentDriven: true,
   },
 
+  image: {
+    provider: 'weserv',
+    weserv: {
+      baseURL: 'http://assets.mirandola2.it/',
+      modifiers: {
+        quality: 'auto:best',
+        format: 'auto'
+      },
+      
+    }
+  
+  },
+
   compatibilityDate: '2024-11-11'
 })
