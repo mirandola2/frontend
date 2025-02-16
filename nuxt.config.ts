@@ -45,10 +45,7 @@ export default defineNuxtConfig({
     provider: 'weserv',
     weserv: {
       baseURL: 'http://assets.mirandola2.it/',
-      modifiers: {
-        quality: 'auto:best',
-        format: 'auto'
-      },
+      modifiers: { withoutEnlargement: 'false' },
       
     }
   

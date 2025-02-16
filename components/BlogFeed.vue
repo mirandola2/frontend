@@ -10,7 +10,7 @@
         :class="{ 'md:max-w-xs max-h-40 md:max-h-none': horizontal, 'max-h-40': !horizontal }"
         v-if="images"
       >
-        <img :src="post.img" :alt="post.title" class="" />
+        <NuxtImg :src="post.img" :alt="post.title" class="" />
       </figure>
       <div class="card-body">
         <h2 class="text-xl font-bold">
