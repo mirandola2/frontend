@@ -2,6 +2,7 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
+    "prebuild": "node download.js",
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
@@ -16,6 +17,7 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@tailwindcss/typography": "^0.5.9",
     "@vueuse/core": "^10.3.0",
+    "basic-ftp": "^5.0.5",
     "daisyui": "^4.12.14",
     "nuxt": "^3.13.2",
     "postcss": "^8.4.47",
