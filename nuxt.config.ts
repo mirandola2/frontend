@@ -42,12 +42,17 @@ export default defineNuxtConfig({
   },
 
   image: {
-    provider: 'weserv',
-    weserv: {
-      baseURL: 'http://assets.mirandola2.it/',
-      modifiers: { withoutEnlargement: 'false' },
+    provider: 'myweserv',
+
+    providers: {
+      myweserv: {
+        name: 'myweserv',
+        provider: 'providers/myweserv.ts',
+        options: {
+          baseURL: 'http://assets.mirandola2.it/',
+        }
       
-    }
+    }}
   
   },
 
