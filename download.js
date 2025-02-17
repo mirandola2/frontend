@@ -1,14 +1,18 @@
 const ftp = require("basic-ftp");
 const fs = require("fs");
+require("dotenv").config();
 
-async function downloadImages() {
+async function downloadImages(host, user, pw) {
     const client = new ftp.Client();
+    client.ftp.verbose = true
+
     try {
 
         await client.access({
-            host: process.env.FTP_HOST,
-            user: process.env.FTP_USER,
-            password: process.env.FTP_PW,
+            host: host,
+            user: user,
+            password: pw,
+            //secure: false,
         });
         console.log(`Connected to ${process.env.FTP_HOST}`);
         await client.downloadToDir("public/img", "/htdocs/img");
@@ -18,4 +22,5 @@ async function downloadImages() {
     client.close();
 }
 
-downloadImages();
+
+downloadImages( process.env.FTP_HOST, process.env.FTP_USER, process.env.FTP_PW);

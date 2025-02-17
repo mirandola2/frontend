@@ -30,3 +30,6 @@ logs
 
 .data/
 public/img/**
+
+# Local Netlify folder
+.netlify
