@@ -19,6 +19,7 @@
     "@vueuse/core": "^10.3.0",
     "basic-ftp": "^5.0.5",
     "daisyui": "^4.12.14",
+    "dotenv": "^16.4.7",
     "nuxt": "^3.13.2",
     "postcss": "^8.4.47",
     "simple-analytics-vue": "^3.0.2",
