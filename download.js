@@ -22,5 +22,6 @@ async function downloadImages(host, user, pw) {
     client.close();
 }
 
+console.log("FTP HOST:", process.env.FTP_USER, "\nPW:", process.env.FTP_PW);
 
 downloadImages( process.env.FTP_HOST, process.env.FTP_USER, process.env.FTP_PW);
