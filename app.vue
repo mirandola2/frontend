@@ -71,9 +71,9 @@ function handleScroll() {
 
 useSeoMeta({
   ogTitle: router.currentRoute.value.path != '/' ? page.value?.title + ' ~ Agesci Gruppo Mirandola 2' : 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
-  description: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
-  ogDescription: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri Capi, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
-  ogImage: router.currentRoute.value.path == '/' ? '/img/misc/hero.jpg' : page.value?.image,
+  description: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
+  ogDescription: router.currentRoute.value.path == '/' || !page.value.description ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
+  //ogImage: router.currentRoute.value.path == '/' ? '/img/misc/hero.jpg' : page.value?.image,
 })
 
 </script>
@@ -104,7 +104,7 @@ useSeoMeta({
           <div class="flex-1 w-3/4 flex">
             <h1 class="text-2xl my-auto font-bold">
               <a href="/">
-                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 xl:ml-0" />
+                <NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 xl:ml-0" alt="logo"/>
               </a>
             </h1>
           </div>

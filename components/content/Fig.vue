@@ -90,13 +90,16 @@ const visibleRef = ref(false);
 const indexRef = ref(0);
 const imgsRef = ref([]);
 
+const img = useImage()
+
+
 const onShow = () => {
   visibleRef.value = true;
 };
 const showSingle = () => {
   imgsRef.value = [
     {
-      src: props.src,
+      src: img(props.src),
       title: props.desc,
     },
   ];
@@ -105,7 +108,7 @@ const showSingle = () => {
 
 const showMulti = () => {
   imgsRef.value = props.src.map((e, i) => {
-    return { src: e, title: props.desc[i] || "" };
+    return { src: img(e), title: props.desc[i] || "" };
   });
   onShow();
 };

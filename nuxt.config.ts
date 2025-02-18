@@ -3,6 +3,7 @@ import tailwindConfig from "./tailwind.config"
 
 export default defineNuxtConfig({
   experimental: { appManifest: false },
+  site: { url: 'https://mirandola2.it' } ,
 
   app: {
     head: {
