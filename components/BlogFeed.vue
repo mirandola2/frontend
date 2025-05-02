@@ -15,11 +15,7 @@
       <div class="card-body">
         <h2 class="text-xl font-bold">
           {{ post.title }}
-          <span
-            class="badge inline border-0"
-            :class="badge[post.category].bg"
-            >{{ badge[post.category].text }}</span
-          >
+          
         </h2>
         <p>
           {{ post.description }}
