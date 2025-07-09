@@ -44,6 +44,7 @@ const menu = ref({
     "Ricerca Codice Socio": "/codice-socio",
     "Uniforme e Distintivi": "/uniforme",
     "Traduttore Morse": "/morse",
+    "Generatore Alci": "/alci",
     "Materiali e link": "/materiale",
   },
 });

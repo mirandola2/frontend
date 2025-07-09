@@ -15,6 +15,7 @@ const { toc, page } = useContent();
 
 useHead({
   title: page.title
+  
 })
 
 if (!page.value) {

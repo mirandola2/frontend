@@ -2,11 +2,7 @@
   <div class="card not-prose my-5 w-full max-w-3xl mx-auto bg-neutral">
     <div class="card-body">
       <h2 class="card-title">Generatore di Alci</h2>
-      <p>
-        Usa <strong>u</strong>, <strong>l</strong>, <strong>d</strong>, e
-        <strong>s</strong> come segnaposto per rispettivamente maiuscole,
-        minuscole, numeri e simboli!
-      </p>
+      
 
       <div class="form-control w-full">
         <label class="label">
@@ -20,10 +16,17 @@
           class="input input-bordered w-full bg-base-200"
         />
       </div>
-
-      <div class="form-control w-full">
+      <div class="form-control w-full flex flex-row items-center gap-2">
+        <label class="label cursor-pointer">
+          <span class="label-text">Modalità Expert</span>
+          <input type="checkbox" v-model="expertMode" class="toggle toggle-secondary toggle-md  ml-2" />
+        </label>
+      </div>
+      <div class="form-control w-full" v-if="expertMode">
         <label class="label">
-          <span class="label-text">Pattern:</span>
+          <span class="label-text">Pattern: usa <strong>m</strong>, <strong>M</strong>, <strong>0</strong>, e
+        <strong>$</strong> come segnaposto per rispettivamente lettere minuscole o maiuscole,
+         numeri e simboli!</span>
         </label>
         <input
           v-model="format"
@@ -31,9 +34,18 @@
           class="input input-bordered w-full bg-base-200 font-[monospace]"
           @input="validateFormat"
         />
+         <label class="label">
+          <span class="label-text">Separatore</span>
+        </label>
+        <input
+          v-model="separator"
+          type="text"
+          placeholder="(nessuno)"
+          class="input input-bordered w-full bg-base-200 font-[monospace]"
+        />
       </div>
 
-      <div class="form-control w-full" v-if="format.includes('s')">
+      <div class="form-control w-full" v-if="format.includes('$')">
         <label class="label">
           <span class="label-text">Simboli personalizzati:</span>
         </label>
@@ -61,7 +73,7 @@
         <div class="flex gap-2 mt-4 flex-wrap items-stretch">
           <button
             @click="copyAllToClipboard"
-            class="btn btn-info btn-sm flex-1"
+            class="btn btn-sm flex-1"
           >
             Copia Tutto
           </button>
@@ -74,16 +86,15 @@
           Stringhe Generate ({{ generatedStrings.length }})
         </div>
         <div
-          class="grid gap-2"
-          style="grid-template-columns: repeat(auto-fit, minmax(2.5rem, 1fr))"
-        >
-          <button
-            v-for="(str, index) in generatedStrings"
-            :key="index"
-            @click="copyToClipboard(str)"
-            class="btn btn-sm btn-outline font-[monospace] w-auto"
-            title="Copia"
-          >
+  class="grid gap-2 lg:grid-cols-6 grid-cols-3" 
+>
+  <button
+    v-for="(str, index) in generatedStrings"
+    :key="index"
+    @click="copyToClipboard(str)"
+    class="btn btn-sm btn-outline font-[monospace] w-auto min-w-fit max-w-full text-left break-words"
+    title="Copia"
+  >
             {{ str }}
           </button>
         </div>
@@ -97,9 +108,11 @@ import { ref, computed } from "vue";
 
 // Reactive data
 const count = ref(50);
-const format = ref("udu");
-const customSymbols = ref("!@#$%^&*");
+const format = ref("M-0-M");
+const customSymbols = ref("!@#$%&*");
 const generatedStrings = ref([]);
+const expertMode = ref(useCookie("expertMode") || false);
+const separator = ref("");
 
 // Character sets
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -109,9 +122,9 @@ const digits = "0123456789";
 // Validation
 const isValidFormat = computed(() => {
   if (!format.value) return false;
-  // Only allow u, l, d, s as pattern characters (case-insensitive)
-  // No other letters allowed
-  return /^[ulds\-\d_ .]+$/i.test(format.value);
+ 
+  // Allow only m, M, 0, $ and spaces, case sensitive
+  return /^[mM0$\s\-]+$/.test(format.value);
 });
 
 // Generate random character from set
@@ -119,40 +132,36 @@ const getRandomFromSet = (charset) => {
   return charset[Math.floor(Math.random() * charset.length)];
 };
 
-// Generate random uppercase letter
-const getRandomUppercase = () => getRandomFromSet(uppercaseChars);
-
-// Generate random lowercase letter
-const getRandomLowercase = () => getRandomFromSet(lowercaseChars);
-
-// Generate random digit
-const getRandomDigit = () => getRandomFromSet(digits);
-
-// Generate random symbol
-const getRandomSymbol = () => {
-  const symbols = customSymbols.value || "!@#$%^&*";
-  return getRandomFromSet(symbols);
+const patternGenerators = {
+  "M": uppercaseChars,
+  "m": lowercaseChars,
+  "0": digits,
+  "$": () => customSymbols.value || "!@#$%^&*",
 };
 
-// Generate single string based on format
+
 const generateString = (formatPattern) => {
-  return formatPattern
-    .toLowerCase()
-    .replace(/u/g, () => getRandomUppercase())
-    .replace(/l/g, () => getRandomLowercase())
-    .replace(/d/g, () => getRandomDigit())
-    .replace(/s/g, () => getRandomSymbol());
+  const parts = formatPattern.split("-");
+  const result = parts.map(part => {
+    const charsets = Array.from(part).map(char => {
+      if (char === "M") return uppercaseChars;
+      if (char === "m") return lowercaseChars;
+      if (char === "0") return digits;
+      if (char === "$") return customSymbols.value || "!@#$%&*";
+      return "";
+    });
+    const combinedCharset = charsets.join("");
+    return combinedCharset ? getRandomFromSet(combinedCharset) : "";
+  });
+  return result.join(separator.value || "");
 };
-
-// Generate array of strings
 const generateStrings = () => {
   if (!isValidFormat.value || count.value <= 0) return;
 
-  const strings = new Set(); // Use Set to ensure uniqueness
+  const strings = new Set(); 
   const maxAttempts = count.value * 1000; // Prevent infinite loop
   let attempts = 0;
 
-  // Generate strings until we have enough unique ones
   while (strings.size < count.value && attempts < maxAttempts) {
     const newString = generateString(format.value);
     strings.add(newString);
@@ -162,12 +171,6 @@ const generateStrings = () => {
   generatedStrings.value = Array.from(strings);
 };
 
-// Validate format on input
-const validateFormat = () => {
-  // This is handled by the computed property
-};
-
-// Copy single string to clipboard
 const copyToClipboard = async (text) => {
   try {
     showToast("Copiato!");
@@ -192,9 +195,7 @@ const copyToClipboard = async (text) => {
       }, 1000);
     }
     await navigator.clipboard.writeText(text);
-    // You could add a toast notification here
   } catch (err) {
-    // Fallback for older browsers
     const textArea = document.createElement("textarea");
     textArea.value = text;
     document.body.appendChild(textArea);
@@ -204,13 +205,11 @@ const copyToClipboard = async (text) => {
   }
 };
 
-// Copy all strings to clipboard
 const copyAllToClipboard = async () => {
   const allStrings = generatedStrings.value.join("\n");
   await copyToClipboard(allStrings);
 };
 
-// Export to TXT file
 const exportToTxt = () => {
   const content = generatedStrings.value.join("\n");
   const blob = new Blob([content], { type: "text/plain" });
@@ -225,4 +224,7 @@ const exportToTxt = () => {
 
   URL.revokeObjectURL(url);
 };
+
+
+
 </script>
