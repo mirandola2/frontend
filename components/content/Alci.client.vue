@@ -12,6 +12,7 @@
           v-model.number="count"
           type="number"
           min="1"
+          max="1000"
           placeholder="50"
           class="input input-bordered w-full bg-base-200"
         />
@@ -26,7 +27,7 @@
         <label class="label">
           <span class="label-text">Pattern: usa <strong>m</strong>, <strong>M</strong>, <strong>0</strong>, e
         <strong>$</strong> come segnaposto per rispettivamente lettere minuscole o maiuscole,
-         numeri e simboli!</span>
+         numeri e simboli scelti casualmente. Usa <strong>-</strong> per separare uno o più segnaposto che generaranno singoli caratteri. </span>
         </label>
         <input
           v-model="format"
@@ -45,7 +46,7 @@
         />
       </div>
 
-      <div class="form-control w-full" v-if="format.includes('$')">
+      <div class="form-control w-full" v-if="format.includes('$') && expertMode">
         <label class="label">
           <span class="label-text">Simboli personalizzati:</span>
         </label>
@@ -78,7 +79,10 @@
             Copia Tutto
           </button>
           <button @click="exportToTxt" class="btn btn-secondary btn-sm flex-1">
-            Esporta .TXT
+            Esporta .txt
+          </button>
+           <button @click="exportToPdf" class="btn btn-accent btn-sm flex-1">
+            Esporta PDF (sperimentale)
           </button>
         </div>
 
@@ -104,7 +108,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 
 // Reactive data
 const count = ref(50);
@@ -225,6 +229,79 @@ const exportToTxt = () => {
   URL.revokeObjectURL(url);
 };
 
+const exportToPdf = async() => {
+  // Create a new jsPDF instance in landscape mode
+  if (typeof window === 'undefined') return; // SSR guard
+  if (!jsPDFInstance) {
+    await loadJsPDF().catch((err) => {
+      console.error("Failed to load jsPDF", err);
+      return;
+    });
+  }
 
+  if (!jsPDFInstance || generatedStrings.value.length === 0) return;
+  
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({
+    orientation: 'landscape',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  const pageWidth = 297;
+  const pageHeight = 210;
+  
+  const fontSize = - (25 * generatedStrings.value[0].length - 320) + 50;
+  const fontHight = fontSize * 0.35
+  const margin = 15;
+  doc.setFontSize(fontSize);
+  
+  generatedStrings.value.forEach((str, index) => {
+    if (index > 0) {
+      doc.addPage();
+    }
+    
+    // Place the text in the upper part, centered horizontally
+    const textWidth = doc.getTextWidth(str);
+    const x = (pageWidth - textWidth) / 2;
+    const y = Math.min(pageHeight/2 - margin, margin + fontHight); 
+    
+    // Add the string to the page
+    doc.setFont(undefined, 'bold');
+    doc.text(str, x, y);
+
+  });
+
+  // Save the PDF
+  doc.save('alci.pdf');
+};
+
+let jsPDFInstance = null;
+
+const loadJsPDF = () => {
+  if (typeof window === 'undefined') return Promise.resolve(); // SSR guard
+  if (window.jspdf && window.jspdf.jsPDF) {
+    jsPDFInstance = window.jspdf.jsPDF;
+    return Promise.resolve();
+  }
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    script.onload = () => {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        jsPDFInstance = window.jspdf.jsPDF;
+        resolve();
+      } else {
+        reject(new Error('jsPDF failed to load'));
+      }
+    };
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+};
+
+onMounted(() => {
+  loadJsPDF().catch(console.error);
+});
 
 </script>
