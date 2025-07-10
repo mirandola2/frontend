@@ -13,6 +13,7 @@
           type="number"
           min="1"
           max="1000"
+          @input="count = Math.max(1, Math.min(count, 1000))"
           placeholder="50"
           class="input input-bordered w-full bg-base-200"
         />
@@ -243,15 +244,15 @@ const exportToPdf = async() => {
   
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({
-    orientation: 'landscape',
+    //orientation: 'landscape',
     unit: 'mm',
     format: 'a4'
   });
 
-  const pageWidth = 297;
+  const pageWidth = 210;
   const pageHeight = 210;
   
-  const fontSize = - (25 * generatedStrings.value[0].length - 320) + 50;
+  const fontSize = - (35 * generatedStrings.value[0].length - 275) + 50;
   const fontHight = fontSize * 0.35
   const margin = 15;
   doc.setFontSize(fontSize);
