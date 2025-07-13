@@ -20,15 +20,16 @@
       </div>
       <div class="form-control w-full flex flex-row items-center gap-2">
         <label class="label cursor-pointer">
-          <span class="label-text">Modalità Expert</span>
+          <span class="label-text">Modalità Expert 🧙</span>
           <input type="checkbox" v-model="expertMode" class="toggle toggle-secondary toggle-md  ml-2" />
         </label>
       </div>
       <div class="form-control w-full" v-if="expertMode">
         <label class="label">
-          <span class="label-text">Pattern: usa <strong>m</strong>, <strong>M</strong>, <strong>0</strong>, e
-        <strong>$</strong> come segnaposto per rispettivamente lettere minuscole o maiuscole,
-         numeri e simboli scelti casualmente. Usa <strong>-</strong> per separare uno o più segnaposto che generaranno singoli caratteri. </span>
+          <span class="label-text">
+            Pattern: usa <code>m</code>, <code>M</code>, <code>0</code>, e <code>$</code> come segnaposto per rispettivamente lettere minuscole o maiuscole,
+            numeri e simboli scelti casualmente. Usa <code>-</code> per separare uno o più segnaposto che generaranno singoli caratteri.
+          </span>
         </label>
         <input
           v-model="format"
@@ -49,7 +50,7 @@
 
       <div class="form-control w-full" v-if="format.includes('$') && expertMode">
         <label class="label">
-          <span class="label-text">Simboli personalizzati:</span>
+          <span class="label-text font-bold">Simboli personalizzati:</span>
         </label>
         <input
           v-model="customSymbols"
@@ -71,8 +72,8 @@
         Genera Stringhe
       </button>
 
-      <div v-if="generatedStrings.length > 0" class="mt-4">
-        <div class="flex gap-2 mt-4 flex-wrap items-stretch">
+      <div v-if="generatedStrings.length > 0">
+        <div class="flex gap-2 mt-2 flex-wrap items-stretch">
           <button
             @click="copyAllToClipboard"
             class="btn btn-sm flex-1"
@@ -82,8 +83,95 @@
           <button @click="exportToTxt" class="btn btn-secondary btn-sm flex-1">
             Esporta .txt
           </button>
-           <button @click="exportToPdf" class="btn btn-accent btn-sm flex-1">
-            Esporta PDF (sperimentale)
+          <button
+            @click="showPdfOptions = !showPdfOptions"
+            class="btn btn-secondary btn-sm flex-1"
+            :class="{ 'btn-active': showPdfOptions }"
+          >
+            Esporta PDF...
+          </button>
+        </div>
+
+        <!-- PDF Options Panel -->
+        <div v-if="showPdfOptions" class="mt-2 p-4 bg-base-200 rounded-lg border border-primary">
+          <h3 class="font-bold mb-3">Esporta PDF 🚧</h3>
+          <p class="text-sm"> L'esportazione del PDF è ancora sperimentale. Selezionando la modalità expert puoi regolare alcune impostazioni o lasciare quelle predefinte che sono quelle raccomandate.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Orientation -->
+            <div class="form-control md:col-span-2"  v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold">Orientamento</span>
+              </label>
+              <span class="text-xs p-1 mb-2"> In modalità verticale (predefinto) la carta sarà da rifilare nella parte bassa per creare un quadrato che può essere piegato in due. In modalità orizzontale sarà sufficiente piegare il foglio in due per la parte lunga e ottenere così l'alce.</span>
+              <select v-model="pdfOptions.orientation" class="select select-bordered select-sm">
+                <option value="portrait">Verticale</option>
+                <option value="landscape">Orizzontale</option>
+              </select>
+             
+            </div>
+
+            <!-- Font Family -->
+            <div class="form-control"  v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold">Font </span>
+              </label>
+              <select v-model="pdfOptions.fontFamily" class="select select-bordered select-sm">
+                <option value="helvetica">Helvetica</option>
+                <option value="times">Times</option>
+                <option value="courier">Courier</option>
+              </select>
+            </div>
+
+            <!-- Font Size -->
+            <div class="form-control"  v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold">Dimensione font <span class="font-normal" v-if="pdfOptions.fontSize != defaultfontSize">
+                 (default: {{ defaultfontSize }})</span>  
+                </span>
+              </label>
+              <input
+                v-model.number="pdfOptions.fontSize"
+                type="number"
+                class="input input-bordered input-sm"
+              />
+            </div>
+
+            <!-- Font Style -->
+            <div class="form-control"  v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold">Stile font</span>
+              </label>
+              <select v-model="pdfOptions.fontStyle" class="select select-bordered select-sm">
+                <option value="normal">Normale</option>
+                <option value="bold">Grassetto</option>
+                <option value="italic">Corsivo</option>
+                <option value="bolditalic">Grassetto Corsivo</option>
+              </select>
+            </div>
+
+            <!-- Multiple per page
+            <div class="form-control"  v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold">Elementi per pagina</span>
+              </label>
+              <input
+                v-model.number="pdfOptions.itemsPerPage"
+                @change="pdfOptions.fontSize = pdfOptions.itemsPerPage > 1 ? int(pdfOptions.fontSize / pdfOptions.itemsPerPage)  : defaultfontSize"
+                type="number"
+                min="1"
+                max="8"
+                class="input input-bordered input-sm"
+              />
+            </div> -->
+          </div>
+
+          <button
+            @click="exportToPdf"
+            class="btn btn-accent btn-sm w-full mt-4"
+            :disabled="generatedStrings.length === 0"
+          >
+            Genera PDF
           </button>
         </div>
 
@@ -118,6 +206,22 @@ const customSymbols = ref("!@#$%&*");
 const generatedStrings = ref([]);
 const expertMode = ref(useCookie("expertMode") || false);
 const separator = ref("");
+const showPdfOptions = ref(false);
+
+
+const defaultfontSize = ref((- 35 * format.value.split("-").length + 320)); // Default font size based on format length and items per page
+
+
+// PDF Options
+const pdfOptions = ref({
+  orientation: 'portrait',
+  textPosition: 'center',
+  fontFamily: 'helvetica',
+  fontSize: defaultfontSize.value,
+  fontStyle: 'bold',
+  //itemsPerPage: 1,
+  //debugLines: false
+});
 
 // Character sets
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -220,9 +324,14 @@ const exportToTxt = () => {
   const blob = new Blob([content], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
 
+  const now = new Date();
+  const pad = (n) => n.toString().padStart(2, '0');
+  const dateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  const filename = `alci_${dateStr}_${generatedStrings.value.length}.txt`;
+
   const link = document.createElement("a");
   link.href = url;
-  link.download = `alci.txt`;
+  link.download = filename;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -231,7 +340,7 @@ const exportToTxt = () => {
 };
 
 const exportToPdf = async() => {
-  // Create a new jsPDF instance in landscape mode
+  // Create a new jsPDF instance with custom options
   if (typeof window === 'undefined') return; // SSR guard
   if (!jsPDFInstance) {
     await loadJsPDF().catch((err) => {
@@ -244,37 +353,44 @@ const exportToPdf = async() => {
   
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({
-    //orientation: 'landscape',
+    orientation: pdfOptions.value.orientation,
     unit: 'mm',
     format: 'a4'
   });
 
-  const pageWidth = 210;
-  const pageHeight = 210;
+  const pageWidth = pdfOptions.value.orientation === 'landscape' ? 297 : 210;
+  const pageHeight = pdfOptions.value.orientation === 'landscape' ? 210 : 297;
   
-  const fontSize = - (35 * generatedStrings.value[0].length - 275) + 50;
-  const fontHight = fontSize * 0.35
-  const margin = 15;
-  doc.setFontSize(fontSize);
+  const margin = 10; //mm
+  const lineHeight = pdfOptions.value.fontSize /  2.835 * 0.8;
+
+  
+  doc.setFont(pdfOptions.value.fontFamily, pdfOptions.value.fontStyle);
+  doc.setFontSize(pdfOptions.value.fontSize);
+  
   
   generatedStrings.value.forEach((str, index) => {
-    if (index > 0) {
-      doc.addPage();
-    }
     
-    // Place the text in the upper part, centered horizontally
+    const yPosition = margin + lineHeight;
+    
+    let xPosition;
     const textWidth = doc.getTextWidth(str);
-    const x = (pageWidth - textWidth) / 2;
-    const y = Math.min(pageHeight/2 - margin, margin + fontHight); 
+    xPosition = (pageWidth - textWidth) / 2;
+  
     
-    // Add the string to the page
-    doc.setFont(undefined, 'bold');
-    doc.text(str, x, y);
+    doc.text(str, xPosition, yPosition);
+    doc.addPage();
 
+   
   });
 
   // Save the PDF
-  doc.save('alci.pdf');
+  // Compose filename:  alci _ current date _ number of alci
+  const now = new Date();
+  const pad = (n) => n.toString().padStart(2, '0');
+  const dateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  const filename = `alci_${dateStr}_${generatedStrings.value.length}.pdf`;
+  doc.save(filename);
 };
 
 let jsPDFInstance = null;
@@ -306,3 +422,13 @@ onMounted(() => {
 });
 
 </script>
+
+
+<style scoped>
+code {
+  font-family: monospace;
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+</style>
