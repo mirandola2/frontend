@@ -197,6 +197,7 @@
 </template>
 
 <script setup>
+import { get } from "@vueuse/core";
 import { ref, computed, onMounted } from "vue";
 
 // Reactive data
@@ -319,19 +320,22 @@ const copyAllToClipboard = async () => {
   await copyToClipboard(allStrings);
 };
 
+const getFileName = (extention) => {
+  const now = new Date();
+  const pad = (n) => n.toString().padStart(2, '0');
+  return `alci_${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${generatedStrings.value.length}.${extention}`;
+};
+
 const exportToTxt = () => {
   const content = generatedStrings.value.join("\n");
   const blob = new Blob([content], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
 
-  const now = new Date();
-  const pad = (n) => n.toString().padStart(2, '0');
-  const dateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-  const filename = `alci_${dateStr}_${generatedStrings.value.length}.txt`;
+  
 
   const link = document.createElement("a");
   link.href = url;
-  link.download = filename;
+  link.download = getFileName("txt");
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -362,7 +366,7 @@ const exportToPdf = async() => {
   const pageHeight = pdfOptions.value.orientation === 'landscape' ? 210 : 297;
   
   const margin = 10; //mm
-  const lineHeight = pdfOptions.value.fontSize /  2.835 * 0.8;
+  const lineHeight = pdfOptions.value.fontSize /  2.835 * 0.9;
 
   
   doc.setFont(pdfOptions.value.fontFamily, pdfOptions.value.fontStyle);
@@ -379,18 +383,16 @@ const exportToPdf = async() => {
   
     
     doc.text(str, xPosition, yPosition);
-    doc.addPage();
+    if (index < generatedStrings.value.length - 1) {
+      doc.addPage();
+    }
+    
 
    
   });
 
   // Save the PDF
-  // Compose filename:  alci _ current date _ number of alci
-  const now = new Date();
-  const pad = (n) => n.toString().padStart(2, '0');
-  const dateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-  const filename = `alci_${dateStr}_${generatedStrings.value.length}.pdf`;
-  doc.save(filename);
+  doc.save(getFileName("pdf"));
 };
 
 let jsPDFInstance = null;
