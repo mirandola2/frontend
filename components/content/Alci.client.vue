@@ -217,11 +217,13 @@
             </span>
             <input
               type="file"
-                accept="image/png, image/jpeg, image/jpg"
+              accept="image/png, image/jpeg, image/jpg"
               @change="handleImageUpload"
               class="file-input file-input-bordered file-input-sm w-full bg-base-200"
             />
           </div>
+
+
 
           <div
             v-if="uploadedImage && expertMode"
@@ -246,6 +248,7 @@
             <label class="label">
               <span class="label-text">Posizione logo:</span>
             </label>
+            <span class="text-xs p-1 mb-2">Scegliendo "Retro del foglio" la stampa dovrà essere fronte retro e il logo verrà stampato su quello che diventerà l'interno dell'alce. Scegliendo "Sotto il testo" il logo verrà stampato capovolto e sarà a contatto con la fronte.</span>
             <select v-model="pdfOptions.imagePosition" class="select select-bordered select-sm">
               <option value="under">Sotto il testo (ruotato)</option>
               <option value="back">Retro del foglio</option>
@@ -262,7 +265,7 @@
         </div>
 
         <div class="mt-5 font-bold">
-          Stringhe Generate ({{ generatedStrings.length }})
+          Alci Generate ({{ generatedStrings.length }})
         </div>
         <div class="grid gap-2 lg:grid-cols-6 grid-cols-3">
           <button
@@ -520,11 +523,9 @@ const exportToPdf = async () => {
           let displayHeight = lineHeight;
           let displayWidth = displayHeight * aspectRatio;
 
-          // Center the image horizontally
           const imgX = (pageWidth - displayWidth) / 2;
 
-          // Place image 2 * margin below the text baseline
-          const imgY = margin * 3 + lineHeight;
+          const imgY = pdfOptions.value.imagePosition == "under" ? margin * 3 + lineHeight : margin; // back or under, if under should be lower than the text
 
           // Create canvas for opacity processing (no rotation)
             const canvas = document.createElement("canvas");
@@ -535,8 +536,13 @@ const exportToPdf = async () => {
             canvas.height = displayHeight * scale;
 
             ctx.save();
-            ctx.translate(canvas.width / 2, canvas.height / 2);
-            ctx.rotate(Math.PI);
+            if (pdfOptions.value.imagePosition == "under") {
+              ctx.translate(canvas.width / 2, canvas.height / 2);
+              ctx.rotate(Math.PI);
+            } else { // back position, no rotation
+              ctx.translate(canvas.width / 2, canvas.height / 2);
+            }
+       
             ctx.scale(scale, scale);
             ctx.globalAlpha = imageOpacity.value / 100;
             ctx.drawImage(
@@ -590,6 +596,9 @@ const exportToPdf = async () => {
     // Add background image if processed successfully (under the text)
     if (processedImageData) {
       try {
+        if (pdfOptions.value.imagePosition === "back") {
+          doc.addPage();
+        }
         doc.addImage(
           processedImageData.imgData,
           processedImageData.imgType,
