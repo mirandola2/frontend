@@ -31,6 +31,7 @@ In questa repository è presente e qui documentato il frontend, mentre il [Middl
       + [Menu](#menu)
    * [Staff file 👨‍👩‍👧‍👧](#staff-file-)
    * [Immagini 🖼️](#immagini-)
+   * [Analytics 📊](#analytics-)
    * [Hosting ☁️](#hosting-)
 
 
@@ -220,14 +221,12 @@ Baden Powell,Impeesa,Fondatore dello Scoutismo|Capo Reparto,CC|E,1,Impeesa ovver
 
 ## Immagini 🖼️
 
-Gestire le immagini è complicato sia per una questione di privacy sia per una questione di storage. L'attuale soluzione prevede che tutte le immagini di archivio siano caricate esternamente, in particolare sul OneDrive fornito al gruppo dall'associazione; tranne per ciò che riguarda le poche immagini presenti sul sito come immagini di copertina o simili, che per una questione di latenza si è preferito procedere diversamente. Queste caricate su GitHub. Tuttavia per evitare che queste finiscano nella git commit history (da evitare sia per motivi di best practice informatiche sia per motivi interni nostri), sono caricate come oggetti di [Git LFS](https://git-lfs.com/). 
+Gestire le immagini è complicato sia per una questione di privacy sia per una questione di storage. L'attuale soluzione prevede che tutte le immagini di archivio siano caricate esternamente, in particolare sul OneDrive fornito al gruppo dall'associazione; tranne per ciò che riguarda le poche immagini presenti sul sito come immagini di copertina o simili, che per una questione di latenza si è preferito procedere diversamente. Queste caricate sul sito [ImageKit.io](https://imagekit.io), un servizio di CDN che permette di ottimizzare le immagini e renderle più veloci da caricare. 
 
-```sh
-git lfs track public/img/**/*.jpg
-git add ...
-git commit -m "Added images"
-git push origin main
-```
+Grazie al plugin Nuxt Image è sufficiente inserire il percorso *relativo* dell'immagine e il plugin si occuperà di ottimizzare l'immagine e renderla disponibile in modo veloce. 
+
+## Analytics 📊
+Le statistiche del sito sono gestite dal serivizio europeo Simple Analytics, che permette di avere statistiche in tempo reale senza compromettere la privacy degli utenti. 
 
 ## Hosting ☁️
 
