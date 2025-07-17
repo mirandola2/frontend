@@ -65,7 +65,8 @@ const filteredData = computed(() => {
     const query = searchQuery.value.toLowerCase().trim()
     filtered = filtered.filter(row => 
       row.name?.toLowerCase().includes(query) ||
-      row.year?.toString().includes(query)
+      row.year?.toString().includes(query) ||
+      (Number(row.year) + 1)?.toString().includes(query)
     )
   }
   
@@ -76,9 +77,7 @@ const grouped = computed(() => {
   if (!filteredData.value?.length) return []
      
   const groups = filteredData.value.reduce((acc, row) => {
-    // Extract the first year from formats like "1983-84"
-    const yearStr = row.year?.toString().split('-')[0]
-    const year = Number(yearStr)
+    const year = Number(row.year)
      
     if (!acc[year]) acc[year] = []
     acc[year].push(row)
@@ -210,7 +209,7 @@ const getTypeLabel = (type) => {
             
     <!-- Results -->
     <div v-for="group in grouped" :key="group.year" class="bg-base-200 p-6 rounded-2xl">
-      <h2 class="text-2xl font-bold mb-4">Anno {{ group.year }}</h2>
+      <h2 class="text-2xl font-bold mb-4">Anno {{ group.year }}-{{ group.year +1 }}</h2>
       <div class="grid md:grid-cols-3 gap-4">
         <div
           v-for="entry in group.entries"
