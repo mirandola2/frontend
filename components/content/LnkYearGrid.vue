@@ -2,31 +2,74 @@
 import { ref, computed } from "vue";
 
 const props = defineProps({
-  path: {
+  photoPath: {
+    type: String,
+    required: true,
+  },
+  videoPath: {
     type: String,
     required: true,
   }
 })
 
-const { data } = await useAsyncData('csv', () =>
-  queryContent(props.path).findOne()
+const { data: photoData } = await useAsyncData('csv-photos', () =>
+  queryContent(props.photoPath).findOne()
+)
+
+const { data: videoData } = await useAsyncData('csv-videos', () =>
+  queryContent(props.videoPath).findOne()
 )
 
 const sortDesc = ref(true)
 const searchQuery = ref('')
+const selectedType = ref('both')
 
-const filteredData = computed(() => {
-  if (!data.value?.body?.length) return []
+const allData = computed(() => {
+  const combined = []
   
-  if (!searchQuery.value.trim()) {
-    return data.value.body
+  // Add photos with type identifier
+  if (photoData.value?.body?.length) {
+    photoData.value.body.forEach(item => {
+      combined.push({
+        ...item,
+        type: 'photo'
+      })
+    })
   }
   
-  const query = searchQuery.value.toLowerCase().trim()
-  return data.value.body.filter(row => 
-    row.name?.toLowerCase().includes(query) ||
-    row.year?.toString().includes(query)
-  )
+  // Add videos with type identifier
+  if (videoData.value?.body?.length) {
+    videoData.value.body.forEach(item => {
+      combined.push({
+        ...item,
+        type: 'video'
+      })
+    })
+  }
+  
+  return combined
+})
+
+const filteredData = computed(() => {
+  if (!allData.value?.length) return []
+  
+  let filtered = allData.value
+  
+  // Filter by type
+  if (selectedType.value !== 'both') {
+    filtered = filtered.filter(row => row.type === selectedType.value)
+  }
+  
+  // Filter by search query
+  if (searchQuery.value.trim()) {
+    const query = searchQuery.value.toLowerCase().trim()
+    filtered = filtered.filter(row => 
+      row.name?.toLowerCase().includes(query) ||
+      row.year?.toString().includes(query)
+    )
+  }
+  
+  return filtered
 })
 
 const grouped = computed(() => {
@@ -57,6 +100,14 @@ const totalEntries = computed(() => {
   return grouped.value.reduce((total, group) => total + group.entries.length, 0)
 })
 
+const typeStats = computed(() => {
+  const stats = { photo: 0, video: 0 }
+  filteredData.value.forEach(item => {
+    stats[item.type]++
+  })
+  return stats
+})
+
 const copyLink = async (entry) => {
   try {
     await navigator.clipboard.writeText(entry.url)
@@ -66,62 +117,79 @@ const copyLink = async (entry) => {
     console.error('Failed to copy link:', err)
   }
 }
+
+const getTypeIcon = (type) => {
+  return type === 'photo' ? 'photo_camera' : 'videocam'
+}
+
+const getTypeLabel = (type) => {
+  return type === 'photo' ? 'Foto' : 'Video'
+}
 </script>
 
 <template>
   <div class="not-prose space-y-4">
     <!-- Search and Controls -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-      <div class="flex items-center gap-2 flex-1">
-        <div class="relative flex-1 max-w-sm">
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="Cerca per nome o anno..."
-            class="input input-sm input-bordered input-secondary w-full pr-8"
-          />
-          <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-            <svg class="w-4 h-4 text-base-content/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-4 w-full">
+      <div class="relative flex-1 w-full">
+        <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Cerca per nome o anno..."
+        class="input input-sm input-bordered input-secondary w-full pr-8"
+        />
+        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+        <svg class="w-4 h-4 text-base-content/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
         </div>
-        
-        <select
-          v-model="sortDesc"
-          class="select select-sm select-bordered select-secondary text-secondary font-bold"
-        >
-          <option :value="true">Dal più recente</option>
-          <option :value="false">Dal meno recente</option>
-        </select>
-        
-        <select
-          class="select select-sm select-bordered select-secondary text-secondary font-bold"
-        >
-          <option :value="photo">Foto</option>
-          <option :value="both" disabled>Foto e Video</option>
-          <option :value="video" disabled>Video</option>
-        </select>
       </div>
       
-      <div class="flex items-center gap-2 text-sm text-base-content/70">
-        <span>{{ totalEntries }} elementi in {{ grouped.length }} anni</span>
-        <span v-if="searchQuery.trim()" class="badge badge-secondary badge-sm">
-          Filtrato
+      <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+        <select
+        v-model="sortDesc"
+        class="select select-sm select-bordered select-secondary text-secondary font-bold w-full sm:w-auto"
+        >
+        <option :value="true">Dal più recente</option>
+        <option :value="false">Dal meno recente</option>
+        </select>
+        
+        <select
+        v-model="selectedType"
+        class="select select-sm select-bordered select-secondary text-secondary font-bold w-full sm:w-auto"
+        >
+        <option value="both">Foto e Video</option>
+        <option value="photo">Solo Foto</option>
+        <option value="video">Solo Video</option>
+        </select>
+      </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm text-base-content/70">
+      <div class="flex items-center gap-2">
+        <span class="flex items-center gap-1">
+        <span class="material-symbols-rounded text-xs">photo_camera</span>
+        {{ typeStats.photo }}
         </span>
+        <span class="flex items-center gap-1">
+        <span class="material-symbols-rounded text-xs">videocam</span>
+        {{ typeStats.video }}
+        </span>
+      </div>
       </div>
     </div>
     
-    <!-- Clear search button when searching -->
-    <div v-if="searchQuery.trim()" class="flex items-center gap-2">
+    <!-- Clear filters button when filtering -->
+    <div v-if="searchQuery.trim() || selectedType !== 'both'" class="flex items-center gap-2">
       <button
-        @click="searchQuery = ''"
+        @click="searchQuery = ''; selectedType = 'both'"
         class="btn btn-sm btn-ghost text-base-content/70 hover:text-base-content"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
-        Cancella ricerca
+        Cancella filtri
       </button>
     </div>
     
@@ -136,7 +204,7 @@ const copyLink = async (entry) => {
         Nessun risultato trovato
       </p>
       <p class="text-base-content/50">
-        Prova a modificare i termini di ricerca
+        Prova a modificare i termini di ricerca o i filtri
       </p>
     </div>
             
@@ -146,16 +214,15 @@ const copyLink = async (entry) => {
       <div class="grid md:grid-cols-3 gap-4">
         <div
           v-for="entry in group.entries"
-          :key="entry.name"
+          :key="`${entry.type}-${entry.name}-${entry.year}`"
           class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-200 group"
         >
           <div class="card-body">
-            <div class="flex items-start justify-between gap-2 mb-2">
-              <a :href="entry.url"  class="card-title text-base font-normal group-hover:text-secondary group-hover:underline transition-colors">
+            <span class="material-symbols-rounded text-sm">{{ getTypeIcon(entry.type) }}</span>
+           
+              <a :href="entry.url" class="card-title text-base font-normal group-hover:text-secondary group-hover:underline transition-colors">
                 {{ entry.name }}
               </a>
-              
-            </div>
             
             <div class="card-actions justify-end mt-auto">
               <button
@@ -168,10 +235,9 @@ const copyLink = async (entry) => {
               <a 
                 :href="entry.url" 
                 target="_blank" 
-                class="btn btn-sm btn-outline btn-secondary  hover:btn-secondary-focus transition-colors"
+                class="btn btn-sm btn-outline btn-secondary hover:btn-secondary-focus transition-colors"
               >
                 <span class="material-symbols-rounded">east</span>
-                
               </a>
             </div>
           </div>
