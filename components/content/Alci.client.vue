@@ -13,6 +13,7 @@
           min="1"
           max="1000"
           @input="count = Math.max(1, Math.min(count, 1000))"
+          @change="resetStrings"
           placeholder="50"
           class="input input-bordered w-full bg-base-200"
         />
@@ -42,7 +43,7 @@
           v-model="format"
           type="text"
           class="input input-bordered w-full bg-base-200 font-[monospace]"
-          @input="validateFormat"
+          @change="resetStrings"
         />
         <label class="label">
           <span class="label-text">Separatore</span>
@@ -52,6 +53,7 @@
           type="text"
           placeholder="(nessuno)"
           class="input input-bordered w-full bg-base-200 font-[monospace]"
+          @change="resetStrings"
         />
       </div>
 
@@ -162,6 +164,26 @@
               </label>
               <input
                 v-model.number="pdfOptions.fontSize"
+                type="number"
+                class="input input-bordered input-sm"
+              />
+            </div>
+
+            <!-- Font Size -->
+            <div class="form-control" v-if="expertMode">
+              <label class="label">
+                <span class="label-text font-bold"
+                  >Margine
+                  <span
+                    class="font-normal"
+                    v-if="pdfOptions.margin != defaultmargin"
+                  >
+                    (default: {{ defaultmargin }})</span
+                  >
+                </span>
+              </label>
+              <input
+                v-model.number="pdfOptions.margin"
                 type="number"
                 class="input input-bordered input-sm"
               />
@@ -302,16 +324,22 @@ const colorHex = ref("#000000");
 const uploadedImage = ref(null);
 const imageOpacity = ref(100);
 
-const defaultfontSize = ref(-35 * format.value.split("-").length + 320); // Default font size based on format length and items per page
+const defaultfontSize = computed(() => -35 * format.value.split("-").length + 320); // Default font size based on format length and items per page
+const defaultmargin = computed(() => 10); // Default margin in mm
+
+const resetStrings = () => {
+  generatedStrings.value = [];
+};
 
 // PDF Options
 const pdfOptions = ref({
   orientation: "portrait",
   textPosition: "center",
   fontFamily: "helvetica",
-  fontSize: defaultfontSize.value,
+  fontSize: computed(() => defaultfontSize.value),
   fontStyle: "bold",
   imagePosition: "under", // 'under' or 'back'
+  margin: 10, // mm
 });
 
 // Character sets
@@ -481,7 +509,7 @@ const exportToPdf = async () => {
   const pageWidth = pdfOptions.value.orientation === "landscape" ? 297 : 210;
   const pageHeight = pdfOptions.value.orientation === "landscape" ? 210 : 297;
 
-  const margin = 10; //mm
+
   const lineHeight = (pdfOptions.value.fontSize / 2.835) * 0.9; //mm;
 
   doc.setFont(pdfOptions.value.fontFamily, pdfOptions.value.fontStyle);
@@ -525,7 +553,7 @@ const exportToPdf = async () => {
 
           const imgX = (pageWidth - displayWidth) / 2;
 
-          const imgY = pdfOptions.value.imagePosition == "under" ? margin * 3 + lineHeight : margin; // back or under, if under should be lower than the text
+          const imgY = pdfOptions.value.imagePosition == "under" ? pdfOptions.value.margin * 3 + lineHeight : pdfOptions.value.margin; // back or under, if under should be lower than the text
 
           // Create canvas for opacity processing (no rotation)
             const canvas = document.createElement("canvas");
@@ -584,7 +612,7 @@ const exportToPdf = async () => {
 
   // Now generate the PDF pages
   generatedStrings.value.forEach((str, index) => {
-    const yPosition = margin + lineHeight;
+    const yPosition = pdfOptions.value.margin + lineHeight;
 
     // Center text horizontally
     const textWidth = doc.getTextWidth(str);
