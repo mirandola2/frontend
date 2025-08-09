@@ -1,6 +1,10 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from "vue";
 
+const { toast, toastMessage, showToast } = useToast()
+
+
+
 const props = defineProps({
   photoPath: {
     type: String,
@@ -32,20 +36,20 @@ const formatUrlId = (name) => {
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "");
 };
-
 // Get current URL parameters
 const getUrlParams = () => {
   if (typeof window === "undefined") return {};
+
   const params = new URLSearchParams(window.location.search);
   return {
     search: params.get("search") || "",
     type: params.get("type") || "both",
     sort: params.get("sort") || "desc",
-    card: window.location.hash.replace("#", "") || "",
+    card: window.location.hash ? window.location.hash.substring(1) : "",
   };
 };
 
-// Update URL with current filters
+// Update URL with current filters without page reload
 const updateUrl = () => {
   if (typeof window === "undefined") return;
 
@@ -59,19 +63,22 @@ const updateUrl = () => {
     params.set("type", selectedType.value);
   }
 
+  // Only set sort param if ascending, default is descending
   if (!sortDesc.value) {
     params.set("sort", "asc");
   }
 
+  // Compose URL with params and hash
   const queryString = params.toString();
   const url = queryString
     ? `${window.location.pathname}?${queryString}${window.location.hash}`
     : window.location.pathname + window.location.hash;
 
+  // Replace current history state without reloading page
   window.history.replaceState({}, "", url);
 };
 
-// Initialize filters from URL
+// Initialize filters from URL parameters
 const initializeFromUrl = () => {
   const params = getUrlParams();
 
@@ -79,31 +86,156 @@ const initializeFromUrl = () => {
   selectedType.value = params.type;
   sortDesc.value = params.sort === "desc";
 };
-
-// Focus on card by ID
-const focusCard = async (cardId, jumpToElement) => {
+const focusCard = async (cardId, jumpToElement = false) => {
   if (!cardId) return;
 
-  await nextTick();
-
-  const element = document.getElementById(cardId);
-  if (element) {
+  const element = document.getElementById(formatUrlId(cardId));
+  
+  if (!element) {
+    // Wait for element if it doesn't exist yet
+    await new Promise(resolve => setTimeout(resolve, 100));
+    const retryElement = document.getElementById(formatUrlId(cardId));
+    if (!retryElement) return;
+    
     if (jumpToElement) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+      // Calculate position with offset
+      let elementTop = 0;
+      let current = retryElement;
+      while (current) {
+        elementTop += current.offsetTop;
+        current = current.offsetParent;
+      }
+      
+      window.scrollTo({
+        top: elementTop - 200, // 200px offset
+        behavior: 'smooth'
       });
     }
+    
+    retryElement.focus({ preventScroll: true });
+    return;
+  }
 
-    element.focus();
+  if (jumpToElement) {
+    // Calculate position with offset
+    let elementTop = 0;
+    let current = element;
+    while (current) {
+      elementTop += current.offsetTop;
+      current = current.offsetParent;
+    }
+    
+    window.scrollTo({
+      top: elementTop - 200, // 200px offset
+      behavior: 'smooth'
+    });
+  }
 
-    // Add a temporary highlight effect
-    element.classList.add("ring-8", "ring-secondary", "ring-offset-2");
-    setTimeout(() => {
-      element.classList.remove("ring-8", "ring-secondary", "ring-offset-2");
-    }, 2000);
+  element.focus({ preventScroll: true });
+};
+
+// Better initialization
+onMounted(async () => {
+  initializeFromUrl();
+
+  // Wait for Vue to finish rendering
+  await nextTick();
+  
+  // Additional wait for data to be processed
+  await new Promise(resolve => setTimeout(resolve, 300));
+  
+  // Handle initial hash
+  const params = getUrlParams();
+  if (params.card) {
+    await focusCard(params.card, true);
+  }
+
+  // Listen for hash changes
+  window.addEventListener("hashchange", handleHashChange);
+});
+
+
+// Improved hash change handler with error handling
+const handleHashChange = async () => {
+  const cardId = window.location.hash.replace("#", "");
+  if (cardId) {
+    const success = await focusCard(cardId, true);
+    if (!success) {
+      console.warn(`Could not scroll to card: ${cardId}`);
+    }
   }
 };
+
+// Better onMounted with proper async handling
+onMounted(async () => {
+  // Initialize filters from URL
+  initializeFromUrl();
+
+  // Wait for Vue's initial render
+  await nextTick();
+
+  // Handle initial hash if present
+  const params = getUrlParams();
+  if (params.card) {
+    try {
+      await focusCard(params.card, true);
+    } catch (error) {
+      console.warn('Failed to scroll to initial card:', error);
+    }
+  }
+
+  // Set up hash change listener
+  window.addEventListener("hashchange", handleHashChange);
+});
+
+// Enhanced copyLink function with better error handling
+const copyLink = async (entry) => {
+  const cardId = formatUrlId(entry.id);
+  const currentUrl = window.location.origin + window.location.pathname;
+  const params = new URLSearchParams(window.location.search);
+  const queryString = params.toString();
+  const fullUrl = `${currentUrl}${queryString ? "?" + queryString : ""}#${cardId}`;
+
+  try {
+    // Modern clipboard API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(fullUrl);
+    } else {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = fullUrl;
+      textArea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
+      document.body.appendChild(textArea);
+      textArea.select();
+      textArea.setSelectionRange(0, textArea.value.length);
+      
+      if (!document.execCommand('copy')) {
+        throw new Error('Copy command failed');
+      }
+      
+      document.body.removeChild(textArea);
+    }
+
+    // Update URL hash
+    history.replaceState(null, null, `#${cardId}`);
+    
+    // Scroll to and focus the card
+    const success = await focusCard(cardId, true);
+    
+    if (!success) {
+      console.warn('Link copied but could not scroll to card');
+    }
+    toast("Copiato!")
+    
+  } catch (err) {
+    console.error("Failed to copy link:", err);
+    
+    // Still try to navigate even if copy failed
+    history.replaceState(null, null, `#${cardId}`);
+    await focusCard(cardId, true);
+  }
+};
+
 
 const allData = computed(() => {
   const combined = [];
@@ -192,43 +324,6 @@ const typeStats = computed(() => {
   return stats;
 });
 
-const copyLink = async (entry) => {
-  const cardId = formatUrlId(entry.name);
-  const currentUrl = window.location.origin + window.location.pathname;
-  const params = new URLSearchParams(window.location.search);
-  const queryString = params.toString();
-  const fullUrl = `${currentUrl}${
-    queryString ? "?" + queryString : ""
-  }#${cardId}`;
-
-  try {
-    // Try modern clipboard API first
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(fullUrl);
-    } else {
-      // Fallback for older browsers or non-HTTPS
-      const textArea = document.createElement("textarea");
-      textArea.value = fullUrl;
-      textArea.style.position = "fixed";
-      textArea.style.left = "-999999px";
-      textArea.style.top = "-999999px";
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
-    }
-
-    window.location.hash = cardId;
-
-    focusCard(cardId, false);
-  } catch (err) {
-    console.error("Failed to copy link:", err);
-    window.location.hash = cardId;
-    focusCard(cardId, false);
-  }
-};
-
 const getTypeIcon = (type) => {
   return type === "photo" ? "photo_camera" : "videocam";
 };
@@ -242,33 +337,6 @@ watch([searchQuery, selectedType, sortDesc], () => {
   updateUrl();
 });
 
-// Handle hash changes (back/forward navigation)
-const handleHashChange = () => {
-  const cardId = window.location.hash.replace("#", "");
-  if (cardId) {
-    focusCard(cardId);
-  }
-};
-
-onMounted(() => {
-  initializeFromUrl();
-
-  // Handle initial hash
-  const params = getUrlParams();
-  if (params.card) {
-    setTimeout(() => focusCard(params.card), 500);
-  }
-
-  // Listen for hash changes
-  window.addEventListener("hashchange", handleHashChange);
-});
-
-// Clean up event listener
-onUnmounted(() => {
-  if (typeof window !== "undefined") {
-    window.removeEventListener("hashchange", handleHashChange);
-  }
-});
 </script>
 
 <template>
@@ -405,8 +473,8 @@ onUnmounted(() => {
         <div
           v-for="entry in group.entries"
           :key="`${entry.type}-${entry.name}-${entry.year}`"
-          :id="formatUrlId(entry.name)"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 scroll-mt-4"
+          :id="formatUrlId(entry.id)"
+          class="card bg-base-100 shadow hover:shadow-2xl transition-all duration-200 group focus:outline-none focus:shadow-2xl focus:ring-4 focus:ring-secondary focus:ring-offset-4"
           tabindex="0"
         >
           <div class="card-body">
@@ -442,4 +510,7 @@ onUnmounted(() => {
       </div>
     </div>
   </div>
+  <Toast v-if="showToast" message="Link Copiato!" />
+
 </template>
+
