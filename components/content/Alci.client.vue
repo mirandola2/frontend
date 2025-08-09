@@ -303,6 +303,8 @@
       </div>
     </div>
   </div>
+  <Toast v-if="showToast" :message="toastMessage" />
+
 </template>
 
 <script setup>
@@ -434,20 +436,12 @@ const generateStrings = () => {
 
   generatedStrings.value = Array.from(strings);
 };
+const { toast, toastMessage, showToast } = useToast()
 
 const copyToClipboard = async (text) => {
   try {
-    showToast("Copiato!");
 
-    function showToast(message) {
-      const toast = document.createElement("div");
-      toast.textContent = message;
-      toast.className = "mytoast";
-      document.body.appendChild(toast);
-      setTimeout(() => {
-        toast.remove();
-      }, 1000);
-    }
+    
     await navigator.clipboard.writeText(text);
   } catch (err) {
     const textArea = document.createElement("textarea");
@@ -457,6 +451,8 @@ const copyToClipboard = async (text) => {
     document.execCommand("copy");
     document.body.removeChild(textArea);
   }
+  toast("Alce Copiata!")
+
 };
 
 const copyAllToClipboard = async () => {

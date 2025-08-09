@@ -225,7 +225,7 @@ const copyLink = async (entry) => {
     if (!success) {
       console.warn('Link copied but could not scroll to card');
     }
-    toast("Copiato!")
+    toast("Link Copiato!")
     
   } catch (err) {
     console.error("Failed to copy link:", err);
@@ -510,7 +510,7 @@ watch([searchQuery, selectedType, sortDesc], () => {
       </div>
     </div>
   </div>
-  <Toast v-if="showToast" message="Link Copiato!" />
+  <Toast v-if="showToast" :message="toastMessage" />
 
 </template>
 
