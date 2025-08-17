@@ -1,14 +1,16 @@
 <template>
   <div class="my-8 max-w-xl mx-auto">
-    <p v-if="quote" class="italic text-center font-serif balanced" :class="class">
-      «{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span>
-    </p>
+    <ClientOnly>
+      <p v-if="quote" class="italic text-center font-serif balanced" :class="class">
+        «{{ quote.text }}» <span v-if="quote.author">({{ quote.author }})</span>
+      </p>
+    </ClientOnly>
   </div>
 </template>
 
 <script setup>
-import * as toml from "toml";
-import { ref, watchEffect } from "vue";
+import { ref, watchEffect, onMounted } from "vue";
+import { queryContent, useAsyncData } from "#imports";
 
 const props = defineProps({
   type: {
@@ -23,20 +25,19 @@ const props = defineProps({
   },
 });
 
-const quote = ref();
 
-watchEffect(async () => {
+const quote = ref(null);
+
+const { data: quotes } = await useAsyncData('quotes', () => queryContent("/_quotes").findOne());
+
+onMounted(() => {
   if (props.quote == null) {
-    try {
-      const response = await fetch("/quotes.toml");
-      const tomlText = await response.text();
-      const parsedToml = toml.parse(tomlText);
-      quote.value =
-        parsedToml["frasi"][props.type][
-          Math.floor(Math.random() * parsedToml["frasi"][props.type].length)
-        ];
-    } catch (error) {
-      console.error("🥲 Failed to load quotes TOML file.");
+    if (quotes.value && quotes.value.body) {
+      const filteredRows = quotes.value.body.filter(row => row.type === props.type);
+      
+      if (filteredRows.length > 0) {
+        quote.value = filteredRows[Math.floor(Math.random() * filteredRows.length)];
+      }
     }
   } else {
     quote.value = { text: props.quote };
