@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import 'daisyui';
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  --font-sans: Ubuntu, ui-sans-serif, system-ui;
+  --font-display: Caprasimo, ui-sans-serif, system-ui;
+  --font-serif: 'Playfair Display', ui-serif;
+  
+  --color-lc: #FFBE0A;
+  --color-eg: #559928;
+  --color-rs: #E84C3E;
+  --color-cc: #9B66A5;
+  --color-white: #ffffff;
+}
+
+html {
+    scroll-padding-top: 6rem;
+  }
+
+
+  /* Typography 
+.prose-container {
+    @apply prose max-w-none prose-a:text-secondary 
+    prose-p:md:text-justify prose-p:max-w-4xl prose-p:mx-auto
+    prose-li:my-0 prose-ul:pl-10 prose-ul:max-w-4xl prose-ul:mx-auto prose-ol:max-w-4xl prose-ol:mx-auto
+    prose-table:max-w-4xl prose-table:mx-auto
+    prose-headings:max-w-4xl prose-headings:mx-auto
+    prose-blockquote:max-w-4xl prose-blockquote:mx-auto prose-blockquote:font-serif
+    prose-figure:rounded-xl prose-img:mx-auto
+    before:prose-p:content-none after:prose-p:content-none
+    prose-h1:font-display prose-h1:font-normal
+}*/
