@@ -38,16 +38,5 @@ export default defineNuxtConfig({
     }
   },
 
-  content: {
-    ignores: [
-      '/content/index.md',
-      'totem'
-    ],
-    markdown: {
-      anchorLinks: false
-    },
-    documentDriven: true,
-  },
-
-  compatibilityDate: '2024-11-11'
+  compatibilityDate: '2025-11-01'
 })

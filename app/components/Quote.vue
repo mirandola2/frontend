@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref, watchEffect, onMounted } from "vue";
-import { queryContent, useAsyncData } from "#imports";
+import { useAsyncData } from "#imports";
 
 const props = defineProps({
   type: {

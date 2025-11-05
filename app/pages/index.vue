@@ -93,9 +93,9 @@
 </template>
 
 <script setup>
-const { data } = await useAsyncData("home", () =>
-  queryContent("/_home").findOne()
-);
+const { data } = await useAsyncData("home", () =>{
+  return queryCollection("pages").path('/_home').first()
+});
 
 
 </script>

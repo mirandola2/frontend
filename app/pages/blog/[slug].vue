@@ -29,7 +29,14 @@
 </template>
 
 <script setup>
-const { toc, page } = useContent();
+const route = useRoute();
+
+const { data: page } = await useAsyncData(
+  route.path,
+  () => queryCollection('blog').path(route.path).first()
+);
+
+const toc = computed(() => page.value?.toc ?? []);
 
 const badge = {
   lc: { bg: "bg-lc text-lc-content", text: "L/C" },

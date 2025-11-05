@@ -1,7 +1,9 @@
 <script setup>
-import { ref, onBeforeMount } from "vue";
+import { ref, onMounted } from "vue";
+import { useRouter, useRoute, useNuxtApp, useSeoMeta } from "#app";
+
 const router = useRouter();
-const  {page} = useContent()
+const route = useRoute();
 
 const menu = ref({
   Home: "/",
@@ -48,35 +50,45 @@ const menu = ref({
     "Materiali e link": "/materiale",
   },
 });
-const regex = /^\/blog/;
 
-const solid = regex.test(router.currentRoute.value.fullPath) || page.value?.navbar_solid;
+// Determine if navbar should be solid or transparent
+const regex = /^\/blog/;
+const solid = regex.test(route.fullPath);
 const transparentNavbar = ref(!solid);
 const fixedNavbar = ref(!solid);
 
-const nuxtApp = useNuxtApp();
-
-nuxtApp.hook("page:finish", () => {
-  if (!solid){
-    window.addEventListener("scroll", handleScroll);
-  }
-});
-
 function handleScroll() {
   if (window.scrollY > 5) {
-    if (transparentNavbar.value) transparentNavbar.value = false;
+    transparentNavbar.value = false;
   } else {
-    if (!transparentNavbar.value) transparentNavbar.value = true;
+    transparentNavbar.value = true;
   }
 }
 
-useSeoMeta({
-  ogTitle: router.currentRoute.value.path != '/' ? page.value?.title + ' ~ Agesci Gruppo Mirandola 2' : 'Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!',
-  description: router.currentRoute.value.path == '/' ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
-  ogDescription: router.currentRoute.value.path == '/' || !page.value?.description ? 'Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili.': page.value?.description,
-  //ogImage: router.currentRoute.value.path == '/' ? '/img/misc/hero.jpg' : page.value?.image,
-})
+const nuxtApp = useNuxtApp();
+nuxtApp.hook("page:finish", () => {
+  if (!solid) window.addEventListener("scroll", handleScroll);
+});
 
+onMounted(() => {
+  if (!solid) window.addEventListener("scroll", handleScroll);
+});
+
+useSeoMeta({
+  ogTitle:
+    route.path !== "/"
+      ? `${route.meta?.title || "Pagina"} ~ Agesci Gruppo Mirandola 2`
+      : "Agesci Scout Mirandola 2 ~ 40 anni di giochi, avventure e strade!",
+  description:
+    route.path === "/"
+      ? "Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili."
+      : route.meta?.description ||
+        "Siamo a Mirandola dal 1983: scopri le ultime notizie e la nostra storia.",
+  ogDescription:
+    route.path === "/" || !route.meta?.description
+      ? "Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili."
+      : route.meta.description,
+});
 </script>
 
 <template>
