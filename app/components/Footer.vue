@@ -1,6 +1,6 @@
 <template>
   <div class="mt-auto"><footer class="mt-12 py-5 sm:p-10 bg-primary text-primary-content">
-    <div class="container footer text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
+    <div class="container md:footer-horizontal text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
       <aside class="flex gap-5">
         <div class="space-y-2">
           <p>

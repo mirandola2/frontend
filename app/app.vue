@@ -135,7 +135,7 @@ useSeoMeta({
                       <label tabindex="0" class="">{{ mainItem }}</label>
                       <ul
                         tabindex="0"
-                        class=" dropdown-content z-[1] menu p-2 shadow bg-secondary text-white rounded-box w-60"
+                        class=" dropdown-content z-1 menu p-2 shadow bg-secondary text-white rounded-box w-60"
                       >
                         <!-- Loop through the sub-menu items -->
                         <li v-for="(link, subItem) in submenu" :key="subItem">

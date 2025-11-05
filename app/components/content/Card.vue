@@ -1,5 +1,5 @@
 <template>
-    <div class="card not-prose grid-item max-w-full !w-full" :class="[bgColor[color], {'md:col-span-2': big}]">
+    <div class="card not-prose grid-item max-w-full w-full!" :class="[bgColor[color], {'md:col-span-2': big}]">
 
         <div class="card-body">
             <h2 class="card-title" v-if="title">
