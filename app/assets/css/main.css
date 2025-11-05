@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@source inline("bg-{lc,rs,eg,cc}");
+
 
 @plugin 'daisyui' {
   themes: agesci --default;
