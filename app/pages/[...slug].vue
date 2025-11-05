@@ -11,7 +11,16 @@
 
 </template>
 <script setup>
-const { toc, page } = useContent();
+
+const route = useRoute();
+
+const { data: page } = await useAsyncData(
+  route.path,
+  () => queryCollection('pages').path(route.path).first()
+);
+
+const toc = computed(() => page.value?.toc ?? []);
+
 
 useHead({
   title: page.title
