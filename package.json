@@ -13,7 +13,7 @@
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/sitemap": "^7.4.7",
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.16",
     "@vueuse/core": "^10.3.0",
     "better-sqlite3": "^12.4.1",
