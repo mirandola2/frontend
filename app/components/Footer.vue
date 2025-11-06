@@ -45,7 +45,8 @@
       </aside>
 
       <p class="text-2xl font-serif inline md:text-right">
-        <i>Del nostro meglio</i> <br />
+        <i>Eccoci,</i> <br />
+        <i>del nostro meglio,</i> <br />
         per <i>essere pronti</i> <br />
         a <i>servire</i>.
       </p>

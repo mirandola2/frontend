@@ -93,7 +93,7 @@ useSeoMeta({
 
 <template>
 	<Head>
-		<Title>{{page?.title ? page?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade</Title>
+		<Title>{{route.meta?.title ? route.meta?.title + ' ~ ' : 'Gruppo' }} Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade</Title>
 	</Head>
 
 	<link
