@@ -113,9 +113,9 @@ useSeoMeta({
 					'bg-primary shadow-md': !transparentNavbar,
 				}"
 			>
-				<div class="container max-w-none max-xl:px-5 xl:mx-auto flex">
+				<div class="container max-w-none max-xl:px-5 xl:mx-auto flex items-center">
 					<div class="flex-1">
-						<h1 class="text-2xl my-auto font-bold">
+						<h1 class="text-2xl font-bold">
 							<a href="/">
 								<NuxtImg placeholder src="/img/graphics/logo_white.svg" class="h-16 -ml-3 xl:ml-0" alt="logo"/>
 							</a>
@@ -130,7 +130,7 @@ useSeoMeta({
 									<!-- Check if the submenu is an object -->
 									<template v-if="typeof submenu === 'object'">
 										<div
-											class="dropdown-hover	 dropdown dropdown-end hover:text-[#dfd2ff]"
+											class="dropdown dropdown-end dropdown-hover hover:text-[#dfd2ff]"
 										>
 											<label tabindex="0">{{ mainItem }}</label>
 											<ul

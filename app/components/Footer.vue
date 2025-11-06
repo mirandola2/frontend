@@ -1,7 +1,7 @@
 <template>
   <div class="mt-auto"><footer class="mt-12 py-5 sm:p-10 bg-primary text-primary-content">
-    <div class="container md:footer-horizontal text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
-      <aside class="flex gap-5">
+    <div class="container footer md:footer-horizontal text-center place-items-center md:justify-between md:place-items-start md:text-left items-center">
+      <aside class="gap-5">
         <div class="space-y-2">
           <p>
             <b>AGESCI - Gruppo Scout Mirandola 2</b><br />Via Posta, 55 - 41037
