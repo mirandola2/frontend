@@ -44,5 +44,14 @@ export default defineNuxtConfig({
     }
   },
 
+  content: {
+    build: {
+      csv: {
+          // Convert CSV data to JSON objects
+          json: true,
+      },
+    },
+  },
+
   compatibilityDate: '2025-11-01'
 })

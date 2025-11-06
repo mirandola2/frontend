@@ -6,7 +6,7 @@ export default defineContentConfig({
     pages: defineCollection({
       type: "page",
       source: {
-        include: "**",
+        include: "**.md",
         exclude: ["blog/**"],
         schema: z.object({
           title: z.string(),
@@ -32,5 +32,18 @@ export default defineContentConfig({
         category: z.string().optional(),
       }),
     }),
+    media: defineCollection({
+      type: "data",
+      source: "_media.csv",
+      schema: z.object({
+        title: z.string(),
+        url: z.string().url(),
+        type: z.enum(["image", "video"]),
+        id: z.string(),
+        year: z.number().optional(),
+      }),
+    }),
+
+
   },
 });

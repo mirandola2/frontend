@@ -1,28 +1,21 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from "vue";
 
-const { toast, toastMessage, showToast } = useToast()
-
-
-
 const props = defineProps({
-  photoPath: {
+  collectionName: {
     type: String,
-    required: true,
-  },
-  videoPath: {
-    type: String,
-    required: true,
-  },
+    default: 'media'
+  }
 });
 
-const { data: photoData } = await useAsyncData("csv-photos", () =>
-  queryContent(props.photoPath).findOne()
+const { toast, toastMessage, showToast } = useToast();
+
+// Fetch media data using queryCollection
+const { data: media } = await useAsyncData("media-collection", () =>
+  queryCollection(props.collectionName).first()
 );
 
-const { data: videoData } = await useAsyncData("csv-videos", () =>
-  queryContent(props.videoPath).findOne()
-);
+const mediaData = computed(() => media.value.meta.body || []);
 
 const sortDesc = ref(true);
 const searchQuery = ref("");
@@ -36,6 +29,7 @@ const formatUrlId = (name) => {
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "");
 };
+
 // Get current URL parameters
 const getUrlParams = () => {
   if (typeof window === "undefined") return {};
@@ -86,6 +80,7 @@ const initializeFromUrl = () => {
   selectedType.value = params.type;
   sortDesc.value = params.sort === "desc";
 };
+
 const focusCard = async (cardId, jumpToElement = false) => {
   if (!cardId) return;
 
@@ -133,27 +128,6 @@ const focusCard = async (cardId, jumpToElement = false) => {
 
   element.focus({ preventScroll: true });
 };
-
-// Better initialization
-onMounted(async () => {
-  initializeFromUrl();
-
-  // Wait for Vue to finish rendering
-  await nextTick();
-  
-  // Additional wait for data to be processed
-  await new Promise(resolve => setTimeout(resolve, 300));
-  
-  // Handle initial hash
-  const params = getUrlParams();
-  if (params.card) {
-    await focusCard(params.card, true);
-  }
-
-  // Listen for hash changes
-  window.addEventListener("hashchange", handleHashChange);
-});
-
 
 // Improved hash change handler with error handling
 const handleHashChange = async () => {
@@ -225,7 +199,7 @@ const copyLink = async (entry) => {
     if (!success) {
       console.warn('Link copied but could not scroll to card');
     }
-    toast("Link Copiato!")
+    toast("Link Copiato!");
     
   } catch (err) {
     console.error("Failed to copy link:", err);
@@ -236,31 +210,17 @@ const copyLink = async (entry) => {
   }
 };
 
-
+// Process all data from collection
 const allData = computed(() => {
-  const combined = [];
+  if (!mediaData.value?.length) return [];
 
-  // Add photos with type identifier
-  if (photoData.value?.body?.length) {
-    photoData.value.body.forEach((item) => {
-      combined.push({
-        ...item,
-        type: "photo",
-      });
-    });
-  }
-
-  // Add videos with type identifier
-  if (videoData.value?.body?.length) {
-    videoData.value.body.forEach((item) => {
-      combined.push({
-        ...item,
-        type: "video",
-      });
-    });
-  }
-
-  return combined;
+  return mediaData.value.map((item) => ({
+    ...item,
+    // Map 'image' to 'photo' for backward compatibility with UI
+    type: item.type === "image" ? "photo" : "video",
+    // Use title as name for display
+    name: item.name,
+  }));
 });
 
 const filteredData = computed(() => {
@@ -336,7 +296,6 @@ const getTypeLabel = (type) => {
 watch([searchQuery, selectedType, sortDesc], () => {
   updateUrl();
 });
-
 </script>
 
 <template>
@@ -511,6 +470,4 @@ watch([searchQuery, selectedType, sortDesc], () => {
     </div>
   </div>
   <Toast v-if="showToast" :message="toastMessage" />
-
 </template>
-
