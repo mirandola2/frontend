@@ -18,18 +18,9 @@ Orario di apertura: Mer/Ven/Sab 16:30-19:00
 ## Raccolta e Consegna Uniformi usate
 
 Come gruppo effettuiamo il servizio di raccolta e consegna uniformi usate.
-Se siete interessati potete rivolervi alla referente Nadia Ortolani, che riceverà **solo su appuntamento**, prenotandosi al 3470042312, in Via Posta, **dalle 17.00 alle 18.30**, presso il Box Luca.  
+Se siete interessati potete rivolervi alla referente Nadia Ortolani, che riceverà **solo su appuntamento**, prenotandosi al [347 004 2312](tel:3470042312), in Via Posta, **ogni sabato mattina**, presso il Box Luca.  
 :Fig{src=img/misc/box-luca.jpg desc="Box Luca"}
 
-I giorni in cui Nadia sarà disponibile per il 2024-2025 sono:  
-
-- 8, 22 novembre 2024  
-- 6, 13 dicembre 2024  
-- 10, 24 gennaio 2025  
-- 7, 14, 28 febbraio 2025  
-- 14, 28 marzo 2025  
-- 11, 18 aprile 2024  
-- 9, 23 maggio 2024  
 
 ## Dove Attaccare i distintivi
 
