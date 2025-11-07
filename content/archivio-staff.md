@@ -690,3 +690,20 @@ _A.E. = Assistente Ecclesiastico; CU = capo unità; MdN = maestro/a dei novizi_
 **Preparazione ai sacramenti:** Edoardo Galavotti  
 **A disposizione:** Francesco Bergonzini, Letizia Pongiluppi  
 **Altri incarichi associativi:** Stefano Venturini
+
+### anno 2024-2025
+**Capi Gruppo:** Riccardo Sbardellati, Elena Zerbini  
+**A.E.:** don Severin Ngueliassi, suor Mary Roselet Fernandez, Gianluca Giannini
+  
+**Branco della Roccia Azzurra:** Giacomo Salici _(Akela - CU)_, Emmanuele Morabito _(Chil)_, Giulio Pongiluppi _(Bagheera)_, Luca Toselli _(Fratel Bigio)_  
+**Cerchio del Bosco Gioioso:** Lucia Cavicchioli _(Arcanda - CU)_, Michele Soavi _(Ughetto)_, Anna Cavicchioli _(Anthea)_
+  
+**Reparto Brownsea:** Tobia Cavicchioli _(CU)_, Riccardo Sbardellati, Anselmo Negrelli
+**Reparto Antares:** Lucrezia Polacchini _(CU)_, Alessia Bucci, Enea Casini
+
+**Noviziato:** Maddalena Pieri  
+**Clan/Fuoco Madonna della Valle:** Elisabetta Polacchini _(CU)_, Luca Meschieri _(CU)_,
+  
+**Preparazione ai sacramenti:** Edoardo Galavotti  
+**A disposizione:** Francesco Bergonzini, Luigi Golinelli  
+**Altri incarichi associativi:** Stefano Venturini

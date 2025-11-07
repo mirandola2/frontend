@@ -111,16 +111,3 @@ html {
 .prose-container a {
   text-decoration: none;
 }
-
-/* Headings with icon on hover */
-.prose-container h1:hover::after,
-.prose-container h2:hover::after,
-.prose-container h3:hover::after,
-.prose-container h4:hover::after,
-.prose-container h5:hover::after,
-.prose-container h6:hover::after {
-  content: '🔗';
-  margin-left: 0.5rem;
-  font-size: 0.8em;
-  color: var(--color-secondary);
-}

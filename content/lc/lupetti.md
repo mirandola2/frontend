@@ -44,7 +44,7 @@ Le due dita divaricate ricordano i due articoli della Legge e le orecchie tese d
 
 __Akela__: buona caccia a tutti quelli che rispettano la legge della giungla.  
 __Bagheera__: zampe che non fanno rumore, occhi che vedono nell'oscurità, orecchi che odono il vento delle tane e denti bianchi e taglienti.  
-__Baloo__: la giungla è grande e il pupo è piccolino, che taccia e ascolti.  
+__Baloo__: la giungla è grande e il lupo è piccolino, che taccia e ascolti.  
 __Kaa__: cuor leale e lingua cortese fanno strada nella giungla.  
 __Popolo Cacciatore__: siamo dello stesso sangue fratellino tu ed io.  
 :::
