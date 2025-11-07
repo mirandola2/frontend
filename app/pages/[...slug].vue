@@ -19,12 +19,11 @@ const { data: page } = await useAsyncData(
   () => queryCollection('pages').path(route.path).first()
 );
 
-const toc = computed(() => page.value?.toc ?? []);
+//const toc = computed(() => page.value?.toc ?? []);
 
 
 useHead({
   title: page.title
-  
 })
 
 if (!page.value) {

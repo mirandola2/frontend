@@ -6,7 +6,7 @@ export default defineContentConfig({
     pages: defineCollection({
       type: "page",
       source: {
-        include: "**.md",
+        include: "**/*.md",
         exclude: ["blog/**"],
         schema: z.object({
           title: z.string(),
@@ -55,6 +55,15 @@ export default defineContentConfig({
         desc: z.string().optional(),
         img: z.string(),
         order: z.number(),
+      }),
+    }),
+    quotes: defineCollection({
+      type: "data",
+      source: "_quotes.csv",
+      schema: z.object({
+        text: z.string(),
+        type: z.string(),
+        author: z.string().optional(),
       }),
     }),
   },
