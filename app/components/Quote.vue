@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref, watchEffect, onMounted } from "vue";
-import { queryContent, useAsyncData } from "#imports";
+import { useAsyncData } from "#imports";
 
 const props = defineProps({
   type: {
@@ -28,15 +28,15 @@ const props = defineProps({
 
 const quote = ref(null);
 
-const { data: quotes } = await useAsyncData('quotes', () => queryContent("/_quotes").findOne());
-
+const { data: quotes_raw } = await useAsyncData(() => queryCollection("quotes").first());
+const quotes = computed(() => quotes_raw.value.meta.body || []);
 onMounted(() => {
   if (props.quote == null) {
-    if (quotes.value && quotes.value.body) {
-      const filteredRows = quotes.value.body.filter(row => row.type === props.type);
+    if (Array.isArray(quotes.value) && quotes.value.length > 0) {
+      const filteredRows = quotes.value.filter(row => row.type === props.type);
       
       if (filteredRows.length > 0) {
-        quote.value = filteredRows[Math.floor(Math.random() * filteredRows.length)];
+      quote.value = filteredRows[Math.floor(Math.random() * filteredRows.length)];
       }
     }
   } else {

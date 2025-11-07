@@ -294,7 +294,7 @@
             v-for="(str, index) in generatedStrings"
             :key="index"
             @click="copyToClipboard(str)"
-            class="btn btn-sm btn-outline font-[monospace] w-auto min-w-fit max-w-full text-left break-words"
+            class="btn btn-sm btn-outline font-[monospace] w-auto min-w-fit max-w-full text-left wrap-break-word"
             title="Copia"
           >
             {{ str }}

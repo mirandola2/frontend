@@ -1,5 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindConfig from "./tailwind.config"
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   experimental: { appManifest: false },
@@ -13,8 +12,15 @@ export default defineNuxtConfig({
     }
   },
 
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
+
+  css: ['./app/assets/css/main.css'],
+
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
     '@nuxt/fonts',
@@ -39,15 +45,13 @@ export default defineNuxtConfig({
   },
 
   content: {
-    ignores: [
-      '/content/index.md',
-      'totem'
-    ],
-    markdown: {
-      anchorLinks: false
+    build: {
+      csv: {
+          // Convert CSV data to JSON objects
+          json: true,
+      },
     },
-    documentDriven: true,
   },
 
-  compatibilityDate: '2024-11-11'
+  compatibilityDate: '2025-11-01'
 })

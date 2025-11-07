@@ -14,7 +14,6 @@
       </div>
 </template>
 <script setup>
-const {toc} = useContent()
 
 defineProps({
     notaside: {
@@ -23,4 +22,12 @@ defineProps({
     default: false,
   },
 })
+
+
+const route = useRoute();
+const { data: page } = await useAsyncData(
+  () => `toc:${route.path}`,
+  () => queryCollection('pages').path(route.path).first()
+);
+const toc = computed(() => page?.value?.toc ?? []);
 </script>
