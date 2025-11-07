@@ -18,7 +18,7 @@
 
   <div class="not-prose clear-both grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
     <div
-      v-for="person in data.body.filter((value) =>
+      v-for="person in data.filter((value) =>
         props.coca == false
           ? actualStaff == '*' || value.staff?.split('|').includes(actualStaff)
           : (actualStaff == '*' || value.staff?.split('|').includes(actualStaff)) && value.coca == 1
@@ -101,8 +101,8 @@ const props = defineProps({
 
 const actualStaff = ref(route.query.staff || props.staff);
 
-const { data } = await useAsyncData(() => queryContent("/_capi").findOne());
-
+const { data:capi } = await useAsyncData(() => queryCollection("capi").first());
+const data = computed(() => capi.value.meta.body || [])
 function namesCannotBeShown() {
   return (props.staff == "L" || props.staff == "C") && props.coca == false;
 }

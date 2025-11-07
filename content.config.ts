@@ -43,7 +43,19 @@ export default defineContentConfig({
         year: z.number().optional(),
       }),
     }),
-
-
+    capi: defineCollection({
+      type: "data",
+      source: "_capi.csv",
+      schema: z.object({
+        nome: z.string(),
+        nomeCaccia: z.string().optional(),
+        ruolo: z.string(),
+        staff: z.string(),
+        coca: z.number(),
+        desc: z.string().optional(),
+        img: z.string(),
+        order: z.number(),
+      }),
+    }),
   },
 });
