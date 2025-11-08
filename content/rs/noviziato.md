@@ -1,5 +1,5 @@
 ---
-title: Noviziato InATake
+title: Noviziato
 image: /img/misc/strada-campo.jpg
 ---
 
