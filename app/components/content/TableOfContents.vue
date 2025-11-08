@@ -47,5 +47,4 @@ const { data: page } = await useAsyncData(
 );
 const toc = computed(() => page?.value?.body.toc ?? []);
 
-console.log(toc.value);
 </script>

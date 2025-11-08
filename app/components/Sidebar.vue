@@ -15,7 +15,7 @@
           </div>
           <div class="card-body">
             <h2 class="card-title">S. Messa di Gruppo</h2>
-            <p>Ogni Domenica, alle 9.00 in Duomo</p>
+            <p>Alla Domenica, alle 9.00 in Duomo, o al Sabato, alle 18.30 in Sala della Comunità.</p>
           </div>
           <div class="card-body">
             <h2 class="card-title">Liturgia del Giorno</h2>
