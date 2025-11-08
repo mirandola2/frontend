@@ -45,7 +45,12 @@ image: /img/branche/reparto_1.jpg
 | 2017 | Campo della Leggendaria Fiducia            | Ribelle - The Brave            | Ramiseto (RE)                 | .                        |
 | 2018 | Campo della Eorica Impresa                 | Percy Jackson                  | Abetone (PT)                  | .                        |
 | 2019 | Campo dell'Appassionata Ricerca            | Cavalieri della Tavola Rotonda | Valledrane (BS)               | .                        |
-| 2020 | Campo ...                                  | Robin Hood                     | Mirandola (Via Posta)         | .                        |
+| 2020 | Campo ...                                  | Robin Hood                     | Mirandola (Via Posta)         | .                        | 
+| 2021 | Campo della Magica Riscoperta              | Aladdin                   | Giarola (RE)            | .                        |  
+| 2022 | Campo dei Legami Trascendenti               | Kung Fu Panda                        | Balze di Verghereto (FC)           | .                        |
+| 2023 | Campo del Legame Incantato             | Harry Potter                      | Spettine (PC)       | Campo di Gruppo                            |
+| 2024 | Campo del Sogno Intrecciato          | Tangled                      | Valledrane (BS) | .                            |
+| 2025 | Campo della Follia Trionfante         |  Alice in Wonderland   | Giarola (RE)   | .                            |
 
 ## Campi Estivi
 
@@ -88,6 +93,11 @@ image: /img/branche/reparto_1.jpg
 | 2018  | Campo del Coraggio Ritrovato           | Braveheart                     | Vauclo di Vigo Rendena (TN)   | .                            |
 | 2019  | Campo dell'Intrepido Incontro          | Cowboy                         | Lavarone (TN)                 | .                            |
 | 2020  | Campo dell'Audace Ricompensa           | Jumanji                        | Mirandola (Via Posta)         | .                            |
+| 2021  | Campo dei Legami Custoditi             | Game Of Thrones        | Daone (TN)	         | .                            |
+| 2022  | Campo della Fraterna Avventura           | Vikings                   | Piandelagotti (MO)                | .                            |
+| 2023  | Campo del Legame Incantato             | Harry Potter                      | Spettine (PC)       | Campo di Gruppo                            |
+| 2024  | Campo dell'Indomito Sogno          | Hunger Games       | Piandelagotti (MO)      | .                            |
+| 2025  | Campo della Fiamma Interiore             | Dragon Trainer                      | Lavarone (TN)        | .                            |
 
 ## Route di Noviziato
 

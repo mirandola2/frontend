@@ -37,7 +37,7 @@
             <a class="link" href="/eg">Leggi.</a>
           </p>
           <div class="card-actions justify-center">
-            <a class="btn btn-ghost btn-sm" href="/eg/brownsea">Esploratori</a>
+            <a class="btn btn-ghost  btn-sm" href="/eg/brownsea">Esploratori</a>
             <a class="btn btn-ghost btn-sm" href="/eg/antares">Guide</a>
           </div>
         </div>
@@ -78,7 +78,7 @@
 
     <LazyBlogLayout>
       <div class="card max-w-none bg-base-300">
-            <div class="card-body">
+            <div class="card-body news">
               <h2 class="card-title">{{ data.title }}</h2>
               <LazyContentRenderer :value="data" />
             </div>
@@ -99,3 +99,11 @@ const { data } = await useAsyncData("home", () =>{
 
 
 </script>
+
+
+<style scoped>
+.news a{
+  text-decoration: underline !important;
+}
+
+</style>

@@ -97,12 +97,12 @@ La Co.Ca. si impegna a mettere in atto nei programmi annuali azioni concrete, ch
 
 :::cards 
 ::card{color=lc title="Obiettivo Branca LC"}
-Mettersi in gioco pensando in grande e riconoscere gli insuccessi come nuove occasioni di ripartenza.
+Essere protagonisti nella vita di Branco e Cerchio, dove attraverso il clima di L/C Famiglia Felice, possiamo Fallire senza senza sentirci Giudicati.
 ::
 ::card{color=eg title="Obiettivo Branca EG"}
-Essere protagonisti attivi dei propri sogni e, servendosi dei propri talenti donati da Dio, impegnarsi a realizzarli riponendo in Lui le proprie speranze, imparando ad accettare i propri fallimenti e insicurezze.
+Cercare la propria Vocazione (sogno di Dio) per arricchire le proprie le proprie Comunità.
 ::
 ::card{color=rs title="Obiettivo Branca RS"}
-Vivere la Promessa: essere protagonisti e responsabili della propria Comunità.
+Camminare per diventare uomini e donne della Partenza, responsabili, partecipi, protagonisti, che sappiano accogliere le situazioni di difficoltà proprie ed altrui.
 ::
 :::

@@ -5,7 +5,7 @@ image: img/misc/uniformi.jpg
 
 ## Come Acquistare
 
-Per aquistare uniforme nuove ci si può recare presso la cooperativa Il Gallo, a Modena o a Bologna.
+Per aquistare uniforme nuove ci si può recare presso la cooperativa Il Gallo, a Modena o a Bologna. Oppure, ci si puà rivolgere al servizio di raccolta e consegna uniformi usate del nostro gruppo (vedi sotto).
 
 **Sede di Bologna (vendita al pubblico)**  
 via G. Rainaldi 2 - Tel. 051 540664  
@@ -17,7 +17,7 @@ Orario di apertura: Mer/Ven/Sab 16:30-19:00
 
 ## Raccolta e Consegna Uniformi usate
 
-Come gruppo effettuiamo il servizio di raccolta e consegna uniformi usate.
+Come gruppo effettuiamo il servizio di raccolta e consegna uniformi nuove e usate.
 Se siete interessati potete rivolervi alla referente Nadia Ortolani, che riceverà **solo su appuntamento**, prenotandosi al [347 004 2312](tel:3470042312), in Via Posta, **ogni sabato mattina**, presso il Box Luca.  
 :Fig{src=img/misc/box-luca.jpg desc="Box Luca"}
 
