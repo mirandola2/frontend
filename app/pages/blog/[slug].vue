@@ -1,4 +1,19 @@
 <template>
+    <Head>
+		<Title>{{page?.title}} ~ Blog degli Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.</Title>
+    <Meta
+      v-if="page?.description"
+      name="description"
+      :content="page.description"
+    />
+
+    <Meta
+      v-if="page?.image"
+      name="og:image"
+      :content="page.image"
+    />
+	</Head>
+
   <BlogLayout>
     <div class="hero rounded-2xl bg-base-200">
       <div

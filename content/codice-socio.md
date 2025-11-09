@@ -1,6 +1,7 @@
 ---
 title: Codice Socio
 image: /img/misc/tesserino60s70s.jpg
+description: Ricerca il tuo codice socio e guarda i vecchi tesserini del nostro gruppo!
 ---
 
 :CodiceSocio{lastupdate="2022-23"}

@@ -1,4 +1,12 @@
 <template>
+    <Head>
+		<Title>Archivio Totem ~ Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.</Title>
+    <Meta
+      name="description"
+      content="Il Totem è un nome, di solito di un animale (ma a volte anche di piante, alberi o agenti atmosferici), seguito da un aggettivo, che viene dato alle guide e agli scout per sottolineare una loro caratteristica."
+    />
+	</Head>
+
   <hero
     title="Nomi Totem"
     image="/img/misc/fuoco.jpg"

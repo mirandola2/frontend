@@ -1,4 +1,12 @@
 <template>
+    <Head>
+		<Title>Blog del Gruppo Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.</Title>
+    <Meta
+      name="description"
+      content="Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili."
+    />
+	</Head>
+
     <BlogLayout>
           <div class="grid gap-3">
             <div
@@ -17,11 +25,3 @@
           </div>
     </BlogLayout>
 </template>
-<script setup>
-
-useHead({
-  title: 'Blog',
-})
-
-
-</script>

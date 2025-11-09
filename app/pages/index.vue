@@ -1,5 +1,13 @@
 <template>
   <div>
+    <Head>
+		<Title>AGESCI Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.</Title>
+    <Meta
+      name="description"
+      content="Siamo a Mirandola dal 1983: scopri le ultime notizie, la nostra storia, i nostri staff, i nomi totem, la galleria foto e video e una raccolta di strumenti utili."
+    />
+	</Head>
+
     <Hero
       title="Quarant'anni di giochi, avventure e strade."
       image="/img/archive/2022_foto-gruppo.jpg"
@@ -96,8 +104,6 @@
 const { data } = await useAsyncData("home", () =>{
   return queryCollection("pages").path('/_home').first()
 });
-
-
 </script>
 
 
@@ -105,5 +111,4 @@ const { data } = await useAsyncData("home", () =>{
 .news a{
   text-decoration: underline !important;
 }
-
 </style>
