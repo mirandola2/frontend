@@ -1,5 +1,5 @@
 ---
-img: 'https://raw.githubusercontent.com/mirandola2/frontend/main/doc/architecture.png'
+img: /img/archive/2022_foto-gruppo.jpg
 category: 'cc'
 title: Un nuovo sito web
 date: 2024-10-15
@@ -12,3 +12,5 @@ E ancora, abbiamo aggiornato [la pagina con i nomi totem](/totem) aggiungendo an
 Sebbene il vecchio sito fosse molto bello e ricco di dettagli, abbiamo voluto ricostruirlo da zero, in modo da non dipendere da nessun "costuttore di siti" terzo. _Per chi volesse dei dettagli tecnici, eccone alcuni. Abbiamo costruito il sito da zero in maniera statica, questo ci permette di avere prestazioni molto buone, pagando nulla di hosting! Il codice sorgente è pubblico, è possibile leggerlo e contribuire [partendo da qui](https://github.com/mirandola2/frontend) per la parte "front-end" mentre [qui](https://github.com/mirandola2/middleware) c'è tutto ciò riguardi middleware e database. In entrambe le pagine è disponibile la documentazione._
 
 In un periodo storico in cui la moneta di Internet è il dato sensibile, aggiungiamo in chiusura che questo sito non usa alcun cookie di profilazione, e tutto quanto è stato costruito ponendo la privacy come primo requisito.
+
+
