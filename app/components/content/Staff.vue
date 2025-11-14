@@ -28,13 +28,14 @@
       <div class="card-body p-5">
         <div class="flex gap-4 justify-start items-top mb-4">
     
-          <NuxtImg  v-if="person.img != '' && person.img != undefined"
-            class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none"
+            <NuxtImg v-if="person.img != '' && person.img != undefined"
+            class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none object-cover"
+            style="object-position: center; overflow: hidden;"
             :src="
-                 '/img/staff/' + person.img
+               '/img/staff/' + person.img
             "
             alt="Avatar Staff"
-          />
+            />
           <img v-else
             class="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none"
             :src="'https://api.dicebear.com/7.x/thumbs/svg?seed=' + person.nome"
