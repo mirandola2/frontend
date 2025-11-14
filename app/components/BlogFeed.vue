@@ -8,13 +8,12 @@
 
     <div class="card w-full bg-base-100" :class="{ 'md:card-side': horizontal }">
       <figure
-        v-if="images"
-        class="bg-contain"
+        class="bg-contain max-h-40 bg-neutral max-w-full"
         :class="{
-          'md:max-w-xs max-h-40 md:max-h-none': horizontal,
-          'max-h-40': !horizontal
+          'md:max-w-xs': horizontal,
         }"
       >
+        
         <NuxtImg :src="post.img" :alt="post.title" />
       </figure>
 
@@ -26,14 +25,20 @@
           <a class="link" :href="post.path">Leggi tutto</a>
         </p>
 
-        <p class="text-sm opacity-50">
-          Pubblicato in
+        <p class="text-sm">
+          <span class="opacity-50">
+Pubblicato in
           {{
             new Date(post.date).toLocaleDateString('it-IT', {
               month: 'long',
               year: 'numeric',
             })
           }}
+          </span>
+          &nbsp;•&nbsp;
+          <span class="badge border-0" :class="badge[post.category].bg">{{
+            badge[post.category].text
+          }}</span>
         </p>
       </div>
     </div>
@@ -46,6 +51,14 @@ const props = defineProps({
   all: { type: Boolean, default: false },
   images: { type: Boolean, default: true },
 })
+
+
+const badge = {
+  lc: { bg: "bg-lc text-lc-content", text: "L/C" },
+  eg: { bg: "bg-eg text-eg-content", text: "E/G" },
+  rs: { bg: "bg-rs text-rs-content", text: "R/S" },
+  cc: { bg: "bg-cc text-white", text: "Gruppo" },
+};
 
 const { data: contentQuery } = await useAsyncData('blog-posts', () => {
   const query = queryCollection('blog').order('date', 'DESC')

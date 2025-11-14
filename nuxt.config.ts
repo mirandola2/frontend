@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     provider: 'imagekit',
     imagekit: {
       baseURL: 'https://ik.imagekit.io/mir2',
-    }
+    },
   },
 
   content: {

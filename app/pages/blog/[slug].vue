@@ -1,44 +1,55 @@
 <template>
-    <Head>
-		<Title>{{page?.title}} ~ Blog degli Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.</Title>
+  <Head>
+    <Title>
+      {{ page?.title }} ~ Blog degli Scout Mirandola 2 ~ Da più di 40 anni
+      facciamo giochi, avventure e strade.
+    </Title>
     <Meta
       v-if="page?.description"
       name="description"
       :content="page.description"
     />
-
-    <Meta
-      v-if="page?.image"
-      name="og:image"
-      :content="page.image"
-    />
-	</Head>
-
+    <Meta v-if="page?.img" name="og:image" :content="page.img" />
+  </Head>
   <BlogLayout>
-    <div class="hero rounded-2xl bg-base-200">
-      <div
-        class="hero-content flex w-full flex-col justify-between xl:flex-row-reverse"
-      >
-        <NuxtImg :src="page.img" class="md:max-w-sm rounded-lg shadow-2xl" />
-        <div class="text-center mx-auto">
-          <h2 class="text-lg">Blog</h2>
-          <h1 class="text-4xl my-4 font-display">{{ page.title }}</h1>
-          <span class="badge border-0" :class="badge[page.category].bg">{{
-            badge[page.category].text
-          }}</span>
-          <span class="badge border-0 bg-base-300">{{
-            capitalizeFirstLetter(
-              new Date(page.date).toLocaleDateString("it-IT", {
-                month: "long",
-                year: "numeric",
-              })
-            )
-          }}</span>
+    <div class="card bg-neutral image-full w-full mx-auto relative overflow-auto">
+      <figure class="h-full">
+        <NuxtImg
+          v-if="page?.img"
+          :src="page.img"
+          alt="Immagine del blog"
+          class="absolute inset-0 w-full h-full object-cover opacity-50 blur-sm"
+        />
+      </figure>
+      <div class="card-body">
+        <h3 class="text-3xl">Blog</h3>
+        <h2 class="card-title text-4xl font-display">{{ page.title }}</h2>
+        <p>
+          {{ page?.description || "Descrizione non disponibile." }}
+        </p>
+        <div class="card-actions justify-end">
+          <span
+            v-if="page?.category"
+            class="badge border-0"
+            :class="badge[page.category]?.bg"
+          >
+            {{ badge[page.category]?.text }}
+          </span>
+          <span class="badge border-0 bg-base-300">
+            {{
+              capitalizeFirstLetter(
+                new Date(page.date).toLocaleDateString("it-IT", {
+                  month: "long",
+                  year: "numeric",
+                })
+              )
+            }}
+          </span>
         </div>
       </div>
     </div>
-    <div class="prose-container">
-      <ContentRenderer :value="page" />
+    <div class="prose-container mt-6">
+      <ContentRenderer v-if="page" :value="page" />
     </div>
   </BlogLayout>
 </template>
