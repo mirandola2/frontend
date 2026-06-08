@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+@source inline("bg-{lc,rs,eg,cc}");
+
+
+@plugin 'daisyui' {
+  themes: agesci --default;
+}
+
+;
+
+@plugin "daisyui/theme" {
+  name: "agesci";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f6f6f6;
+  --color-base-300: #e6e6e6;
+  --color-base-content: #000000;
+
+  --color-primary: #462678;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #6B478D;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #AEB0D9;
+  --color-accent-content: #1a1a1a;
+
+  --color-neutral: #E5D6C7;
+  --color-neutral-content: #1a1a1a;
+
+  --color-info: #3ABFF8;
+  --color-info-content: #ffffff;
+
+  --color-success: #36D399;
+  --color-success-content: #ffffff;
+
+  --color-warning: #FBBD23;
+  --color-warning-content: #000000;
+
+  --color-error: #F87272;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: Ubuntu, ui-sans-serif, system-ui;
+  --font-display: Caprasimo, ui-sans-serif, system-ui;
+  --font-serif: 'Playfair Display', ui-serif;
+
+  --color-lc: #FFBE0A;
+  --color-eg: #559928;
+  --color-rs: #E84C3E;
+  --color-cc: #9B66A5;
+  --color-white: #ffffff;
+
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+
+@plugin "@tailwindcss/typography";
+
+.prose-quoteless blockquote p:first-of-type::before {
+  content: none;
+}
+
+.prose-quoteless blockquote p:first-of-type::after {
+  content: none;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+.prose-container {
+  @apply  max-w-4xl mx-auto prose prose-a:text-secondary 
+  prose-p:md:text-justify 
+  prose-li:my-0 prose-ul:pl-10 prose-blockquote:font-serif
+  prose-figure:rounded-xl prose-img:mx-auto
+  before:prose-p:content-none after:prose-p:content-none
+  prose-h1:font-display prose-h1:font-normal;
+}
+
+.prose-container table {
+  display: block;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prose-container a {
+  text-decoration: none;
+}
