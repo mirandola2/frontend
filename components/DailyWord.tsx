@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useCachedFetch } from '@/hooks/useCachedFetch'
 
 interface DailyWordData {
   CantoVangelo: string
@@ -9,28 +9,20 @@ interface DailyWordData {
 }
 
 export default function DailyWord() {
-  const [data, setData] = useState<{ json: DailyWordData | null; loaded: boolean }>({
-    json: null,
-    loaded: false,
-  })
+  const { data, loaded } = useCachedFetch<DailyWordData>(
+    'https://daily.mirandola2.workers.dev/',
+    60 * 60 * 1000,
+  )
 
-  useEffect(() => {
-    fetch('https://daily.mirandola2.workers.dev/')
-      .then((res) => res.json())
-      .then((json) => {
-        setData({ json, loaded: true })
-      })
-  }, [])
-
-  if (!data.loaded) {
+  if (!loaded || !data) {
     return <span className="loading loading-spinner loading-xs" />
   }
 
   return (
     <span>
-      &ldquo;{data.json!.CantoVangelo}&rdquo;{' '}
-      <a href={data.json!.Link} className="link">
-        ({data.json!.Letture})
+      &ldquo;{data.CantoVangelo}&rdquo;{' '}
+      <a href={data.Link} className="link">
+        ({data.Letture})
       </a>
     </span>
   )

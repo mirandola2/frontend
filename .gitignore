@@ -7,7 +7,7 @@
 .nitro
 .cache
 dist
-
+.next
 out/
 
 # Node dependencies

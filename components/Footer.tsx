@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <div className="mt-auto">
@@ -15,12 +17,12 @@ export default function Footer() {
               <p>&copy; {new Date().getFullYear()} - Tutti i diritti riservati</p>
               <nav className="text-secondary font-bold">
                 <div className="grid grid-flow-col gap-4">
-                  <a className="link link-hover" href="/privacy-policy">
+                  <Link className="link link-hover" href="/privacy-policy">
                     Privacy Policy
-                  </a>
-                  <a className="link link-hover" href="/contatti">
+                  </Link>
+                  <Link className="link link-hover" href="/contatti">
                     Contatti
-                  </a>
+                  </Link>
                   <button
                     className="link link-hover"
                     onClick={() => {

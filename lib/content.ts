@@ -76,7 +76,7 @@ export function getAllPages(): PageDoc[] {
       title: data.title || slug,
       date: data.date || '',
       description: data.description,
-      img: data.img,
+      img: data.image,
       category: data.category,
       body: content,
     }

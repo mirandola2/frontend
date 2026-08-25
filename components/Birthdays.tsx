@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useMemo } from 'react'
+import { useCachedFetch } from '@/hooks/useCachedFetch'
 
 interface BirthdayPerson {
   name: string
@@ -56,24 +57,19 @@ function birthdaysFormatter(birthdays: BirthdayPerson[]): string {
 }
 
 export default function Birthdays() {
-  const [data, setData] = useState<{ text: string; loaded: boolean }>({ text: '', loaded: false })
-
-  useEffect(() => {
+  const url = useMemo(() => {
     const now = new Date()
     const start = new Date(now.getFullYear(), 0, 0)
     const diff = now.getTime() - start.getTime() + (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000
     const day = Math.floor(diff / (1000 * 60 * 60 * 24))
-
-    fetch(`https://people.mirandola2.workers.dev/birthday?t=7&d=${day}`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData({ text: birthdaysFormatter(json), loaded: true })
-      })
+    return `https://people.mirandola2.workers.dev/birthday?t=7&d=${day}`
   }, [])
 
-  if (!data.loaded) {
+  const { data, loaded } = useCachedFetch<BirthdayPerson[]>(url, 12 * 60 * 60 * 1000)
+
+  if (!loaded || !data) {
     return <span className="loading loading-spinner loading-xs" />
   }
 
-  return <>{data.text}</>
+  return <>{birthdaysFormatter(data)}</>
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Ubuntu, Caprasimo, Playfair_Display } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -33,6 +33,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#462678',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,9 +47,6 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${ubuntu.variable} ${caprasimo.variable} ${playfair.variable}`}>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#462678" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"

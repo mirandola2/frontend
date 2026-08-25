@@ -1,6 +1,6 @@
 'use client'
 
-import { useSyncExternalStore } from 'react'
+import { useState, useEffect } from 'react'
 
 interface TocItem {
   id: string
@@ -15,7 +15,6 @@ interface TableOfContentsProps {
 }
 
 function getTocFromDom(): TocItem[] {
-  if (typeof window === 'undefined') return []
   const headings = document.querySelectorAll<HTMLHeadingElement>('h2, h3')
   const items: TocItem[] = []
   const stack: TocItem[] = []
@@ -46,16 +45,13 @@ function getTocFromDom(): TocItem[] {
   return items
 }
 
-function subscribeToToc(callback: () => void) {
-  const observer = new MutationObserver(callback)
-  if (typeof window !== 'undefined') {
-    observer.observe(document.body, { childList: true, subtree: true })
-  }
-  return () => observer.disconnect()
-}
-
 export default function TableOfContents({ notaside = false, maxdepth = 2 }: TableOfContentsProps) {
-  const toc = useSyncExternalStore(subscribeToToc, getTocFromDom, () => [])
+  const [toc, setToc] = useState<TocItem[]>([])
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setToc(getTocFromDom())
+  }, [])
 
   if (toc.length === 0) return null
 
