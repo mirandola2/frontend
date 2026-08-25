@@ -12,9 +12,11 @@ import Morse from '@/components/mdx/Morse'
 import CodiceSocio from '@/components/mdx/CodiceSocio'
 import GroupSize from '@/components/mdx/GroupSize'
 import MyDiv from '@/components/mdx/MyDiv'
+import MdxImage from '@/components/mdx/MdxImage'
 
 export function useMDXComponents(): MDXComponents {
   return {
+    img: MdxImage,
     Staff,
     Fig,
     TableOfContents,

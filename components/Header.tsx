@@ -1,8 +1,6 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import HeaderNavbar from './HeaderNavbar'
 
 interface MenuItem {
   label: string
@@ -75,26 +73,11 @@ const menuItems: MenuItem[] = [
 ]
 
 export default function Header({ children }: { children: React.ReactNode }) {
-  const isBlog = false
-  const [scrolled, setScrolled] = useState(isBlog)
-
-  useEffect(() => {
-    if (!isBlog) {
-      const handleScroll = () => setScrolled(window.scrollY > 5)
-      window.addEventListener('scroll', handleScroll)
-      return () => window.removeEventListener('scroll', handleScroll)
-    }
-  }, [isBlog])
-
   return (
     <div className="drawer drawer-end">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <main className="drawer-content flex flex-col min-h-screen">
-        <div
-          className={`navbar text-primary-content xl:top-0 z-50 ${
-            scrolled || isBlog ? 'bg-primary shadow-md' : ''
-          } ${!isBlog ? 'fixed' : 'sticky'} ${!scrolled && !isBlog ? 'transparent' : ''}`}
-        >
+        <HeaderNavbar>
           <div className="container max-w-none max-xl:px-5 xl:mx-auto flex items-center">
             <div className="flex-1">
               <h1 className="text-2xl font-bold">
@@ -156,7 +139,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
               </svg>
             </label>
           </div>
-        </div>
+        </HeaderNavbar>
 
         {children}
       </main>

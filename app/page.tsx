@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import Hero from '@/components/Hero'
 import Quote from '@/components/Quote'
 import BlogLayout from '@/components/BlogLayout'
@@ -29,14 +31,14 @@ export default async function HomePage() {
             <p>
               Dagli 8 agli 11 anni i bambini e le bambine &quot;cacciano&quot; e &quot;volano&quot; nel &quot;branco&quot; e
               nel &quot;cerchio&quot;.
-              <a className="link" href="/lc">Leggi.</a>
+              <Link className="link" href="/lc">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <a className="btn btn-ghost btn-sm" href="/lc/lupetti">Branco</a>
-              <a className="btn btn-ghost btn-sm" href="/lc/coccinelle">Cerchio</a>
+              <Link className="btn btn-ghost btn-sm" href="/lc/lupetti">Branco</Link>
+              <Link className="btn btn-ghost btn-sm" href="/lc/coccinelle">Cerchio</Link>
             </div>
           </div>
-          <img src="/img/graphics/icon_cappellini.svg" alt="" className="absolute w-full h-full p-2 opacity-10 object-contain" />
+          <Image src="/img/graphics/icon_cappellini.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
         </div>
 
         <div className="card max-w-full bg-eg text-lc-content rounded-none relative overflow-hidden">
@@ -45,14 +47,14 @@ export default async function HomePage() {
             <p>
               La Branca Esploratori/Guide si rivolge ai ragazzi da 12 a 16
               anni che si uniscono nei Reparti.
-              <a className="link" href="/eg">Leggi.</a>
+              <Link className="link" href="/eg">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <a className="btn btn-ghost btn-sm" href="/eg/brownsea">Esploratori</a>
-              <a className="btn btn-ghost btn-sm" href="/eg/antares">Guide</a>
+              <Link className="btn btn-ghost btn-sm" href="/eg/brownsea">Esploratori</Link>
+              <Link className="btn btn-ghost btn-sm" href="/eg/antares">Guide</Link>
             </div>
           </div>
-          <img src="/img/graphics/icon_tenda.svg" alt="" className="absolute w-full h-full p-2 opacity-10 object-contain" />
+          <Image src="/img/graphics/icon_tenda.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
         </div>
 
         <div className="card max-w-full bg-rs text-rs-content rounded-b-2xl rounded-t-none md:rounded-r-2xl md:rounded-l-none relative overflow-hidden">
@@ -61,14 +63,14 @@ export default async function HomePage() {
             <p>
               I Rover e le Scolte tra i 16 e 19 anni aderiscono alla proposta che
               lo scautismo fa alla loro età.
-              <a className="link" href="/rs">Leggi.</a>
+              <Link className="link" href="/rs">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <a className="btn btn-ghost btn-sm" href="/rs/noviziato">Noviziato</a>
-              <a className="btn btn-ghost btn-sm" href="/rs/mdv">Clan Fuoco</a>
+              <Link className="btn btn-ghost btn-sm" href="/rs/noviziato">Noviziato</Link>
+              <Link className="btn btn-ghost btn-sm" href="/rs/mdv">Clan Fuoco</Link>
             </div>
           </div>
-          <img src="/img/graphics/icon_forcola.svg" alt="" className="absolute w-full h-full p-2 opacity-10 object-contain" />
+          <Image src="/img/graphics/icon_forcola.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
         </div>
       </div>
 
@@ -89,7 +91,7 @@ export default async function HomePage() {
           <BlogFeed posts={posts} images={false} />
         </div>
         <p className="text-right w-full mt-3">
-          <a href="/blog" className="btn btn-base-200">Leggi Tutte le notizie</a>
+          <Link href="/blog" className="btn btn-base-200">Leggi Tutte le notizie</Link>
         </p>
       </BlogLayout>
     </>

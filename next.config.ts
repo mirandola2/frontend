@@ -6,10 +6,13 @@ const nextConfig: NextConfig = {
   images: {
     loader: 'custom',
     loaderFile: './lib/imagekit-loader.ts',
-    unoptimized: true,
   },
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }
 
-export default withMDX()(nextConfig)
+export default withMDX({
+  options: {
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+  },
+})(nextConfig)

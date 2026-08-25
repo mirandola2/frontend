@@ -18,7 +18,9 @@ export default function Fig({ src, alt, desc, float = '2' }: FigProps) {
 
   const srcs = Array.isArray(src) ? src : [src]
   const descs = Array.isArray(desc) ? desc : desc ? [desc] : []
-  const slides = srcs.map(s => ({ src: s.startsWith('http') ? s : `https://ik.imagekit.io/mir2${s}` }))
+  const slides = srcs.map(s => ({
+    src: s.startsWith('http') ? s : `https://ik.imagekit.io/mir2${s.startsWith('/') ? s : `/${s}`}`,
+  }))
 
   const floatVal = typeof float === 'string' ? float : String(float)
   const floatClass = floatVal === '0' ? '' : floatVal === '1' ? 'md:float-left m-3 md:ml-0 md:max-w-sm' : 'md:float-right md:max-w-sm m-3 md:mr-0'
@@ -28,7 +30,7 @@ export default function Fig({ src, alt, desc, float = '2' }: FigProps) {
       <div className={`not-prose object-contain bg-base-200 p-5 rounded-xl justify-center content-center ${floatClass} ${floatVal === '0' ? 'my-2 max-w-3xl w-full mx-auto clear-both' : ''}`}>
         <button onClick={() => { setIndex(0); setOpen(true) }} className="block mx-auto h-auto w-auto">
           <Image
-            src={`https://ik.imagekit.io/mir2${srcs[0]}?tr=w-800`}
+            src={srcs[0]}
             alt={alt || (typeof desc === 'string' ? desc : '')}
             width={800}
             height={600}
