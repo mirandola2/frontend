@@ -6,10 +6,10 @@ interface CardProps {
 }
 
 const cardBg: Record<string, string> = {
-  lc: 'bg-lc text-eg-content',
-  eg: 'bg-eg text-lc-content',
+  lc: 'bg-lc text-lc-content',
+  eg: 'bg-eg text-eg-content',
   rs: 'bg-rs text-rs-content',
-  cc: 'bg-cc text-white',
+  cc: 'bg-cc text-cc-content',
   base: 'bg-base-200',
   primary: 'bg-primary text-primary-content',
 }

@@ -7,7 +7,7 @@ export default function GroupSize() {
           <span className="text-sm">Lupetti e Coccinelle</span>
         </div>
       </div>
-      <div className="card bg-eg text-lc-content">
+      <div className="card bg-eg text-eg-content">
         <div className="card-body items-center text-center">
           <span className="text-3xl font-bold">~60</span>
           <span className="text-sm">Esploratori e Guide</span>
@@ -19,7 +19,7 @@ export default function GroupSize() {
           <span className="text-sm">Rover e Scolte</span>
         </div>
       </div>
-      <div className="card bg-cc text-white">
+      <div className="card bg-cc text-cc-content">
         <div className="card-body items-center text-center">
           <span className="text-3xl font-bold">~30</span>
           <span className="text-sm">Capi</span>
