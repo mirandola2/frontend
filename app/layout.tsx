@@ -14,15 +14,36 @@ const ubuntu = Ubuntu({
 const caprasimo = Caprasimo({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-caprasimo',
 })
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-serif',
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
 })
 
+// Only these Material Symbols are downloaded (~3 KB instead of ~370 KB).
+// When using a new icon (also via `icon="..."` in MDX), add it here, keeping alphabetical order.
+const ICONS = [
+  'center_focus_strong',
+  'checklist',
+  'east',
+  'link',
+  'logout',
+  'movie',
+  'navigate_before',
+  'navigate_next',
+  'newspaper',
+  'open_in_new',
+  'other_admission',
+  'photo_camera',
+  'videocam',
+]
+const ICONS_URL = `https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${ICONS.join(',')}&display=block`
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mirandola2.it'),
   title: {
     default: 'AGESCI Scout Mirandola 2 ~ Da più di 40 anni facciamo giochi, avventure e strade.',
     template: '%s ~ Scout Mirandola 2',
@@ -47,14 +68,13 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${ubuntu.variable} ${caprasimo.variable} ${playfair.variable}`}>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
-        />
+        <link rel="preconnect" href="https://ik.imagekit.io" />
+        {/* Icon font: `display=block` avoids flashing the ligature names as text. */}
+        <link rel="stylesheet" href={ICONS_URL} />
       </head>
       <body>
         <Header>
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </Header>
       </body>

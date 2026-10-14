@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useSyncExternalStore } from 'react'
 import { useCookie } from '@/hooks/useCookie'
 
 interface CodiceSocioProps {
@@ -13,130 +13,116 @@ interface PersonData {
   code?: string
 }
 
+// Cookies can't be observed, so login/logout notify subscribers manually.
+const listeners = new Set<() => void>()
+function subscribe(listener: () => void) {
+  listeners.add(listener)
+  return () => listeners.delete(listener)
+}
+const notify = () => listeners.forEach(l => l())
+
+async function sha256Hex(message: string) {
+  const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(message))
+  return Array.from(new Uint8Array(hashBuffer), b => b.toString(16).padStart(2, '0')).join('')
+}
+
 export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
   const pskCookie = useCookie('psk')
+  const logged = useSyncExternalStore(subscribe, () => pskCookie.get()?.length === 64, () => false)
   const [name, setName] = useState('')
   const [pw, setPw] = useState('')
-  const [logged, setLogged] = useState(() => {
-    const psk = pskCookie.get()
-    return !!(psk && psk.length === 64)
-  })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [personData, setPersonData] = useState<PersonData[]>([])
   const dialogRef = useRef<HTMLDialogElement>(null)
 
-  async function digestMessage(message: string) {
-    const msgUint8 = new TextEncoder().encode(message)
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8)
-    const hashArray = Array.from(new Uint8Array(hashBuffer))
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-  }
-
   async function handleSave() {
-    const hashHex = await digestMessage(pw)
-    pskCookie.set(hashHex, { maxAge: 345600000 })
-    setLogged(true)
+    if (!pw) return
+    pskCookie.set(await sha256Hex(pw), { expires: 365, sameSite: 'strict', secure: location.protocol === 'https:' })
     setPw('')
+    notify()
   }
 
   function logout() {
     pskCookie.remove()
-    setLogged(false)
     setPersonData([])
     setError('')
-  }
-
-  function validateInput(val: string) {
-    return val.trim().toUpperCase().replace(/[^A-Z0-9 ]/g, '')
+    notify()
   }
 
   async function searchMemberCode() {
-    const cleaned = name.trim().toUpperCase()
-    if (!cleaned) return
+    const cleaned = name.trim().replace(/\s+/g, ' ')
+    if (!cleaned || loading) return
 
     setLoading(true)
     setError('')
     setPersonData([])
+    dialogRef.current?.showModal()
 
     try {
-      const psk = pskCookie.get() || ''
       const res = await fetch(
         `https://people.mirandola2.workers.dev/data?name=${encodeURIComponent(cleaned.toLowerCase())}`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Just-A-PSK': psk,
-          },
-        }
+        { headers: { 'Content-Type': 'application/json', 'Just-A-PSK': pskCookie.get() || '' } },
       )
 
       if (res.status === 403) {
         setError('Non sei autorizzato o il token usato è errato. Esci e riprova.')
-        setPersonData([])
+      } else if (!res.ok) {
+        setError(`Errore del server (${res.status}), riprova più tardi.`)
       } else {
-        const data = await res.json()
-        setPersonData(data)
+        setPersonData(await res.json())
       }
     } catch {
       setError('Errore di rete')
-      setPersonData([])
     } finally {
       setLoading(false)
-      dialogRef.current?.showModal()
     }
   }
 
   return (
     <>
-      <div className="card w-full not-prose max-w-xl mt-12 mx-auto">
-        <div className="card-body">
-          <h2 className="card-title">Ricerca codice socio</h2>
-
-          {logged && (
-            <button className="btn ml-auto text-primary font-bold" onClick={logout}>
-              Reset Token <span className="material-symbols-rounded">logout</span>
-            </button>
-          )}
+      <div className="card w-full not-prose max-w-xl mt-12 mx-auto bg-base-200">
+        <div className="card-body gap-4">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="card-title">Ricerca codice socio</h2>
+            {logged && (
+              <button type="button" className="btn btn-ghost btn-sm text-primary" onClick={logout}>
+                Reset Token <span className="material-symbols-rounded text-lg!" aria-hidden="true">logout</span>
+              </button>
+            )}
+          </div>
 
           {!logged && (
-            <div className="flex gap-2">
+            <form className="join w-full" onSubmit={e => { e.preventDefault(); handleSave() }}>
               <input
                 type="password"
                 value={pw}
                 onChange={e => setPw(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleSave()}
                 placeholder="Token Magico"
-                className="input input-bordered w-full"
+                autoComplete="current-password"
+                className="input join-item w-full"
               />
-              <button className="btn btn-primary" onClick={handleSave}>
+              <button type="submit" className="btn btn-primary join-item" disabled={!pw}>
                 Salva
               </button>
-            </div>
+            </form>
           )}
 
-          <div className="flex gap-2">
+          <form className="join w-full" onSubmit={e => { e.preventDefault(); searchMemberCode() }}>
             <input
               type="text"
               value={name}
-              onChange={e => setName(validateInput(e.target.value))}
-              onKeyDown={e => e.key === 'Enter' && searchMemberCode()}
+              onChange={e => setName(e.target.value.toUpperCase().replace(/[^A-Z0-9 ]/g, ''))}
               placeholder="Nome Completo"
-              className="input input-bordered w-full"
+              className="input join-item w-full"
               disabled={!logged}
             />
-            <button
-              className="btn btn-primary"
-              onClick={searchMemberCode}
-              disabled={!logged}
-            >
+            <button type="submit" className="btn btn-primary join-item" disabled={!logged || !name.trim()}>
               Cerca
             </button>
-          </div>
+          </form>
 
-          {lastupdate && (
-            <p className="text-sm text-right">Dati aggiornati al {lastupdate}</p>
-          )}
+          {lastupdate && <p className="text-sm text-right opacity-70">Dati aggiornati al {lastupdate}</p>}
         </div>
       </div>
 
@@ -144,9 +130,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
         <div className="modal-box">
           {loading && <span className="loading loading-spinner loading-md" />}
           {error && <span className="font-bold text-error">{error}</span>}
-          {!loading && !error && personData.length === 0 && (
-            <span>Codice socio non trovato.</span>
-          )}
+          {!loading && !error && personData.length === 0 && <span>Codice socio non trovato.</span>}
           {!loading &&
             personData.map((data, i) => (
               <table key={i} className="table text-sm py-8 font-mono">
@@ -161,16 +145,14 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
                   </tr>
                   <tr>
                     <td className="pl-0">Codice Socio:</td>
-                    <th className="text-3xl bold">{data?.code}</th>
+                    <th className="text-3xl font-bold">{data?.code}</th>
                   </tr>
                 </tbody>
               </table>
             ))}
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn" onClick={() => setLoading(false)}>
-                Chiudi
-              </button>
+              <button className="btn">Chiudi</button>
             </form>
           </div>
         </div>

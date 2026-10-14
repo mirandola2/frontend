@@ -1,6 +1,7 @@
 'use client'
 
 import { useCachedFetch } from '@/hooks/useCachedFetch'
+import LoadingState from './LoadingState'
 
 interface WeatherResponse {
   daily: {
@@ -41,14 +42,12 @@ const codes: Record<string, string> = {
 }
 
 export default function Weather() {
-  const { data, loaded } = useCachedFetch<WeatherResponse>(
+  const { data, error } = useCachedFetch<WeatherResponse>(
     'https://api.open-meteo.com/v1/forecast?latitude=44.8909&longitude=11.0671&daily=weathercode&timezone=Europe%2FBerlin&forecast_days=3',
     30 * 60 * 1000,
   )
 
-  if (!loaded || !data) {
-    return <span className="loading loading-spinner loading-xs" />
-  }
+  if (!data) return <LoadingState error={error} />
 
   return (
     <table className="text-center">

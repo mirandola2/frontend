@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/content'
+import { imagekitUrl } from '@/lib/imagekit'
 import BlogLayout from '@/components/BlogLayout'
+import CategoryBadge, { formatMonthYear } from '@/components/CategoryBadge'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -9,8 +12,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllBlogPosts()
-  return posts.map(post => ({ slug: post.slug }))
+  return getAllBlogPosts().map(post => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -20,19 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
-    openGraph: post.img ? { images: [post.img] } : undefined,
+    openGraph: post.img ? { images: [imagekitUrl(post.img, 'w-1200')] } : undefined,
   }
-}
-
-const badge: Record<string, { bg: string; text: string }> = {
-  lc: { bg: 'bg-lc text-lc-content', text: 'L/C' },
-  eg: { bg: 'bg-eg text-eg-content', text: 'E/G' },
-  rs: { bg: 'bg-rs text-rs-content', text: 'R/S' },
-  cc: { bg: 'bg-cc text-white', text: 'Gruppo' },
-}
-
-function capitalizeFirstLetter(s: string) {
-  return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
 export default async function BlogPost({ params }: Props) {
@@ -40,45 +31,28 @@ export default async function BlogPost({ params }: Props) {
   const post = getBlogPostBySlug(slug)
   if (!post) notFound()
 
-  let MDXContent: React.ComponentType
-  try {
-    MDXContent = (await import(`@/content/blog/${slug}.mdx`)).default
-  } catch {
-    notFound()
-  }
+  const { default: MDXContent } = await import(`@/content/blog/${slug}.mdx`)
 
   return (
     <BlogLayout>
-      <div className="card bg-neutral image-full w-full mx-auto relative overflow-auto">
+      <header className="card bg-neutral image-full w-full mx-auto relative overflow-hidden">
         {post.img && (
-          <figure className="h-full">
-            <Image
-              src={post.img}
-              alt="Immagine del blog"
-              width={1200}
-              height={600}
-              className="absolute inset-0 w-full h-full object-cover opacity-50 blur-sm"
-            />
+          <figure>
+            <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" preload className="object-cover opacity-50 blur-sm" />
           </figure>
         )}
-        <div className="card-body">
-          <h3 className="text-3xl">Blog</h3>
-          <h2 className="card-title text-4xl font-display">{post.title}</h2>
-          <p>{post.description || 'Descrizione non disponibile.'}</p>
+        <div className="card-body gap-3 py-10">
+          <Link href="/blog" className="text-sm font-bold uppercase tracking-widest opacity-80 hover:opacity-100 hover:underline w-fit">
+            ← Blog
+          </Link>
+          <h1 className="text-4xl md:text-5xl font-display text-balance">{post.title}</h1>
+          <p className="text-lg">{post.description || 'Descrizione non disponibile.'}</p>
           <div className="card-actions justify-end">
-            {post.category && (
-              <span className={`badge border-0 ${badge[post.category]?.bg || ''}`}>
-                {badge[post.category]?.text || post.category}
-              </span>
-            )}
-            <span className="badge border-0 bg-base-300">
-              {capitalizeFirstLetter(
-                new Date(post.date).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })
-              )}
-            </span>
+            {post.category && <CategoryBadge category={post.category} />}
+            <span className="badge border-0 bg-base-300">{formatMonthYear(post.date, true)}</span>
           </div>
         </div>
-      </div>
+      </header>
 
       <div className="prose-container mt-6">
         <MDXContent />

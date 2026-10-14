@@ -1,6 +1,7 @@
 'use client'
 
 import { useCachedFetch } from '@/hooks/useCachedFetch'
+import LoadingState from './LoadingState'
 
 interface DailyWordData {
   CantoVangelo: string
@@ -9,14 +10,12 @@ interface DailyWordData {
 }
 
 export default function DailyWord() {
-  const { data, loaded } = useCachedFetch<DailyWordData>(
+  const { data, error } = useCachedFetch<DailyWordData>(
     'https://daily.mirandola2.workers.dev/',
     60 * 60 * 1000,
   )
 
-  if (!loaded || !data) {
-    return <span className="loading loading-spinner loading-xs" />
-  }
+  if (!data) return <LoadingState error={error} />
 
   return (
     <span>

@@ -1,187 +1,128 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import HeaderNavbar from './HeaderNavbar'
+import NavLink from './NavLink'
+import { DRAWER_ID, menuItems } from './navigation'
 
-interface MenuItem {
-  label: string
-  href?: string
-  children?: MenuItem[]
+const activeLink = 'aria-[current=page]:bg-white/15 aria-[current=page]:font-bold'
+
+function Chevron() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="w-4 h-4 opacity-70">
+      <path
+        fillRule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
 }
-
-const menuItems: MenuItem[] = [
-  { label: 'Home', href: '/' },
-  {
-    label: 'Chi Siamo',
-    children: [
-      { label: "L'Associazione", href: '/associazione' },
-      { label: 'Il Gruppo', href: '/gruppo' },
-      { label: 'La Comunità Capi', href: '/coca' },
-      { label: 'Il Progetto Educativo', href: '/progetto' },
-      { label: 'Contatti', href: '/contatti' },
-      { label: 'Iscrizioni', href: '/iscrizioni' },
-    ],
-  },
-  {
-    label: 'Lupetti e Coccinelle',
-    children: [
-      { label: 'La Branca L/C', href: '/lc/' },
-      { label: 'Branco della Roccia Azzurra', href: '/lc/lupetti' },
-      { label: 'Cerchio del Bosco Gioioso', href: '/lc/coccinelle' },
-      { label: 'Piccole Orme', href: '/lc/piccole-orme' },
-      { label: 'Specialità', href: '/lc/specialita' },
-      { label: 'Iniziazione Cristiana', href: '/lc/ic' },
-    ],
-  },
-  {
-    label: 'Esploratori e Guide',
-    children: [
-      { label: 'La Branca E/G', href: '/eg' },
-      { label: 'Reparto Brownsea', href: '/eg/brownsea' },
-      { label: 'Reparto Antares', href: '/eg/antares' },
-      { label: 'Campi di Specialità e Competenza', href: '/eg/campetti' },
-      { label: 'Specialità e Competenze', href: '/eg/specialita' },
-    ],
-  },
-  {
-    label: 'Rover e Scolte',
-    children: [
-      { label: 'La Branca R/S', href: '/rs/' },
-      { label: 'Clan Fuoco MdV', href: '/rs/mdv' },
-      { label: 'Noviziato', href: '/rs/noviziato' },
-      { label: 'Epppi/Ross', href: '/rs/epppi-ross' },
-    ],
-  },
-  {
-    label: 'Archivio',
-    children: [
-      { label: 'Archivio Totem', href: '/totem' },
-      { label: 'Staff del Passato', href: '/archivio-staff' },
-      { label: 'Campi e Route', href: '/archivio-campi-route' },
-      { label: 'Foto e Video', href: '/media' },
-    ],
-  },
-  {
-    label: 'Utilities',
-    children: [
-      { label: 'Ricerca Codice Socio', href: '/codice-socio' },
-      { label: 'Uniforme e Distintivi', href: '/uniforme' },
-      { label: 'Traduttore Morse', href: '/morse' },
-      { label: 'Generatore Alci', href: '/alci' },
-      { label: 'Materiali e link', href: '/materiale' },
-    ],
-  },
-]
 
 export default function Header({ children }: { children: React.ReactNode }) {
   return (
     <div className="drawer drawer-end">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <main className="drawer-content flex flex-col min-h-screen">
+      <input id={DRAWER_ID} type="checkbox" className="drawer-toggle" aria-label="Apri il menu" />
+      <div className="drawer-content flex flex-col min-h-screen">
         <HeaderNavbar>
           <div className="container max-w-none max-xl:px-5 xl:mx-auto flex items-center">
             <div className="flex-1">
-              <h1 className="text-2xl font-bold">
-                <Link href="/">
-                  <Image
-                    src="/img/graphics/logo_white.svg"
-                    alt="logo"
-                    width={64}
-                    height={64}
-                    className="h-16 -ml-3 xl:ml-0"
-                  />
-                </Link>
-              </h1>
+              <Link href="/" aria-label="Home - Scout Mirandola 2" className="inline-block">
+                <Image
+                  src="/img/graphics/logo_white.svg"
+                  alt="Logo Scout Mirandola 2"
+                  width={64}
+                  height={64}
+                  className="h-16 -ml-3 xl:ml-0"
+                />
+              </Link>
             </div>
 
-            <div className="flex-none hidden xl:block">
-              <ul className="menu menu-horizontal text-white">
-                {menuItems.map((item) => (
+            <nav className="flex-none hidden xl:block" aria-label="Menu principale">
+              <ul className="menu menu-horizontal gap-1 text-white">
+                {menuItems.map(item => (
                   <li key={item.label}>
                     {item.children ? (
                       <div className="dropdown dropdown-end dropdown-hover hover:text-[#dfd2ff]">
-                        <label tabIndex={0}>{item.label}</label>
+                        <div tabIndex={0} role="button" className="flex items-center gap-1">
+                          {item.label}
+                          <Chevron />
+                        </div>
                         <ul
                           tabIndex={0}
-                          className="dropdown-content z-1 menu p-2 shadow bg-secondary text-white rounded-box w-60"
+                          className="dropdown-content z-10 menu p-2 shadow-xl bg-secondary text-white rounded-box w-64"
                         >
-                          {item.children.map((child) => (
+                          {item.children.map(child => (
                             <li key={child.label}>
-                              <Link href={child.href!}>{child.label}</Link>
+                              <NavLink href={child.href!} className={`hover:bg-white/10 ${activeLink}`}>
+                                {child.label}
+                              </NavLink>
                             </li>
                           ))}
                         </ul>
                       </div>
                     ) : (
-                      <Link href={item.href!} className="hover:text-[#dfd2ff]">
+                      <NavLink href={item.href!} className={`hover:text-[#dfd2ff] ${activeLink}`}>
                         {item.label}
-                      </Link>
+                      </NavLink>
                     )}
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           </div>
 
           <div className="flex-none xl:hidden">
-            <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+            <label htmlFor={DRAWER_ID} className="btn btn-square btn-ghost hover:bg-white/10 border-0" aria-label="Apri il menu">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 className="inline-block w-6 h-6 stroke-current"
+                aria-hidden="true"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </label>
           </div>
         </HeaderNavbar>
 
         {children}
-      </main>
+      </div>
 
-      <div className="drawer-side min-h-full z-50">
-        <label htmlFor="my-drawer-3" className="drawer-overlay" />
+      <div className="drawer-side z-50">
+        <label htmlFor={DRAWER_ID} className="drawer-overlay" aria-label="Chiudi il menu" />
         <div className="flex flex-row min-h-full">
           <div className="bg-[#07ac0f] w-1" />
           <div className="bg-[#ffee18] w-1" />
-          <div>
-            <ul className="menu p-4 w-80 bg-secondary min-h-full overflow-y-scroll text-white">
-              <Link href="/">
-                <Image
-                  src="/img/graphics/logo_white.svg"
-                  alt=""
-                  width={160}
-                  height={96}
-                  className="h-24 mb-8"
-                />
-              </Link>
-              {menuItems.map((item) => (
+          <nav aria-label="Menu principale" className="w-80 min-h-full bg-secondary text-white">
+            <Link href="/" className="block p-4 pb-0">
+              <Image src="/img/graphics/logo_white.svg" alt="Home" width={160} height={96} className="h-24 mb-6" />
+            </Link>
+            <ul className="menu w-full p-4 pt-0">
+              {menuItems.map(item => (
                 <li key={item.label}>
                   {item.children ? (
                     <details>
-                      <summary>{item.label}</summary>
+                      <summary className="hover:bg-white/10">{item.label}</summary>
                       <ul>
-                        {item.children.map((child) => (
+                        {item.children.map(child => (
                           <li key={child.label}>
-                            <Link href={child.href!}>{child.label}</Link>
+                            <NavLink href={child.href!} className={`hover:bg-white/10 ${activeLink}`}>
+                              {child.label}
+                            </NavLink>
                           </li>
                         ))}
                       </ul>
                     </details>
                   ) : (
-                    <Link href={item.href!} className="hover:text-secondary">
+                    <NavLink href={item.href!} className={`hover:bg-white/10 ${activeLink}`}>
                       {item.label}
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
     </div>

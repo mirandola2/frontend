@@ -1,50 +1,105 @@
 'use client'
 
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import Lightbox from 'yet-another-react-lightbox'
-import 'yet-another-react-lightbox/styles.css'
+import { imagekitUrl } from '@/lib/imagekit'
+
+const FigLightbox = dynamic(() => import('./FigLightbox'), { ssr: false })
 
 interface FigProps {
   src: string | string[]
   alt?: string
   desc?: string | string[]
+  /** 0: not floating, 1: float left, 2: float right */
   float?: number | string
+}
+
+// MDX passes arrays as JSON strings, e.g. src={'["/a.jpg", "/b.jpg"]'}
+function toList(value?: string | string[]): string[] {
+  if (value == null) return []
+  if (Array.isArray(value)) return value
+  if (value.trim().startsWith('[')) {
+    try {
+      return JSON.parse(value)
+    } catch {
+      // not JSON, treat as a single value
+    }
+  }
+  return [value]
+}
+
+const floatClasses: Record<string, string> = {
+  '0': 'my-2 max-w-3xl w-full mx-auto clear-both',
+  '1': 'md:float-left m-3 md:ml-0 md:max-w-sm',
+  '2': 'md:float-right m-3 md:mr-0 md:max-w-sm',
 }
 
 export default function Fig({ src, alt, desc, float = '2' }: FigProps) {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const srcs = Array.isArray(src) ? src : [src]
-  const descs = Array.isArray(desc) ? desc : desc ? [desc] : []
-  const slides = srcs.map(s => ({
-    src: s.startsWith('http') ? s : `https://ik.imagekit.io/mir2${s.startsWith('/') ? s : `/${s}`}`,
-  }))
+  const srcs = toList(src)
+  const descs = toList(desc)
+  const floating = String(float) !== '0'
+  const multi = srcs.length > 1
 
-  const floatVal = typeof float === 'string' ? float : String(float)
-  const floatClass = floatVal === '0' ? '' : floatVal === '1' ? 'md:float-left m-3 md:ml-0 md:max-w-sm' : 'md:float-right md:max-w-sm m-3 md:mr-0'
+  if (srcs.length === 0) return null
+
+  const step = (delta: number) => setIndex(i => (i + delta + srcs.length) % srcs.length)
 
   return (
-    <>
-      <div className={`not-prose object-contain bg-base-200 p-5 rounded-xl justify-center content-center ${floatClass} ${floatVal === '0' ? 'my-2 max-w-3xl w-full mx-auto clear-both' : ''}`}>
-        <button onClick={() => { setIndex(0); setOpen(true) }} className="block mx-auto h-auto w-auto">
+    <figure
+      className={`not-prose bg-base-200 p-5 rounded-box flex flex-col items-center ${
+        floatClasses[String(float)] ?? floatClasses['2']
+      }`}
+    >
+      <div className="relative flex items-center justify-center">
+        <button type="button" onClick={() => setOpen(true)} className="block cursor-zoom-in" aria-label="Ingrandisci immagine">
           <Image
-            src={srcs[0]}
-            alt={alt || (typeof desc === 'string' ? desc : '')}
+            src={srcs[index]}
+            alt={alt || descs[index] || ''}
             width={800}
             height={600}
-            className="rounded-lg shadow-lg w-auto h-auto"
+            sizes={floating ? '(min-width: 768px) 384px, 100vw' : '(min-width: 768px) 768px, 100vw'}
+            className={`rounded-lg shadow-lg w-auto h-auto ${floating ? 'max-h-48' : 'max-h-96'}`}
           />
         </button>
-        {descs[0] && <p className="text-sm text-center opacity-70 mt-2 mx-auto">{descs[0]}</p>}
+        {multi && (
+          <>
+            <button
+              type="button"
+              onClick={() => step(-1)}
+              className="btn btn-secondary btn-circle btn-sm shadow-xl absolute -left-3"
+              aria-label="Immagine precedente"
+            >
+              <span className="material-symbols-rounded" aria-hidden="true">navigate_before</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => step(1)}
+              className="btn btn-secondary btn-circle btn-sm shadow-xl absolute -right-3"
+              aria-label="Immagine successiva"
+            >
+              <span className="material-symbols-rounded" aria-hidden="true">navigate_next</span>
+            </button>
+          </>
+        )}
       </div>
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        index={index}
-        slides={slides}
-      />
-    </>
+      {(descs[index] || multi) && (
+        <figcaption className="text-sm text-center opacity-70 mt-2">
+          {descs[index]} {multi && `[${index + 1}/${srcs.length}]`}
+        </figcaption>
+      )}
+      {open && (
+        <FigLightbox
+          open
+          close={() => setOpen(false)}
+          index={index}
+          on={{ view: ({ index: i }) => setIndex(i) }}
+          slides={srcs.map(s => ({ src: imagekitUrl(s) }))}
+        />
+      )}
+    </figure>
   )
 }

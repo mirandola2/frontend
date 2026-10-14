@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { BlogPost } from '@/lib/content'
+import CategoryBadge, { formatMonthYear } from './CategoryBadge'
 
 interface BlogFeedProps {
   posts: BlogPost[]
@@ -8,48 +9,37 @@ interface BlogFeedProps {
   images?: boolean
 }
 
-const badge: Record<string, { bg: string; text: string }> = {
-  lc: { bg: 'bg-lc text-lc-content', text: 'L/C' },
-  eg: { bg: 'bg-eg text-eg-content', text: 'E/G' },
-  rs: { bg: 'bg-rs text-rs-content', text: 'R/S' },
-  cc: { bg: 'bg-cc text-white', text: 'Gruppo' },
-}
-
 export default function BlogFeed({ posts, horizontal = false, images = true }: BlogFeedProps) {
   return (
     <>
       {posts.map(post => (
-        <div key={post.slug} className="relative hover:shadow shadow-lg rounded-2xl">
-          <Link href={post.path} className="absolute z-10 w-full h-full" />
-          <div className={`card w-full bg-base-100 ${horizontal ? 'md:card-side' : ''}`}>
-            {images && post.img && (
-              <figure className="bg-contain max-h-40 bg-neutral max-w-full md:max-w-xs">
-                <Image src={post.img} alt={post.title} width={300} height={200} />
-              </figure>
-            )}
-            <div className="card-body">
-              <h2 className="text-xl font-bold">{post.title}</h2>
-              <p>
-                {post.description}
-                <Link href={post.path} className="link"> Leggi tutto</Link>
-              </p>
-              <p className="text-sm">
-                <span className="opacity-50">
-                  Pubblicato in{' '}
-                  {new Date(post.date).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}
-                </span>
-                {post.category && (
-                  <>
-                    &nbsp;•&nbsp;
-                    <span className={`badge border-0 ${badge[post.category]?.bg || ''}`}>
-                      {badge[post.category]?.text || post.category}
-                    </span>
-                  </>
-                )}
-              </p>
-            </div>
+        <article
+          key={post.slug}
+          className={`card relative w-full bg-base-100 shadow-md transition duration-200 hover:-translate-y-0.5 hover:shadow-xl has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-secondary ${
+            horizontal ? 'md:card-side' : ''
+          }`}
+        >
+          {images && post.img && (
+            <figure className="bg-neutral max-h-40 max-w-full md:max-w-xs">
+              <Image src={post.img} alt="" width={320} height={200} className="h-full w-full object-cover" />
+            </figure>
+          )}
+          <div className="card-body">
+            <h2 className="text-xl font-bold text-balance">
+              {/* Stretched link: the whole card is clickable through this single link */}
+              <Link href={post.path} className="after:absolute after:inset-0 after:rounded-box focus:outline-none">
+                {post.title}
+              </Link>
+            </h2>
+            <p>
+              {post.description} <span className="link text-secondary">Leggi tutto</span>
+            </p>
+            <p className="flex flex-wrap items-center gap-2 text-sm">
+              <span className="opacity-60">Pubblicato in {formatMonthYear(post.date)}</span>
+              {post.category && <CategoryBadge category={post.category} />}
+            </p>
           </div>
-        </div>
+        </article>
       ))}
     </>
   )
