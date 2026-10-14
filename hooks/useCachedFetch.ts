@@ -7,11 +7,22 @@ interface CacheEntry<T> {
   expires: number
 }
 
+interface FetchState<T> {
+  data: T | null
+  loaded: boolean
+  error: boolean
+}
+
 const memoryCache = new Map<string, CacheEntry<unknown>>()
 
+function readMemory<T>(key: string): T | null {
+  const entry = memoryCache.get(key) as CacheEntry<T> | undefined
+  return entry && entry.expires > Date.now() ? entry.value : null
+}
+
 function readCache<T>(key: string): T | null {
-  const fromMemory = memoryCache.get(key) as CacheEntry<T> | undefined
-  if (fromMemory && fromMemory.expires > Date.now()) return fromMemory.value
+  const fromMemory = readMemory<T>(key)
+  if (fromMemory !== null) return fromMemory
 
   try {
     const raw = sessionStorage.getItem(key)
@@ -36,27 +47,33 @@ function writeCache<T>(key: string, value: T, ttlMs: number) {
 }
 
 export function useCachedFetch<T>(url: string, ttlMs = 5 * 60 * 1000) {
-  const [data, setData] = useState<T | null>(() => readCache<T>(url))
-  const [loaded, setLoaded] = useState(() => readCache<T>(url) !== null)
-  const [error, setError] = useState(false)
+  // Only the in-memory cache is read during render: it is empty while hydrating a
+  // prerendered page, so the first client render matches the static HTML. It still
+  // gives an instant render when navigating client-side between pages.
+  const [state, setState] = useState<FetchState<T>>(() => {
+    const data = readMemory<T>(url)
+    return { data, loaded: data !== null, error: false }
+  })
 
   useEffect(() => {
-    if (readCache<T>(url) !== null) return
-
     let cancelled = false
-    fetch(url)
-      .then(res => res.json())
-      .then((json: T) => {
+    const cachedValue = readCache<T>(url)
+    const request: Promise<T> =
+      cachedValue !== null
+        ? Promise.resolve(cachedValue)
+        : fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`)
+            return res.json()
+          })
+
+    request
+      .then(json => {
         if (cancelled) return
-        writeCache(url, json, ttlMs)
-        setData(json)
-        setLoaded(true)
+        if (cachedValue === null) writeCache(url, json, ttlMs)
+        setState({ data: json, loaded: true, error: false })
       })
       .catch(() => {
-        if (!cancelled) {
-          setError(true)
-          setLoaded(true)
-        }
+        if (!cancelled) setState({ data: null, loaded: true, error: true })
       })
 
     return () => {
@@ -65,5 +82,5 @@ export function useCachedFetch<T>(url: string, ttlMs = 5 * 60 * 1000) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url])
 
-  return { data, loaded, error }
+  return state
 }

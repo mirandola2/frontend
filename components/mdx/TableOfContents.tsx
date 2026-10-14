@@ -1,11 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface TocItem {
   id: string
   text: string
-  level: number
   children: TocItem[]
 }
 
@@ -14,30 +13,35 @@ interface TableOfContentsProps {
   maxdepth?: number
 }
 
-function getTocFromDom(): TocItem[] {
-  const headings = document.querySelectorAll<HTMLHeadingElement>('h2, h3')
-  const items: TocItem[] = []
-  const stack: TocItem[] = []
+// "Obiettivi 2024-25" -> "obiettivi-2024-25", "Città & Paese" -> "citta-paese"
+function slugify(text: string) {
+  return text
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
 
-  headings.forEach(h => {
-    const id = h.id || h.textContent?.toLowerCase().replace(/\s+/g, '-') || ''
-    if (!id && h.textContent) {
-      h.id = h.textContent.toLowerCase().replace(/\s+/g, '-')
-    }
-    const item: TocItem = {
-      id: h.id || id,
-      text: h.textContent || '',
-      level: h.tagName === 'H2' ? 2 : 3,
-      children: [],
-    }
+// MDX headings have no ids: assign them here so both the TOC and in-page links
+// (e.g. <Lnk href="#obiettivi-2024-25">) can jump to them.
+function getTocFromDom(root: ParentNode): TocItem[] {
+  const items: TocItem[] = []
+  let current: TocItem | null = null
+
+  root.querySelectorAll<HTMLHeadingElement>('h2, h3').forEach(h => {
+    if (h.closest('[data-toc-ignore]')) return
+    const text = h.textContent?.trim() || ''
+    if (!text) return
+    if (!h.id) h.id = slugify(text)
+    const item: TocItem = { id: h.id, text, children: [] }
 
     if (h.tagName === 'H2') {
       items.push(item)
-      stack.length = 0
-      stack.push(item)
-    } else if (h.tagName === 'H3' && stack.length > 0) {
-      stack[stack.length - 1].children.push(item)
-    } else if (h.tagName === 'H3') {
+      current = item
+    } else if (current) {
+      current.children.push(item)
+    } else {
       items.push(item)
     }
   })
@@ -46,32 +50,37 @@ function getTocFromDom(): TocItem[] {
 }
 
 export default function TableOfContents({ notaside = false, maxdepth = 2 }: TableOfContentsProps) {
+  const ref = useRef<HTMLElement>(null)
   const [toc, setToc] = useState<TocItem[]>([])
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setToc(getTocFromDom())
+    const root = ref.current?.closest('.prose-container') ?? document
+    setToc(getTocFromDom(root))
+    // Re-run the browser's scroll-to-hash now that the target ids exist.
+    const hash = decodeURIComponent(window.location.hash.slice(1))
+    if (hash) document.getElementById(hash)?.scrollIntoView()
   }, [])
 
-  if (toc.length === 0) return null
-
   return (
-    <div
+    <nav
+      ref={ref}
+      data-toc-ignore
+      aria-label="Indice"
       className={`not-prose card w-full bg-base-200 text-base-content my-5 ${
         !notaside ? 'md:float-right md:ml-5 md:w-96' : ''
-      }`}
+      } ${toc.length === 0 ? 'hidden' : ''}`}
     >
       <div className="card-body">
-        <h2 className="card-title">Indice</h2>
-        <ul>
+        <h2 className="card-title text-primary">Indice</h2>
+        <ul className="space-y-1">
           {toc.map(link => (
             <li key={link.id}>
-              <a href={`#${link.id}`}>{link.text}</a>
+              <a href={`#${link.id}`} className="link link-hover">{link.text}</a>
               {maxdepth > 2 && link.children.length > 0 && (
-                <ul>
+                <ul className="mt-1 space-y-1">
                   {link.children.map(child => (
                     <li key={child.id} className="ml-4 text-sm">
-                      <a href={`#${child.id}`}>{child.text}</a>
+                      <a href={`#${child.id}`} className="link link-hover">{child.text}</a>
                     </li>
                   ))}
                 </ul>
@@ -80,6 +89,6 @@ export default function TableOfContents({ notaside = false, maxdepth = 2 }: Tabl
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react'
 import { useCachedFetch } from '@/hooks/useCachedFetch'
+import LoadingState from './LoadingState'
 
 interface BirthdayPerson {
   name: string
@@ -65,11 +66,9 @@ export default function Birthdays() {
     return `https://people.mirandola2.workers.dev/birthday?t=7&d=${day}`
   }, [])
 
-  const { data, loaded } = useCachedFetch<BirthdayPerson[]>(url, 12 * 60 * 60 * 1000)
+  const { data, error } = useCachedFetch<BirthdayPerson[]>(url, 12 * 60 * 60 * 1000)
 
-  if (!loaded || !data) {
-    return <span className="loading loading-spinner loading-xs" />
-  }
+  if (!data) return <LoadingState error={error} />
 
   return <>{birthdaysFormatter(data)}</>
 }

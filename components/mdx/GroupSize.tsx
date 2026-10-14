@@ -1,30 +1,21 @@
+const groups = [
+  { count: '~80', label: 'Lupetti e Coccinelle', className: 'bg-lc text-lc-content' },
+  { count: '~60', label: 'Esploratori e Guide', className: 'bg-eg text-eg-content' },
+  { count: '~30', label: 'Rover e Scolte', className: 'bg-rs text-rs-content' },
+  { count: '~30', label: 'Capi', className: 'bg-cc text-cc-content' },
+]
+
 export default function GroupSize() {
   return (
     <div className="not-prose grid grid-cols-2 md:grid-cols-4 gap-3 my-4">
-      <div className="card bg-primary text-primary-content">
-        <div className="card-body items-center text-center">
-          <span className="text-3xl font-bold">~80</span>
-          <span className="text-sm">Lupetti e Coccinelle</span>
+      {groups.map(group => (
+        <div key={group.label} className={`card ${group.className}`}>
+          <div className="card-body items-center text-center">
+            <span className="text-4xl font-display">{group.count}</span>
+            <span className="text-sm font-bold">{group.label}</span>
+          </div>
         </div>
-      </div>
-      <div className="card bg-eg text-eg-content">
-        <div className="card-body items-center text-center">
-          <span className="text-3xl font-bold">~60</span>
-          <span className="text-sm">Esploratori e Guide</span>
-        </div>
-      </div>
-      <div className="card bg-rs text-rs-content">
-        <div className="card-body items-center text-center">
-          <span className="text-3xl font-bold">~30</span>
-          <span className="text-sm">Rover e Scolte</span>
-        </div>
-      </div>
-      <div className="card bg-cc text-cc-content">
-        <div className="card-body items-center text-center">
-          <span className="text-3xl font-bold">~30</span>
-          <span className="text-sm">Capi</span>
-        </div>
-      </div>
+      ))}
     </div>
   )
 }

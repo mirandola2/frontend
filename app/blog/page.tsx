@@ -13,10 +13,10 @@ export default function BlogIndex() {
 
   return (
     <BlogLayout>
-      <div className="grid gap-3">
-        <div className="card w-full bg-base-200 shadow-none">
+      <div className="grid gap-4">
+        <div className="card w-full bg-base-200">
           <div className="card-body">
-            <h2 className="text-2xl font-bold">Tutte le notizie</h2>
+            <h1 className="font-display text-4xl text-primary">Tutte le notizie</h1>
           </div>
         </div>
         <BlogFeed posts={posts} horizontal />

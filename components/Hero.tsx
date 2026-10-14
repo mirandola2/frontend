@@ -17,21 +17,20 @@ const bgColor: Record<string, string> = {
 
 export default function Hero({ title, image, color = 'primary', big = false }: HeroProps) {
   return (
-    <div className="hero relative mb-5 overflow-hidden">
+    <div className="hero relative mb-5 overflow-hidden bg-primary">
       {image && (
-        <Image
-          src={image}
-          alt="Hero Image"
-          width={1920}
-          height={400}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <Image src={image} alt="" fill sizes="100vw" preload className="object-cover" />
       )}
       <div className={`absolute inset-0 ${bgColor[color] || bgColor.primary} opacity-75`} />
-      <div className={`container relative z-10 mx-auto flex max-w-4xl flex-col text-white md:flex-row md:px-12 ${big ? 'pt-28 pb-44' : 'py-28'}`}>
+      <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
+      <div
+        className={`container relative z-10 mx-auto flex max-w-4xl flex-col text-white md:flex-row md:px-12 ${
+          big ? 'pt-28 pb-44' : 'py-28'
+        }`}
+      >
         <div className="text-center md:text-left md:mr-auto">
-          <h2 className="mb-5 text-lg md:text-3xl">AGESCI - Gruppo Scout Mirandola 2</h2>
-          <h1 className="font-display text-5xl md:text-6xl">{title}</h1>
+          <p className="mb-4 text-lg md:text-2xl opacity-90">AGESCI - Gruppo Scout Mirandola 2</p>
+          <h1 className="font-display text-5xl md:text-6xl text-balance drop-shadow-md">{title}</h1>
         </div>
       </div>
     </div>

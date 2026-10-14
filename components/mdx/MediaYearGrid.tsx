@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useToast } from '@/hooks/useToast'
+import { copyText } from '@/lib/clipboard'
+import Toast from '@/components/Toast'
 
 interface MediaEntry {
   type: string
@@ -9,6 +11,18 @@ interface MediaEntry {
   year: number
   name: string
   url: string
+}
+
+function formatUrlId(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+function getTypeIcon(type: string) {
+  return type === 'photo' ? 'photo_camera' : 'videocam'
 }
 
 interface MediaYearGridProps {
@@ -66,18 +80,6 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
     return stats
   }, [filteredData])
 
-  function formatUrlId(name: string) {
-    return name
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '')
-  }
-
-  function getTypeIcon(type: string) {
-    return type === 'photo' ? 'photo_camera' : 'videocam'
-  }
-
   const updateUrl = useCallback(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams()
@@ -103,60 +105,30 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
 
   const focusCard = useCallback(async (cardId: string, jumpToElement = false) => {
     if (!cardId) return
-
-    const el = document.getElementById(formatUrlId(cardId))
+    const id = formatUrlId(cardId)
+    let el = document.getElementById(id)
     if (!el) {
+      // the grid may not be rendered yet right after mount
       await new Promise(r => setTimeout(r, 100))
-      const retry = document.getElementById(formatUrlId(cardId))
-      if (!retry) return
-      if (jumpToElement) {
-        let top = 0
-        let curr: HTMLElement | null = retry
-        while (curr) { top += curr.offsetTop; curr = curr.offsetParent as HTMLElement }
-        window.scrollTo({ top: top - 200, behavior: 'smooth' })
-      }
-      retry.focus({ preventScroll: true })
-      return
+      el = document.getElementById(id)
+      if (!el) return
     }
-
-    if (jumpToElement) {
-      let top = 0
-      let curr: HTMLElement | null = el
-      while (curr) { top += curr.offsetTop; curr = curr.offsetParent as HTMLElement }
-      window.scrollTo({ top: top - 200, behavior: 'smooth' })
-    }
+    if (jumpToElement) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
     el.focus({ preventScroll: true })
   }, [])
 
   const copyLink = useCallback(async (entry: MediaEntry) => {
     const cardId = formatUrlId(entry.id || entry.name)
-    const currentUrl = window.location.origin + window.location.pathname
-    const params = new URLSearchParams(window.location.search)
-    const queryString = params.toString()
-    const fullUrl = `${currentUrl}${queryString ? '?' + queryString : ''}#${cardId}`
+    const fullUrl = `${window.location.origin}${window.location.pathname}${window.location.search}#${cardId}`
 
     try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(fullUrl)
-      } else {
-        const textArea = document.createElement('textarea')
-        textArea.value = fullUrl
-        textArea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;'
-        document.body.appendChild(textArea)
-        textArea.select()
-        textArea.setSelectionRange(0, textArea.value.length)
-        if (!document.execCommand('copy')) throw new Error('Copy command failed')
-        document.body.removeChild(textArea)
-      }
-
-      history.replaceState(null, '', `#${cardId}`)
-      await focusCard(cardId, true)
+      await copyText(fullUrl)
       toast('Link Copiato!')
     } catch (err) {
       console.error('Failed to copy link:', err)
-      history.replaceState(null, '', `#${cardId}`)
-      await focusCard(cardId, true)
     }
+    history.replaceState(null, '', `#${cardId}`)
+    await focusCard(cardId, true)
   }, [focusCard, toast])
 
   const handleHashChange = useCallback(async () => {
@@ -192,7 +164,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Cerca per nome o anno..."
-              className="input input-sm input-bordered input-secondary w-full pr-8"
+              className="input input-sm input-secondary w-full pr-8"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <svg className="w-4 h-4 text-base-content/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +177,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
             <select
               value={sortDesc ? 'true' : 'false'}
               onChange={e => setSortDesc(e.target.value === 'true')}
-              className="select select-sm select-bordered select-secondary text-secondary font-bold w-full sm:w-auto"
+              className="select select-sm select-secondary text-secondary font-bold w-full sm:w-auto"
             >
               <option value="true">Dal più recente</option>
               <option value="false">Dal meno recente</option>
@@ -214,7 +186,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
             <select
               value={selectedType}
               onChange={e => setSelectedType(e.target.value)}
-              className="select select-sm select-bordered select-secondary text-secondary font-bold w-full sm:w-auto"
+              className="select select-sm select-secondary text-secondary font-bold w-full sm:w-auto"
             >
               <option value="both">Foto e Video</option>
               <option value="photo">Solo Foto</option>
@@ -240,6 +212,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
       {(searchQuery.trim() || selectedType !== 'both') && (
         <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={() => { setSearchQuery(''); setSelectedType('both') }}
             className="btn btn-sm btn-ghost text-base-content/70 hover:text-base-content"
           >
@@ -264,8 +237,8 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
       )}
 
       {grouped.map(group => (
-        <div key={group.year} className="bg-base-200 p-6 rounded-2xl">
-          <h2 className="text-2xl font-bold mb-4">
+        <div key={group.year} className="bg-base-200 p-6 rounded-box">
+          <h2 className="text-2xl font-bold text-primary mb-4">
             Anno {group.year}-{group.year + 1}
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
@@ -275,7 +248,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
                 <div
                   key={`${entry.type}-${entry.name}-${entry.year}`}
                   id={cardId}
-                  className="card bg-base-100 shadow hover:shadow-2xl transition-all duration-200 group focus:outline-none focus:shadow-2xl focus:ring-4 focus:ring-secondary focus:ring-offset-4"
+                  className="card bg-base-100 shadow-sm hover:shadow-lg transition-shadow duration-200 group focus:outline-none focus:shadow-lg focus:ring-4 focus:ring-secondary focus:ring-offset-4"
                   tabIndex={0}
                 >
                   <div className="card-body">
@@ -291,18 +264,20 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
                     <div className="card-actions justify-end mt-auto">
                       <button
                         onClick={e => { e.preventDefault(); copyLink(entry) }}
-                        className="btn btn-ghost btn-sm transition-opacity duration-200"
+                        className="btn btn-ghost btn-sm btn-square"
                         title="Copia link"
+                        aria-label="Copia link"
                       >
-                        <span className="material-symbols-rounded">link</span>
+                        <span className="material-symbols-rounded" aria-hidden="true">link</span>
                       </button>
                       <a
                         href={entry.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-sm btn-outline btn-secondary hover:btn-secondary-focus transition-colors"
+                        className="btn btn-sm btn-outline btn-secondary"
+                        aria-label={`Apri ${entry.name}`}
                       >
-                        <span className="material-symbols-rounded">east</span>
+                        <span className="material-symbols-rounded" aria-hidden="true">east</span>
                       </a>
                     </div>
                   </div>
@@ -313,13 +288,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
         </div>
       ))}
 
-      {showToast && (
-        <div className="toast toast-top toast-center">
-          <div className="alert alert-info">
-            <span>{toastMessage}</span>
-          </div>
-        </div>
-      )}
+      <Toast show={showToast} message={toastMessage} />
     </div>
   )
 }

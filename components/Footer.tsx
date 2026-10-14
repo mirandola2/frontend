@@ -14,8 +14,8 @@ export default function Footer() {
                 <br />
                 Via Posta, 55 - 41037 Mirandola (MO)
               </p>
-              <p>&copy; {new Date().getFullYear()} - Tutti i diritti riservati</p>
-              <nav className="text-secondary font-bold">
+              <p suppressHydrationWarning>&copy; {new Date().getFullYear()} - Tutti i diritti riservati</p>
+              <nav className="text-accent font-bold" aria-label="Link utili">
                 <div className="grid grid-flow-col gap-4">
                   <Link className="link link-hover" href="/privacy-policy">
                     Privacy Policy
@@ -24,11 +24,9 @@ export default function Footer() {
                     Contatti
                   </Link>
                   <button
-                    className="link link-hover"
-                    onClick={() => {
-                      const modal = document.getElementById('credit_modal') as HTMLDialogElement
-                      modal?.showModal()
-                    }}
+                    type="button"
+                    className="link link-hover text-left"
+                    onClick={() => (document.getElementById('credit_modal') as HTMLDialogElement | null)?.showModal()}
                   >
                     Credit
                   </button>
@@ -49,11 +47,11 @@ export default function Footer() {
       <dialog id="credit_modal" className="modal">
         <div className="modal-box">
           <form method="dialog">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Chiudi">
               ✕
             </button>
           </form>
-          <h3 className="font-bold text-lg">Credits</h3>
+          <h3 className="font-bold text-lg text-primary">Credits</h3>
           <p className="py-4 font-normal text-justify">
             Il sito web che stai leggendo è stato sviluppato sulla base del lavoro di{' '}
             <i>Lince Spensierata</i>, da <i>Aquila Ambiziosa</i> e tutti coloro che lo hanno
@@ -63,6 +61,9 @@ export default function Footer() {
             migliorarlo.
           </p>
         </div>
+        <form method="dialog" className="modal-backdrop">
+          <button aria-label="Chiudi">chiudi</button>
+        </form>
       </dialog>
     </div>
   )

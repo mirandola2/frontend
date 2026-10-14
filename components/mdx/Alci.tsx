@@ -2,10 +2,13 @@
 
 import { useState, useMemo, useRef } from 'react'
 import { useToast } from '@/hooks/useToast'
+import { copyText } from '@/lib/clipboard'
+import Toast from '@/components/Toast'
 
 const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz'
 const digits = '0123456789'
+const defaultSymbols = '!@#$%&*'
 
 interface PdfOptions {
   orientation: 'portrait' | 'landscape'
@@ -16,11 +19,30 @@ interface PdfOptions {
   imagePosition: 'under' | 'back'
 }
 
+function getRandomFromSet(charset: string) {
+  return charset[Math.floor(Math.random() * charset.length)]
+}
+
+function Field({ legend, hint, className = '', children }: {
+  legend: React.ReactNode
+  hint?: React.ReactNode
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <fieldset className={`fieldset ${className}`}>
+      <legend className="fieldset-legend">{legend}</legend>
+      {hint && <p className="text-xs opacity-70 -mt-1 mb-1">{hint}</p>}
+      {children}
+    </fieldset>
+  )
+}
+
 export default function Alci() {
   const { toast, toastMessage, showToast } = useToast()
   const [count, setCount] = useState(50)
   const [format, setFormat] = useState('M-0-M')
-  const [customSymbols, setCustomSymbols] = useState('!@#$%&*')
+  const [customSymbols, setCustomSymbols] = useState(defaultSymbols)
   const [generatedStrings, setGeneratedStrings] = useState<string[]>([])
   const [expertMode, setExpertMode] = useState(false)
   const [separator, setSeparator] = useState('')
@@ -42,28 +64,24 @@ export default function Alci() {
     imagePosition: 'under',
   })
 
-  const isValidFormat = useMemo(() => {
-    return /^[mM0$\s\-]+$/.test(format)
-  }, [format])
-
-  function getRandomFromSet(charset: string) {
-    return charset[Math.floor(Math.random() * charset.length)]
-  }
+  const isValidFormat = useMemo(() => /^[mM0$\s\-]+$/.test(format), [format])
 
   function generateString(formatPattern: string) {
-    const parts = formatPattern.split('-')
-    const result = parts.map(part => {
-      const chars = Array.from(part).map(char => {
-        if (char === 'M') return uppercaseChars
-        if (char === 'm') return lowercaseChars
-        if (char === '0') return digits
-        if (char === '$') return customSymbols || '!@#$%&*'
-        return ''
+    return formatPattern
+      .split('-')
+      .map(part => {
+        const combined = Array.from(part)
+          .map(char => {
+            if (char === 'M') return uppercaseChars
+            if (char === 'm') return lowercaseChars
+            if (char === '0') return digits
+            if (char === '$') return customSymbols || defaultSymbols
+            return ''
+          })
+          .join('')
+        return combined ? getRandomFromSet(combined) : ''
       })
-      const combined = chars.join('')
-      return combined ? getRandomFromSet(combined) : ''
-    })
-    return result.join(separator || '')
+      .join(separator)
   }
 
   function generateStrings() {
@@ -71,33 +89,19 @@ export default function Alci() {
 
     const strings = new Set<string>()
     const maxAttempts = count * 1000
-    let attempts = 0
-
-    while (strings.size < count && attempts < maxAttempts) {
+    for (let attempts = 0; strings.size < count && attempts < maxAttempts; attempts++) {
       strings.add(generateString(format))
-      attempts++
     }
-
     setGeneratedStrings(Array.from(strings))
   }
 
-  async function copyToClipboard(text: string) {
+  async function copyToClipboard(text: string, message = 'Alce Copiata!') {
     try {
-      await navigator.clipboard.writeText(text)
+      await copyText(text)
+      toast(message)
     } catch {
-      const textArea = document.createElement('textarea')
-      textArea.value = text
-      textArea.style.cssText = 'position:fixed;left:-9999px;opacity:0'
-      document.body.appendChild(textArea)
-      textArea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textArea)
+      toast('Impossibile copiare')
     }
-    toast('Alce Copiata!')
-  }
-
-  async function copyAllToClipboard() {
-    await copyToClipboard(generatedStrings.join('\n'))
   }
 
   function getFileName(extension: string) {
@@ -107,30 +111,26 @@ export default function Alci() {
   }
 
   function exportToTxt() {
-    const content = generatedStrings.join('\n')
-    const blob = new Blob([content], { type: 'text/plain' })
+    const blob = new Blob([generatedStrings.join('\n')], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
     link.download = getFileName('txt')
-    document.body.appendChild(link)
     link.click()
-    document.body.removeChild(link)
     URL.revokeObjectURL(url)
   }
 
   function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = event => setUploadedImage(event.target?.result as string)
-      reader.readAsDataURL(file)
-    }
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = event => setUploadedImage(event.target?.result as string)
+    reader.readAsDataURL(file)
   }
 
   function updateColorFromInput(val: string) {
     setTextColor(val)
-    if (val.startsWith('#') && /^#[0-9A-Fa-f]{6}$/.test(val)) {
+    if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
       setColorHex(val)
     } else if (val.includes(',')) {
       const rgb = val.split(',').map(c => parseInt(c.trim()))
@@ -140,16 +140,15 @@ export default function Alci() {
     }
   }
 
+  const updatePdf = (patch: Partial<PdfOptions>) => setPdfOptions(options => ({ ...options, ...patch }))
+
   return (
     <>
       <div className="card not-prose my-5 w-full max-w-3xl mx-auto bg-neutral">
         <div className="card-body">
           <h2 className="card-title">Generatore di Alci</h2>
 
-          <div className="form-control w-full">
-            <label className="label">
-              <span className="label-text">Numero di alci:</span>
-            </label>
+          <Field legend="Numero di alci">
             <input
               type="number"
               min={1}
@@ -157,277 +156,254 @@ export default function Alci() {
               value={count}
               onChange={e => setCount(Math.max(1, Math.min(Number(e.target.value), 1000)))}
               placeholder="50"
-              className="input input-bordered w-full bg-base-200"
+              className="input w-full bg-base-200"
             />
-          </div>
+          </Field>
 
-          <div className="form-control w-full flex flex-row items-center gap-2">
-            <label className="label cursor-pointer">
-              <span className="label-text">Modalità Expert 🧙</span>
-              <input
-                type="checkbox"
-                checked={expertMode}
-                onChange={e => setExpertMode(e.target.checked)}
-                className="toggle toggle-secondary toggle-md ml-2"
-              />
-            </label>
-          </div>
+          <label className="label cursor-pointer w-fit text-base-content mt-2">
+            Modalità Expert 🧙
+            <input
+              type="checkbox"
+              checked={expertMode}
+              onChange={e => setExpertMode(e.target.checked)}
+              className="toggle toggle-secondary"
+            />
+          </label>
 
           {expertMode && (
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">
-                  Pattern: usa <code>m</code>, <code>M</code>, <code>0</code>, e{' '}
-                  <code>$</code> come segnaposto per rispettivamente lettere minuscole
-                  o maiuscole, numeri e simboli scelti casualmente. Usa <code>-</code>{' '}
-                  per separare uno o più segnaposto che generaranno singoli caratteri.
-                </span>
-              </label>
-              <input
-                type="text"
-                value={format}
-                onChange={e => { setFormat(e.target.value); setGeneratedStrings([]) }}
-                className="input input-bordered w-full bg-base-200 font-[monospace]"
-              />
-              <label className="label">
-                <span className="label-text">Separatore</span>
-              </label>
-              <input
-                type="text"
-                value={separator}
-                onChange={e => { setSeparator(e.target.value); setGeneratedStrings([]) }}
-                placeholder="(nessuno)"
-                className="input input-bordered w-full bg-base-200 font-[monospace]"
-              />
-            </div>
-          )}
-
-          {format.includes('$') && expertMode && (
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text font-bold">Simboli personalizzati:</span>
-              </label>
-              <input
-                type="text"
-                value={customSymbols}
-                onChange={e => setCustomSymbols(e.target.value)}
-                placeholder="!@#$%^&*"
-                className="input input-bordered w-full bg-base-200 font-[monospace]"
-              />
-            </div>
+            <>
+              <Field
+                legend="Pattern"
+                hint={
+                  <>
+                    Usa <code>m</code>, <code>M</code>, <code>0</code>, e <code>$</code> come segnaposto per
+                    rispettivamente lettere minuscole o maiuscole, numeri e simboli scelti casualmente.
+                    Usa <code>-</code> per separare uno o più segnaposto che genereranno singoli caratteri.
+                  </>
+                }
+              >
+                <input
+                  type="text"
+                  value={format}
+                  onChange={e => { setFormat(e.target.value); setGeneratedStrings([]) }}
+                  className="input w-full bg-base-200 font-mono"
+                />
+              </Field>
+              <Field legend="Separatore">
+                <input
+                  type="text"
+                  value={separator}
+                  onChange={e => { setSeparator(e.target.value); setGeneratedStrings([]) }}
+                  placeholder="(nessuno)"
+                  className="input w-full bg-base-200 font-mono"
+                />
+              </Field>
+              {format.includes('$') && (
+                <Field legend="Simboli personalizzati">
+                  <input
+                    type="text"
+                    value={customSymbols}
+                    onChange={e => setCustomSymbols(e.target.value)}
+                    placeholder="!@#$%^&*"
+                    className="input w-full bg-base-200 font-mono"
+                  />
+                </Field>
+              )}
+            </>
           )}
 
           {!isValidFormat && format && (
-            <div className="alert alert-error">
+            <div role="alert" className="alert alert-error">
               <span>Formato non valido.</span>
             </div>
           )}
 
-          <button
-            onClick={generateStrings}
-            disabled={!isValidFormat}
-            className="btn btn-primary w-full mt-4"
-          >
+          <button type="button" onClick={generateStrings} disabled={!isValidFormat} className="btn btn-primary w-full mt-4">
             Genera Stringhe
           </button>
 
           {generatedStrings.length > 0 && (
             <>
               <div className="flex gap-2 mt-2 flex-wrap items-stretch">
-                <button onClick={copyAllToClipboard} className="btn btn-sm flex-1">
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard(generatedStrings.join('\n'), 'Alci Copiate!')}
+                  className="btn btn-sm flex-1"
+                >
                   Copia Tutto
                 </button>
-                <button onClick={exportToTxt} className="btn btn-secondary btn-sm flex-1">
+                <button type="button" onClick={exportToTxt} className="btn btn-secondary btn-sm flex-1">
                   Esporta .txt
                 </button>
                 <button
+                  type="button"
                   onClick={() => setShowPdfOptions(!showPdfOptions)}
                   className={`btn btn-secondary btn-sm flex-1 ${showPdfOptions ? 'btn-active' : ''}`}
+                  aria-expanded={showPdfOptions}
                 >
                   Esporta PDF...
                 </button>
               </div>
 
               {showPdfOptions && (
-                <div className="mt-2 p-4 bg-base-200 rounded-lg border border-primary">
+                <div className="mt-2 p-4 bg-base-200 rounded-box border border-primary">
                   <h3 className="font-bold mb-3">Esporta PDF 🚧</h3>
                   <p className="text-sm mb-4">
                     L&apos;esportazione del PDF è ancora sperimentale. Selezionando la
                     modalità expert puoi regolare alcune impostazioni o lasciare quelle
-                    predefinte che sono quelle raccomandate.
+                    predefinite che sono quelle raccomandate.
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {expertMode && (
-                      <div className="form-control md:col-span-2">
-                        <label className="label"><span className="label-text font-bold">Orientamento</span></label>
-                        <span className="text-xs p-1 mb-2">
-                          In modalità verticale (predefinto) la carta sarà da rifilare
-                          nella parte bassa per creare un quadrato che può essere piegato
-                          in due. In modalità orizzontale sarà sufficiente piegare il
-                          foglio in due per la parte lunga e ottenere così l&apos;alce.
-                        </span>
-                        <select
-                          value={pdfOptions.orientation}
-                          onChange={e => setPdfOptions({ ...pdfOptions, orientation: e.target.value as 'portrait' | 'landscape' })}
-                          className="select select-bordered select-sm"
-                        >
-                          <option value="portrait">Verticale</option>
-                          <option value="landscape">Orizzontale</option>
-                        </select>
-                      </div>
-                    )}
-
-                    {expertMode && (
-                      <div className="form-control">
-                        <label className="label"><span className="label-text font-bold">Font</span></label>
-                        <select
-                          value={pdfOptions.fontFamily}
-                          onChange={e => setPdfOptions({ ...pdfOptions, fontFamily: e.target.value })}
-                          className="select select-bordered select-sm"
-                        >
-                          <option value="helvetica">Helvetica</option>
-                          <option value="times">Times</option>
-                          <option value="courier">Courier</option>
-                        </select>
-                      </div>
-                    )}
-
-                    {expertMode && (
-                      <div className="form-control">
-                        <label className="label">
-                          <span className="label-text font-bold">
-                            Dimensione font{pdfOptions.fontSize !== defaultFontSize && ` (default: ${defaultFontSize})`}
-                          </span>
-                        </label>
-                        <input
-                          type="number"
-                          value={pdfOptions.fontSize}
-                          onChange={e => setPdfOptions({ ...pdfOptions, fontSize: Number(e.target.value) })}
-                          className="input input-bordered input-sm"
-                        />
-                      </div>
-                    )}
-
-                    {expertMode && (
-                      <div className="form-control">
-                        <label className="label">
-                          <span className="label-text font-bold">
-                            Margine{pdfOptions.margin !== 10 && ' (default: 10)'}
-                          </span>
-                        </label>
-                        <input
-                          type="number"
-                          value={pdfOptions.margin}
-                          onChange={e => setPdfOptions({ ...pdfOptions, margin: Number(e.target.value) })}
-                          className="input input-bordered input-sm"
-                        />
-                      </div>
-                    )}
-
-                    {expertMode && (
-                      <div className="form-control">
-                        <label className="label"><span className="label-text font-bold">Stile font</span></label>
-                        <select
-                          value={pdfOptions.fontStyle}
-                          onChange={e => setPdfOptions({ ...pdfOptions, fontStyle: e.target.value })}
-                          className="select select-bordered select-sm"
-                        >
-                          <option value="normal">Normale</option>
-                          <option value="bold">Grassetto</option>
-                          <option value="italic">Corsivo</option>
-                          <option value="bolditalic">Grassetto Corsivo</option>
-                        </select>
-                      </div>
-                    )}
-                  </div>
-
                   {expertMode && (
-                    <div className="form-control w-full mt-4">
-                      <label className="label"><span className="label-text font-bold">Colore testo PDF:</span></label>
-                      <div className="flex gap-2 items-center">
-                        <input
-                          type="text"
-                          value={textColor}
-                          onChange={e => updateColorFromInput(e.target.value)}
-                          placeholder="255,0,0 o #FF0000"
-                          className="input input-bordered input-sm flex-1 bg-base-200 font-[monospace]"
-                        />
-                        <input
-                          type="color"
-                          value={colorHex}
-                          onChange={e => { setColorHex(e.target.value); setTextColor(e.target.value) }}
-                          className="w-12 h-12 border-2 border-base-300 rounded-full cursor-pointer"
-                        />
+                    <>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <Field
+                          legend="Orientamento"
+                          className="md:col-span-2"
+                          hint="In modalità verticale (predefinito) la carta sarà da rifilare nella parte bassa per creare un quadrato che può essere piegato in due. In modalità orizzontale sarà sufficiente piegare il foglio in due per la parte lunga e ottenere così l'alce."
+                        >
+                          <select
+                            value={pdfOptions.orientation}
+                            onChange={e => updatePdf({ orientation: e.target.value as PdfOptions['orientation'] })}
+                            className="select select-sm w-full"
+                          >
+                            <option value="portrait">Verticale</option>
+                            <option value="landscape">Orizzontale</option>
+                          </select>
+                        </Field>
+
+                        <Field legend="Font">
+                          <select
+                            value={pdfOptions.fontFamily}
+                            onChange={e => updatePdf({ fontFamily: e.target.value })}
+                            className="select select-sm w-full"
+                          >
+                            <option value="helvetica">Helvetica</option>
+                            <option value="times">Times</option>
+                            <option value="courier">Courier</option>
+                          </select>
+                        </Field>
+
+                        <Field legend={<>Dimensione font{pdfOptions.fontSize !== defaultFontSize && ` (default: ${defaultFontSize})`}</>}>
+                          <input
+                            type="number"
+                            value={pdfOptions.fontSize}
+                            onChange={e => updatePdf({ fontSize: Number(e.target.value) })}
+                            className="input input-sm w-full"
+                          />
+                        </Field>
+
+                        <Field legend={<>Margine{pdfOptions.margin !== 10 && ' (default: 10)'}</>}>
+                          <input
+                            type="number"
+                            value={pdfOptions.margin}
+                            onChange={e => updatePdf({ margin: Number(e.target.value) })}
+                            className="input input-sm w-full"
+                          />
+                        </Field>
+
+                        <Field legend="Stile font">
+                          <select
+                            value={pdfOptions.fontStyle}
+                            onChange={e => updatePdf({ fontStyle: e.target.value })}
+                            className="select select-sm w-full"
+                          >
+                            <option value="normal">Normale</option>
+                            <option value="bold">Grassetto</option>
+                            <option value="italic">Corsivo</option>
+                            <option value="bolditalic">Grassetto Corsivo</option>
+                          </select>
+                        </Field>
                       </div>
-                    </div>
-                  )}
 
-                  {expertMode && (
-                    <div className="form-control w-full mt-4">
-                      <label className="label"><span className="label-text font-bold">Logo (opzionale):</span></label>
-                      <span className="text-xs p-1 mb-2">
-                        L&apos;immagine apparirà sotto il testo nel PDF, mantenendo le proporzioni originali
-                      </span>
-                      <input
-                        type="file"
-                        accept="image/png, image/jpeg, image/jpg"
-                        onChange={handleImageUpload}
-                        className="file-input file-input-bordered file-input-sm w-full bg-base-200"
-                      />
-                    </div>
-                  )}
+                      <Field legend="Colore testo PDF" className="mt-2">
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="text"
+                            value={textColor}
+                            onChange={e => updateColorFromInput(e.target.value)}
+                            placeholder="255,0,0 o #FF0000"
+                            className="input input-sm flex-1 bg-base-100 font-mono"
+                          />
+                          <input
+                            type="color"
+                            value={colorHex}
+                            onChange={e => { setColorHex(e.target.value); setTextColor(e.target.value) }}
+                            className="w-10 h-10 border-2 border-base-300 rounded-full cursor-pointer"
+                            aria-label="Scegli colore"
+                          />
+                        </div>
+                      </Field>
 
-                  {uploadedImage && expertMode && (
-                    <div className="mt-2 form-control w-full">
-                      <label className="label"><span className="label-text">Opacità logo:</span></label>
-                      <input
-                        type="number"
-                        min={0}
-                        max={100}
-                        value={imageOpacity}
-                        onChange={e => setImageOpacity(Number(e.target.value))}
-                        className="input input-bordered input-sm"
-                      />
-                    </div>
-                  )}
-
-                  {uploadedImage && expertMode && (
-                    <div className="mt-2 form-control w-full">
-                      <label className="label"><span className="label-text">Posizione logo:</span></label>
-                      <span className="text-xs p-1 mb-2">
-                        Scegliendo &quot;Retro del foglio&quot; la stampa dovrà essere fronte retro e il logo verrà stampato su quello che diventerà l&apos;interno dell&apos;alce. Scegliendo &quot;Sotto il testo&quot; il logo verrà stampato capovolto e sarà a contatto con la fronte.
-                      </span>
-                      <select
-                        value={pdfOptions.imagePosition}
-                        onChange={e => setPdfOptions({ ...pdfOptions, imagePosition: e.target.value as 'under' | 'back' })}
-                        className="select select-bordered select-sm"
+                      <Field
+                        legend="Logo (opzionale)"
+                        className="mt-2"
+                        hint="L'immagine apparirà sotto il testo nel PDF, mantenendo le proporzioni originali"
                       >
-                        <option value="under">Sotto il testo (ruotato)</option>
-                        <option value="back">Retro del foglio</option>
-                      </select>
-                    </div>
+                        <input
+                          type="file"
+                          accept="image/png, image/jpeg, image/jpg"
+                          onChange={handleImageUpload}
+                          className="file-input file-input-sm w-full bg-base-100"
+                        />
+                      </Field>
+
+                      {uploadedImage && (
+                        <>
+                          <Field legend="Opacità logo" className="mt-2">
+                            <input
+                              type="number"
+                              min={0}
+                              max={100}
+                              value={imageOpacity}
+                              onChange={e => setImageOpacity(Number(e.target.value))}
+                              className="input input-sm w-full"
+                            />
+                          </Field>
+
+                          <Field
+                            legend="Posizione logo"
+                            className="mt-2"
+                            hint={
+                              <>
+                                Scegliendo &quot;Retro del foglio&quot; la stampa dovrà essere fronte retro e il logo verrà
+                                stampato su quello che diventerà l&apos;interno dell&apos;alce. Scegliendo &quot;Sotto il
+                                testo&quot; il logo verrà stampato capovolto e sarà a contatto con la fronte.
+                              </>
+                            }
+                          >
+                            <select
+                              value={pdfOptions.imagePosition}
+                              onChange={e => updatePdf({ imagePosition: e.target.value as PdfOptions['imagePosition'] })}
+                              className="select select-sm w-full"
+                            >
+                              <option value="under">Sotto il testo (ruotato)</option>
+                              <option value="back">Retro del foglio</option>
+                            </select>
+                          </Field>
+                        </>
+                      )}
+                    </>
                   )}
 
                   <button
-                    onClick={exportToPdfWithDialog}
+                    type="button"
+                    onClick={() => dialogRef.current?.showModal()}
                     className="btn btn-accent btn-sm w-full mt-4"
-                    disabled={generatedStrings.length === 0}
                   >
                     Genera PDF
                   </button>
                 </div>
               )}
 
-              <div className="mt-5 font-bold">
-                Alci Generate ({generatedStrings.length})
-              </div>
+              <div className="mt-5 font-bold">Alci Generate ({generatedStrings.length})</div>
               <div className="grid gap-2 lg:grid-cols-6 grid-cols-3">
                 {generatedStrings.map((str, i) => (
                   <button
+                    type="button"
                     key={i}
                     onClick={() => copyToClipboard(str)}
-                    className="btn btn-sm btn-outline font-[monospace] w-auto min-w-fit max-w-full text-left wrap-break-word"
+                    className="btn btn-sm btn-outline font-mono w-auto min-w-fit max-w-full wrap-break-word"
                     title="Copia"
                   >
                     {str}
@@ -450,17 +426,7 @@ export default function Alci() {
         </div>
       </dialog>
 
-      {showToast && (
-        <div className="toast toast-top toast-center">
-          <div className="alert alert-info">
-            <span>{toastMessage}</span>
-          </div>
-        </div>
-      )}
+      <Toast show={showToast} message={toastMessage} />
     </>
   )
-
-  async function exportToPdfWithDialog() {
-    dialogRef.current?.showModal()
-  }
 }

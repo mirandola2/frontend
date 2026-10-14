@@ -51,13 +51,13 @@ export default function Morse() {
           separando le lettere con <strong>/</strong> e le parole con <strong>{'//'}</strong>.
         </p>
         <textarea
-          className="textarea w-full textarea-bordered bg-base-200 h-24 font-[monospace]"
+          className="textarea w-full bg-base-200 h-24 font-mono"
           placeholder="Messaggio (SOS)"
           value={mexText}
           onChange={e => text2morse(e.target.value)}
         />
         <textarea
-          className="textarea w-full textarea-bordered bg-base-200 h-24 font-[monospace]"
+          className="textarea w-full bg-base-200 h-24 font-mono"
           placeholder="Codice Morse (... / --- / ...)"
           value={mexMorse}
           onChange={e => morse2text(e.target.value)}

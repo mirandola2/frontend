@@ -1,5 +1,5 @@
 import { getQuotes } from '@/lib/content'
-import type { Quote as QuoteType } from '@/lib/content'
+import RandomQuote from './RandomQuote'
 
 interface QuoteProps {
   type?: string
@@ -8,26 +8,12 @@ interface QuoteProps {
 }
 
 export default function Quote({ type, quote, className = '' }: QuoteProps) {
-  let displayQuote: QuoteType | null = null
-
-  if (quote) {
-    displayQuote = { text: quote, type: type || '' }
-  } else if (type) {
-    const quotes = getQuotes().filter((q) => q.type === type)
-    if (quotes.length > 0) {
-      displayQuote = quotes[Math.floor(Math.random() * quotes.length)]
-    }
-  }
-
-  if (!displayQuote) return null
+  const quotes = quote ? [{ text: quote, type: type || '' }] : getQuotes().filter(q => q.type === type)
+  if (quotes.length === 0) return null
 
   return (
-    <div
-      className={`my-8 max-w-xl mx-auto italic text-center font-serif text-xl ${className}`}
-      style={{ textWrap: 'balance' }}
-    >
-      &laquo;{displayQuote.text}&raquo;{' '}
-      {displayQuote.author && <>({displayQuote.author})</>}
-    </div>
+    <blockquote className={`my-8 max-w-xl mx-auto px-4 italic text-center font-serif text-xl text-balance ${className}`}>
+      <RandomQuote quotes={quotes} />
+    </blockquote>
   )
 }
