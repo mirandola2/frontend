@@ -13,6 +13,6 @@ const nextConfig: NextConfig = {
 
 export default withMDX({
   options: {
-    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter', 'remark-gfm'],
   },
 })(nextConfig)

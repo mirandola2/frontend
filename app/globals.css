@@ -60,9 +60,13 @@
   --font-serif: 'Playfair Display', ui-serif;
 
   --color-lc: #FFBE0A;
+  --color-lc-content: #462678;
   --color-eg: #559928;
+  --color-eg-content: #ffffff;
   --color-rs: #E84C3E;
+  --color-rs-content: #ffffff;
   --color-cc: #9B66A5;
+  --color-cc-content: #ffffff;
   --color-white: #ffffff;
 
 }

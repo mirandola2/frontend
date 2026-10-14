@@ -25,7 +25,7 @@ export default async function HomePage() {
       <Hero title="Quarant'anni di giochi, avventure e strade." image="/img/archive/2022_foto-gruppo.jpg" big />
 
       <div className="container grid md:grid-cols-3 -mt-24">
-        <div className="card max-w-full bg-lc text-eg-content rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none relative overflow-hidden">
+        <div className="card max-w-full bg-lc text-lc-content rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none relative overflow-hidden">
           <div className="text-center card-body items-center z-10">
             <h2 className="card-title">Lupetti e Coccinelle</h2>
             <p>
@@ -34,14 +34,14 @@ export default async function HomePage() {
               <Link className="link" href="/lc">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <Link className="btn btn-ghost btn-sm" href="/lc/lupetti">Branco</Link>
-              <Link className="btn btn-ghost btn-sm" href="/lc/coccinelle">Cerchio</Link>
+              <Link className="btn btn-outline btn-sm" href="/lc/lupetti">Branco</Link>
+              <Link className="btn btn-outline btn-sm" href="/lc/coccinelle">Cerchio</Link>
             </div>
           </div>
           <Image src="/img/graphics/icon_cappellini.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
         </div>
 
-        <div className="card max-w-full bg-eg text-lc-content rounded-none relative overflow-hidden">
+        <div className="card max-w-full bg-eg text-eg-content rounded-none relative overflow-hidden">
           <div className="card-body items-center text-center z-10">
             <h2 className="card-title">Esploratori e Guide</h2>
             <p>
@@ -50,8 +50,8 @@ export default async function HomePage() {
               <Link className="link" href="/eg">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <Link className="btn btn-ghost btn-sm" href="/eg/brownsea">Esploratori</Link>
-              <Link className="btn btn-ghost btn-sm" href="/eg/antares">Guide</Link>
+              <Link className="btn btn-outline btn-sm" href="/eg/brownsea">Esploratori</Link>
+              <Link className="btn btn-outline btn-sm" href="/eg/antares">Guide</Link>
             </div>
           </div>
           <Image src="/img/graphics/icon_tenda.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
@@ -66,8 +66,8 @@ export default async function HomePage() {
               <Link className="link" href="/rs">Leggi.</Link>
             </p>
             <div className="card-actions justify-center">
-              <Link className="btn btn-ghost btn-sm" href="/rs/noviziato">Noviziato</Link>
-              <Link className="btn btn-ghost btn-sm" href="/rs/mdv">Clan Fuoco</Link>
+              <Link className="btn btn-outline btn-sm" href="/rs/noviziato">Noviziato</Link>
+              <Link className="btn btn-outline btn-sm" href="/rs/mdv">Clan Fuoco</Link>
             </div>
           </div>
           <Image src="/img/graphics/icon_forcola.svg" alt="" fill className="absolute w-full h-full p-2 opacity-10 object-contain" />
