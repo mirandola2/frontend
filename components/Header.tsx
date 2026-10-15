@@ -2,10 +2,43 @@ import Link from 'next/link'
 import Image from 'next/image'
 import HeaderNavbar from './HeaderNavbar'
 import NavLink from './NavLink'
-import { DRAWER_ID, menuItems } from './navigation'
-import { CaretDown, List } from '@phosphor-icons/react/ssr'
+import { DRAWER_ID, menuItems, utilityItems } from './navigation'
+import { CaretDown, List, Toolbox, X } from '@phosphor-icons/react/ssr'
 
 const activeLink = 'aria-[current=page]:bg-white/15 aria-[current=page]:font-bold'
+
+// daisyUI speed dial, anchored to the navbar instead of the screen corner and opening downwards
+function UtilitiesFab() {
+  return (
+    <div className="relative size-10 flex-none">
+      <div className="fab absolute top-0 end-0 bottom-auto flex-col [&_.fab-close]:top-0 [&_.fab-close]:bottom-auto">
+        <div
+          tabIndex={0}
+          role="button"
+          className="size-10 place-items-center rounded-field cursor-pointer text-white hover:bg-black/10 hover:text-[#dfd2ff]"
+          aria-label="Utilità"
+        >
+          <Toolbox size={26} weight="bold" aria-hidden />
+        </div>
+        <div className="fab-close">
+          <span className="btn btn-circle bg-white text-secondary border-0 shadow-lg" aria-label="Chiudi">
+            <X size={20} weight="bold" aria-hidden />
+          </span>
+        </div>
+        {utilityItems.map(({ label, href, icon: Icon }) => (
+          <NavLink key={href} href={href} className="group">
+            <span className="rounded-full bg-secondary text-white px-3 py-1 shadow-lg group-hover:bg-[#dfd2ff] group-hover:text-secondary group-aria-[current=page]:font-bold">
+              {label}
+            </span>
+            <span className="btn btn-circle bg-secondary text-white border-0 shadow-lg group-hover:bg-[#dfd2ff] group-hover:text-secondary">
+              <Icon size={22} aria-hidden />
+            </span>
+          </NavLink>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function Header({ children }: { children: React.ReactNode }) {
   return (
@@ -13,7 +46,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
       <input id={DRAWER_ID} type="checkbox" className="drawer-toggle" aria-label="Apri il menu" />
       <div className="drawer-content flex flex-col min-h-screen">
         <HeaderNavbar>
-          <div className="container max-w-none max-xl:px-5 xl:mx-auto flex items-center">
+          <div className="container max-w-none max-xl:pl-5 max-xl:pr-0 xl:mx-auto flex items-center gap-1">
             <div className="flex-1">
               <Link href="/" aria-label="Home - Scout Mirandola 2" className="inline-block">
                 <Image
@@ -67,6 +100,8 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 })}
               </ul>
             </nav>
+
+            <UtilitiesFab />
           </div>
 
           <div className="flex-none xl:hidden">
