@@ -59,8 +59,8 @@ function birthdaysFormatter(birthdays: BirthdayPerson[]): string {
 
 const CONFETTI_COLORS = ['#FFBE0A', '#559928', '#D24D41', '#9B66A5', '#462678']
 
-// Confetti over the "Compleanni" box when someone has their birthday today: once when the
-// box scrolls into view, then again on hover (throttled).
+// Confetti over the "Compleanni" box when someone has their birthday today, on hover and
+// on click (throttled).
 function BirthdayConfetti({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLSpanElement>(null)
 
@@ -85,20 +85,11 @@ function BirthdayConfetti({ children }: { children: React.ReactNode }) {
       })
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          fire()
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.6 },
-    )
-    observer.observe(box)
     box.addEventListener('mouseenter', fire)
+    box.addEventListener('click', fire)
     return () => {
-      observer.disconnect()
       box.removeEventListener('mouseenter', fire)
+      box.removeEventListener('click', fire)
     }
   }, [])
 
