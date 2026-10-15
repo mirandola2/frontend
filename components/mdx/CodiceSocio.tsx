@@ -2,6 +2,7 @@
 
 import { useState, useRef, useSyncExternalStore } from 'react'
 import { useCookie } from '@/hooks/useCookie'
+import { sha256Hex } from '@/lib/sha256'
 
 interface CodiceSocioProps {
   lastupdate?: string
@@ -20,11 +21,6 @@ function subscribe(listener: () => void) {
   return () => listeners.delete(listener)
 }
 const notify = () => listeners.forEach(l => l())
-
-async function sha256Hex(message: string) {
-  const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(message))
-  return Array.from(new Uint8Array(hashBuffer), b => b.toString(16).padStart(2, '0')).join('')
-}
 
 export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
   const pskCookie = useCookie('psk')
