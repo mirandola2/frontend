@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo } from 'react'
 import { useToast } from '@/hooks/useToast'
 import { copyText } from '@/lib/clipboard'
 import Toast from '@/components/Toast'
+import { exportAlciPdf } from '@/lib/alciPdf'
 
 const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz'
@@ -13,7 +14,8 @@ const defaultSymbols = '!@#$%&*'
 interface PdfOptions {
   orientation: 'portrait' | 'landscape'
   fontFamily: string
-  fontSize: number
+  /** null = default size, computed from the pattern length */
+  fontSize: number | null
   fontStyle: string
   margin: number
   imagePosition: 'under' | 'back'
@@ -51,14 +53,14 @@ export default function Alci() {
   const [colorHex, setColorHex] = useState('#000000')
   const [uploadedImage, setUploadedImage] = useState<string | null>(null)
   const [imageOpacity, setImageOpacity] = useState(100)
-  const dialogRef = useRef<HTMLDialogElement>(null)
+  const [exporting, setExporting] = useState(false)
 
   const defaultFontSize = useMemo(() => -35 * format.split('-').length + 320, [format])
 
   const [pdfOptions, setPdfOptions] = useState<PdfOptions>({
     orientation: 'portrait',
     fontFamily: 'helvetica',
-    fontSize: defaultFontSize,
+    fontSize: null,
     fontStyle: 'bold',
     margin: 10,
     imagePosition: 'under',
@@ -141,6 +143,24 @@ export default function Alci() {
   }
 
   const updatePdf = (patch: Partial<PdfOptions>) => setPdfOptions(options => ({ ...options, ...patch }))
+  const fontSize = pdfOptions.fontSize ?? defaultFontSize
+
+  async function exportToPdf() {
+    if (generatedStrings.length === 0 || exporting) return
+    setExporting(true)
+    try {
+      await exportAlciPdf(
+        generatedStrings,
+        { ...pdfOptions, fontSize, color: colorHex, image: uploadedImage, imageOpacity },
+        getFileName('pdf'),
+      )
+    } catch (err) {
+      console.error('PDF export failed:', err)
+      toast('Errore durante la creazione del PDF')
+    } finally {
+      setExporting(false)
+    }
+  }
 
   return (
     <>
@@ -284,11 +304,11 @@ export default function Alci() {
                           </select>
                         </Field>
 
-                        <Field legend={<>Dimensione font{pdfOptions.fontSize !== defaultFontSize && ` (default: ${defaultFontSize})`}</>}>
+                        <Field legend={<>Dimensione font{fontSize !== defaultFontSize && ` (default: ${defaultFontSize})`}</>}>
                           <input
                             type="number"
-                            value={pdfOptions.fontSize}
-                            onChange={e => updatePdf({ fontSize: Number(e.target.value) })}
+                            value={fontSize}
+                            onChange={e => updatePdf({ fontSize: e.target.value === '' ? null : Number(e.target.value) })}
                             className="input input-sm w-full"
                           />
                         </Field>
@@ -388,9 +408,11 @@ export default function Alci() {
 
                   <button
                     type="button"
-                    onClick={() => dialogRef.current?.showModal()}
+                    onClick={exportToPdf}
+                    disabled={exporting}
                     className="btn btn-accent btn-sm w-full mt-4"
                   >
+                    {exporting && <span className="loading loading-spinner loading-xs" />}
                     Genera PDF
                   </button>
                 </div>
@@ -414,17 +436,6 @@ export default function Alci() {
           )}
         </div>
       </div>
-
-      <dialog ref={dialogRef} className="modal">
-        <div className="modal-box">
-          <p>Questa funzionalità non è ancora implementata. Usa l&apos;esportazione .txt per ora.</p>
-          <div className="modal-action">
-            <form method="dialog">
-              <button className="btn">Chiudi</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
 
       <Toast show={showToast} message={toastMessage} />
     </>
