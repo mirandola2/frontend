@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 import Papa from 'papaparse'
+import { parse as parseYaml } from 'yaml'
 
 const contentDir = path.join(process.cwd(), 'content')
 const blogDir = path.join(contentDir, 'blog')
@@ -58,8 +58,10 @@ function cached<T>(fn: () => T): () => T {
   }
 }
 
+// YAML between the leading `---` fences. Dates stay plain strings (e.g. "2025-05-01").
 function readFrontmatter(filePath: string) {
-  return matter(fs.readFileSync(filePath, 'utf-8')).data
+  const match = fs.readFileSync(filePath, 'utf-8').match(/^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/)
+  return (match && parseYaml(match[1])) || {}
 }
 
 export const getAllPages = cached((): PageDoc[] =>
