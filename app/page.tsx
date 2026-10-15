@@ -6,6 +6,7 @@ import BlogLayout from '@/components/BlogLayout'
 import BlogFeed from '@/components/BlogFeed'
 import HomeMDX from '@/content/_home.mdx'
 import { getAllBlogPosts } from '@/lib/content'
+import { ArrowRight, Newspaper, PushPin } from '@phosphor-icons/react/ssr'
 
 const branches = [
   {
@@ -48,7 +49,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Hero title="Oltre quarant'anni di giochi, avventure e strade." image="/img/archive/2022_foto-gruppo.jpg" big />
+      <Hero title="Oltre quarant'anni di Giochi, Avventure e Strade." image="/img/archive/2022_foto-gruppo.jpg" big />
 
       <div className="container grid md:grid-cols-3 -mt-24 relative z-10">
         {branches.map(branch => (
@@ -85,7 +86,10 @@ export default function HomePage() {
       <BlogLayout>
         <div className="card max-w-none bg-base-300">
           <div className="card-body">
-            <h2 className="card-title text-2xl">In Primo Piano</h2>
+            <h2 className="card-title text-2xl">
+              <PushPin size={26} weight="duotone" aria-hidden />
+              In Primo Piano
+            </h2>
             <div className="prose max-w-none prose-a:text-secondary prose-a:underline prose-li:my-0 prose-code:before:content-none prose-code:after:content-none">
               <HomeMDX />
             </div>
@@ -96,8 +100,9 @@ export default function HomePage() {
         </div>
         <p className="text-right w-full mt-4">
           <Link href="/blog" className="btn btn-primary">
+            <Newspaper size={20} weight="duotone" aria-hidden />
             Leggi tutte le notizie
-            <span aria-hidden="true">→</span>
+            <ArrowRight size={18} weight="bold" aria-hidden />
           </Link>
         </p>
       </BlogLayout>

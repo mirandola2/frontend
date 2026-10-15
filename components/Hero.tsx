@@ -30,7 +30,7 @@ export default function Hero({ title, image, color = 'primary', big = false }: H
       >
         <div className="text-center md:text-left md:mr-auto">
           <p className="mb-4 text-lg md:text-2xl opacity-90">AGESCI - Gruppo Scout Mirandola 2</p>
-          <h1 className="font-display text-5xl md:text-6xl text-balance drop-shadow-md">{title}</h1>
+          <h1 className="font-display text-5xl md:text-6xl">{title}</h1>
         </div>
       </div>
     </div>
