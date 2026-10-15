@@ -178,11 +178,11 @@ html {
   margin-inline: auto;
 }
 
-.prose-container a:not(.btn) {
+.prose-container a:not(.btn, .not-prose *) {
   text-decoration: none;
 }
 
-.prose-container a:not(.btn):hover {
+.prose-container a:not(.btn, .not-prose *):hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
