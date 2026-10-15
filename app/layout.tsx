@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Roboto, Roboto_Slab, Caprasimo, Playfair_Display } from 'next/font/google'
+import { Roboto, Roboto_Slab, Roboto_Serif, Caprasimo } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
@@ -21,10 +21,10 @@ const caprasimo = Caprasimo({
   variable: '--font-caprasimo',
 })
 
-const playfair = Playfair_Display({
+const robotoSerif = Roboto_Serif({
   subsets: ['latin'],
   style: ['normal', 'italic'],
-  variable: '--font-playfair',
+  variable: '--font-roboto-serif',
 })
 
 // Only these Material Symbols are downloaded (~3 KB instead of ~370 KB).
@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="it" className={`${roboto.variable} ${robotoSlab.variable} ${caprasimo.variable} ${playfair.variable}`}>
+    <html lang="it" className={`${roboto.variable} ${robotoSlab.variable} ${caprasimo.variable} ${robotoSerif.variable}`}>
       <head>
         <link rel="preconnect" href="https://ik.imagekit.io" />
         {/* Icon font: `display=block` avoids flashing the ligature names as text. */}

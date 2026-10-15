@@ -53,8 +53,9 @@ export default function StaffGrid({ allStaff, initialStaff, coca = false, select
   return (
     <>
       {selector && (
+        <div className="flex justify-end mb-4">
         <select
-          className="select select-primary rounded-full w-full max-w-xs block ml-auto mb-4"
+          className="select select-primary w-full max-w-xs"
           aria-label="Filtra per staff"
           value={actualStaff}
           onChange={e => setActualStaff(e.target.value)}
@@ -69,6 +70,7 @@ export default function StaffGrid({ allStaff, initialStaff, coca = false, select
           <option value="CF">Clan Fuoco</option>
           <option value="CC">Altri incarichi</option>
         </select>
+        </div>
       )}
       <div className="not-prose clear-both grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(person => (

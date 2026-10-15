@@ -13,6 +13,7 @@ import CodiceSocio from '@/components/mdx/CodiceSocio'
 import GroupSize from '@/components/mdx/GroupSize'
 import MyDiv from '@/components/mdx/MyDiv'
 import MdxImage from '@/components/mdx/MdxImage'
+import ImageLink from '@/components/mdx/ImageLink'
 
 export function useMDXComponents(): MDXComponents {
   return {
@@ -30,5 +31,6 @@ export function useMDXComponents(): MDXComponents {
     CodiceSocio,
     GroupSize,
     MyDiv,
+    ImageLink,
   }
 }
