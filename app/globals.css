@@ -54,14 +54,14 @@
 /* Font families come from next/font (app/layout.tsx), which also provides
    metric-matched fallbacks to avoid layout shift while the fonts load. */
 @theme inline {
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-caprasimo), ui-sans-serif, system-ui;
   --font-serif: var(--font-playfair), ui-serif, serif;
 }
 
 @theme {
   --color-lc: #FFBE0A;
-  --color-lc-content: #462678;
+  --color-lc-content: #000000;
   --color-eg: #559928;
   --color-eg-content: #ffffff;
   --color-rs: #D24D41;
@@ -97,16 +97,11 @@ html {
   scroll-padding-top: 6rem;
 }
 
-/* Content text in black: the typography plugin defaults to greys. */
-.prose {
-  --tw-prose-body: var(--color-base-content);
-  --tw-prose-headings: var(--color-base-content);
-  --tw-prose-lead: var(--color-base-content);
-  --tw-prose-bold: var(--color-base-content);
-  --tw-prose-quotes: var(--color-base-content);
-  --tw-prose-captions: var(--color-base-content);
-  --tw-prose-code: var(--color-base-content);
-  --tw-prose-th-borders: var(--color-base-300);
+/* Headings in Roboto Slab; `font-display` (Caprasimo) titles override it as a utility. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto-slab), ui-serif, serif;
+  }
 }
 
 .prose-quoteless blockquote p:first-of-type::before {
@@ -128,6 +123,20 @@ html {
   prose-h2:text-primary prose-h3:text-secondary;
 }
 
+/* Content text in black: typography/daisyUI default to greys (`:root .prose` in daisyUI).
+   Must come after `.prose-container`, whose @apply emits the same selector. */
+:root .prose,
+:root .prose-container {
+  --tw-prose-body: var(--color-base-content);
+  --tw-prose-headings: var(--color-base-content);
+  --tw-prose-lead: var(--color-base-content);
+  --tw-prose-bold: var(--color-base-content);
+  --tw-prose-quotes: var(--color-base-content);
+  --tw-prose-captions: var(--color-base-content);
+  --tw-prose-code: var(--color-base-content);
+  --tw-prose-th-borders: var(--color-base-300);
+}
+
 .prose-container table {
   display: block;
   max-width: -moz-fit-content;
@@ -135,6 +144,24 @@ html {
   margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
+}
+
+/* Tables of images (e.g. "La Stagione di Caccia"): keep them within the column. */
+.prose-container table:has(img) {
+  white-space: normal;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.prose-container table:has(img) td,
+.prose-container table:has(img) th {
+  vertical-align: bottom;
+}
+
+.prose-container table:has(img) img {
+  max-height: 9rem;
+  width: auto;
+  margin-inline: auto;
 }
 
 .prose-container a:not(.btn) {

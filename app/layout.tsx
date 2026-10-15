@@ -1,13 +1,18 @@
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Caprasimo, Playfair_Display } from 'next/font/google'
+import { Roboto, Roboto_Slab, Caprasimo, Playfair_Display } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
 
-const dmSans = DM_Sans({
+const roboto = Roboto({
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-roboto',
+})
+
+const robotoSlab = Roboto_Slab({
+  subsets: ['latin'],
+  variable: '--font-roboto-slab',
 })
 
 const caprasimo = Caprasimo({
@@ -65,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="it" className={`${dmSans.variable} ${caprasimo.variable} ${playfair.variable}`}>
+    <html lang="it" className={`${roboto.variable} ${robotoSlab.variable} ${caprasimo.variable} ${playfair.variable}`}>
       <head>
         <link rel="preconnect" href="https://ik.imagekit.io" />
         {/* Icon font: `display=block` avoids flashing the ligature names as text. */}
