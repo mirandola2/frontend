@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/content'
 import { imagekitUrl } from '@/lib/imagekit'
 import BlogLayout from '@/components/BlogLayout'
+import BlogFeed from '@/components/BlogFeed'
 import CategoryBadge, { formatMonthYear } from '@/components/CategoryBadge'
 import type { Metadata } from 'next'
 
@@ -32,31 +33,53 @@ export default async function BlogPost({ params }: Props) {
   if (!post) notFound()
 
   const { default: MDXContent } = await import(`@/content/blog/${slug}.mdx`)
+  const otherPosts = getAllBlogPosts()
+    .filter(p => p.slug !== slug)
+    .slice(0, 2)
 
   return (
     <BlogLayout>
-      <header className="card bg-neutral image-full w-full mx-auto relative overflow-hidden">
-        {post.img && (
-          <figure>
-            <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" preload className="object-cover opacity-50 blur-sm" />
-          </figure>
-        )}
-        <div className="card-body gap-3 py-10">
-          <Link href="/blog" className="text-sm font-bold uppercase tracking-widest opacity-80 hover:opacity-100 hover:underline w-fit">
-            ← Blog
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-display text-balance">{post.title}</h1>
-          <p className="text-lg">{post.description || 'Descrizione non disponibile.'}</p>
-          <div className="card-actions justify-end">
-            {post.category && <CategoryBadge category={post.category} />}
-            <span className="badge border-0 bg-base-300">{formatMonthYear(post.date, true)}</span>
+      <article>
+        <header className="card bg-neutral overflow-hidden">
+          {post.img && (
+            <figure className="relative aspect-video max-h-96 w-full bg-base-300">
+              {/* blurred copy fills the frame, the sharp image is shown whole on top */}
+              <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover blur-xl scale-110 opacity-60" />
+              <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" preload className="object-contain" />
+            </figure>
+          )}
+          <div className="card-body gap-3">
+            <nav className="flex flex-wrap items-center gap-2 text-sm">
+              <Link href="/blog" className="font-bold text-secondary hover:underline">
+                ← Tutte le notizie
+              </Link>
+              <span className="opacity-40">·</span>
+              <time dateTime={post.date} className="opacity-70">{formatMonthYear(post.date, true)}</time>
+              {post.category && <CategoryBadge category={post.category} />}
+            </nav>
+            <h1 className="font-display text-4xl md:text-5xl text-primary text-balance">{post.title}</h1>
+            {post.description && <p className="text-lg md:text-xl">{post.description}</p>}
           </div>
-        </div>
-      </header>
+        </header>
 
-      <div className="prose-container mt-6">
-        <MDXContent />
-      </div>
+        <div className="prose-container prose-lg mt-8 px-1">
+          <MDXContent />
+        </div>
+      </article>
+
+      {otherPosts.length > 0 && (
+        <section className="mt-12 border-t border-base-300 pt-8">
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <h2 className="text-2xl font-bold text-primary">Altre notizie</h2>
+            <Link href="/blog" className="btn btn-sm btn-outline btn-secondary">
+              Vedi tutte
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <BlogFeed posts={otherPosts} images={false} />
+          </div>
+        </section>
+      )}
     </BlogLayout>
   )
 }

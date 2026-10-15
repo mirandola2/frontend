@@ -25,7 +25,7 @@
   --color-accent-content: #1a1a1a;
 
   --color-neutral: #E5D6C7;
-  --color-neutral-content: #1a1a1a;
+  --color-neutral-content: #000000;
 
   --color-info: #3ABFF8;
   --color-info-content: #ffffff;
@@ -54,7 +54,7 @@
 /* Font families come from next/font (app/layout.tsx), which also provides
    metric-matched fallbacks to avoid layout shift while the fonts load. */
 @theme inline {
-  --font-sans: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-caprasimo), ui-sans-serif, system-ui;
   --font-serif: var(--font-playfair), ui-serif, serif;
 }
@@ -64,7 +64,7 @@
   --color-lc-content: #462678;
   --color-eg: #559928;
   --color-eg-content: #ffffff;
-  --color-rs: #E84C3E;
+  --color-rs: #D24D41;
   --color-rs-content: #ffffff;
   --color-cc: #9B66A5;
   --color-cc-content: #ffffff;
@@ -95,6 +95,18 @@
 
 html {
   scroll-padding-top: 6rem;
+}
+
+/* Content text in black: the typography plugin defaults to greys. */
+.prose {
+  --tw-prose-body: var(--color-base-content);
+  --tw-prose-headings: var(--color-base-content);
+  --tw-prose-lead: var(--color-base-content);
+  --tw-prose-bold: var(--color-base-content);
+  --tw-prose-quotes: var(--color-base-content);
+  --tw-prose-captions: var(--color-base-content);
+  --tw-prose-code: var(--color-base-content);
+  --tw-prose-th-borders: var(--color-base-300);
 }
 
 .prose-quoteless blockquote p:first-of-type::before {

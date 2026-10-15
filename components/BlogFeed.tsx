@@ -16,15 +16,26 @@ export default function BlogFeed({ posts, horizontal = false, images = true }: B
         <article
           key={post.slug}
           className={`card relative w-full bg-base-100 shadow-md transition duration-200 hover:-translate-y-0.5 hover:shadow-xl has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-secondary ${
-            horizontal ? 'md:card-side' : ''
+            horizontal ? 'card-side' : ''
           }`}
         >
           {images && post.img && (
-            <figure className="bg-neutral max-h-40 max-w-full md:max-w-xs">
-              <Image src={post.img} alt="" width={320} height={200} className="h-full w-full object-cover" />
+            // Square thumbnail, the whole image is always visible
+            <figure
+              className={`relative aspect-square shrink-0 bg-base-200 ${
+                horizontal ? 'w-28 sm:w-44 md:w-56 self-start m-3 md:m-4 rounded-box' : 'w-full'
+              }`}
+            >
+              <Image
+                src={post.img}
+                alt=""
+                fill
+                sizes={horizontal ? '(min-width: 768px) 224px, (min-width: 640px) 176px, 112px' : '(min-width: 1024px) 33vw, 100vw'}
+                className="object-contain"
+              />
             </figure>
           )}
-          <div className="card-body">
+          <div className={`card-body ${horizontal ? 'max-sm:p-4 max-sm:pl-1' : ''}`}>
             <h2 className="text-xl font-bold text-balance">
               {/* Stretched link: the whole card is clickable through this single link */}
               <Link href={post.path} className="after:absolute after:inset-0 after:rounded-box focus:outline-none">

@@ -20,7 +20,6 @@ export function useMDXComponents(): MDXComponents {
     Staff,
     Fig,
     TableOfContents,
-    tableOfContents: TableOfContents,
     Cards,
     Card,
     Quoted,
