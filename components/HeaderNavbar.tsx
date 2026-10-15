@@ -18,7 +18,7 @@ export default function HeaderNavbar({ children }: { children: React.ReactNode }
   const scrolled = useSyncExternalStore(subscribeScroll, () => window.scrollY > 5, () => false)
 
   // Client-side navigation doesn't reload the page: close the mobile drawer and
-  // any focused dropdown when one of their links is clicked.
+  // any focused dropdown or speed dial when one of their links is clicked.
   useEffect(() => {
     function onClick(e: MouseEvent) {
       const link = (e.target as Element | null)?.closest?.('a')
@@ -27,6 +27,8 @@ export default function HeaderNavbar({ children }: { children: React.ReactNode }
         const toggle = document.getElementById(DRAWER_ID) as HTMLInputElement | null
         if (toggle) toggle.checked = false
       }
+      // The speed dial stays open while focus is inside it
+      if (link.closest('.fab') && document.activeElement instanceof HTMLElement) document.activeElement.blur()
       const dropdown = link.closest<HTMLElement>('.dropdown')
       if (dropdown) {
         // Hide the menu right away: otherwise it stays open (hover/focus) over the new page

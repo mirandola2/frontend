@@ -1,3 +1,6 @@
+import type { Icon } from '@phosphor-icons/react'
+import { Broadcast, CardsThree, IdentificationCard, PawPrint } from '@phosphor-icons/react/ssr'
+
 export const DRAWER_ID = 'main-drawer'
 
 export interface MenuItem {
@@ -52,20 +55,25 @@ export const menuItems: MenuItem[] = [
   {
     label: 'Archivio',
     children: [
-      { label: 'Archivio Totem', href: '/totem' },
       { label: 'Staff del Passato', href: '/archivio-staff' },
       { label: 'Campi e Route', href: '/archivio-campi-route' },
       { label: 'Foto e Video', href: '/media' },
-    ],
-  },
-  {
-    label: 'Utilities',
-    children: [
-      { label: 'Ricerca Codice Socio', href: '/codice-socio' },
       { label: 'Uniforme e Distintivi', href: '/uniforme' },
-      { label: 'Traduttore Morse', href: '/morse' },
-      { label: 'Generatore Alci', href: '/alci' },
       { label: 'Materiali e link', href: '/materiale' },
     ],
   },
+]
+
+export interface UtilityItem {
+  label: string
+  href: string
+  icon: Icon
+}
+
+// Shown in the header speed dial (desktop and mobile)
+export const utilityItems: UtilityItem[] = [
+  { label: 'Ricerca Codice Socio', href: '/codice-socio', icon: IdentificationCard },
+  { label: 'Traduttore Morse', href: '/morse', icon: Broadcast },
+  { label: 'Generatore Alci', href: '/alci', icon: CardsThree },
+  { label: 'Archivio Totem', href: '/totem', icon: PawPrint },
 ]
