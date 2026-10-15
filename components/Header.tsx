@@ -39,17 +39,30 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
             <nav className="flex-none hidden xl:block" aria-label="Menu principale">
               <ul className="menu menu-horizontal gap-1 text-white">
-                {menuItems.map(item => (
-                  <li key={item.label}>
-                    {item.children ? (
-                      <div className="dropdown dropdown-end dropdown-hover hover:text-[#dfd2ff]">
+                {menuItems.map((item, i) => {
+                  if (!item.children) {
+                    return (
+                      <li key={item.label}>
+                        <NavLink href={item.href!} className={`hover:text-[#dfd2ff] ${activeLink}`}>
+                          {item.label}
+                        </NavLink>
+                      </li>
+                    )
+                  }
+                  // Menus open to the right, except the last ones which would overflow the screen
+                  const alignEnd = i >= menuItems.length - 2
+                  return (
+                    <li key={item.label}>
+                      <div className={`dropdown dropdown-hover hover:text-[#dfd2ff] ${alignEnd ? 'dropdown-end' : 'dropdown-start'}`}>
                         <div tabIndex={0} role="button" className="flex items-center gap-1">
                           {item.label}
                           <Chevron />
                         </div>
                         <ul
                           tabIndex={0}
-                          className="dropdown-content z-10 menu p-2 shadow-xl bg-secondary text-white rounded-box w-64"
+                          className={`dropdown-content z-10 menu ms-0 before:hidden animate-none transition-none p-2 shadow-xl bg-secondary text-white rounded-box w-64 ${
+                            alignEnd ? '' : 'start-0'
+                          }`}
                         >
                           {item.children.map(child => (
                             <li key={child.label}>
@@ -60,13 +73,9 @@ export default function Header({ children }: { children: React.ReactNode }) {
                           ))}
                         </ul>
                       </div>
-                    ) : (
-                      <NavLink href={item.href!} className={`hover:text-[#dfd2ff] ${activeLink}`}>
-                        {item.label}
-                      </NavLink>
-                    )}
-                  </li>
-                ))}
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>

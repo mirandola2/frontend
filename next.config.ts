@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  // Allow testing the dev server from other devices on the LAN (e.g. http://192.168.x.x:3000):
+  // without this Next blocks its dev scripts for those origins and the page never hydrates.
+  allowedDevOrigins: ['192.168.*.*', '10.*.*.*', '*.local'],
 }
 
 export default withMDX({

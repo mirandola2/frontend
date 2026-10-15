@@ -1,14 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import { Ubuntu, Caprasimo, Playfair_Display } from 'next/font/google'
+import { DM_Sans, Caprasimo, Playfair_Display } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
 
-const ubuntu = Ubuntu({
-  weight: ['400', '700'],
+const dmSans = DM_Sans({
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  variable: '--font-ubuntu',
+  variable: '--font-dm-sans',
 })
 
 const caprasimo = Caprasimo({
@@ -66,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="it" className={`${ubuntu.variable} ${caprasimo.variable} ${playfair.variable}`}>
+    <html lang="it" className={`${dmSans.variable} ${caprasimo.variable} ${playfair.variable}`}>
       <head>
         <link rel="preconnect" href="https://ik.imagekit.io" />
         {/* Icon font: `display=block` avoids flashing the ligature names as text. */}

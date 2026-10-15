@@ -29,12 +29,13 @@ export interface StaffMember {
   order: number
 }
 
+// Columns of content/_media.csv
 export interface MediaEntry {
-  title: string
-  url: string
   type: 'image' | 'video'
   id: string
   year?: number
+  name: string
+  url: string
 }
 
 export interface Quote {

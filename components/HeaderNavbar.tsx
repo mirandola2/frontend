@@ -27,8 +27,12 @@ export default function HeaderNavbar({ children }: { children: React.ReactNode }
         const toggle = document.getElementById(DRAWER_ID) as HTMLInputElement | null
         if (toggle) toggle.checked = false
       }
-      if (link.closest('.dropdown')) {
-        (document.activeElement as HTMLElement | null)?.blur()
+      const dropdown = link.closest<HTMLElement>('.dropdown')
+      if (dropdown) {
+        // Hide the menu right away: otherwise it stays open (hover/focus) over the new page
+        if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
+        dropdown.classList.add('dropdown-close')
+        dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('dropdown-close'), { once: true })
       }
     }
     document.addEventListener('click', onClick)
