@@ -20,7 +20,7 @@ export default function BlogFeed({ posts, horizontal = false, images = true }: B
           }`}
         >
           {images && post.img && (
-            // Square thumbnail, the whole image is always visible
+            // Square thumbnail, cropped to fill
             <figure
               className={`relative aspect-square shrink-0 bg-base-200 ${
                 horizontal ? 'w-28 sm:w-44 md:w-56 self-start m-3 md:m-4 rounded-box' : 'w-full'
@@ -31,7 +31,7 @@ export default function BlogFeed({ posts, horizontal = false, images = true }: B
                 alt=""
                 fill
                 sizes={horizontal ? '(min-width: 768px) 224px, (min-width: 640px) 176px, 112px' : '(min-width: 1024px) 33vw, 100vw'}
-                className="object-contain"
+                className="object-cover"
               />
             </figure>
           )}

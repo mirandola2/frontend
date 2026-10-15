@@ -40,15 +40,21 @@ export default async function BlogPost({ params }: Props) {
   return (
     <BlogLayout>
       <article>
-        <header className="card bg-neutral overflow-hidden">
+        {/* Mobile: image on top. Desktop: text on the left, image on the right. */}
+        <header className="card bg-base-200 overflow-hidden md:flex-row">
           {post.img && (
-            <figure className="relative aspect-video max-h-96 w-full bg-base-300">
-              {/* blurred copy fills the frame, the sharp image is shown whole on top */}
-              <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover blur-xl scale-110 opacity-60" />
-              <Image src={post.img} alt="" fill sizes="(min-width: 1024px) 60vw, 100vw" preload className="object-contain" />
+            <figure className="relative aspect-video w-full shrink-0 rounded-none md:order-last md:aspect-auto md:w-2/5 md:min-h-72">
+              <Image
+                src={post.img}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 360px, (min-width: 768px) 40vw, 100vw"
+                preload
+                className="object-cover"
+              />
             </figure>
           )}
-          <div className="card-body gap-3">
+          <div className="card-body gap-3 md:justify-center md:p-8">
             <nav className="flex flex-wrap items-center gap-2 text-sm">
               <Link href="/blog" className="font-bold text-secondary hover:underline">
                 ← Tutte le notizie
