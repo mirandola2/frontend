@@ -18,7 +18,7 @@ export default function RandomQuote({ quotes }: { quotes: Quote[] }) {
 
   return (
     <span className={index < 0 ? 'invisible' : undefined}>
-      &laquo;{quote.text}&raquo;
+      {quote.text}
       {quote.author && <> ({quote.author})</>}
     </span>
   )

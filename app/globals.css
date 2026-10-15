@@ -56,7 +56,7 @@
 @theme inline {
   --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-caprasimo), ui-sans-serif, system-ui;
-  --font-serif: var(--font-playfair), ui-serif, serif;
+  --font-serif: var(--font-roboto-serif), ui-serif, serif;
 }
 
 @theme {
@@ -104,11 +104,26 @@ html {
   }
 }
 
-.prose-quoteless blockquote p:first-of-type::before {
-  content: none;
+/* Solid buttons: a soft neutral shadow instead of daisyUI's coloured glow and inner rim. */
+.btn:not(.btn-outline, .btn-ghost, .btn-link, .btn-soft, .btn-dash, .btn-on-color) {
+  --btn-shadow: 0 1px 2px rgb(0 0 0 / 0.12), 0 1px 3px rgb(0 0 0 / 0.08);
+  box-shadow: var(--btn-shadow);
+
+  &:hover {
+    --btn-shadow: 0 2px 4px rgb(0 0 0 / 0.14), 0 4px 10px rgb(0 0 0 / 0.1);
+  }
 }
 
-.prose-quoteless blockquote p:first-of-type::after {
+/* Opt-out for whole widgets (e.g. Generatore Alci): flat buttons without shadow. */
+.flat-buttons .btn,
+.flat-buttons .btn:hover {
+  --btn-shadow: none;
+  box-shadow: none;
+}
+
+/* Quotes are set in italics: no typographic quote marks around blockquotes. */
+.prose-container blockquote p:first-of-type::before,
+.prose-container blockquote p:last-of-type::after {
   content: none;
 }
 
@@ -119,7 +134,6 @@ html {
   prose-figure:rounded-xl prose-img:mx-auto
   before:prose-p:content-none after:prose-p:content-none
   prose-headings:text-balance
-  prose-h1:font-display prose-h1:font-normal
   prose-h2:text-primary prose-h3:text-secondary;
 }
 

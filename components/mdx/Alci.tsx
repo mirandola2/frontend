@@ -164,7 +164,7 @@ export default function Alci() {
 
   return (
     <>
-      <div className="card not-prose my-5 w-full max-w-3xl mx-auto bg-neutral">
+      <div className="card not-prose my-5 w-full max-w-3xl mx-auto bg-neutral flat-buttons">
         <div className="card-body">
           <h2 className="card-title">Generatore di Alci</h2>
 
@@ -181,7 +181,7 @@ export default function Alci() {
           </Field>
 
           <label className="label cursor-pointer w-fit text-base-content mt-2">
-            Modalità Expert 🧙
+            Modalità Expert
             <input
               type="checkbox"
               checked={expertMode}
@@ -267,7 +267,7 @@ export default function Alci() {
 
               {showPdfOptions && (
                 <div className="mt-2 p-4 bg-base-200 rounded-box border border-primary">
-                  <h3 className="font-bold mb-3">Esporta PDF 🚧</h3>
+                  <h3 className="font-bold mb-3">Esporta PDF</h3>
                   <p className="text-sm mb-4">
                     L&apos;esportazione del PDF è ancora sperimentale. Selezionando la
                     modalità expert puoi regolare alcune impostazioni o lasciare quelle

@@ -97,6 +97,7 @@ export default function Fig({ src, alt, desc, float = '2' }: FigProps) {
           close={() => setOpen(false)}
           index={index}
           on={{ view: ({ index: i }) => setIndex(i) }}
+          controller={{ closeOnBackdropClick: true }}
           slides={srcs.map(s => ({ src: imagekitUrl(s) }))}
         />
       )}
