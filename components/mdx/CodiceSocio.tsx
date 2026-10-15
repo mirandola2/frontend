@@ -3,6 +3,7 @@
 import { useState, useRef, useSyncExternalStore } from 'react'
 import { useCookie } from '@/hooks/useCookie'
 import { sha256Hex } from '@/lib/sha256'
+import { MagnifyingGlass, SignOut, FloppyDisk } from '@phosphor-icons/react'
 
 interface CodiceSocioProps {
   lastupdate?: string
@@ -82,8 +83,9 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
           <div className="flex items-center justify-between gap-2">
             <h2 className="card-title">Ricerca codice socio</h2>
             {logged && (
-              <button type="button" className="btn btn-ghost btn-sm text-primary" onClick={logout}>
-                Reset Token <span className="material-symbols-rounded text-lg!" aria-hidden="true">logout</span>
+              <button type="button" className="btn btn-ghost btn-sm" onClick={logout}>
+                <SignOut size={18} weight="bold" aria-hidden />
+                Reset Token
               </button>
             )}
           </div>
@@ -99,6 +101,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
                 className="input join-item w-full"
               />
               <button type="submit" className="btn btn-primary join-item" disabled={!pw}>
+                <FloppyDisk size={18} weight="bold" aria-hidden />
                 Salva
               </button>
             </form>
@@ -114,6 +117,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
               disabled={!logged}
             />
             <button type="submit" className="btn btn-primary join-item" disabled={!logged || !name.trim()}>
+              <MagnifyingGlass size={18} weight="bold" aria-hidden />
               Cerca
             </button>
           </form>
@@ -148,7 +152,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
             ))}
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn">Chiudi</button>
+              <button className="btn btn-outline btn-primary">Chiudi</button>
             </form>
           </div>
         </div>

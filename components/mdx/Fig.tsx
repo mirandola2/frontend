@@ -4,6 +4,7 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { imagekitUrl } from '@/lib/imagekit'
+import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 
 const FigLightbox = dynamic(() => import('./FigLightbox'), { ssr: false })
 
@@ -70,18 +71,18 @@ export default function Fig({ src, alt, desc, float = '2' }: FigProps) {
             <button
               type="button"
               onClick={() => step(-1)}
-              className="btn btn-secondary btn-circle btn-sm shadow-xl absolute -left-3"
+              className="btn btn-primary btn-circle btn-sm absolute -left-3"
               aria-label="Immagine precedente"
             >
-              <span className="material-symbols-rounded" aria-hidden="true">navigate_before</span>
+              <CaretLeft size={18} weight="bold" aria-hidden />
             </button>
             <button
               type="button"
               onClick={() => step(1)}
-              className="btn btn-secondary btn-circle btn-sm shadow-xl absolute -right-3"
+              className="btn btn-primary btn-circle btn-sm absolute -right-3"
               aria-label="Immagine successiva"
             >
-              <span className="material-symbols-rounded" aria-hidden="true">navigate_next</span>
+              <CaretRight size={18} weight="bold" aria-hidden />
             </button>
           </>
         )}

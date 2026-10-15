@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { X } from '@phosphor-icons/react'
 
 export default function Footer() {
   return (
@@ -48,7 +49,7 @@ export default function Footer() {
         <div className="modal-box">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Chiudi">
-              ✕
+              <X size={18} weight="bold" aria-hidden />
             </button>
           </form>
           <h3 className="font-bold text-lg text-primary">Credits</h3>

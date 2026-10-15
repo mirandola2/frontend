@@ -12,7 +12,7 @@ export default function BlogIndex() {
   const posts = getAllBlogPosts()
 
   return (
-    <BlogLayout>
+    <BlogLayout belowNavbar>
       <div className="grid gap-4">
         <div className="card w-full bg-base-200">
           <div className="card-body">

@@ -18,7 +18,7 @@ const branches = [
       { label: 'Cerchio', href: '/lc/coccinelle' },
     ],
     icon: '/img/graphics/icon_cappellini.svg',
-    className: 'bg-lc text-lc-content rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none',
+    className: 'bg-lc text-lc-content',
   },
   {
     title: 'Esploratori e Guide',
@@ -29,7 +29,7 @@ const branches = [
       { label: 'Guide', href: '/eg/antares' },
     ],
     icon: '/img/graphics/icon_tenda.svg',
-    className: 'bg-eg text-eg-content rounded-none',
+    className: 'bg-eg text-eg-content',
   },
   {
     title: 'Rover e Scolte',
@@ -40,7 +40,7 @@ const branches = [
       { label: 'Clan Fuoco', href: '/rs/mdv' },
     ],
     icon: '/img/graphics/icon_forcola.svg',
-    className: 'bg-rs text-rs-content rounded-b-2xl rounded-t-none md:rounded-r-2xl md:rounded-l-none',
+    className: 'bg-rs text-rs-content',
   },
 ]
 
@@ -51,9 +51,9 @@ export default function HomePage() {
     <>
       <Hero title="Oltre quarant'anni di Giochi, Avventure e Strade." image="/img/archive/2022_foto-gruppo.jpg" big />
 
-      <div className="container grid md:grid-cols-3 -mt-24 relative z-10">
+      <div className="container grid gap-2 md:grid-cols-3 -mt-24 relative z-10">
         {branches.map(branch => (
-          <div key={branch.href} className={`card max-w-full relative overflow-hidden ${branch.className}`}>
+          <div key={branch.href} className={`card max-w-full relative overflow-hidden rounded-2xl ${branch.className}`}>
             <div className="card-body items-center text-center z-10">
               <h2 className="card-title text-2xl">{branch.title}</h2>
               <p>

@@ -7,6 +7,7 @@ import BlogLayout from '@/components/BlogLayout'
 import BlogFeed from '@/components/BlogFeed'
 import CategoryBadge, { formatMonthYear } from '@/components/CategoryBadge'
 import type { Metadata } from 'next'
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react/ssr'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -38,7 +39,7 @@ export default async function BlogPost({ params }: Props) {
     .slice(0, 2)
 
   return (
-    <BlogLayout>
+    <BlogLayout belowNavbar>
       <article>
         {/* Mobile: image on top. Desktop: text on the left, image on the right. */}
         <header className="card bg-base-200 overflow-hidden md:flex-row">
@@ -56,8 +57,9 @@ export default async function BlogPost({ params }: Props) {
           )}
           <div className="card-body gap-3 md:justify-center md:p-8">
             <nav className="flex flex-wrap items-center gap-2 text-sm">
-              <Link href="/blog" className="font-bold text-secondary hover:underline">
-                ← Tutte le notizie
+              <Link href="/blog" className="inline-flex items-center gap-1 font-bold text-secondary hover:underline">
+                <ArrowLeft size={16} weight="bold" aria-hidden />
+                Tutte le notizie
               </Link>
               <span className="opacity-40">·</span>
               <time dateTime={post.date} className="opacity-70">{formatMonthYear(post.date, true)}</time>
@@ -77,8 +79,9 @@ export default async function BlogPost({ params }: Props) {
         <section className="mt-12 border-t border-base-300 pt-8">
           <div className="flex items-center justify-between gap-4 mb-4">
             <h2 className="text-2xl font-bold text-primary">Altre notizie</h2>
-            <Link href="/blog" className="btn btn-sm btn-outline btn-secondary">
+            <Link href="/blog" className="btn btn-sm btn-outline btn-primary">
               Vedi tutte
+              <ArrowRight size={16} weight="bold" aria-hidden />
             </Link>
           </div>
           <div className="grid md:grid-cols-2 gap-4">

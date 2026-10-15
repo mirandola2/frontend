@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useToast } from '@/hooks/useToast'
 import { copyText } from '@/lib/clipboard'
 import Toast from '@/components/Toast'
+import { ArrowSquareOut, Camera, LinkSimple, MagnifyingGlass, VideoCamera, X } from '@phosphor-icons/react'
 
 interface MediaEntry {
   type: string
@@ -21,8 +22,10 @@ function formatUrlId(name: string) {
     .replace(/^-|-$/g, '')
 }
 
-function getTypeIcon(type: string) {
-  return type === 'photo' ? 'photo_camera' : 'videocam'
+function TypeIcon({ type, size }: { type: string; size: number }) {
+  return type === 'photo'
+    ? <Camera size={size} weight="duotone" aria-label="Foto" />
+    : <VideoCamera size={size} weight="duotone" aria-label="Video" />
 }
 
 interface MediaYearGridProps {
@@ -167,9 +170,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
               className="input input-sm input-secondary w-full pr-8"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <svg className="w-4 h-4 text-base-content/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <MagnifyingGlass size={16} weight="bold" className="text-base-content/50" aria-hidden />
             </div>
           </div>
 
@@ -198,11 +199,11 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm text-base-content/70">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1">
-              <span className="material-symbols-rounded text-xs">photo_camera</span>
+              <TypeIcon type="photo" size={16} />
               {typeStats.photo}
             </span>
             <span className="flex items-center gap-1">
-              <span className="material-symbols-rounded text-xs">videocam</span>
+              <TypeIcon type="video" size={16} />
               {typeStats.video}
             </span>
           </div>
@@ -214,11 +215,9 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
           <button
             type="button"
             onClick={() => { setSearchQuery(''); setSelectedType('both') }}
-            className="btn btn-sm btn-ghost text-base-content/70 hover:text-base-content"
+            className="btn btn-sm btn-ghost"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X size={16} weight="bold" aria-hidden />
             Cancella filtri
           </button>
         </div>
@@ -227,9 +226,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
       {grouped.length === 0 && (
         <div className="text-center py-12">
           <div className="text-base-content/50 mb-2">
-            <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+            <MagnifyingGlass size={48} weight="duotone" className="mx-auto mb-4" aria-hidden />
           </div>
           <p className="text-lg font-medium text-base-content/70">Nessun risultato trovato</p>
           <p className="text-base-content/50">Prova a modificare i termini di ricerca o i filtri</p>
@@ -252,7 +249,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
                   tabIndex={0}
                 >
                   <div className="card-body">
-                    <span className="material-symbols-rounded text-sm">{getTypeIcon(entry.type)}</span>
+                    <TypeIcon type={entry.type} size={20} />
 
                     <a
                       href={entry.url}
@@ -263,21 +260,22 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
 
                     <div className="card-actions justify-end mt-auto">
                       <button
+                        type="button"
                         onClick={e => { e.preventDefault(); copyLink(entry) }}
                         className="btn btn-ghost btn-sm btn-square"
                         title="Copia link"
                         aria-label="Copia link"
                       >
-                        <span className="material-symbols-rounded" aria-hidden="true">link</span>
+                        <LinkSimple size={18} weight="bold" aria-hidden />
                       </button>
                       <a
                         href={entry.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-sm btn-outline btn-secondary"
+                        className="btn btn-sm btn-outline btn-primary btn-square"
                         aria-label={`Apri ${entry.name}`}
                       >
-                        <span className="material-symbols-rounded" aria-hidden="true">east</span>
+                        <ArrowSquareOut size={18} weight="bold" aria-hidden />
                       </a>
                     </div>
                   </div>

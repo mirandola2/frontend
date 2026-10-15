@@ -5,6 +5,7 @@ import { useToast } from '@/hooks/useToast'
 import { copyText } from '@/lib/clipboard'
 import Toast from '@/components/Toast'
 import { exportAlciPdf } from '@/lib/alciPdf'
+import { Copy, DownloadSimple, FilePdf, FileText, Shuffle } from '@phosphor-icons/react'
 
 const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz'
@@ -239,6 +240,7 @@ export default function Alci() {
           )}
 
           <button type="button" onClick={generateStrings} disabled={!isValidFormat} className="btn btn-primary w-full mt-4">
+            <Shuffle size={20} weight="bold" aria-hidden />
             Genera Stringhe
           </button>
 
@@ -248,19 +250,22 @@ export default function Alci() {
                 <button
                   type="button"
                   onClick={() => copyToClipboard(generatedStrings.join('\n'), 'Alci Copiate!')}
-                  className="btn btn-sm flex-1"
+                  className="btn btn-sm btn-outline btn-primary flex-1"
                 >
+                  <Copy size={16} weight="bold" aria-hidden />
                   Copia Tutto
                 </button>
-                <button type="button" onClick={exportToTxt} className="btn btn-secondary btn-sm flex-1">
+                <button type="button" onClick={exportToTxt} className="btn btn-sm btn-outline btn-primary flex-1">
+                  <FileText size={16} weight="bold" aria-hidden />
                   Esporta .txt
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowPdfOptions(!showPdfOptions)}
-                  className={`btn btn-secondary btn-sm flex-1 ${showPdfOptions ? 'btn-active' : ''}`}
+                  className={`btn btn-sm btn-outline btn-primary flex-1 ${showPdfOptions ? 'btn-active' : ''}`}
                   aria-expanded={showPdfOptions}
                 >
+                  <FilePdf size={16} weight="bold" aria-hidden />
                   Esporta PDF...
                 </button>
               </div>
@@ -410,9 +415,13 @@ export default function Alci() {
                     type="button"
                     onClick={exportToPdf}
                     disabled={exporting}
-                    className="btn btn-accent btn-sm w-full mt-4"
+                    className="btn btn-primary btn-sm w-full mt-4"
                   >
-                    {exporting && <span className="loading loading-spinner loading-xs" />}
+                    {exporting ? (
+                      <span className="loading loading-spinner loading-xs" />
+                    ) : (
+                      <DownloadSimple size={16} weight="bold" aria-hidden />
+                    )}
                     Genera PDF
                   </button>
                 </div>
@@ -425,7 +434,7 @@ export default function Alci() {
                     type="button"
                     key={i}
                     onClick={() => copyToClipboard(str)}
-                    className="btn btn-sm btn-outline font-mono w-auto min-w-fit max-w-full wrap-break-word"
+                    className="btn btn-sm btn-outline btn-primary font-mono w-auto min-w-fit max-w-full wrap-break-word"
                     title="Copia"
                   >
                     {str}
