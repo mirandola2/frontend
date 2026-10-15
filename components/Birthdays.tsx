@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { useCachedFetch } from '@/hooks/useCachedFetch'
 import LoadingState from './LoadingState'
 
@@ -57,6 +57,54 @@ function birthdaysFormatter(birthdays: BirthdayPerson[]): string {
   return returnBDString
 }
 
+const CONFETTI_COLORS = ['#FFBE0A', '#559928', '#D24D41', '#9B66A5', '#462678']
+
+// Confetti over the "Compleanni" box when someone has their birthday today: once when the
+// box scrolls into view, then again on hover (throttled).
+function BirthdayConfetti({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const box = ref.current?.closest('section') ?? ref.current
+    if (!box) return
+
+    let last = 0
+    async function fire() {
+      if (!box || Date.now() - last < 1500) return
+      last = Date.now()
+      const { default: confetti } = await import('canvas-confetti')
+      const r = box.getBoundingClientRect()
+      confetti({
+        particleCount: 90,
+        spread: 75,
+        startVelocity: 32,
+        origin: { x: (r.left + r.width / 2) / window.innerWidth, y: (r.top + 40) / window.innerHeight },
+        colors: CONFETTI_COLORS,
+        zIndex: 60,
+        disableForReducedMotion: true,
+      })
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          fire()
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.6 },
+    )
+    observer.observe(box)
+    box.addEventListener('mouseenter', fire)
+    return () => {
+      observer.disconnect()
+      box.removeEventListener('mouseenter', fire)
+    }
+  }, [])
+
+  return <span ref={ref}>{children}</span>
+}
+
 export default function Birthdays() {
   const url = useMemo(() => {
     const now = new Date()
@@ -70,5 +118,6 @@ export default function Birthdays() {
 
   if (!data) return <LoadingState error={error} />
 
-  return <>{birthdaysFormatter(data)}</>
+  const text = birthdaysFormatter(data)
+  return data.some(p => p.t_minus === 0) ? <BirthdayConfetti>{text}</BirthdayConfetti> : <>{text}</>
 }
