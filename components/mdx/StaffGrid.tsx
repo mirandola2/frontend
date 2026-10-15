@@ -2,12 +2,20 @@
 
 import { useState, useMemo } from 'react'
 import Image from 'next/image'
-import type { StaffMember } from '@/lib/content'
+// Only the public fields: names are already resolved on the server (see Staff.tsx).
+export interface StaffPerson {
+  name: string
+  ruolo: string
+  staff: string
+  desc?: string
+  img?: string
+}
 
 interface StaffGridProps {
-  allStaff: StaffMember[]
+  people: StaffPerson[]
   initialStaff: string
-  coca?: boolean
+  showBadges?: boolean
+  showDesc?: boolean
   selector?: boolean
 }
 
@@ -39,15 +47,18 @@ function getRole(ruolo: string | undefined, allStaff: boolean) {
   return allStaff ? roles[0] : (roles[1] ?? roles[0])
 }
 
-export default function StaffGrid({ allStaff, initialStaff, coca = false, selector = false }: StaffGridProps) {
+export default function StaffGrid({
+  people,
+  initialStaff,
+  showBadges = false,
+  showDesc = true,
+  selector = false,
+}: StaffGridProps) {
   const [actualStaff, setActualStaff] = useState(initialStaff)
 
-  const filtered = useMemo(() =>
-    allStaff.filter(p =>
-      (actualStaff === '*' || p.staff?.split('|').includes(actualStaff)) &&
-      (!coca || p.coca === 1)
-    ).sort((a, b) => a.order - b.order),
-    [allStaff, actualStaff, coca]
+  const filtered = useMemo(
+    () => people.filter(p => actualStaff === '*' || p.staff?.split('|').includes(actualStaff)),
+    [people, actualStaff],
   )
 
   return (
@@ -73,23 +84,21 @@ export default function StaffGrid({ allStaff, initialStaff, coca = false, select
         </div>
       )}
       <div className="not-prose clear-both grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {filtered.map(person => (
-          <div key={person.nome + person.order} className="card bg-base-200 transition-shadow hover:shadow-md">
+        {filtered.map((person, i) => (
+          <div key={person.name + i} className="card bg-base-200 transition-shadow hover:shadow-md">
             <div className="card-body p-5">
               <div className="flex gap-4 justify-start items-start mb-4">
                 <Image
-                  src={person.img ? `/img/staff/${person.img}` : `https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(person.nome)}`}
-                  alt={person.nome}
+                  src={person.img ? `/img/staff/${person.img}` : `https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(person.name)}`}
+                  alt={person.name}
                   width={112}
                   height={112}
                   className="mask mask-squircle w-28 h-28 drop-shadow-lg pointer-events-none object-cover"
                 />
                 <div className="space-y-1">
-                  <h2 className="text-xl font-bold text-primary">
-                    {coca ? person.nome : person.nome.split(' ').slice(0, -1).join(' ')}
-                  </h2>
+                  <h2 className="text-xl font-bold text-primary">{person.name}</h2>
                   <p>{getRole(person.ruolo, actualStaff === '*')}</p>
-                  {coca && (
+                  {showBadges && (
                     <div className="flex flex-wrap gap-1 pt-1">
                       {person.staff?.split('|').map(s => (
                         <span key={s} className={`badge badge-lg font-bold border-0 ${staffColors[s] || 'bg-base-300'}`}>
@@ -100,7 +109,7 @@ export default function StaffGrid({ allStaff, initialStaff, coca = false, select
                   )}
                 </div>
               </div>
-              {!coca && <p className="text-sm">{person.desc}</p>}
+              {showDesc && person.desc && <p className="text-sm">{person.desc}</p>}
             </div>
           </div>
         ))}
