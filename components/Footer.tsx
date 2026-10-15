@@ -53,12 +53,11 @@ export default function Footer() {
           </form>
           <h3 className="font-bold text-lg text-primary">Credits</h3>
           <p className="py-4 font-normal text-justify">
-            Il sito web che stai leggendo è stato sviluppato sulla base del lavoro di{' '}
-            <i>Lince Spensierata</i>, da <i>Aquila Ambiziosa</i> e tutti coloro che lo hanno
-            aiutato durante le fasi di costruzione e revisione. Il codice sorgente dell&apos;intero
-            sito, così come l&apos;elenco di chi ha contribuito, è disponibile su{' '}
-            <i>GitHub/Mirandola2</i>. Essendo open-source, chiunque può leggere il codice e
-            migliorarlo.
+            Il sito web che stai leggendo è stato sviluppato nel corso di più di dieci anni da{' '}
+            <i>Lince Spensierata</i> e poi da <i>Aquila Ambiziosa</i> e tutti coloro che li hanno
+            aiutati durante le fasi di costruzione e revisione. Il codice sorgente dell&apos;intero
+            sito è disponibile su <i>GitHub/Mirandola2</i>. Essendo open-source, chiunque può
+            leggere il codice e migliorarlo.
           </p>
         </div>
         <form method="dialog" className="modal-backdrop">

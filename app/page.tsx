@@ -48,7 +48,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Hero title="Quarant'anni di giochi, avventure e strade." image="/img/archive/2022_foto-gruppo.jpg" big />
+      <Hero title="Oltre quarant'anni di giochi, avventure e strade." image="/img/archive/2022_foto-gruppo.jpg" big />
 
       <div className="container grid md:grid-cols-3 -mt-24 relative z-10">
         {branches.map(branch => (
