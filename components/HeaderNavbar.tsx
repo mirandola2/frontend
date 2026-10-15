@@ -9,9 +9,9 @@ function subscribeScroll(onChange: () => void) {
   return () => window.removeEventListener('scroll', onChange)
 }
 
-// Pages under /blog have no colored Hero band behind the navbar, so a
-// transparent navbar there would leave the white text unreadable against
-// the page background — keep it solid there instead of on-scroll only.
+// The navbar is always `fixed` (same scroll behaviour on every page, also after client-side
+// navigation). Pages under /blog have no coloured Hero band behind it, so a transparent navbar
+// would leave the white text unreadable: keep it solid there (BlogLayout leaves room for it).
 export default function HeaderNavbar({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isBlog = pathname === '/blog' || pathname.startsWith('/blog/')
@@ -43,9 +43,9 @@ export default function HeaderNavbar({ children }: { children: React.ReactNode }
 
   return (
     <div
-      className={`navbar top-0 z-50 text-primary-content transition-[background-color,box-shadow] duration-300 ${
-        isBlog ? 'sticky' : 'fixed'
-      } ${solid ? 'bg-primary shadow-md' : 'bg-transparent'}`}
+      className={`navbar fixed top-0 z-50 text-primary-content transition-[background-color,box-shadow] duration-300 ${
+        solid ? 'bg-primary shadow-md' : 'bg-transparent'
+      }`}
     >
       {children}
     </div>

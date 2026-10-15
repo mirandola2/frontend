@@ -3,20 +3,9 @@ import Image from 'next/image'
 import HeaderNavbar from './HeaderNavbar'
 import NavLink from './NavLink'
 import { DRAWER_ID, menuItems } from './navigation'
+import { CaretDown, List } from '@phosphor-icons/react/ssr'
 
 const activeLink = 'aria-[current=page]:bg-white/15 aria-[current=page]:font-bold'
-
-function Chevron() {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="w-4 h-4 opacity-70">
-      <path
-        fillRule="evenodd"
-        d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
-}
 
 export default function Header({ children }: { children: React.ReactNode }) {
   return (
@@ -56,7 +45,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                       <div className={`dropdown dropdown-hover hover:text-[#dfd2ff] ${alignEnd ? 'dropdown-end' : 'dropdown-start'}`}>
                         <div tabIndex={0} role="button" className="flex items-center gap-1">
                           {item.label}
-                          <Chevron />
+                          <CaretDown size={14} weight="bold" className="opacity-70" aria-hidden />
                         </div>
                         <ul
                           tabIndex={0}
@@ -82,15 +71,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
           <div className="flex-none xl:hidden">
             <label htmlFor={DRAWER_ID} className="btn btn-square btn-ghost hover:bg-white/10 border-0" aria-label="Apri il menu">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-6 h-6 stroke-current"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <List size={26} weight="bold" aria-hidden />
             </label>
           </div>
         </HeaderNavbar>

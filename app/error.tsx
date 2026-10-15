@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Hero from '@/components/Hero'
+import { ArrowClockwise, House } from '@phosphor-icons/react'
 
 export default function ErrorPage({
   error,
@@ -26,10 +27,12 @@ export default function ErrorPage({
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="btn btn-primary btn-lg">
+          <Link href="/" className="btn btn-primary">
+            <House size={20} weight="bold" aria-hidden />
             Torna alla Home
           </Link>
-          <button type="button" onClick={reset} className="btn btn-outline btn-primary btn-lg">
+          <button type="button" onClick={reset} className="btn btn-outline btn-primary">
+            <ArrowClockwise size={20} weight="bold" aria-hidden />
             Riprova
           </button>
         </div>

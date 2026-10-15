@@ -17,7 +17,7 @@ const bgColor: Record<string, string> = {
 
 export default function Hero({ title, image, color = 'primary', big = false }: HeroProps) {
   return (
-    <div className="hero relative mb-5 overflow-hidden bg-primary">
+    <div className={`hero relative overflow-hidden bg-primary ${big ? 'mb-5' : 'mb-10'}`}>
       {image && (
         <Image src={image} alt="" fill sizes="100vw" preload className="object-cover" />
       )}

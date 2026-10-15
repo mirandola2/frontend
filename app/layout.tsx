@@ -27,25 +27,6 @@ const robotoSerif = Roboto_Serif({
   variable: '--font-roboto-serif',
 })
 
-// Only these Material Symbols are downloaded (~3 KB instead of ~370 KB).
-// When using a new icon (also via `icon="..."` in MDX), add it here, keeping alphabetical order.
-const ICONS = [
-  'center_focus_strong',
-  'checklist',
-  'east',
-  'link',
-  'logout',
-  'movie',
-  'navigate_before',
-  'navigate_next',
-  'newspaper',
-  'open_in_new',
-  'other_admission',
-  'photo_camera',
-  'videocam',
-]
-const ICONS_URL = `https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${ICONS.join(',')}&display=block`
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://mirandola2.it'),
   title: {
@@ -73,8 +54,6 @@ export default function RootLayout({
     <html lang="it" className={`${roboto.variable} ${robotoSlab.variable} ${caprasimo.variable} ${robotoSerif.variable}`}>
       <head>
         <link rel="preconnect" href="https://ik.imagekit.io" />
-        {/* Icon font: `display=block` avoids flashing the ligature names as text. */}
-        <link rel="stylesheet" href={ICONS_URL} />
       </head>
       <body>
         <Header>

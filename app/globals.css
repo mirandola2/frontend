@@ -121,7 +121,11 @@ html {
   box-shadow: none;
 }
 
-/* Quotes are set in italics: no typographic quote marks around blockquotes. */
+/* Quotes are set in italics, regular weight, without typographic quote marks. */
+.prose-container blockquote {
+  font-weight: 400;
+}
+
 .prose-container blockquote p:first-of-type::before,
 .prose-container blockquote p:last-of-type::after {
   content: none;
