@@ -43,11 +43,13 @@ export default function HeaderNavbar({ children }: { children: React.ReactNode }
 
   const solid = scrolled || isBlog
 
+  // `data-scrolled` lets the children (e.g. the logo) shrink once the page is scrolled
   return (
     <div
-      className={`navbar fixed top-0 z-50 text-primary-content transition-[background-color,box-shadow] duration-300 ${
+      data-scrolled={scrolled || undefined}
+      className={`navbar group/navbar fixed top-0 z-50 text-primary-content transition-[background-color,box-shadow,padding] duration-300 ${
         solid ? 'bg-primary shadow-md' : 'bg-transparent'
-      }`}
+      } ${scrolled ? 'py-1' : 'py-2'}`}
     >
       {children}
     </div>

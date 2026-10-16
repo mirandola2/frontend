@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef } from 'react'
 import { useCachedFetch } from '@/hooks/useCachedFetch'
+import { HandTap } from '@phosphor-icons/react'
 import LoadingState from './LoadingState'
 
 interface BirthdayPerson {
@@ -59,8 +60,9 @@ function birthdaysFormatter(birthdays: BirthdayPerson[]): string {
 
 const CONFETTI_COLORS = ['#FFBE0A', '#559928', '#D24D41', '#9B66A5', '#462678']
 
-// Confetti over the "Compleanni" box when someone has their birthday today, on hover and
-// on click (throttled).
+// Confetti over the "Compleanni" box when someone has their birthday today, on mouse hover and
+// on click / tap (throttled). Pointer events instead of mouseenter/click: iOS Safari doesn't fire
+// `click` on non-interactive elements, and a tap would also emulate a mouseenter.
 function BirthdayConfetti({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLSpanElement>(null)
 
@@ -85,15 +87,30 @@ function BirthdayConfetti({ children }: { children: React.ReactNode }) {
       })
     }
 
-    box.addEventListener('mouseenter', fire)
-    box.addEventListener('click', fire)
+    function onEnter(e: PointerEvent) {
+      if (e.pointerType === 'mouse') fire()
+    }
+    // pointerup is skipped (pointercancel) when the touch turns into a scroll
+    box.addEventListener('pointerenter', onEnter)
+    box.addEventListener('pointerup', fire)
+    box.style.cursor = 'pointer'
     return () => {
-      box.removeEventListener('mouseenter', fire)
-      box.removeEventListener('click', fire)
+      box.removeEventListener('pointerenter', onEnter)
+      box.removeEventListener('pointerup', fire)
+      box.style.cursor = ''
     }
   }, [])
 
-  return <span ref={ref}>{children}</span>
+  return (
+    <span ref={ref}>
+      {children}
+      {/* Touch screens only: there is no hover to discover the confetti */}
+      <span className="hidden pointer-coarse:flex items-center gap-1 mt-2 text-sm opacity-50 select-none">
+        <HandTap size={16} aria-hidden />
+        Tocca per festeggiare
+      </span>
+    </span>
+  )
 }
 
 export default function Birthdays() {

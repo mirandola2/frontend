@@ -35,3 +35,4 @@ public/img/**
 
 # Local Netlify folder
 .netlify
+AGENTS.md
