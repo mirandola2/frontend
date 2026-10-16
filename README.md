@@ -261,7 +261,7 @@ Gestire le immagini è complicato sia per una questione di privacy sia per una q
 Grazie al loader personalizzato di `next/image` (`lib/imagekit-loader.ts`) è sufficiente inserire il percorso *relativo* dell'immagine (es. `/img/misc/img.jpg`) e sarà ImageKit a ridimensionarla e ottimizzarla in base allo schermo. Se serve costruire a mano l'indirizzo di un'immagine, va usata la funzione `imagekitUrl` in `lib/imagekit.ts`.
 
 ## Analytics 📊
-Le statistiche del sito erano gestite dal servizio europeo Simple Analytics, che permette di avere statistiche in tempo reale senza compromettere la privacy degli utenti. Lo script non è ancora stato riportato nella versione Next.js del sito.
+Le statistiche del sito sono gestite da [Vercel Web Analytics](https://vercel.com/docs/analytics) (pacchetto `@vercel/analytics`), che non usa cookie. Il componente `<Analytics />` è incluso in `app/layout.tsx` e i dati sono consultabili nella scheda *Analytics* del progetto su Vercel (va attivata dalla dashboard). Funziona solo sui deploy ospitati su Vercel.
 
 ## Hosting ☁️
 
