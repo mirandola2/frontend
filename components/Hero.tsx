@@ -19,7 +19,8 @@ export default function Hero({ title, image, color = 'primary', big = false }: H
   return (
     <div className={`hero relative overflow-hidden bg-primary ${big ? 'mb-5' : 'mb-10'}`}>
       {image && (
-        <Image src={image} alt="" fill sizes="100vw" preload className="object-cover" />
+        // LCP element: it sits under a 75% colour overlay, so a lower quality is not visible
+        <Image src={image} alt="" fill sizes="100vw" quality={50} loading="eager" fetchPriority="high" className="object-cover" />
       )}
       <div className={`absolute inset-0 ${bgColor[color] || bgColor.primary} opacity-75`} />
       <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />

@@ -96,7 +96,9 @@ function DesktopMenu() {
 function MobileDrawer() {
   return (
     <div className="drawer-side z-50">
-      <label htmlFor={DRAWER_ID} className="drawer-overlay" aria-label="Chiudi il menu" />
+      <label htmlFor={DRAWER_ID} className="drawer-overlay">
+        <span className="sr-only">Chiudi il menu</span>
+      </label>
       <div className="flex flex-row min-h-full">
         <div className="bg-[#07ac0f] w-1" />
         <div className="bg-[#ffee18] w-1" />
@@ -105,8 +107,9 @@ function MobileDrawer() {
             <Link href="/" aria-label="Home - Scout Mirandola 2">
               <Image src="/img/graphics/logo_white.svg" alt="" width={96} height={96} className="h-20 w-auto" />
             </Link>
-            <label htmlFor={DRAWER_ID} className={iconButton} aria-label="Chiudi il menu">
+            <label htmlFor={DRAWER_ID} className={iconButton}>
               <XIcon size={24} weight="bold" aria-hidden />
+              <span className="sr-only">Chiudi il menu</span>
             </label>
           </div>
 
@@ -157,7 +160,7 @@ function MobileDrawer() {
 export default function Header({ children }: { children: React.ReactNode }) {
   return (
     <div className="drawer drawer-end">
-      <input id={DRAWER_ID} type="checkbox" className="drawer-toggle" aria-label="Apri il menu" />
+      <input id={DRAWER_ID} type="checkbox" className="drawer-toggle" aria-label="Menu" />
       <div className="drawer-content flex flex-col min-h-screen">
         <HeaderNavbar>
           <div className="container max-xl:px-3 flex items-center gap-1">
@@ -177,8 +180,9 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
             <UtilitiesFab />
 
-            <label htmlFor={DRAWER_ID} className={`${iconButton} xl:hidden`} aria-label="Apri il menu">
+            <label htmlFor={DRAWER_ID} className={`${iconButton} xl:hidden`}>
               <ListIcon size={28} weight="bold" aria-hidden />
+              <span className="sr-only">Apri il menu</span>
             </label>
           </div>
         </HeaderNavbar>

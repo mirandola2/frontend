@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     loader: 'custom',
     loaderFile: './lib/imagekit-loader.ts',
+    qualities: [50, 75],
   },
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],

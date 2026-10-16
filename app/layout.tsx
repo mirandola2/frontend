@@ -22,9 +22,12 @@ const caprasimo = Caprasimo({
 })
 
 const robotoSerif = Roboto_Serif({
+  weight: '400',
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-roboto-serif',
+  // Only used by quotes/blockquotes: don't compete with the hero image for bandwidth
+  preload: false,
 })
 
 export const metadata: Metadata = {
