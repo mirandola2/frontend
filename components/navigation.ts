@@ -1,5 +1,5 @@
 import type { Icon } from '@phosphor-icons/react'
-import { Broadcast, CardsThree, IdentificationCard, PawPrint } from '@phosphor-icons/react/ssr'
+import { BroadcastIcon, CardsThreeIcon, IdentificationCardIcon, PawPrintIcon } from '@phosphor-icons/react/ssr'
 
 export const DRAWER_ID = 'main-drawer'
 
@@ -72,8 +72,8 @@ export interface UtilityItem {
 
 // Shown in the header speed dial (desktop and mobile)
 export const utilityItems: UtilityItem[] = [
-  { label: 'Ricerca Codice Socio', href: '/codice-socio', icon: IdentificationCard },
-  { label: 'Traduttore Morse', href: '/morse', icon: Broadcast },
-  { label: 'Generatore Alci', href: '/alci', icon: CardsThree },
-  { label: 'Archivio Totem', href: '/totem', icon: PawPrint },
+  { label: 'Ricerca Codice Socio', href: '/codice-socio', icon: IdentificationCardIcon },
+  { label: 'Traduttore Morse', href: '/morse', icon: BroadcastIcon },
+  { label: 'Generatore Alci', href: '/alci', icon: CardsThreeIcon },
+  { label: 'Archivio Totem', href: '/totem', icon: PawPrintIcon },
 ]

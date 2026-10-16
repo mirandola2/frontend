@@ -3,7 +3,7 @@ import Image from 'next/image'
 import HeaderNavbar from './HeaderNavbar'
 import NavLink from './NavLink'
 import { DRAWER_ID, menuItems, utilityItems } from './navigation'
-import { CaretDown, List, SquaresFour, X } from '@phosphor-icons/react/ssr'
+import { CaretDownIcon, ListIcon, SquaresFourIcon, XIcon } from '@phosphor-icons/react/ssr'
 
 // daisyUI paints the current page with the neutral background: here it is only bold, no other effect.
 const onPrimary = '[--menu-active-bg:transparent] [--menu-active-fg:white]'
@@ -19,11 +19,11 @@ function UtilitiesFab() {
     <div className="relative size-11 flex-none max-xl:hidden">
       <div className="fab absolute top-0 end-0 bottom-auto flex-col [&_.fab-close]:top-0 [&_.fab-close]:bottom-auto">
         <div tabIndex={0} role="button" className={iconButton} aria-label="Strumenti" title="Strumenti">
-          <SquaresFour size={26} weight="bold" aria-hidden />
+          <SquaresFourIcon size={26} weight="bold" aria-hidden />
         </div>
         <div className="fab-close">
           <span className="btn btn-circle size-11 bg-white text-primary border-0 shadow-lg" aria-label="Chiudi">
-            <X size={20} weight="bold" aria-hidden />
+            <XIcon size={20} weight="bold" aria-hidden />
           </span>
         </div>
         {utilityItems.map(({ label, href, icon: Icon }) => (
@@ -62,7 +62,7 @@ function DesktopMenu() {
               <div className={`dropdown group rounded-field transition-colors hover:bg-white/10 focus-within:bg-white focus-within:hover:bg-white focus-within:text-primary ${alignEnd ? 'dropdown-end' : 'dropdown-start'}`}>
                 <div tabIndex={0} role="button" className="flex items-center gap-1">
                   {item.label}
-                  <CaretDown
+                  <CaretDownIcon
                     size={14}
                     weight="bold"
                     className="opacity-70 transition-transform duration-200 group-focus-within:rotate-180"
@@ -106,7 +106,7 @@ function MobileDrawer() {
               <Image src="/img/graphics/logo_white.svg" alt="" width={96} height={96} className="h-20 w-auto" />
             </Link>
             <label htmlFor={DRAWER_ID} className={iconButton} aria-label="Chiudi il menu">
-              <X size={24} weight="bold" aria-hidden />
+              <XIcon size={24} weight="bold" aria-hidden />
             </label>
           </div>
 
@@ -178,7 +178,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             <UtilitiesFab />
 
             <label htmlFor={DRAWER_ID} className={`${iconButton} xl:hidden`} aria-label="Apri il menu">
-              <List size={28} weight="bold" aria-hidden />
+              <ListIcon size={28} weight="bold" aria-hidden />
             </label>
           </div>
         </HeaderNavbar>

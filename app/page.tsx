@@ -6,7 +6,7 @@ import BlogLayout from '@/components/BlogLayout'
 import BlogFeed from '@/components/BlogFeed'
 import HomeMDX from '@/content/_home.mdx'
 import { getAllBlogPosts } from '@/lib/content'
-import { ArrowRight, Newspaper, PushPin } from '@phosphor-icons/react/ssr'
+import { ArrowRightIcon, NewspaperIcon, PushPinIcon } from '@phosphor-icons/react/ssr'
 
 const branches = [
   {
@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="card max-w-none bg-base-300">
           <div className="card-body">
             <h2 className="card-title text-2xl">
-              <PushPin size={26} weight="duotone" aria-hidden />
+              <PushPinIcon size={26} weight="duotone" aria-hidden />
               In Primo Piano
             </h2>
             <div className="prose max-w-none prose-a:text-secondary prose-a:underline prose-li:my-0 prose-code:before:content-none prose-code:after:content-none">
@@ -100,9 +100,9 @@ export default function HomePage() {
         </div>
         <p className="text-right w-full mt-4">
           <Link href="/blog" className="btn btn-primary">
-            <Newspaper size={20} weight="duotone" aria-hidden />
+            <NewspaperIcon size={20} weight="duotone" aria-hidden />
             Leggi tutte le notizie
-            <ArrowRight size={18} weight="bold" aria-hidden />
+            <ArrowRightIcon size={18} weight="bold" aria-hidden />
           </Link>
         </p>
       </BlogLayout>

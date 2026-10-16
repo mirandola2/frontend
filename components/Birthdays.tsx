@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from 'react'
 import { useCachedFetch } from '@/hooks/useCachedFetch'
-import { HandTap } from '@phosphor-icons/react'
+import { HandTapIcon } from '@phosphor-icons/react'
 import LoadingState from './LoadingState'
 
 interface BirthdayPerson {
@@ -106,7 +106,7 @@ function BirthdayConfetti({ children }: { children: React.ReactNode }) {
       {children}
       {/* Touch screens only: there is no hover to discover the confetti */}
       <span className="hidden pointer-coarse:flex items-center gap-1 mt-2 text-sm opacity-50 select-none">
-        <HandTap size={16} aria-hidden />
+        <HandTapIcon size={16} aria-hidden />
         Tocca per festeggiare
       </span>
     </span>

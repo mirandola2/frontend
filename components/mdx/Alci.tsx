@@ -5,7 +5,7 @@ import { useToast } from '@/hooks/useToast'
 import { copyText } from '@/lib/clipboard'
 import Toast from '@/components/Toast'
 import { exportAlciPdf } from '@/lib/alciPdf'
-import { Copy, DownloadSimple, FilePdf, FileText, Shuffle } from '@phosphor-icons/react'
+import { CopyIcon, DownloadSimpleIcon, FilePdfIcon, FileTextIcon, ShuffleIcon } from '@phosphor-icons/react'
 
 const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz'
@@ -240,7 +240,7 @@ export default function Alci() {
           )}
 
           <button type="button" onClick={generateStrings} disabled={!isValidFormat} className="btn btn-primary w-full mt-4">
-            <Shuffle size={20} weight="bold" aria-hidden />
+            <ShuffleIcon size={20} weight="bold" aria-hidden />
             Genera Stringhe
           </button>
 
@@ -252,11 +252,11 @@ export default function Alci() {
                   onClick={() => copyToClipboard(generatedStrings.join('\n'), 'Alci Copiate!')}
                   className="btn btn-sm btn-outline btn-primary flex-1"
                 >
-                  <Copy size={16} weight="bold" aria-hidden />
+                  <CopyIcon size={16} weight="bold" aria-hidden />
                   Copia Tutto
                 </button>
                 <button type="button" onClick={exportToTxt} className="btn btn-sm btn-outline btn-primary flex-1">
-                  <FileText size={16} weight="bold" aria-hidden />
+                  <FileTextIcon size={16} weight="bold" aria-hidden />
                   Esporta .txt
                 </button>
                 <button
@@ -265,7 +265,7 @@ export default function Alci() {
                   className={`btn btn-sm btn-outline btn-primary flex-1 ${showPdfOptions ? 'btn-active' : ''}`}
                   aria-expanded={showPdfOptions}
                 >
-                  <FilePdf size={16} weight="bold" aria-hidden />
+                  <FilePdfIcon size={16} weight="bold" aria-hidden />
                   Esporta PDF...
                 </button>
               </div>
@@ -420,7 +420,7 @@ export default function Alci() {
                     {exporting ? (
                       <span className="loading loading-spinner loading-xs" />
                     ) : (
-                      <DownloadSimple size={16} weight="bold" aria-hidden />
+                      <DownloadSimpleIcon size={16} weight="bold" aria-hidden />
                     )}
                     Genera PDF
                   </button>

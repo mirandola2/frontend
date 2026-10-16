@@ -1,13 +1,5 @@
 import Link from 'next/link'
-import {
-  ArrowRight,
-  ArrowSquareOut,
-  ClipboardText,
-  FilmSlate,
-  ListChecks,
-  Newspaper,
-  Target,
-} from '@phosphor-icons/react/ssr'
+import { ArrowRightIcon, ArrowSquareOutIcon, ClipboardTextIcon, FilmSlateIcon, ListChecksIcon, NewspaperIcon, TargetIcon } from '@phosphor-icons/react/ssr'
 import type { Icon } from '@phosphor-icons/react'
 
 interface LnkProps {
@@ -22,18 +14,18 @@ interface LnkProps {
 // Names used in the content (historically Material Symbols names) -> Phosphor icons.
 // Add an entry here to use a new icon from MDX.
 const icons: Record<string, Icon> = {
-  newspaper: Newspaper,
-  movie: FilmSlate,
-  checklist: ListChecks,
-  other_admission: ClipboardText,
-  center_focus_strong: Target,
-  open_in_new: ArrowSquareOut,
-  east: ArrowRight,
+  newspaper: NewspaperIcon,
+  movie: FilmSlateIcon,
+  checklist: ListChecksIcon,
+  other_admission: ClipboardTextIcon,
+  center_focus_strong: TargetIcon,
+  open_in_new: ArrowSquareOutIcon,
+  east: ArrowRightIcon,
 }
 
 export default function Lnk({ href, icon, self = false, children }: LnkProps) {
   const newTab = href.startsWith('http') && !self
-  const IconComponent = (icon && icons[icon]) || (newTab ? ArrowSquareOut : ArrowRight)
+  const IconComponent = (icon && icons[icon]) || (newTab ? ArrowSquareOutIcon : ArrowRightIcon)
 
   return (
     <Link

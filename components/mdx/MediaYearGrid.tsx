@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useToast } from '@/hooks/useToast'
 import { copyText } from '@/lib/clipboard'
 import Toast from '@/components/Toast'
-import { ArrowSquareOut, Camera, LinkSimple, MagnifyingGlass, VideoCamera, X } from '@phosphor-icons/react'
+import { ArrowSquareOutIcon, CameraIcon, LinkSimpleIcon, MagnifyingGlassIcon, VideoCameraIcon, XIcon } from '@phosphor-icons/react'
 
 interface MediaEntry {
   type: string
@@ -24,8 +24,8 @@ function formatUrlId(name: string) {
 
 function TypeIcon({ type, size }: { type: string; size: number }) {
   return type === 'photo'
-    ? <Camera size={size} weight="duotone" aria-label="Foto" />
-    : <VideoCamera size={size} weight="duotone" aria-label="Video" />
+    ? <CameraIcon size={size} weight="duotone" aria-label="Foto" />
+    : <VideoCameraIcon size={size} weight="duotone" aria-label="Video" />
 }
 
 interface MediaYearGridProps {
@@ -170,7 +170,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
               className="input input-sm input-secondary w-full pr-8"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <MagnifyingGlass size={16} weight="bold" className="text-base-content/50" aria-hidden />
+              <MagnifyingGlassIcon size={16} weight="bold" className="text-base-content/50" aria-hidden />
             </div>
           </div>
 
@@ -217,7 +217,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
             onClick={() => { setSearchQuery(''); setSelectedType('both') }}
             className="btn btn-sm btn-ghost"
           >
-            <X size={16} weight="bold" aria-hidden />
+            <XIcon size={16} weight="bold" aria-hidden />
             Cancella filtri
           </button>
         </div>
@@ -226,7 +226,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
       {grouped.length === 0 && (
         <div className="text-center py-12">
           <div className="text-base-content/50 mb-2">
-            <MagnifyingGlass size={48} weight="duotone" className="mx-auto mb-4" aria-hidden />
+            <MagnifyingGlassIcon size={48} weight="duotone" className="mx-auto mb-4" aria-hidden />
           </div>
           <p className="text-lg font-medium text-base-content/70">Nessun risultato trovato</p>
           <p className="text-base-content/50">Prova a modificare i termini di ricerca o i filtri</p>
@@ -266,7 +266,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
                         title="Copia link"
                         aria-label="Copia link"
                       >
-                        <LinkSimple size={18} weight="bold" aria-hidden />
+                        <LinkSimpleIcon size={18} weight="bold" aria-hidden />
                       </button>
                       <a
                         href={entry.url}
@@ -275,7 +275,7 @@ export default function MediaYearGrid({ media }: MediaYearGridProps) {
                         className="btn btn-sm btn-outline btn-primary btn-square"
                         aria-label={`Apri ${entry.name}`}
                       >
-                        <ArrowSquareOut size={18} weight="bold" aria-hidden />
+                        <ArrowSquareOutIcon size={18} weight="bold" aria-hidden />
                       </a>
                     </div>
                   </div>

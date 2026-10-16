@@ -3,7 +3,7 @@
 import { useState, useRef, useSyncExternalStore } from 'react'
 import { useCookie } from '@/hooks/useCookie'
 import { sha256Hex } from '@/lib/sha256'
-import { MagnifyingGlass, SignOut, FloppyDisk } from '@phosphor-icons/react'
+import { MagnifyingGlassIcon, SignOutIcon, FloppyDiskIcon } from '@phosphor-icons/react'
 
 interface CodiceSocioProps {
   lastupdate?: string
@@ -84,7 +84,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
             <h2 className="card-title">Ricerca codice socio</h2>
             {logged && (
               <button type="button" className="btn btn-ghost btn-sm" onClick={logout}>
-                <SignOut size={18} weight="bold" aria-hidden />
+                <SignOutIcon size={18} weight="bold" aria-hidden />
                 Reset Token
               </button>
             )}
@@ -101,7 +101,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
                 className="input join-item w-full"
               />
               <button type="submit" className="btn btn-primary join-item" disabled={!pw}>
-                <FloppyDisk size={18} weight="bold" aria-hidden />
+                <FloppyDiskIcon size={18} weight="bold" aria-hidden />
                 Salva
               </button>
             </form>
@@ -117,7 +117,7 @@ export default function CodiceSocio({ lastupdate }: CodiceSocioProps) {
               disabled={!logged}
             />
             <button type="submit" className="btn btn-primary join-item" disabled={!logged || !name.trim()}>
-              <MagnifyingGlass size={18} weight="bold" aria-hidden />
+              <MagnifyingGlassIcon size={18} weight="bold" aria-hidden />
               Cerca
             </button>
           </form>

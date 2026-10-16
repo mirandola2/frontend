@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Hero from '@/components/Hero'
-import { House } from '@phosphor-icons/react/ssr'
+import { HouseIcon } from '@phosphor-icons/react/ssr'
 
 export default function NotFound() {
   return (
@@ -12,7 +12,7 @@ export default function NotFound() {
           link potrebbe essere errato.
         </p>
         <Link href="/" className="btn btn-primary">
-          <House size={20} weight="bold" aria-hidden />
+          <HouseIcon size={20} weight="bold" aria-hidden />
           Torna alla Home
         </Link>
       </div>

@@ -7,7 +7,7 @@ import BlogLayout from '@/components/BlogLayout'
 import BlogFeed from '@/components/BlogFeed'
 import CategoryBadge, { formatMonthYear } from '@/components/CategoryBadge'
 import type { Metadata } from 'next'
-import { ArrowLeft, ArrowRight } from '@phosphor-icons/react/ssr'
+import { ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react/ssr'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -58,7 +58,7 @@ export default async function BlogPost({ params }: Props) {
           <div className="card-body gap-3 md:justify-center md:p-8">
             <nav className="flex flex-wrap items-center gap-2 text-sm">
               <Link href="/blog" className="inline-flex items-center gap-1 font-bold text-secondary hover:underline">
-                <ArrowLeft size={16} weight="bold" aria-hidden />
+                <ArrowLeftIcon size={16} weight="bold" aria-hidden />
                 Tutte le notizie
               </Link>
               <span className="opacity-40">·</span>
@@ -81,7 +81,7 @@ export default async function BlogPost({ params }: Props) {
             <h2 className="text-2xl font-bold text-primary">Altre notizie</h2>
             <Link href="/blog" className="btn btn-sm btn-outline btn-primary">
               Vedi tutte
-              <ArrowRight size={16} weight="bold" aria-hidden />
+              <ArrowRightIcon size={16} weight="bold" aria-hidden />
             </Link>
           </div>
           <div className="grid md:grid-cols-2 gap-4">

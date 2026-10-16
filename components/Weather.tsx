@@ -2,7 +2,7 @@
 
 import { useCachedFetch } from '@/hooks/useCachedFetch'
 import LoadingState from './LoadingState'
-import { Cloud, CloudFog, CloudLightning, CloudRain, CloudSnow, CloudSun, Sun, type Icon } from '@phosphor-icons/react'
+import { CloudIcon, CloudFogIcon, CloudLightningIcon, CloudRainIcon, CloudSnowIcon, CloudSunIcon, SunIcon, type Icon } from '@phosphor-icons/react'
 
 interface WeatherResponse {
   daily: {
@@ -14,14 +14,14 @@ interface WeatherResponse {
 // Open-Meteo WMO weather codes -> icon
 // https://open-meteo.com/en/docs#weathervariables
 function weatherIcon(code: number): { Icon: Icon; label: string } {
-  if (code === 0) return { Icon: Sun, label: 'Sereno' }
-  if (code <= 2) return { Icon: CloudSun, label: 'Poco nuvoloso' }
-  if (code === 3) return { Icon: Cloud, label: 'Nuvoloso' }
-  if (code === 45 || code === 48) return { Icon: CloudFog, label: 'Nebbia' }
-  if (code >= 95) return { Icon: CloudLightning, label: 'Temporale' }
-  if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { Icon: CloudSnow, label: 'Neve' }
-  if (code === 81 || code === 82) return { Icon: CloudLightning, label: 'Rovesci forti' }
-  return { Icon: CloudRain, label: 'Pioggia' }
+  if (code === 0) return { Icon: SunIcon, label: 'Sereno' }
+  if (code <= 2) return { Icon: CloudSunIcon, label: 'Poco nuvoloso' }
+  if (code === 3) return { Icon: CloudIcon, label: 'Nuvoloso' }
+  if (code === 45 || code === 48) return { Icon: CloudFogIcon, label: 'Nebbia' }
+  if (code >= 95) return { Icon: CloudLightningIcon, label: 'Temporale' }
+  if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { Icon: CloudSnowIcon, label: 'Neve' }
+  if (code === 81 || code === 82) return { Icon: CloudLightningIcon, label: 'Rovesci forti' }
+  return { Icon: CloudRainIcon, label: 'Pioggia' }
 }
 
 export default function Weather() {
