@@ -6,9 +6,7 @@ Il frontend è la parte di un sito web che è visibile dall'utente. Nel nostro c
 
 I siti statici, come quello generato da Next.js con l'opzione `output: 'export'`, sono siti web precompilati in pagine HTML, CSS e JavaScript che non richiedono un server attivo per generare i contenuti al momento della richiesta dell’utente. A differenza dei siti tradizionali dinamici, che generano le pagine in tempo reale, i siti statici vengono generati in anticipo, permettendo una distribuzione più semplice e una performance più elevata.
 
-Di seguito si può vedere l'architettura del sito.
-
-![L'architettura del sito](doc/architecture.png)
+Fino ad ottobre 2026, il sito era fatto con Nuxt, un framework basato su Vue. 
 
 In questa repository è presente e qui documentato il frontend, mentre il [Middleware 📤 si può trovare qui](https://github.com/mirandola2/middleware).
 
