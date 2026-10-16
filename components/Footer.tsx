@@ -11,9 +11,11 @@ export default function Footer() {
           <aside className="gap-5">
             <div className="space-y-2">
               <p>
-                <b>AGESCI - Gruppo Scout Mirandola 2</b>
+                <b>AGESCI Gruppo Mirandola 2 APS</b>
                 <br />
                 Via Posta, 55 - 41037 Mirandola (MO)
+                <br />
+                CF: 90043640367
               </p>
               <p suppressHydrationWarning>&copy; {new Date().getFullYear()} - Tutti i diritti riservati</p>
               <nav className="text-accent font-bold" aria-label="Link utili">

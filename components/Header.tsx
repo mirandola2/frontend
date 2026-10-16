@@ -22,7 +22,7 @@ function UtilitiesFab() {
           <SquaresFourIcon size={26} weight="bold" aria-hidden />
         </div>
         <div className="fab-close">
-          <span className="btn btn-circle size-11 bg-white text-primary border-0 shadow-lg" aria-label="Chiudi">
+          <span className="btn btn-circle size-11 bg-secondary text-white border-0 shadow-lg" aria-label="Chiudi">
             <XIcon size={20} weight="bold" aria-hidden />
           </span>
         </div>
@@ -59,7 +59,7 @@ function DesktopMenu() {
           const alignEnd = i >= menuItems.length - 2
           return (
             <li key={item.label}>
-              <div className={`dropdown group rounded-field transition-colors hover:bg-white/10 focus-within:bg-white focus-within:hover:bg-white focus-within:text-primary ${alignEnd ? 'dropdown-end' : 'dropdown-start'}`}>
+              <div className={`dropdown group rounded-field transition-colors hover:bg-white/10 focus-within:bg-secondary focus-within:hover:bg-secondary focus-within:text-white ${alignEnd ? 'dropdown-end' : 'dropdown-start'}`}>
                 <div tabIndex={0} role="button" className="flex items-center gap-1">
                   {item.label}
                   <CaretDownIcon
