@@ -41,10 +41,13 @@ const staffColors: Record<string, string> = {
   CJ: 'bg-cc text-cc-content',
 }
 
-// `ruolo` is "general role|role inside the staff": show the specific one when filtering by staff.
-function getRole(ruolo: string | undefined, allStaff: boolean) {
-  const roles = ruolo?.split('|') ?? []
-  return allStaff ? roles[0] : (roles[1] ?? roles[0])
+// `ruolo` lists one service per staff ("Capo Gruppo | Aiuto Capo Fuoco" for staff "CJ|CF").
+// All capi shown: every service joined by "e"; filtering by staff: only the service of that staff.
+function getRole(ruolo: string | undefined, staff: string | undefined, actualStaff: string) {
+  const roles = ruolo?.split('|').map(r => r.trim()) ?? []
+  if (actualStaff === '*') return roles.join(' e ')
+  const index = staff?.split('|').indexOf(actualStaff) ?? -1
+  return roles[index] ?? roles[0]
 }
 
 export default function StaffGrid({
@@ -87,7 +90,7 @@ export default function StaffGrid({
         {filtered.map((person, i) => (
           <div key={person.name + i} className="card bg-base-200 transition-shadow hover:shadow-md">
             <div className="card-body p-5">
-              <div className="flex gap-4 justify-start items-start mb-4">
+              <div className={`flex gap-4 justify-start ${showBadges ? 'items-center' : 'items-start'} mb-4`}>
                 <Image
                   src={person.img ? `/img/staff/${person.img}` : `https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(person.name)}`}
                   alt={person.name}
@@ -97,7 +100,7 @@ export default function StaffGrid({
                 />
                 <div className="space-y-1">
                   <h2 className="text-xl font-bold text-primary">{person.name}</h2>
-                  <p>{getRole(person.ruolo, actualStaff === '*')}</p>
+                  {person.ruolo && <p>{getRole(person.ruolo, person.staff, actualStaff)}</p>}
                   {showBadges && (
                     <div className="flex flex-wrap gap-1 pt-1">
                       {person.staff?.split('|').map(s => (

@@ -13,21 +13,30 @@ const LC_STAFF = ['L', 'C']
 // - Coca page: name and surname
 // - L/C pages: only the "nome di caccia" (Akela, Bagheera...), to keep the capi anonymous
 // - E/G and R/S pages: first name only
+function usesHuntName(person: StaffMember, staff: string, coca: boolean) {
+  return !coca && LC_STAFF.includes(staff) && !!person.nomeCaccia
+}
+
 function displayName(person: StaffMember, staff: string, coca: boolean) {
   if (coca) return person.nome
-  const firstName = person.nome.split(' ').slice(0, -1).join(' ') || person.nome
-  return LC_STAFF.includes(staff) ? person.nomeCaccia || firstName : firstName
+  if (person.nomeCaccia && usesHuntName(person, staff, coca)) return person.nomeCaccia
+  return person.nome.split(' ').slice(0, -1).join(' ') || person.nome
 }
+
+const orderKey = (p: StaffMember) => (typeof p.order === 'number' ? p.order : Infinity)
 
 export default function Staff({ staff, coca = false, selector = false }: StaffProps) {
   // Computed on the server: only what is displayed reaches the page (real names never end up in
   // the L/C pages' HTML or data).
   const people: StaffPerson[] = getStaff()
     .filter(p => (selector || staff === '*' || p.staff?.split('|').includes(staff)) && (!coca || p.coca === 1))
-    .sort((a, b) => a.order - b.order)
+    // Coca page: capi with an explicit `order` come first (ascending), the others keep the CSV row order
+    // (Array.sort is stable). Other pages: CSV row order.
+    .sort((a, b) => (coca ? orderKey(a) - orderKey(b) : 0))
     .map(p => ({
       name: displayName(p, staff, coca),
-      ruolo: p.ruolo,
+      // With the "nome di caccia" the role is not shown
+      ruolo: usesHuntName(p, staff, coca) ? '' : p.ruolo,
       staff: p.staff,
       desc: p.desc,
       img: p.img,
